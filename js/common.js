@@ -91,16 +91,44 @@ $(document).ready(function () {
     // высота svg равна ширине картинки под ней
     function chooseSvgWidth() {
         let chooseImg = $('.choose_block_img');
-        let chooseSvg = $('.imgs_list');
-        if (chooseImg) {
-            let chooseImgWidth = chooseImg.outerWidth();
-            chooseSvg.css('width', chooseImgWidth)
+        let chooseSvg = $('.choose_block_svg');
+        if (chooseImg.length) {
+            chooseImg.on('load', function () {
+                let chooseImgWidth = chooseImg.outerWidth();
+                chooseSvg.css('width', chooseImgWidth);
+            });
+
+            // Для случая, если изображение уже было загружено
+            if (chooseImg[0].complete) {
+                let chooseImgWidth = chooseImg.outerWidth();
+                chooseSvg.css('width', chooseImgWidth);
+            }
         }
     }
-    chooseSvgWidth()
-    $(window).resize(function (e) {
-        chooseSvgWidth()
 
+    function chooseBuildWidth() {
+        let chooseImg = $('.choose_block_img');
+        let chooseBuild = $('.imgs_list');
+        if (chooseImg.length) {
+            chooseImg.on('load', function () {
+                let chooseImgWidth = chooseImg.outerWidth();
+                chooseBuild.css('width', chooseImgWidth);
+            });
+
+            // Для случая, если изображение уже было загружено
+            if (chooseImg[0].complete) {
+                let chooseImgWidth = chooseImg.outerWidth();
+                chooseBuild.css('width', chooseImgWidth);
+            }
+        }
+    }
+    chooseBuildWidth()
+    chooseSvgWidth()
+
+
+    $(window).resize(function (e) {
+        chooseBuildWidth()
+        chooseSvgWidth()
     });
 
     //галерея
