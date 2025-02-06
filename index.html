@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1"
+        />
+        <meta name="description" content="Крылатская 33" />
+        <meta name="keywords" content="" />
+        <title>ЖК «Крылатская 33»</title>
+        <!-- Favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="favicons/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
+        <link rel="shortcut icon" href="favicons/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="favicons/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="ЖК «Крылатская 33»" />
+        <link rel="manifest" href="favicons/site.webmanifest" />
+
+        <!-- шрифты -->
+        <link
+            rel="preload"
+            href="fonts/TTFirsNeue-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="preload"
+            href="fonts/TTFirsNeue-Medium.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="preload"
+            href="fonts/TTFirsNeue-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="vendors/swiper/swiper-bundle.min.css" />
+        <link
+            rel="stylesheet"
+            href="vendors/fancybox/jquery.fancybox.min.css"
+        />
+        <link rel="stylesheet" href="vendors/tippy/scale.css" />
+        <link rel="stylesheet" href="css/common.css?1" />
+
+        <script
+            src="https://api-maps.yandex.ru/2.1/?apikey=4c7e2233-a854-4da5-9483-7a55bd41dfc3&lang=ru_RU"
+            type="text/javascript"
+        ></script>
+        <script src="js/map.js?1" type="text/javascript"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="header_block header_block_fix">
+                    <div class="menu_btn">
+                        <span></span>
+                    </div>
+                    <a href="/" class="logo"
+                        ><img src="imgs/logo_brown.svg" alt=""
+                    /></a>
+                    <a href="tel:+7 (495) 642 44 77" class="header_phone"
+                        >+7 (495) 642 44 77</a
+                    >
+                    <a href="#" class="favorites_btn">
+                        <svg class="fill_brown">
+                            <use
+                                xlink:href="imgs/sprite.symbol.svg#favorites"
+                            ></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="btn">ВЫБРАТЬ КВАРТИРУ</a>
+                </div>
+                <div class="header_block">
+                    <div class="menu_btn">
+                        <span></span>
+                    </div>
+                    <a href="/" class="logo"
+                        ><img src="imgs/logo.svg" alt=""
+                    /></a>
+                    <a href="tel:+7 (495) 642 44 77" class="header_phone"
+                        >+7 (495) 642 44 77</a
+                    >
+                    <a href="#" class="favorites_btn">
+                        <svg class="fill_creamy">
+                            <use
+                                xlink:href="imgs/sprite.symbol.svg#favorites"
+                            ></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="btn -not_border">ВЫБРАТЬ КВАРТИРУ</a>
+                </div>
+                <div class="head">
+                    <div class="head_img">
+                        <img src="imgs/head_img_1.jpeg" alt="" />
+                    </div>
+                    <div class="head_content">
+                        <div class="tags">
+                            <div class="tag">Цена от 14.2 млн ₽</div>
+                            <div class="tag">Стоимость от 475 000 ₽/м²</div>
+                            <div class="tag">Площадь от 30 м²</div>
+                        </div>
+                        <h1>
+                            На высоте<br />
+                            ваших ожиданий
+                        </h1>
+                        <a href="#" class="btn">ВЫБРАТЬ КВАРТИРУ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="big_menu">
+                <div class="menu_btn">
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="#" class="item" data-img="imgs/img_1.png"
+                            >Привелегии</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/img_2.png"
+                            >Инфраструктура</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/img_3.png"
+                            >Локация</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/img_4.png"
+                            >архитектура</a
+                        >
+                    </li>
+                    <li><a href="#" class="item">Окружение</a></li>
+                    <li><a href="#" class="item">Благоустройство</a></li>
+                    <li>
+                        <a href="#" class="item">ВЫБРАТЬ Квартиры</a>
+                        <ul>
+                            <li>
+                                <a href="#">Квартиры</a>
+                            </li>
+                            <li>
+                                <a href="#">Машиноместа</a>
+                            </li>
+                            <li>
+                                <a href="#">Кладовые</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/img_5.jpg"
+                            >коммерция</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/img_6.jpg"
+                            >Ипотечные предложения</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/img_7.jpg"
+                            >Технологии комфорта</a
+                        >
+                    </li>
+                    <li><a href="#" class="item">КОМАНДА</a></li>
+                    <li><a href="#" class="item">МЕДИА</a></li>
+                    <li><a href="#" class="item">Контакты</a></li>
+                </ul>
+                <div class="big_menu_img">
+                    <img src="imgs/head_img_1.jpeg" alt="" />
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="section section_two">
+                <div class="container">
+                    <div class="home_blocks_two">
+                        <div class="left">
+                            <h3>
+                                Клубный квартал
+                                &laquo;Kрылатская&nbsp;33&raquo;&nbsp;&mdash;
+                                новая точка притяжения <br />
+                                в&nbsp;одном из&nbsp;самых престижных районов
+                                Запада Москвы
+                            </h3>
+                            <a href="#" class="btn btn_play btn_icon">
+                                <svg class="fill_creamy">
+                                    <use
+                                        xlink:href="imgs/sprite.symbol.svg#play"
+                                    ></use>
+                                </svg>
+                                Посмотреть ролик о проекте
+                            </a>
+                        </div>
+                        <div class="right">
+                            <div class="text">
+                                <p>
+                                    Уникальный проект от именитого
+                                    архитектурного бюро «Остоженка» в
+                                    Крылатском: самый высокий небоскреб в
+                                    районе, достигающий отметки в 150 метров, и
+                                    малоэтажный клубный формат от 42 метров.
+                                    Инновационный архитектурный концепт создает
+                                    ощущение естественности и нерукотворности
+                                    сооружения.
+                                </p>
+                                <p>
+                                    Витражная система «в пол», прямая солнечная
+                                    инсоляция на всех фасадах и великолепные
+                                    виды на излучину Москвы-реки, Живописный
+                                    мост, Ермогеновский храм и урбанистический
+                                    облик города.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section_slider">
+                <div class="container">
+                    <div class="slider_popups_wrapper">
+                        <div class="swiper slider_popups">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a
+                                        href="#"
+                                        data-open-modal="info_modal"
+                                        class="item"
+                                        data-tab="tab_popup-1"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                src="imgs/slider_popups/slider_popups_img_1.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="text">
+                                            <span>1,4 гектара</span> приватной
+                                            территории для всех возрастов
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a
+                                        href="#"
+                                        class="item"
+                                        data-open-modal="info_modal"
+                                        data-tab="tab_popup-2"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                src="imgs/slider_popups/slider_popups_img_2.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="text">
+                                            <span>От 28 до 410 м²</span> –
+                                            квартиры на любой вкус
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a
+                                        href="#"
+                                        class="item"
+                                        data-open-modal="info_modal"
+                                        data-tab="tab_popup-3"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                src="imgs/slider_popups/slider_popups_img_3.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="text">
+                                            Планировочные решения для<span>
+                                                755 квартир</span
+                                            >
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a
+                                        href="#"
+                                        class="item"
+                                        data-open-modal="info_modal"
+                                        data-tab="tab_popup-4"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                src="imgs/slider_popups/slider_popups_img_4.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="text">
+                                            <span>24/7:</span> инновации в
+                                            каждой детали
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a
+                                        href="#"
+                                        class="item"
+                                        data-open-modal="info_modal"
+                                        data-tab="tab_popup-5"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                src="imgs/slider_popups/slider_popups_img_5.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="text">
+                                            <span>271</span> машино-место
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a
+                                        href="#"
+                                        class="item"
+                                        data-open-modal="info_modal"
+                                        data-tab="tab_popup-5"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                src="imgs/slider_popups/slider_popups_img_6.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="text">
+                                            <span> 15 минут</span> до центра
+                                            столицы
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a
+                                        href="#"
+                                        class="item"
+                                        data-open-modal="info_modal"
+                                        data-tab="tab_popup-5"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                src="imgs/slider_popups/slider_popups_img_7.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="text">
+                                            <span>5</span> спортивных локаций
+                                            рядом
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a
+                                        href="#"
+                                        class="item"
+                                        data-open-modal="info_modal"
+                                        data-tab="tab_popup-5"
+                                    >
+                                        <div class="img">
+                                            <img
+                                                src="imgs/slider_popups/slider_popups_img_8.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div class="text">
+                                            <span>175 гектаров</span> заповедной
+                                            зоны — чистый воздух и природа рядом
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper_arrows">
+                                <div class="swiper-button-prev">
+                                    <svg>
+                                        <use
+                                            xlink:href="imgs/sprite.symbol.svg#arrow_right"
+                                        ></use>
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <svg>
+                                        <use
+                                            xlink:href="imgs/sprite.symbol.svg#arrow_left"
+                                        ></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section choose_section">
+                <div class="container">
+                    <div class="title">
+                        <h2>
+                            Выбрать<br />
+                            квартиру
+                        </h2>
+                        <div class="subtitle">Выберите секцию</div>
+                    </div>
+                    <div class="choose_block">
+                        <img
+                            src="imgs/choose_img.png"
+                            alt=""
+                            class="choose_block_img"
+                        />
+                        <div class="choose_courtyard">
+                            <svg class="w24 fill_none">
+                                <use
+                                    xlink:href="imgs/sprite.symbol.svg#close"
+                                ></use>
+                            </svg>
+                            <span>Внутренний двор</span>
+                        </div>
+                        <div class="choose_courtyard_modal">
+                            <div class="name">
+                                Внутренний<br />
+                                двор
+                            </div>
+                            <div class="close">
+                                <svg class="w24 fill_none">
+                                    <use
+                                        xlink:href="imgs/sprite.symbol.svg#close"
+                                    ></use>
+                                </svg>
+                            </div>
+                            <div class="text">
+                                <img src="imgs/img_1.png" alt="" />
+                                <p>
+                                    Уникальный проект от именитого
+                                    архитектурного бюро «Остоженка» в
+                                    Крылатском: самый высокий небоскреб в
+                                    районе, достигающий отметки в 150 метров, и
+                                    малоэтажный клубный формат от 42 метров.
+                                    Инновационный архитектурный концепт создает
+                                    ощущение естественности и нерукотворности
+                                    сооружения.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="imgs_list">
+                            <img
+                                src="imgs/build/build_1.png"
+                                alt=""
+                                data-id="build_1"
+                            />
+                            <img
+                                src="imgs/build/build_2.png"
+                                alt=""
+                                data-id="build_2"
+                            />
+                            <img
+                                src="imgs/build/build_3.png"
+                                alt=""
+                                data-id="build_3"
+                            />
+                            <img
+                                src="imgs/build/build_4.png"
+                                alt=""
+                                data-id="build_4"
+                            />
+                            <img
+                                src="imgs/build/build_5.png"
+                                alt=""
+                                data-id="build_5"
+                            />
+                            <img
+                                src="imgs/build/build_6.png"
+                                alt=""
+                                data-id="build_6"
+                            />
+                            <img
+                                src="imgs/build/build_7.png"
+                                alt=""
+                                data-id="build_7"
+                            />
+                        </div>
+
+                        <svg
+                            width="2640"
+                            height="1105"
+                            viewBox="0 0 2640 1105"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="choose_block_svg"
+                        >
+                            <mask
+                                id="mask0_1467_59"
+                                style="mask-type: alpha"
+                                maskUnits="userSpaceOnUse"
+                                x="0"
+                                y="0"
+                                width="2640"
+                                height="1105"
+                            >
+                                <rect
+                                    x="0.5"
+                                    y="0.389648"
+                                    width="2639"
+                                    height="1104.61"
+                                    fill="#D9D9D9"
+                                />
+                            </mask>
+                            <g mask="url(#mask0_1467_59)">
+                                <path
+                                    class="build tippy_btn"
+                                    data-template="tippy-content_7"
+                                    id="build_7"
+                                    d="M1143.98 987.25L1145.98 985.75L1138.98 928.25L1128.48 911.75L1126.98 896.75L1121.98 891.25L1101.48 856.25L1084.98 865.25L1083.48 862.75V860.75L1080.48 856.25L1079.98 854.25L1074.48 846.25H1072.98L1069.48 839.75L1068.48 836.75L1062.98 828.25L1062.48 825.25L1059.48 821.75L1043.98 833.25L1041.48 832.25L1023.98 843.25H1022.48L996.484 857.75L997.984 862.75L976.484 874.25L971.984 866.25L968.984 855.75L961.984 839.75L957.984 835.25L954.484 836.75L952.484 833.25L857.984 885.75V889.25L856.484 890.25L876.984 924.75L878.484 929.25L911.484 980.75L912.484 986.25L921.984 1000.75V1004.75L967.484 1073.25L971.484 1074.25L980.984 1068.75L984.984 1075.25L1010.98 1058.75L1015.48 1066.25L1016.98 1065.25L1020.48 1070.75L1077.48 1034.75L1075.48 1028.25L1107.48 1007.25L1109.98 1010.25L1143.98 989.25V987.25Z"
+                                    fill="#141414"
+                                />
+                                <path
+                                    class="build tippy_btn"
+                                    data-template="tippy-content_6"
+                                    id="build_6"
+                                    d="M829.984 848.75L855.984 890.25L858.484 888.75L856.984 884.25L954.984 830.25L961.484 839.25L969.484 855.75L975.984 850.25L947.984 779.75L914.984 721.75L899.484 728.75L889.484 711.75L871.484 721.75L868.984 718.25L831.484 740.25L828.484 736.75L815.984 744.25L811.984 743.75L805.984 749.25L813.484 763.25L815.484 769.25L822.484 782.25L803.484 793.75V796.75L811.984 810.25V814.75L820.984 828.25V832.25L828.484 844.75L829.984 848.75Z"
+                                    fill="#141414"
+                                />
+                                <path
+                                    class="build tippy_btn"
+                                    data-template="tippy-content_5"
+                                    id="build_5"
+                                    d="M1167.48 754.75L1171.98 751.75L1166.98 592.75L1164.98 587.75H1160.98L1101.98 508.75L1029.98 546.25L1033.48 566.25L1015.48 576.25V578.75L1006.48 583.75L1010.48 604.25L987.484 618.75L996.484 657.75L980.984 667.25L1000.98 745.75L1005.98 750.25L1011.98 770.75L1016.98 776.25V781.25L1035.48 805.75L1038.98 814.75L1043.98 818.75L1047.48 829.25L1062.98 818.75L1066.48 821.75L1070.48 818.75V814.75L1078.48 809.25L1081.48 812.75L1085.98 808.25L1094.98 802.75L1095.98 804.25L1100.98 799.25L1109.98 793.25L1111.48 794.75L1115.48 791.25V785.25L1123.48 779.75L1126.48 785.25L1131.98 781.25V776.25L1154.98 761.75L1158.48 760.25V757.75L1164.98 753.75L1167.48 754.75Z"
+                                    fill="#141414"
+                                />
+                                <path
+                                    class="build tippy_btn"
+                                    data-template="tippy-content_4"
+                                    id="build_4"
+                                    d="M1179.98 745.25L1171.98 751.75L1166.98 592.25L1164.48 587.75H1160.48L1101.48 508.25L1097.48 460.25L1101.48 458.25V455.75L1106.48 453.25L1104.48 422.25L1111.48 419.25L1107.48 367.75L1111.48 365.25V362.75L1127.48 355.75L1121.98 266.75L1130.98 263.25V259.75L1140.98 257.25V254.25L1149.48 249.75V246.25L1162.98 244.25L1170.48 240.75L1169.48 237.25L1182.98 234.75L1190.98 231.25V227.75L1203.48 225.75L1209.98 221.75V218.75L1223.48 216.25L1230.98 212.75V208.75L1243.98 206.25L1253.98 203.25L1261.48 209.75H1263.98L1274.98 224.25H1277.98L1283.98 232.75L1286.98 238.75H1291.98L1296.98 248.25L1301.98 254.25H1307.98L1311.48 264.25L1317.48 270.25H1322.98V279.75H1325.48L1328.98 283.75L1282.48 680.25L1272.48 686.25L1271.48 693.25L1261.98 697.75L1256.98 703.25L1254.48 701.75L1241.98 708.75L1237.48 714.75L1235.48 711.25L1228.98 714.75L1227.98 718.25L1222.98 722.75L1218.98 719.75L1215.48 721.75L1213.98 727.75L1210.98 729.75L1208.98 727.75L1201.48 732.25L1196.98 737.25L1193.98 735.25L1186.98 739.25V742.25L1181.98 746.25L1179.98 745.25Z"
+                                    fill="#141414"
+                                />
+                                <path
+                                    class="build tippy_btn"
+                                    data-template="tippy-content_3"
+                                    id="build_3"
+                                    d="M1390.48 95.25L1311.48 616.25L1321.48 629.75L1318.98 657.25L1366.98 722.75L1375.98 718.75L1384.98 733.25L1446.48 515.25L1450.98 519.25L1512.98 485.25L1518.98 473.25L1520.98 471.75L1523.98 474.75L1553.98 389.75L1543.48 375.75L1555.48 338.75L1550.98 334.75L1583.48 241.75L1569.98 229.25L1593.48 155.75L1591.48 153.25L1599.98 126.75L1589.98 117.75L1583.98 108.25L1580.48 109.75L1572.48 102.75L1566.98 93.75H1562.98L1554.48 87.75L1548.98 78.25H1545.48L1537.48 73.25L1532.48 64.25L1528.98 63.75L1520.48 58.75L1514.98 47.25H1508.98L1504.98 44.75L1496.98 48.75L1481.98 50.25V55.25L1474.98 58.75L1458.98 61.25V64.25L1452.98 67.75L1436.48 70.75L1437.98 74.75L1430.48 78.75L1414.48 80.75L1414.98 84.75L1392.98 90.75V94.25L1390.48 95.25Z"
+                                    fill="#141414"
+                                />
+                                <path
+                                    class="build tippy_btn"
+                                    data-template="tippy-content_2"
+                                    id="build_2"
+                                    d="M1518.98 473.25L1520.98 471.75L1537.48 488.75L1535.48 492.75L1562.98 521.25L1553.48 542.75L1573.48 564.25L1563.98 584.25L1572.48 593.75L1562.48 616.75L1565.48 620.25V624.75L1573.98 633.25L1563.98 652.25L1497.98 692.25L1508.48 703.75L1435.48 747.75L1431.98 756.75L1421.48 761.25L1413.98 780.25L1402.98 779.25L1391.48 762.75L1383.48 749.25L1380.48 744.75L1445.98 515.25L1450.98 519.75L1512.98 485.25L1518.98 473.25Z"
+                                    fill="#141414"
+                                />
+                                <path
+                                    class="build tippy_btn"
+                                    data-template="tippy-content_1"
+                                    id="build_1"
+                                    d="M1558.98 871.75L1578.48 858.75L1577.48 853.75L1621.48 787.75V782.75L1624.98 774.25L1615.98 761.25L1630.48 739.25L1627.48 736.75V734.75L1621.48 727.75H1619.48L1612.98 720.25V718.25L1607.48 711.75H1605.48L1598.98 703.75V702.25L1592.98 695.75H1591.48L1585.98 689.25L1588.48 684.75L1575.98 671.25L1577.98 666.75L1563.98 652.25L1497.98 692.25L1507.98 703.75L1435.48 747.75L1431.98 756.75L1421.48 761.25L1413.48 781.75L1404.48 787.25L1402.98 785.75L1397.98 789.25L1387.48 820.25L1378.48 826.75L1376.98 825.75L1370.98 829.25V831.25L1361.98 836.75L1359.98 835.25L1354.98 838.25L1350.48 855.25L1340.48 862.25L1338.48 860.75L1333.98 863.75L1321.48 912.75L1358.48 964.25L1363.48 960.75L1369.48 968.25L1367.48 972.25L1379.48 987.75L1381.48 985.75L1385.98 990.75L1440.98 953.25L1445.98 954.75L1522.98 902.75L1525.48 898.25L1552.48 880.75L1558.98 871.75Z"
+                                    fill="#141414"
+                                />
+                            </g>
+                        </svg>
+                        <!-- контент для всплывашек -->
+                        <div style="display: none">
+                            <div id="tippy-content_1">
+                                <div class="tooltip_block">
+                                    <div class="name">Секция</div>
+                                    <div class="number">1</div>
+                                    <div class="text">
+                                        Ввод в эксплуатацию 31.08.2027
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>Студия</span>
+                                            <span>от 15.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>1-комнатная</span>
+                                            <span>от 23.5 млн.₽</span>
+                                        </li>
+                                        <li>
+                                            <span>2-комнатная</span>
+                                            <span>от 30.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>3-комнатная</span>
+                                            <span>от 54.6 млн. ₽</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="tippy-content_2">
+                                <div class="tooltip_block">
+                                    <div class="name">Секция</div>
+                                    <div class="number">2</div>
+                                    <div class="text">
+                                        Ввод в эксплуатацию 31.08.2027
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>Студия</span>
+                                            <span>от 15.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>1-комнатная</span>
+                                            <span>от 23.5 млн.₽</span>
+                                        </li>
+                                        <li>
+                                            <span>2-комнатная</span>
+                                            <span>от 30.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>3-комнатная</span>
+                                            <span>от 54.6 млн. ₽</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="tippy-content_3">
+                                <div class="tooltip_block">
+                                    <div class="name">Секция</div>
+                                    <div class="number">3</div>
+                                    <div class="text">
+                                        Ввод в эксплуатацию 31.08.2027
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>Студия</span>
+                                            <span>от 15.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>1-комнатная</span>
+                                            <span>от 23.5 млн.₽</span>
+                                        </li>
+                                        <li>
+                                            <span>2-комнатная</span>
+                                            <span>от 30.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>3-комнатная</span>
+                                            <span>от 54.6 млн. ₽</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="tippy-content_4">
+                                <div class="tooltip_block">
+                                    <div class="name">Секция</div>
+                                    <div class="number">4</div>
+                                    <div class="text">
+                                        Ввод в эксплуатацию 31.08.2027
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>Студия</span>
+                                            <span>от 15.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>1-комнатная</span>
+                                            <span>от 23.5 млн.₽</span>
+                                        </li>
+                                        <li>
+                                            <span>2-комнатная</span>
+                                            <span>от 30.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>3-комнатная</span>
+                                            <span>от 54.6 млн. ₽</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="tippy-content_5">
+                                <div class="tooltip_block">
+                                    <div class="name">Секция</div>
+                                    <div class="number">5</div>
+                                    <div class="text">
+                                        Ввод в эксплуатацию 31.08.2027
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>Студия</span>
+                                            <span>от 15.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>1-комнатная</span>
+                                            <span>от 23.5 млн.₽</span>
+                                        </li>
+                                        <li>
+                                            <span>2-комнатная</span>
+                                            <span>от 30.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>3-комнатная</span>
+                                            <span>от 54.6 млн. ₽</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="tippy-content_6">
+                                <div class="tooltip_block">
+                                    <div class="name">Секция</div>
+                                    <div class="number">6</div>
+                                    <div class="text">
+                                        Ввод в эксплуатацию 31.08.2027
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>Студия</span>
+                                            <span>от 15.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>1-комнатная</span>
+                                            <span>от 23.5 млн.₽</span>
+                                        </li>
+                                        <li>
+                                            <span>2-комнатная</span>
+                                            <span>от 30.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>3-комнатная</span>
+                                            <span>от 54.6 млн. ₽</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="tippy-content_7">
+                                <div class="tooltip_block">
+                                    <div class="name">Секция</div>
+                                    <div class="number">7</div>
+                                    <div class="text">
+                                        Ввод в эксплуатацию 31.08.2027
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>Студия</span>
+                                            <span>от 15.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>1-комнатная</span>
+                                            <span>от 23.5 млн.₽</span>
+                                        </li>
+                                        <li>
+                                            <span>2-комнатная</span>
+                                            <span>от 30.7 млн. ₽</span>
+                                        </li>
+                                        <li>
+                                            <span>3-комнатная</span>
+                                            <span>от 54.6 млн. ₽</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container choose_btn_mobile_wrapper">
+                <a href="#" class="btn choose_btn_mobile"
+                    >ПОДБОР ПО ПАРАМЕТРАМ</a
+                >
+            </div>
+            <section class="section gallery_section">
+                <div class="container">
+                    <h2>
+                        Галерея визуальных<br />
+                        материалов
+                    </h2>
+                    <div class="tabs_block">
+                        <div class="tabs_nav tags">
+                            <a class="tabs_nav_item tag active" href="#tab-1"
+                                >Архитектура</a
+                            >
+                            <a class="tabs_nav_item tag" href="#tab-2"
+                                >Благоустройство</a
+                            >
+                            <a class="tabs_nav_item tag" href="#tab-3">Лобби</a>
+                            <a class="tabs_nav_item tag" href="#tab-4"
+                                >Инфраструктура</a
+                            >
+                        </div>
+                        <div class="tabs_content">
+                            <div class="tabs_content_item" id="tab-1">
+                                <div class="slider_gallery_wrapper">
+                                    <div class="swiper slider_gallery">
+                                        <div class="swiper_arrows">
+                                            <div class="swiper-button-prev">
+                                                <svg>
+                                                    <use
+                                                        xlink:href="imgs/sprite.symbol.svg#arrow_right"
+                                                    ></use>
+                                                </svg>
+                                            </div>
+                                            <div class="swiper-button-next">
+                                                <svg>
+                                                    <use
+                                                        xlink:href="imgs/sprite.symbol.svg#arrow_left"
+                                                    ></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a
+                                                    class="item gallery_img"
+                                                    data-src="imgs/img_5.jpg"
+                                                    data-fancybox="gallery_1"
+                                                >
+                                                    <div class="img">
+                                                        <img
+                                                            src="imgs/img_5.jpg"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a
+                                                    class="item gallery_img"
+                                                    data-src="imgs/img_6.jpg"
+                                                    data-fancybox="gallery_1"
+                                                >
+                                                    <div class="img">
+                                                        <img
+                                                            src="imgs/img_6.jpg"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a
+                                                    class="item gallery_img"
+                                                    data-src="imgs/img_7.jpg"
+                                                    data-fancybox="gallery_1"
+                                                >
+                                                    <div class="img">
+                                                        <img
+                                                            src="imgs/img_7.jpg"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a
+                                                    class="item gallery_img"
+                                                    data-src="imgs/img_1.png"
+                                                    data-fancybox="gallery_1"
+                                                >
+                                                    <div class="img">
+                                                        <img
+                                                            src="imgs/img_1.png"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs_content_item" id="tab-2">
+                                <div class="slider_gallery_wrapper">
+                                    <div class="swiper slider_gallery">
+                                        <div class="swiper_arrows">
+                                            <div class="swiper-button-prev">
+                                                <svg>
+                                                    <use
+                                                        xlink:href="imgs/sprite.symbol.svg#arrow_right"
+                                                    ></use>
+                                                </svg>
+                                            </div>
+                                            <div class="swiper-button-next">
+                                                <svg>
+                                                    <use
+                                                        xlink:href="imgs/sprite.symbol.svg#arrow_left"
+                                                    ></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="#" class="item">
+                                                    <div class="img">
+                                                        <img
+                                                            src="imgs/img_1.png"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="item">
+                                                    <div class="img">
+                                                        <img
+                                                            src="imgs/img_2.png"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="item">
+                                                    <div class="img">
+                                                        <img
+                                                            src="imgs/img_3.png"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#" class="item">
+                                                    <div class="img">
+                                                        <img
+                                                            src="imgs/img_4.png"
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs_content_item" id="tab-3">
+                                <div class="swiper slider_gallery">
+                                    <div class="swiper_arrows">
+                                        <div class="swiper-button-prev">
+                                            <svg>
+                                                <use
+                                                    xlink:href="imgs/sprite.symbol.svg#arrow_right"
+                                                ></use>
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-button-next">
+                                            <svg>
+                                                <use
+                                                    xlink:href="imgs/sprite.symbol.svg#arrow_left"
+                                                ></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="#" class="item">
+                                                <div class="img">
+                                                    <img
+                                                        src="imgs/img_4.png"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="item">
+                                                <div class="img">
+                                                    <img
+                                                        src="imgs/img_6.jpg"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section map_section">
+                <div class="container">
+                    <h2>Локация проекта</h2>
+                </div>
+                <div class="tabs_block">
+                    <div class="container">
+                        <div class="tabs_nav tags">
+                            <a
+                                class="tabs_nav_item tag active"
+                                href="#tab_map-1"
+                                >Статичная карта</a
+                            >
+                            <a class="tabs_nav_item tag" href="#tab_map-2"
+                                >Яндекс Карта</a
+                            >
+                        </div>
+                    </div>
+                    <div class="tabs_content">
+                        <div class="tabs_content_item" id="tab_map-1">
+                            <div class="static_map">
+                                <div class="left">
+                                    <img src="imgs/static_map.jpg" alt="" />
+                                </div>
+                                <div class="right">
+                                    <div class="static_map_block">
+                                        <h4 class="name">
+                                            ИДТИ<br />
+                                            ПЕШКОМ
+                                        </h4>
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="imgs/static_map_img_1.svg"
+                                                    alt=""
+                                                />
+                                                <div>
+                                                    <span>5-7 МИНУТ </span>
+                                                    До&nbsp;парка звезд,<br />
+                                                    крылатского
+                                                    и&nbsp;набережной
+                                                    москвы-реки
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img
+                                                    src="imgs/static_map_img_2.svg"
+                                                    alt=""
+                                                />
+                                                <div>
+                                                    <span>15 МИНУТ </span>
+                                                    ДО метро «крылатское»<br />
+                                                    арбатско-покровской линии
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img
+                                                    src="imgs/static_map_img_3.svg"
+                                                    alt=""
+                                                />
+                                                <div>
+                                                    <span>15 МИНУТ </span>
+                                                    До пристани<br />
+                                                    «крылатская»
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="static_map_block">
+                                        <h4 class="name">
+                                            <span>
+                                                НА ЛИЧНОМ<br />
+                                                ТРАнспорте или такси
+                                            </span>
+                                            <span
+                                                >ЛИЧНый ТРАнспорт или
+                                                такси</span
+                                            >
+                                        </h4>
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="imgs/static_map_img_4.svg"
+                                                    alt=""
+                                                />
+                                                <div>
+                                                    <span>15 МИНУТ </span>
+                                                    до садового кольца<br />
+                                                    и москва-сити
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img
+                                                    src="imgs/static_map_img_5.svg"
+                                                    alt=""
+                                                />
+                                                <div>
+                                                    <span>20-30 МИНУТ </span>
+                                                    до аэропорта внуково
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img
+                                                    src="imgs/static_map_img_5.svg"
+                                                    alt=""
+                                                />
+                                                <div>
+                                                    <span>30-40 МИНУТ </span>
+                                                    до аэропорта шереметьево
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs_content_item" id="tab_map-2">
+                            <div class="map_wrapper">
+                                <div id="map"></div>
+                                <div class="map_filters">
+                                    <div class="map_filters_title">
+                                        Фильтр
+                                        <svg class="fill_none">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#arrow_left"
+                                            ></use>
+                                        </svg>
+                                    </div>
+                                    <div class="map_filters_dropdown">
+                                        <button
+                                            class="filter-button"
+                                            data-category="all"
+                                        >
+                                            Все объекты
+                                        </button>
+                                        <button
+                                            class="filter-button"
+                                            data-category="Парки и скверы"
+                                        >
+                                            Парки и скверы
+                                        </button>
+                                        <button
+                                            class="filter-button"
+                                            data-category="Кафе и рестораны"
+                                        >
+                                            Кафе и рестораны
+                                        </button>
+                                        <button
+                                            class="filter-button"
+                                            data-category="Образование"
+                                        >
+                                            Образование
+                                        </button>
+                                        <button
+                                            class="filter-button"
+                                            data-category="Детские сады"
+                                        >
+                                            Детские сады
+                                        </button>
+                                        <button
+                                            class="filter-button"
+                                            data-category="Торговые центры"
+                                        >
+                                            Торговые центры
+                                        </button>
+                                        <button
+                                            class="filter-button"
+                                            data-category="Больницы и поликлинники"
+                                        >
+                                            Больницы и поликлинники
+                                        </button>
+                                        <button
+                                            class="filter-button"
+                                            data-category="Спорт"
+                                        >
+                                            Спорт
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="map_zoom_btn">
+                                    <button id="zoom-in">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="30"
+                                            height="31"
+                                            viewBox="0 0 30 31"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M-0.000501054 15.4419L29.883 15.4416M14.941 0.50043L14.941 30.3837"
+                                                stroke="#63483F"
+                                                stroke-width="2.6087"
+                                            />
+                                        </svg>
+                                    </button>
+                                    <button id="zoom-out">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="30"
+                                            height="3"
+                                            viewBox="0 0 30 3"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M-0.000501054 1.4419L29.883 1.44162"
+                                                stroke="#63483F"
+                                                stroke-width="2.6087"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section photo_section">
+                <img src="imgs/photo_1.jpg" alt="" class="bg" />
+                <div class="container">
+                    <div class="content">
+                        <h3>
+                            Крылатская 33 —<br />
+                            место, где природа и город соединяются
+                        </h3>
+                        <div class="text">
+                            Панорамы парка<br />
+                            и набережной Москвы-реки
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section card_section">
+                <div class="container">
+                    <div class="content">
+                        <h2>
+                            Гибкие условия<br />
+                            для комфортного приобретения вашего нового дома
+                        </h2>
+                        <div class="card_list">
+                            <div class="card_col">
+                                <div class="card_item">
+                                    <div class="top">
+                                        <div class="left">
+                                            <h3>Ипотека</h3>
+                                            <span>
+                                                Выгодные<br />
+                                                предложения<br />
+                                                от ведущих банков
+                                            </span>
+                                        </div>
+                                        <div class="right">
+                                            <img src="imgs/bank.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="left">
+                                            <div class="text">
+                                                Ставки от 5,5% годовых
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <a href="#" class="btn"
+                                                >КАЛЬКУЛЯТОР</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_col">
+                                <div class="card_item">
+                                    <div class="top">
+                                        <div class="left">
+                                            <h3>Рассрочка</h3>
+                                            <span>
+                                                Гибкие условия<br />
+                                                на несколько лет без переплат
+                                            </span>
+                                        </div>
+                                        <div class="right">
+                                            <img
+                                                src="imgs/calendar.svg"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="left">
+                                            <div class="text">
+                                                Оплата в удобном формате
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <a href="#" class="btn"
+                                                >подробнее</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_col">
+                                <div class="card_item">
+                                    <div class="top">
+                                        <div class="left">
+                                            <h3>100% оплата</h3>
+                                            <span>
+                                                Экономьте время и получайте
+                                                дополнительные бонусы
+                                            </span>
+                                        </div>
+                                        <div class="right">
+                                            <img src="imgs/coins.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="left">
+                                            <div class="text">
+                                                Специальные скидки при полной
+                                                оплате
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <a href="#" class="btn"
+                                                >подробнее</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_col">
+                                <div class="card_item">
+                                    <div class="top">
+                                        <div class="left">
+                                            <h3>Трейд-ин</h3>
+                                            <span>
+                                                Обменяйте вашу старую
+                                                недвижимость на новую квартиру
+                                            </span>
+                                        </div>
+                                        <div class="right">
+                                            <img src="imgs/trade.svg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="left">
+                                            <div class="text">
+                                                Минимум усилий — максимум выгоды
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <a href="#" class="btn"
+                                                >подробнее</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section news_section">
+                <div class="container">
+                    <h2>
+                        Новости<br />
+                        и сми
+                    </h2>
+                    <div class="news_list">
+                        <div class="news_col">
+                            <a href="#" class="news_item">
+                                <div class="img">
+                                    <img src="imgs/img_8.jpg" alt="" />
+                                </div>
+                                <div class="text">
+                                    Уникальные квартиры в небоскребах с
+                                    панорамой Москвы-реки, Живописного моста,
+                                    Соснового Бора, великолепного Ермогеновского
+                                    храма и современного городского пейзажа.
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news_col">
+                            <a href="#" class="news_item">
+                                <div class="img">
+                                    <img src="imgs/img_9.jpg" alt="" />
+                                </div>
+                                <div class="text">
+                                    Публикация “Уникальные квартиры в
+                                    небоскребах с панорамой Москвы-реки,
+                                    Живописного моста, Соснового Бора,
+                                    великолепного Ермогеновского храма и
+                                    современного городского пейзажа”
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news_col">
+                            <a href="#" class="news_item">
+                                <div class="img">
+                                    <img src="imgs/img_10.jpg" alt="" />
+                                </div>
+                                <div class="text">
+                                    Уникальные квартиры в небоскребах с
+                                    панорамой Москвы-реки, Живописного моста,
+                                    Соснового Бора, великолепного Ермогеновского
+                                    храма и современного городского пейзажа.
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#" class="btn">Все новости и сми</a>
+                </div>
+            </section>
+            <section class="section info_section">
+                <div class="container">
+                    <div class="info_blocks">
+                        <div class="left">
+                            <h2>
+                                Подписка<br />
+                                на обновления
+                            </h2>
+                        </div>
+                        <div class="right">
+                            <div class="text">
+                                Следите за новостями<br />
+                                проекта
+                            </div>
+                            <ul class="social_list">
+                                <li>
+                                    <a href="#" class="social_item">
+                                        <svg class="fill_creamy">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#vk"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="social_item">
+                                        <svg class="fill_creamy">
+                                            <use
+                                                xlink:href="imgs/sprite.symbol.svg#telegram"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="text">
+                                Подпишитесь на наш Telegram-канал и получайте
+                                свежие обновления
+                            </div>
+                            <a href="#" class="btn">ПОДПИСАТЬСЯ</a>
+                        </div>
+                    </div>
+                    <div class="info_blocks">
+                        <div class="left">
+                            <h2>Ход <br />строительства</h2>
+                        </div>
+                        <div class="right">
+                            <div class="text">
+                                Следите за прогрессом проекта в режиме реального
+                                времени
+                            </div>
+                            <a href="#" class="btn">ПЕРЕЙТИ В РАЗДЕЛ</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section team_section">
+                <div class="container">
+                    <h2>
+                        Команда.<br />
+                        Надежность ваших отношений
+                    </h2>
+                    <div class="slider_team_wrapper">
+                        <div class="swiper slider_team">
+                            <div class="swiper_arrows">
+                                <div class="swiper-button-prev">
+                                    <svg>
+                                        <use
+                                            xlink:href="imgs/sprite.symbol.svg#arrow_right"
+                                        ></use>
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <svg>
+                                        <use
+                                            xlink:href="imgs/sprite.symbol.svg#arrow_left"
+                                        ></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="text">
+                                            девелопер проекта —
+                                            специализированный застройщик ООО<br />
+                                            «Сияние»
+                                        </div>
+                                        <div class="img">
+                                            <img
+                                                src="imgs/team_img_1.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="text">
+                                            проектное финансирование —
+                                            московский кредитный банк
+                                        </div>
+                                        <div class="img">
+                                            <img
+                                                src="imgs/team_img_2.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="text">
+                                            АРХитектор проекта — архитектурное
+                                            бюро «остоженка»
+                                        </div>
+                                        <div class="img">
+                                            <img
+                                                src="imgs/team_img_3.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="text">
+                                            Планировочные решения «бюро
+                                            александры фёдоровой»
+                                        </div>
+                                        <div class="img">
+                                            <img
+                                                src="imgs/team_img_4.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="text">
+                                            девелопер проекта —
+                                            специализированный застройщик ООО
+                                            «Сияние»
+                                        </div>
+                                        <div class="img">
+                                            <img
+                                                src="imgs/team_img_1.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn">ПЕРЕЙТИ В РАЗДЕЛ</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer_block">
+                    <div class="left">
+                        <a href="/" class="logo"
+                            ><img src="imgs/logo.svg" alt=""
+                        /></a>
+                        <ul class="footer_menu">
+                            <li><a href="#">Привелегии</a></li>
+                            <li><a href="#">Инфраструктура</a></li>
+                            <li><a href="#">Локация</a></li>
+                            <li><a href="#">архитектура</a></li>
+                            <li><a href="#">Окружение</a></li>
+                            <li><a href="#">Благоустройство</a></li>
+                            <li><a href="#">ВЫБРАТЬ Квартиры</a></li>
+                            <li><a href="#">КОММЕРЦИЯ</a></li>
+                            <li><a href="#">Ипотечные</a></li>
+                            <li><a href="#">предложения</a></li>
+                            <li><a href="#">Технологии комфорта</a></li>
+                            <li><a href="#">Команда</a></li>
+                            <li><a href="#">МЕДИА</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <div class="btns_block">
+                            <a href="#" class="btn btn_icon -not_border">
+                                <svg>
+                                    <use
+                                        href="imgs/sprite.symbol.svg#nash_dom"
+                                        xlink:href="imgs/sprite.symbol.svg#nash_dom"
+                                    ></use>
+                                </svg>
+                                проверить наш.дом.рф
+                            </a>
+                            <a href="#" class="btn -not_border"
+                                >Кабинет брокера</a
+                            >
+                        </div>
+                        <div class="text">
+                            Офис продаж<br />
+                            г. Москва ул. Большая Дмитровка, 11 стр. 1<br />
+                            <a href="tel:+7 (495) 642 44 77"
+                                >+7 (495) 642 44 77</a
+                            >
+                            <a href="mailto:info@k33.ru">info@k33.ru</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div>© Крылатская 33, 2025. Все права защищены</div>
+                    <div class="footer_bottom_design">Дизайн и разработка</div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal" data-modal="info_modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button type="button" class="close" data-modal-close="">
+                        <svg class="w24 fill_none">
+                            <use
+                                xlink:href="imgs/sprite.symbol.svg#close"
+                            ></use>
+                        </svg>
+                    </button>
+                    <div class="modal_body tabs_block">
+                        <div class="left">
+                            <div class="tabs_content">
+                                <div class="tabs_content_item" id="tab_popup-1">
+                                    <h2 class="modal_title">
+                                        15 минут<br />
+                                        до центра столицы
+                                    </h2>
+                                    <div class="modal_text">
+                                        <p>
+                                            Уникальный проект от именитого
+                                            архитектурного бюро «Остоженка» в
+                                            Крылатском: самый высокий небоскреб
+                                            в районе, достигающий отметки в 150
+                                            метров, и малоэтажный клубный формат
+                                            от 42 метров. Инновационный
+                                            архитектурный концепт создает
+                                            ощущение естественности и
+                                            нерукотворности сооружения.
+                                        </p>
+                                        <p>
+                                            Витражная система «в пол», прямая
+                                            солнечная инсоляция на всех фасадах
+                                            и великолепные виды на излучину
+                                            Москвы-реки, Живописный мост,
+                                            Ермогеновский храм и урбанистический
+                                            облик города.
+                                        </p>
+                                        <img src="imgs/img_1.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="tabs_content_item" id="tab_popup-2">
+                                    <h2 class="modal_title">
+                                        15 минут<br />
+                                        до центра столицы
+                                    </h2>
+                                    <div class="modal_text">
+                                        <p>
+                                            Уникальный проект от именитого
+                                            архитектурного бюро «Остоженка» в
+                                            Крылатском: самый высокий небоскреб
+                                            в районе, достигающий отметки в 150
+                                            метров, и малоэтажный клубный формат
+                                            от 42 метров. Инновационный
+                                            архитектурный концепт создает
+                                            ощущение естественности и
+                                            нерукотворности сооружения.
+                                        </p>
+                                        <img src="imgs/img_2.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="tabs_content_item" id="tab_popup-3">
+                                    <h2 class="modal_title">
+                                        15 минут<br />
+                                        до центра столицы
+                                    </h2>
+                                    <div class="modal_text">
+                                        <p>
+                                            Уникальный проект от именитого
+                                            архитектурного бюро «Остоженка»
+                                        </p>
+                                        <img src="imgs/img_3.png" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="tabs_nav">
+                                <a href="#tab_popup-1" class="tabs_nav_item"
+                                    >15 минут до центра столицы</a
+                                >
+                                <a href="#tab_popup-2" class="tabs_nav_item"
+                                    >175 гектаров заповедной зоны
+                                </a>
+                                <a href="#tab_popup-3" class="tabs_nav_item"
+                                    >5 спортивных локаций рядом
+                                </a>
+                                <a href="#tab_popup-4" class="tabs_nav_item"
+                                    >1,4 гектара приватной территории
+                                </a>
+                                <a href="#tab_popup-5" class="tabs_nav_item"
+                                    >От 28 до 410 м² – квартиры на любой вкус</a
+                                >
+                                <a href="#tab_popup-6" class="tabs_nav_item"
+                                    >Планировочные решения для 755 квартир</a
+                                >
+                                <a href="#tab_popup-7" class="tabs_nav_item"
+                                    >124/7: инновации в каждой детали</a
+                                >
+                                <a href="#tab_popup-8" class="tabs_nav_item"
+                                    >271 машино-мест</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_bg"></div>
+        </div>
+
+        <script src="vendors/jquery/jquery-3.5.1.min.js"></script>
+        <script src="vendors/fancybox/jquery.fancybox.min.js"></script>
+        <script src="vendors/swiper/swiper-bundle.min.js"></script>
+        <script src="vendors/tippy/popper.min.js"></script>
+        <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
+        <script src="js/common.js?1"></script>
+    </body>
+</html>
