@@ -33,11 +33,11 @@
 html,
 body {
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background: #f8f0ec;
-  overflow-x: hidden;
 }
 body.locked {
   overflow: hidden;
@@ -1261,6 +1261,8 @@ svg.stroke_none {
   color: #f8f0ec;
   padding-top: 70px;
   padding-bottom: 70px !important;
+  overflow: hidden;
+  z-index: 1;
 }
 .photo_section .bg {
   display: block;
@@ -1270,10 +1272,18 @@ svg.stroke_none {
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  height: 120%;
+  z-index: -2;
+}
+.photo_section .bg img {
   -o-object-fit: cover;
      object-fit: cover;
-  z-index: -2;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  max-width: 120%;
+  -o-object-position: bottom left;
+     object-position: bottom left;
 }
 .photo_section:after {
   content: "";
@@ -1298,13 +1308,29 @@ svg.stroke_none {
   margin-top: auto;
 }
 
+@media screen and (max-width: 1700px) {
+  .photo_section .bg img {
+    max-width: 140%;
+    left: 0;
+    transform: none;
+    height: 120%;
+  }
+}
 .card_section {
   padding-top: 70px;
 }
-.card_section h2 {
-  width: 62%;
+.card_section .title_animation.title_mobile {
+  display: none;
 }
 
+@media screen and (max-width: 992px) {
+  .card_section .title_animation.title_desktop {
+    display: none;
+  }
+  .card_section .title_animation.title_mobile {
+    display: block;
+  }
+}
 .card_list {
   display: flex;
   flex-wrap: wrap;
@@ -2961,4 +2987,47 @@ svg.stroke_none {
   .map_zoom_btn {
     left: 12px;
   }
+}
+@keyframes title {
+  to {
+    transform: translate3d(0px, 0em, 0px);
+  }
+}
+.title_animation {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-direction: column;
+  will-change: transform;
+}
+.title_animation .line {
+  display: flex;
+  text-align: start;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.title_animation .line span {
+  position: relative;
+  top: -0.1em;
+  transform: translate3d(0, 100%, 0);
+}
+.title_animation .line:nth-child(1) span {
+  animation-delay: 0.1s;
+}
+.title_animation .line:nth-child(2) span {
+  animation-delay: 0.2s;
+}
+.title_animation .line:nth-child(3) span {
+  animation-delay: 0.3s;
+}
+.title_animation .line:nth-child(4) span {
+  animation-delay: 0.4s;
+}
+.title_animation.aos-animate .line span {
+  animation-name: title;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }

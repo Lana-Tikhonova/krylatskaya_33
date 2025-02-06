@@ -14,6 +14,19 @@ $(document).ready(function () {
             delay: 3000,
             disableOnInteraction: false,
         },
+        // on: {
+        //     init() {
+        //         this.el.addEventListener('mouseenter', () => {
+        //             this.autoplay.stop();
+
+        //         });
+
+        //         this.el.addEventListener('mouseleave', () => {
+        //             this.autoplay.start();
+
+        //         });
+        //     }
+        // },
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -29,7 +42,26 @@ $(document).ready(function () {
                 spaceBetween: 20,
             },
         },
+
     });
+
+    // Функция для управления автоплеем в зависимости от видимости
+    function handleVisibility(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                swiperPopups.autoplay.start();
+            } else {
+                swiperPopups.autoplay.stop();
+            }
+        });
+    }
+
+    // Создаём Observer и отслеживаем .slider_popups
+    const observer = new IntersectionObserver(handleVisibility, {
+        root: null, // Отслеживать относительно viewport
+        threshold: 0.2 // Запускать событие, если хотя бы 20% элемента видно
+    });
+    observer.observe(document.querySelector('.slider_popups'));
     // swiperTeam
     const swiperTeam = new Swiper(".slider_team", {
         slidesPerView: 'auto',
@@ -168,19 +200,19 @@ $(document).ready(function () {
     });
 
 
-    // let offset
-    // if ($(window).width() > 576) {
-    //     offset = 100;
-    // } else {
-    //     offset = 0;
-    // }
-    // AOS.init({
-    //     easing: 'ease-in-out',
-    //     delay: 100,
-    //     once: true,
-    //     duration: 700,
-    //     offset: offset,
-    // });
+    let offset
+    if ($(window).width() > 576) {
+        offset = 100;
+    } else {
+        offset = 0;
+    }
+    AOS.init({
+        easing: 'ease-in-out',
+        delay: 100,
+        once: true,
+        duration: 700,
+        offset: offset,
+    });
 
 });
 
@@ -198,6 +230,10 @@ document.addEventListener("DOMContentLoaded", function () {
             watchSlidesVisibility: true,
             effect: "slide",
             speed: 1000,
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: false,
+            // },
             pagination: {
                 el: el.closest(".tabs_content_item").querySelector(".swiper-pagination"),
             },
@@ -422,5 +458,30 @@ document.addEventListener("DOMContentLoaded", function () {
         followCursor: true,
         maxWidth: '462px',
     });
+
+
+    gsap.to(".photo_section .bg", {
+        y: "-30%", // Смещаем фон вверх
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".photo_section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1, // Плавность движения
+        }
+    });
+    gsap.registerPlugin(ScrollTrigger);
+
+    // плавный скролл
+    const lenis = new Lenis();
+    lenis.on('scroll', (e) => {
+        // isVisible();
+    });
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
 
 });
