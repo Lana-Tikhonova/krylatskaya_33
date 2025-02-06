@@ -912,6 +912,9 @@ svg {
             }
         }
     }
+    .swiper-pagination {
+        padding: 0 250px;
+    }
 }
 
 .choose_section {
@@ -1700,6 +1703,9 @@ svg {
         text-underline-offset: auto;
         text-underline-position: from-font;
         text-transform: uppercase;
+        &:hover {
+            text-decoration: none;
+        }
     }
     li {
         display: flex;
@@ -1743,6 +1749,9 @@ svg {
     }
 }
 @media screen and (max-width: 1440px) {
+    .slider_popups .swiper-pagination {
+        padding: 0 170px;
+    }
     .header_block {
         .btn {
             margin-left: 30px;
@@ -1903,6 +1912,9 @@ svg {
     }
 }
 @media screen and (max-width: 992px) {
+    .slider_popups .swiper-pagination {
+        padding: 0;
+    }
     .header_phone {
         display: none;
     }
@@ -2928,6 +2940,9 @@ svg {
 .map_filters_title {
     display: none;
 }
+.map_filters_dropdown {
+    width: 100%;
+}
 @media screen and (min-width: 541px) and (max-width: 1023px) and (orientation: landscape) {
     .map_wrapper ymaps[class$='controls__control'] {
         height: 108.0729166667vw !important;
@@ -2997,7 +3012,6 @@ svg {
         height: calc(100dvh - 108px);
     }
     .map_filters_dropdown {
-        width: 100%;
         display: none;
         padding: 0 10px 10px;
         &.show {
