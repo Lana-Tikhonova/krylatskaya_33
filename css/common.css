@@ -32,11 +32,12 @@
 }
 html,
 body {
-  min-height: 100dvh;
+  min-height: 100%;
 }
 
 body {
   background: #f8f0ec;
+  overflow-x: hidden;
 }
 body.locked {
   overflow: hidden;
@@ -749,6 +750,10 @@ svg.stroke_none {
 .head_content .btn {
   display: none;
 }
+.head_content .tag {
+  background: linear-gradient(90deg, #693528 0%, #c37a59 70%, #c47f5a 100%);
+  border: none;
+}
 
 .tags {
   display: flex;
@@ -872,6 +877,14 @@ svg.stroke_none {
 
 .choose_btn_mobile_wrapper {
   display: none;
+}
+
+.choose_btn_deskrop {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .choose_block {
@@ -2352,6 +2365,9 @@ svg.stroke_none {
   }
   .subtitle {
     font-size: 10px;
+  }
+  .choose_btn_deskrop {
+    display: none;
   }
   .choose_btn_mobile_wrapper {
     display: block;

@@ -168,6 +168,20 @@ $(document).ready(function () {
     });
 
 
+    // let offset
+    // if ($(window).width() > 576) {
+    //     offset = 100;
+    // } else {
+    //     offset = 0;
+    // }
+    // AOS.init({
+    //     easing: 'ease-in-out',
+    //     delay: 100,
+    //     once: true,
+    //     duration: 700,
+    //     offset: offset,
+    // });
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -43,12 +43,12 @@ $transition: all 0.3s ease;
 
 html,
 body {
-    min-height: 100dvh;
+    min-height: 100%;
 }
 
 body {
     background: $color_creamy;
-    // overflow-x: hidden;
+    overflow-x: hidden;
     // display: flex;
     // flex-direction: column;
 
@@ -803,6 +803,10 @@ svg {
     .btn {
         display: none;
     }
+    .tag {
+        background: $color_gradient;
+        border: none;
+    }
 }
 .tags {
     display: flex;
@@ -930,6 +934,13 @@ svg {
 }
 .choose_btn_mobile_wrapper {
     display: none;
+}
+.choose_btn_deskrop {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 .choose_block {
     overflow: hidden;
@@ -2445,6 +2456,9 @@ svg {
     .subtitle {
         font-size: 10px;
     }
+    .choose_btn_deskrop {
+        display: none;
+    }
     .choose_btn_mobile_wrapper {
         display: block;
         margin-top: 16px;
@@ -3065,4 +3079,7 @@ svg {
     .map_zoom_btn {
         left: 12px;
     }
+}
+
+.header_block_not_fix {
 }
