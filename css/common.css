@@ -1388,6 +1388,12 @@ svg.stroke_none {
   gap: 21px;
   margin-bottom: 60px;
 }
+.social_list img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 98px;
+  height: 98px;
+}
 .social_list svg {
   fill: #63483f;
   width: 98px;
@@ -2184,6 +2190,10 @@ svg.stroke_none {
     margin-bottom: 30px;
   }
   .social_list svg {
+    width: 40px;
+    height: 40px;
+  }
+  .social_list img {
     width: 40px;
     height: 40px;
   }

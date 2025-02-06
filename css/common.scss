@@ -1457,6 +1457,11 @@ svg {
     flex-wrap: wrap;
     gap: 21px;
     margin-bottom: 60px;
+    img {
+        object-fit: contain;
+        width: 98px;
+        height: 98px;
+    }
     svg {
         fill: $color_brown;
         width: 98px;
@@ -2271,6 +2276,10 @@ svg {
         margin-top: 0;
         margin-bottom: 30px;
         svg {
+            width: 40px;
+            height: 40px;
+        }
+        img {
             width: 40px;
             height: 40px;
         }

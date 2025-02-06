@@ -366,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
         placement = 'bottom';
     }
     tippy('.tippy_btn', {
-        trigger: 'click',
+        // trigger: 'click',
         content(reference) {
             const id = reference.getAttribute('data-template');
             const template = document.getElementById(id);
