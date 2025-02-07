@@ -132,26 +132,54 @@ $(document).ready(function () {
     });
 
     //фиксировать шапку
-    let prevScroll = $(window).scrollTop();
+    // let prevScroll = $(window).scrollTop();
 
+    // const header = document.querySelector('.header_block_fix');
+    // window.addEventListener('scroll', e => {
+    //     if (window.scrollY > 300) {
+    //         header.classList.add('fixed')
+    //     } else {
+    //         header.classList.remove('fixed')
+    //     }
+
+    //     let currentScroll;
+    //     currentScroll = $(window).scrollTop()
+    //     if (currentScroll < prevScroll && header.classList.contains('fixed')) {
+    //         header.classList.add('fix-on-scroll');
+    //     }
+    //     if (currentScroll > prevScroll && header.classList.contains('fixed') || window.scrollY < 300) {
+    //         header.classList.remove('fix-on-scroll');
+    //     }
+    //     prevScroll = currentScroll
+    // })
+
+
+    //фиксировать шапку
+    let prevScroll = window.scrollY;
     const header = document.querySelector('.header_block_fix');
-    window.addEventListener('scroll', e => {
-        if (window.scrollY > 300) {
-            header.classList.add('fixed')
-        } else {
-            header.classList.remove('fixed')
-        }
 
-        let currentScroll;
-        currentScroll = $(window).scrollTop()
-        if (currentScroll < prevScroll && header.classList.contains('fixed')) {
-            header.classList.add('fix-on-scroll');
-        }
-        if (currentScroll > prevScroll && header.classList.contains('fixed') || window.scrollY < 300) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+
+        if (currentScroll > 300) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
             header.classList.remove('fix-on-scroll');
         }
-        prevScroll = currentScroll
-    })
+
+        if ((currentScroll < prevScroll && header.classList.contains('fixed')) || isAtBottom) {
+            header.classList.add('fix-on-scroll');
+        }
+
+        if (currentScroll > prevScroll && header.classList.contains('fixed') && !isAtBottom) {
+            header.classList.remove('fix-on-scroll');
+        }
+
+        prevScroll = currentScroll;
+    });
+
 
     // function headerFixed(e) {
     //     let header = $('.header_block_fix');
@@ -577,55 +605,70 @@ document.addEventListener("DOMContentLoaded", function () {
     // });
 
 
-    gsap.to(".photo_section .bg", {
-        y: "-20%",
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".photo_section",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-        }
+    document.querySelectorAll(".photo_section").forEach(block => {
+        gsap.to(block.querySelector(".bg"), {
+            y: "-20%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: block,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            }
+        });
+    });
+    document.querySelectorAll(".offer_block").forEach(block => {
+        gsap.to(block.querySelector(".img"), {
+            y: "15%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: block,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            }
+        });
     });
 
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 992px)", () => {
-        gsap.to(".text_img_big_section .text", {
-            y: "-10%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".text_img_big_section",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-            }
-        });
-
-        gsap.to(".text_img_big_section .img", {
-            y: "5%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".text_img_big_section",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-            }
-        });
-
-
-        document.querySelectorAll(".text_img").forEach(block => {
+        document.querySelectorAll(".text_img_big_section").forEach(block => {
             gsap.to(block.querySelector(".text"), {
-                y: "15%",
+                y: "-10%",
                 ease: "none",
                 scrollTrigger: {
-                    trigger: block, // Используем сам .text_img как триггер
+                    trigger: block,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1,
+                }
+            });
+            gsap.to(block.querySelector(".img"), {
+                y: "5%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: block,
                     start: "top bottom",
                     end: "bottom top",
                     scrub: 1,
                 }
             });
         });
+
+        document.querySelectorAll(".text_img").forEach(block => {
+            gsap.to(block.querySelector(".text"), {
+                y: "15%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: block,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1,
+                }
+            });
+        });
+
     });
 
     gsap.registerPlugin(ScrollTrigger);

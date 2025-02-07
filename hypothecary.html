@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="description" content="Крылатская 33" />
+    <meta name="keywords" content="" />
+    <title>Ипотечные предложения</title>
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ЖК «Крылатская 33»" />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+
+    <!-- шрифты -->
+    <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/TTFirsNeue-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/TTFirsNeue-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="vendors/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="vendors/animate/aos.min.css" />
+    <link rel="stylesheet" href="vendors/tippy/scale.css" />
+    <link rel="stylesheet" href="css/common.css?4" />
+</head>
+
+<body>
+    <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
+    <header class="header">
+        <div class="container">
+            <div class="header_block header_block_fix">
+                <div class="menu_btn">
+                    <span></span>
+                </div>
+                <a href="/" class="logo"><img src="imgs/logo_brown.svg" alt="" /></a>
+                <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
+                <a href="#" class="favorites_btn">
+                    <svg class="fill_brown">
+                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                    </svg>
+                </a>
+                <a href="#" class="btn">ВЫБРАТЬ КВАРТИРУ</a>
+            </div>
+            <div class="header_block header_block_not_fix" data-aos="fade-down">
+                <div class="menu_btn">
+                    <span></span>
+                </div>
+                <a href="/" class="logo"><img src="imgs/logo.svg" alt="" /></a>
+                <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
+                <a href="#" class="favorites_btn">
+                    <svg class="fill_creamy">
+                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                    </svg>
+                </a>
+                <a href="#" class="btn -not_border">ВЫБРАТЬ КВАРТИРУ</a>
+            </div>
+            <div class="head">
+                <div class="head_img">
+                    <img src="imgs/head_img_6.jpg" alt="" />
+                </div>
+                <div class="head_content">
+                    <div class="head_subtitle" data-aos="fade-left">Ипотечные предложения</div>
+                    <h1 class="title_animation" data-aos="">
+                        <span class="line"><span>Выберите удобный</span></span>
+                        <span class="line"><span>способ покупки</span></span>
+                    </h1>
+                    <a href="#" class="btn" data-aos="fade-up">ВЫБРАТЬ КВАРТИРУ</a>
+                </div>
+            </div>
+        </div>
+        <div class="big_menu">
+            <div class="menu_btn">
+                <span></span>
+            </div>
+            <ul class="menu">
+
+                <li>
+                    <a href="#" class="item" data-img="imgs/img_1.png">Привелегии</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/img_2.png">Инфраструктура</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/img_3.png">Локация</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/img_4.png">архитектура</a>
+                </li>
+                <li><a href="#" class="item">Окружение</a></li>
+                <li><a href="#" class="item">Благоустройство</a></li>
+                <li>
+                    <a href="#" class="item">ВЫБРАТЬ Квартиры</a>
+                    <ul>
+                        <li>
+                            <a href="#">Квартиры</a>
+                        </li>
+                        <li>
+                            <a href="#">Машиноместа</a>
+                        </li>
+                        <li>
+                            <a href="#">Кладовые</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/img_5.jpg">коммерция</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/img_6.jpg">Ипотечные предложения</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/img_7.jpg">Технологии комфорта</a>
+                </li>
+                <li><a href="#" class="item">КОМАНДА</a></li>
+                <li><a href="#" class="item">МЕДИА</a></li>
+                <li><a href="#" class="item">Контакты</a></li>
+            </ul>
+            <div class="big_menu_img">
+                <img src="imgs/head_img_1.jpeg" alt="" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section card_section">
+            <div class="container">
+                <div class="content">
+                    <h2 class="title_animation title_desktop" data-aos="">
+                        <span class="line"><span>Гибкие условия</span></span>
+                        <span class="line"><span>для комфортного приобретения</span></span>
+                        <span class="line"><span>вашего нового дома</span></span>
+                    </h2>
+                    <h2 class="title_animation title_mobile" data-aos="">
+                        <span class="line"><span>Гибкие условия</span></span>
+                        <span class="line"><span>для комфортного </span></span>
+                        <span class="line"><span>приобретения вашего</span></span>
+                        <span class="line"><span>нового дома</span></span>
+                    </h2>
+                    <div class="card_list">
+                        <div class="card_col">
+                            <div class="card_item" data-aos="zoom-in">
+                                <div class="top">
+                                    <div class="left">
+                                        <h3>Ипотека</h3>
+                                        <span>
+                                            Выгодные<br />
+                                            предложения<br />
+                                            от ведущих банков
+                                        </span>
+                                    </div>
+                                    <div class="right">
+                                        <img src="imgs/bank.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="left">
+                                        <div class="text">
+                                            Ставки от 5,5% годовых
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <a href="#" class="btn">КАЛЬКУЛЯТОР</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_col">
+                            <div class="card_item" data-aos="zoom-in">
+                                <div class="top">
+                                    <div class="left">
+                                        <h3>Рассрочка</h3>
+                                        <span>
+                                            Гибкие условия<br />
+                                            на несколько лет без переплат
+                                        </span>
+                                    </div>
+                                    <div class="right">
+                                        <img src="imgs/calendar.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="left">
+                                        <div class="text">
+                                            Оплата в удобном формате
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <a href="#" class="btn">подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_col">
+                            <div class="card_item" data-aos="zoom-in">
+                                <div class="top">
+                                    <div class="left">
+                                        <h3>100% оплата</h3>
+                                        <span>
+                                            Экономьте время и получайте
+                                            дополнительные бонусы
+                                        </span>
+                                    </div>
+                                    <div class="right">
+                                        <img src="imgs/coins.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="left">
+                                        <div class="text">
+                                            Специальные скидки при полной
+                                            оплате
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <a href="#" class="btn">подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_col">
+                            <div class="card_item" data-aos="zoom-in">
+                                <div class="top">
+                                    <div class="left">
+                                        <h3>Трейд-ин</h3>
+                                        <span>
+                                            Обменяйте вашу старую
+                                            недвижимость на новую квартиру
+                                        </span>
+                                    </div>
+                                    <div class="right">
+                                        <img src="imgs/trade.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="left">
+                                        <div class="text">
+                                            Минимум усилий — максимум выгоды
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <a href="#" class="btn">подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='section small_card_section'>
+            <div class="container">
+                <ul class="small_card">
+                    <li class='col'>
+                        <div class='item' data-aos="zoom-in">Подробности о бонусах при покупке</div>
+                    </li>
+                    <li class='col'>
+                        <div class='item' data-aos="zoom-in">Условия возврата при отказе от сделки</div>
+                    </li>
+                    <li class='col'>
+                        <div class='item' data-aos="zoom-in">Контактная информация для вопросов о способах оплаты</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class='section offer_block_section'>
+            <div class="container">
+                <div class="offer_block" data-aos="fade-up">
+                    <div class='img'><img src="imgs/offer.jpg" alt=""></div>
+                    <h2>Получите индивидуальное предложение прямо сейчас!</h2>
+                    <a href="#" class='btn -not_border'>оставить заявку</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_block">
+                <div class="left">
+                    <a href="/" class="logo"><img src="imgs/logo.svg" alt="" /></a>
+                    <ul class="footer_menu">
+                        <li><a href="#">Привелегии</a></li>
+                        <li><a href="#">Инфраструктура</a></li>
+                        <li><a href="#">Локация</a></li>
+                        <li><a href="#">архитектура</a></li>
+                        <li><a href="#">Окружение</a></li>
+                        <li><a href="#">Благоустройство</a></li>
+                        <li><a href="#">ВЫБРАТЬ Квартиры</a></li>
+                        <li><a href="#">КОММЕРЦИЯ</a></li>
+                        <li><a href="#">Ипотечные</a></li>
+                        <li><a href="#">предложения</a></li>
+                        <li><a href="#">Технологии комфорта</a></li>
+                        <li><a href="#">Команда</a></li>
+                        <li><a href="#">МЕДИА</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="btns_block">
+                        <a href="#" class="btn btn_icon -not_border">
+                            <svg>
+                                <use href="imgs/sprite.symbol.svg#nash_dom"
+                                    xlink:href="imgs/sprite.symbol.svg#nash_dom"></use>
+                            </svg>
+                            проверить наш.дом.рф
+                        </a>
+                        <a href="#" class="btn -not_border">Кабинет брокера</a>
+                    </div>
+                    <div class="text">
+                        Офис продаж<br />
+                        г. Москва ул. Большая Дмитровка, 11 стр. 1<br />
+                        <a href="tel:+7 (495) 642 44 77">+7 (495) 642 44 77</a>
+                        <a href="mailto:info@k33.ru">info@k33.ru</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div>© Крылатская 33, 2025. Все права защищены</div>
+                <div class="footer_bottom_design">Дизайн и разработка</div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" data-modal="info_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-modal-close="">
+                    <svg class="w24 fill_none">
+                        <use xlink:href="imgs/sprite.symbol.svg#close"></use>
+                    </svg>
+                </button>
+                <div class="modal_body tabs_block">
+                    <div class="left">
+                        <div class="tabs_content">
+                            <div class="tabs_content_item" id="tab_popup-1">
+                                <h2 class="modal_title">
+                                    15 минут<br />
+                                    до центра столицы
+                                </h2>
+                                <div class="modal_text">
+                                    <p>
+                                        Уникальный проект от именитого
+                                        архитектурного бюро «Остоженка» в
+                                        Крылатском: самый высокий небоскреб
+                                        в районе, достигающий отметки в 150
+                                        метров, и малоэтажный клубный формат
+                                        от 42 метров. Инновационный
+                                        архитектурный концепт создает
+                                        ощущение естественности и
+                                        нерукотворности сооружения.
+                                    </p>
+                                    <p>
+                                        Витражная система «в пол», прямая
+                                        солнечная инсоляция на всех фасадах
+                                        и великолепные виды на излучину
+                                        Москвы-реки, Живописный мост,
+                                        Ермогеновский храм и урбанистический
+                                        облик города.
+                                    </p>
+                                    <img src="imgs/img_1.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="tabs_content_item" id="tab_popup-2">
+                                <h2 class="modal_title">
+                                    1,4 гектара приватной территории для всех возрастов
+                                </h2>
+                                <div class="modal_text">
+                                    <p>
+                                        Уникальный проект от именитого
+                                        архитектурного бюро «Остоженка» в
+                                        Крылатском: самый высокий небоскреб
+                                        в районе, достигающий отметки в 150
+                                        метров, и малоэтажный клубный формат
+                                        от 42 метров. Инновационный
+                                        архитектурный концепт создает
+                                        ощущение естественности и
+                                        нерукотворности сооружения.
+                                    </p>
+                                    <img src="imgs/img_2.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="tabs_content_item" id="tab_popup-3">
+                                <h2 class="modal_title">
+                                    От 28 до 410 м² – квартиры на любой вкус
+                                </h2>
+                                <div class="modal_text">
+                                    <p>
+                                        Уникальный проект от именитого
+                                        архитектурного бюро «Остоженка»
+                                    </p>
+                                    <img src="imgs/img_3.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="tabs_nav">
+                            <a href="#tab_popup-1" class="tabs_nav_item">15 минут до центра столицы</a>
+                            <a href="#tab_popup-2" class="tabs_nav_item">175 гектаров заповедной зоны
+                            </a>
+                            <a href="#tab_popup-3" class="tabs_nav_item">5 спортивных локаций рядом
+                            </a>
+                            <a href="#tab_popup-4" class="tabs_nav_item">1,4 гектара приватной территории
+                            </a>
+                            <a href="#tab_popup-5" class="tabs_nav_item">От 28 до 410 м² – квартиры на любой вкус</a>
+                            <a href="#tab_popup-6" class="tabs_nav_item">Планировочные решения для 755 квартир</a>
+                            <a href="#tab_popup-7" class="tabs_nav_item">124/7: инновации в каждой детали</a>
+                            <a href="#tab_popup-8" class="tabs_nav_item">271 машино-мест</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal_bg"></div>
+    </div>
+
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="vendors/jquery/jquery-3.5.1.min.js"></script>
+    <script src="vendors/fancybox/jquery.fancybox.min.js"></script>
+    <script src="vendors/animate/aos.min.js"></script>
+    <script src="vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="vendors/tippy/popper.min.js"></script>
+    <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
+    <script src="js/common.js?4"></script>
+</body>
+
+</html>

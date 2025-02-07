@@ -9,6 +9,9 @@
             </clipPath>
         </defs>
     </symbol>
+    <symbol viewBox="0 0 46 24" id="arrow_long_left" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.2069 24.3892L13.3087 23.2994L3.11144 13.2136L46 13.2136L46 11.6728L2.85266 11.6728L13.0499 1.587L11.9481 0.498125L1.04193e-06 12.3157L12.2069 24.3892Z" fill="#63483F"/>
+    </symbol>
     <symbol viewBox="0 0 18 30" id="arrow_right" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_1408_37131)">
             <path d="M14.5909 -0.000547224L16.7109 2.12945L4.24094 14.5995L16.7109 27.0695L14.5909 29.1895L0.00093714 14.5995L14.5909 -0.000547224Z"/>

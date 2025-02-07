@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta name="description" content="Крылатская 33" />
     <meta name="keywords" content="" />
-    <title>ЖК «Крылатская 33»</title>
+    <title>Архитектура</title>
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/common.css?3" />
+    <link rel="stylesheet" href="css/common.css?4" />
 </head>
 
 <body>
@@ -171,6 +171,7 @@
                 </div>
             </div>
         </section>
+
         <section class='section text_img_section'>
             <div class="container">
                 <div class='title_wrapper'>
@@ -179,6 +180,8 @@
                         современный архитектурный дизайн.
                     </h3>
                 </div>
+                <!-- блоки отличаются лкссом, шже картинка справа есть класс .text_img_revers
+                 Если в блоке два фото, то есть класс text_img_several -->
                 <div class='text_img'>
                     <div class="text">
                         <div data-aos="fade-up">
@@ -203,7 +206,7 @@
                         </div>
                     </div>
                 </div>
-                <div class='text_img'>
+                <div class='text_img text_img_several'>
                     <div class="text">
                         <div data-aos="fade-up">
                             Дизайн фасадов дополнен декоративными алюминиевыми ламелями, создающими игру света и тени
@@ -280,16 +283,16 @@
                 </div>
             </div>
         </section>
-        <section class="section photo_section photo_section_big">
+        <section class="section photo_section photo_section_big gradient_bottom">
             <div class="bg"><img src="imgs/photo_5.jpg" alt="" /></div>
             <div class="container">
                 <div class="content">
                     <h2 data-aos="fade-left">
                         Видовые<br> преимущества
                     </h2>
-                    <div class="text" data-aos="fade-up">
+                    <h4 class="text" data-aos="fade-up">
                         Для тех, кто ценит как природную красоту, так и урбанистическую эстетику
-                    </div>
+                    </h4>
                 </div>
             </div>
         </section>
@@ -547,7 +550,7 @@
     <script src="vendors/swiper/swiper-bundle.min.js"></script>
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
-    <script src="js/common.js?3"></script>
+    <script src="js/common.js?4"></script>
 </body>
 
 </html>
