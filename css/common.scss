@@ -1494,14 +1494,68 @@ svg {
     }
 }
 
+@keyframes scaleUpDownDesktop {
+
+    0%,
+    100% {
+        transform: scale(1);
+        transform-origin: 287.435px 433.649px;
+    }
+
+    50% {
+        transform: scale(1.3);
+        transform-origin: 287.435px 433.649px;
+    }
+}
+
+@keyframes scaleUpDownMobile {
+
+    0%,
+    100% {
+        transform: scale(1);
+        transform-origin: 361.517px 539.767px;
+    }
+
+    50% {
+        transform: scale(1.3);
+        transform-origin: 361.517px 539.767px;
+    }
+}
+
+.static_map_svg_desktop {
+    g {
+        animation: scaleUpDownDesktop 2s ease-in-out infinite;
+    }
+
+}
+
+.static_map_svg_mobile {
+    display: none;
+
+    g {
+        animation: scaleUpDownMobile 2s ease-in-out infinite;
+    }
+}
+
 .static_map {
     height: 100%;
     display: flex;
 
     .left {
         width: calc(100% - 520px);
+        overflow: hidden;
 
-        img {
+        svg {
+            width: 100%;
+            height: 101%;
+            margin-top: -1%;
+
+            g {
+                transition: $transition;
+            }
+        }
+
+        .static_map_img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -2718,6 +2772,21 @@ svg {
         .right {
             display: none;
         }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .static_map .left {
+        max-height: 100dvh;
+        min-height: 424px;
+    }
+
+    .static_map_svg_desktop {
+        display: none;
+    }
+
+    .static_map_svg_mobile {
+        display: block;
     }
 }
 
@@ -3964,5 +4033,50 @@ svg {
             margin-top: 30px;
             max-width: 350px;
         }
+    }
+}
+
+.slider_big_img {
+    .item {
+        position: relative;
+        display: flex;
+
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
+            background-blend-mode: multiply;
+        }
+    }
+
+    .swiper-pagination {
+        padding: 0 250px;
+        bottom: 44px;
+    }
+
+    .container {
+        position: absolute;
+        bottom: 53px;
+        left: 0;
+        width: 100%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        background: transparent;
+        box-shadow: #fff inset 0px 0px 0px 1px;
+
+        svg {
+            fill: #fff;
+        }
+
     }
 }

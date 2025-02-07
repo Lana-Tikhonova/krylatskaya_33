@@ -82,6 +82,28 @@ $(document).ready(function () {
         });
         observer.observe(document.querySelector('.slider_popups'));
     }
+
+    // swiperBigImg
+    const swiperBigImg = new Swiper(".slider_big_img", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        effect: 'slide',
+        speed: 1000,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+
+        },
+    });
+
     // swiperTeam
     const swiperTeam = new Swiper(".slider_team", {
         slidesPerView: 'auto',
@@ -249,6 +271,36 @@ $(document).ready(function () {
         offset: offset,
     });
 
+
+    let staticMapImg = $('.static_map_img');
+    if (staticMapImg.length) {
+        function setMapImgWidth(targetSelector) {
+            let staticMapImg = document.querySelector('.static_map .left');
+            let targetElement = document.querySelector(targetSelector);
+
+            if (staticMapImg && targetElement) {
+                let updateWidth = () => {
+                    targetElement.style.width = staticMapImg.offsetWidth + 'px';
+                };
+
+                // Устанавливаем ширину при загрузке
+                staticMapImg.addEventListener('load', updateWidth);
+
+                // Если изображение уже загружено
+                if (staticMapImg.complete) {
+                    updateWidth();
+                }
+            }
+        }
+
+        setMapImgWidth('.static_map_logo');
+
+        window.addEventListener('resize', () => {
+            setMapImgWidth('.static_map_logo');
+        });
+
+    }
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -306,13 +358,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Удаляем и добавляем класс активности внутри текущего блока
                 tabsNavItems.forEach((nav) => nav.classList.remove("active"));
-                this.classList.add("active");
+
+                if (this.classList.contains("static_map_svg_g")) {
+                    console.log(this);
+                    const mapTabBtn = document.querySelector('[href="#tab_map-2"]');
+                    mapTabBtn && mapTabBtn.classList.add('active');
+
+                } else {
+                    this.classList.add("active");
+                }
 
                 // Обновляем Swiper в текущем активном табе
-                const swiperInstance = targetTab.querySelector(".slider_gallery");
-                if (swiperInstance && swiperInstance.swiper) {
-                    swiperInstance.swiper.update();
+                if (targetTab) {
+                    const swiperInstance = targetTab.querySelector(".slider_gallery");
+                    if (swiperInstance && swiperInstance.swiper) {
+                        swiperInstance.swiper.update();
+                    }
                 }
+
             });
         });
 
@@ -546,5 +609,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     gsap.registerPlugin(ScrollTrigger);
 
-
 });
+
+
