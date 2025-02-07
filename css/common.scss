@@ -4175,12 +4175,13 @@ svg {
     }
 
     .img {
-        width: 50%;
+        width: 42%;
     }
 
     .content {
         padding-bottom: 70px;
-        width: 40%;
+        width: 50%;
+        padding-left: 10%;
     }
 
 
@@ -4218,12 +4219,13 @@ svg {
     display: flex;
 
     .content {
-        width: 33.5%;
+        width: 620px;
         padding-right: 50px;
     }
 
     .img {
         width: 66.5%;
+        width: calc(100% - 620px);
 
         img {
             height: 100%;

@@ -3373,11 +3373,12 @@ svg.stroke_none {
   margin-bottom: 60px;
 }
 .plan_block .img {
-  width: 50%;
+  width: 42%;
 }
 .plan_block .content {
   padding-bottom: 70px;
-  width: 40%;
+  width: 50%;
+  padding-left: 10%;
 }
 
 .photo_section_big .text {
@@ -3407,11 +3408,12 @@ svg.stroke_none {
   display: flex;
 }
 .content_img .content {
-  width: 33.5%;
+  width: 620px;
   padding-right: 50px;
 }
 .content_img .img {
   width: 66.5%;
+  width: calc(100% - 620px);
 }
 .content_img .img img {
   height: 100%;
