@@ -107,7 +107,7 @@ $(document).ready(function () {
     // swiperTeam
     const swiperTeam = new Swiper(".slider_team", {
         slidesPerView: 'auto',
-        spaceBetween: 10,
+        spaceBetween: 8,
         watchSlidesProgress: true,
         mousewheelControl: true,
         watchOverflow: true,
@@ -125,6 +125,9 @@ $(document).ready(function () {
             },
             1201: {
                 slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            577: {
                 spaceBetween: 20,
             },
 
@@ -587,6 +590,7 @@ document.addEventListener("DOMContentLoaded", function () {
         placement: placement,
         followCursor: true,
         maxWidth: '462px',
+        duration: [400, 200]
     });
 
     // tippy('.choose_courtyard', {
