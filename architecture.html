@@ -131,12 +131,16 @@
     </header>
 
     <main>
-        <section class='section text_img_section'>
+        <section class='section text_img_big_section'>
             <div class="container">
-                <div class="text_img">
-                    <div class="text">Новая архитектурная доминанта района Крылатское от именитого архитектурного бюро
-                        «Остоженка»</div>
-                    <div class="img"><img src="imgs/photo_4.jpg" alt=""></div>
+                <div class="text_img_big">
+                    <div class="text">
+                        <div data-aos="fade-up">
+                            Новая архитектурная доминанта района Крылатское от именитого архитектурного бюро
+                            «Остоженка»
+                        </div>
+                    </div>
+                    <div class="img"><img src="imgs/photo_4.jpg" alt="" data-aos="fade-left"></div>
                 </div>
             </div>
         </section>
@@ -144,12 +148,12 @@
             <div class="swiper slider_big_img">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="item">
+                        <div class="item" data-aos="fade-in">
                             <img src="imgs/big_img_1.jpg" alt="">
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="item">
+                        <div class="item" data-aos="fade-in">
                             <img src="imgs/big_img_1.jpg" alt="">
                         </div>
                     </div>
@@ -171,161 +175,223 @@
                 </div>
             </div>
         </section>
-        <section class="section map_section">
-            <div class="tabs_block">
-                <div class="container">
-                    <div class="tabs_nav tags">
-                        <a class="tabs_nav_item tag active" href="#tab_map-1" data-aos="fade-up">Статичная карта</a>
-                        <a class="tabs_nav_item tag" href="#tab_map-2" data-aos="fade-up">Яндекс Карта</a>
-                    </div>
+        <section class='section text_img_section'>
+            <div class="container">
+                <div class='title_wrapper'>
+                    <h3 data-aos="fade-up">
+                        Крылатская 33 — это Дом будущего, который воплощает в себе самые передовые технологии и
+                        современный архитектурный дизайн.
+                    </h3>
                 </div>
-                <div class="tabs_content">
-                    <div class="tabs_content_item" id="tab_map-1">
-                        <div class="static_map">
-                            <div class="left">
-                                <img src="imgs/static_map_new.jpg" alt="" />
-                            </div>
-                            <div class="right">
-                                <div class="static_map_block">
-                                    <h4 class="name" data-aos="fade-up">
-                                        ИДТИ<br />
-                                        ПЕШКОМ
-                                    </h4>
-                                    <ul>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_1.svg" alt="" />
-                                            <div>
-                                                <span>5-7 МИНУТ </span>
-                                                До&nbsp;парка звезд,<br />
-                                                крылатского
-                                                и&nbsp;набережной
-                                                москвы-реки
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_2.svg" alt="" />
-                                            <div>
-                                                <span>15 МИНУТ </span>
-                                                ДО метро «крылатское»<br />
-                                                арбатско-покровской линии
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_3.svg" alt="" />
-                                            <div>
-                                                <span>15 МИНУТ </span>
-                                                До пристани<br />
-                                                «крылатская»
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="static_map_block">
-                                    <h4 class="name" data-aos="fade-up">
-                                        <span>
-                                            НА ЛИЧНОМ<br />
-                                            ТРАнспорте или такси
-                                        </span>
-                                        <span>ЛИЧНый ТРАнспорт или
-                                            такси</span>
-                                    </h4>
-                                    <ul>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_4.svg" alt="" />
-                                            <div>
-                                                <span>15 МИНУТ </span>
-                                                до садового кольца<br />
-                                                и москва-сити
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_5.svg" alt="" />
-                                            <div>
-                                                <span>20-30 МИНУТ </span>
-                                                до аэропорта внуково
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_5.svg" alt="" />
-                                            <div>
-                                                <span>30-40 МИНУТ </span>
-                                                до аэропорта шереметьево
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                <div class='text_img'>
+                    <div class="text">
+                        <div data-aos="fade-up">
+                            Роскошь начинается с деталей.  
+                            Панорамное остекление и просторные террасы, витражная система «в пол» создают светлую
+                            атмосферу, а современные инженерные решения обеспечивают комфорт на каждом этапе жизни.
                         </div>
                     </div>
-                    <div class="tabs_content_item" id="tab_map-2">
-                        <div class="map_wrapper">
-                            <div id="map"></div>
-                            <div class="map_filters">
-                                <div class="map_filters_title">
-                                    Фильтр
-                                    <svg class="fill_none">
-                                        <use xlink:href="imgs/sprite.symbol.svg#arrow_left"></use>
-                                    </svg>
-                                </div>
-                                <div class="map_filters_dropdown">
-                                    <button class="filter-button" data-category="all">
-                                        Все объекты
-                                    </button>
-                                    <button class="filter-button" data-category="Парки и скверы">
-                                        Парки и скверы
-                                    </button>
-                                    <button class="filter-button" data-category="Кафе и рестораны">
-                                        Кафе и рестораны
-                                    </button>
-                                    <button class="filter-button" data-category="Образование">
-                                        Образование
-                                    </button>
-                                    <button class="filter-button" data-category="Детские сады">
-                                        Детские сады
-                                    </button>
-                                    <button class="filter-button" data-category="Торговые центры">
-                                        Торговые центры
-                                    </button>
-                                    <button class="filter-button" data-category="Больницы и поликлинники">
-                                        Больницы и поликлинники
-                                    </button>
-                                    <button class="filter-button" data-category="Спорт">
-                                        Спорт
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="map_zoom_btn">
-                                <button id="zoom-in">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31"
-                                        fill="none">
-                                        <path d="M-0.000501054 15.4419L29.883 15.4416M14.941 0.50043L14.941 30.3837"
-                                            stroke="#63483F" stroke-width="2.6087" />
-                                    </svg>
-                                </button>
-                                <button id="zoom-out">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="3" viewBox="0 0 30 3"
-                                        fill="none">
-                                        <path d="M-0.000501054 1.4419L29.883 1.44162" stroke="#63483F"
-                                            stroke-width="2.6087" />
-                                    </svg>
-                                </button>
-                            </div>
+                    <div class="imgs" data-aos="fade-left">
+                        <img src="imgs/photo_long_1.jpg" alt="">
+                    </div>
+                </div>
+                <div class='text_img text_img_revers'>
+                    <div class="imgs" data-aos="fade-right">
+                        <img src="imgs/photo_long_2.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <div data-aos="fade-up">
+                            Основной строительный материал – стеклофибробетон, известный своей экологичностью,
+                            огнестойкостью и устойчивостью
+                            к трещинам, что обеспечивает долговечность здания.
+                        </div>
+                    </div>
+                </div>
+                <div class='text_img'>
+                    <div class="text">
+                        <div data-aos="fade-up">
+                            Дизайн фасадов дополнен декоративными алюминиевыми ламелями, создающими игру света и тени
+                        </div>
+                    </div>
+                    <div class="imgs" data-aos="fade-left">
+                        <img src="imgs/photo_vertical_1.jpg" alt="">
+                        <img src="imgs/photo_vertical_2.jpg" alt="">
+                    </div>
+                </div>
+                <div class='text_img text_img_revers'>
+                    <div class="imgs" data-aos="fade-right">
+                        <img src="imgs/photo_long_3.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <div data-aos="fade-up">
+                            Основной строительный материал – стеклофибробетон, известный своей экологичностью,
+                            огнестойкостью и устойчивостью
+                            к трещинам, что обеспечивает долговечность здания
+                        </div>
+                    </div>
+                </div>
+                <div class='text_img'>
+                    <div class="text">
+                        <div data-aos="fade-up">
+                            Селективное стекло с серебряным покрытием блокирует теплопередачу, экономя энергию и
+                            поддерживая комфорт в помещениях
+                        </div>
+                    </div>
+                    <div class="imgs" data-aos="fade-left">
+                        <img src="imgs/photo_long_4.jpg" alt="">
+                    </div>
+                </div>
+                <div class='text_img text_img_revers'>
+                    <div class="imgs" data-aos="fade-right">
+                        <img src="imgs/photo_long_5.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <div data-aos="fade-up">
+                            Фасады зданий с алюминиевыми стоечно-ригельными системами премиального качества и
+                            многослойным стеклом триплекс обеспечивают высокую звуко- и теплоизоляцию
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section photo_section">
-            <div class="bg"><img src="imgs/photo_2.jpg" alt="" /></div>
+        <section class='section plan_section'>
+            <div class="container">
+                <div class='title_wrapper'>
+                    <h3 data-aos="fade_up">Современные планировки для комфортной жизни</h3>
+                </div>
+            </div>
+            <div class='plan_block_wrapper plan_block_wrapper_white'>
+                <div class='container'>
+                    <div class='plan_block'>
+                        <div class="img" data-aos="fade-in"><img src="imgs/plan_1.png" alt=""></div>
+                        <div class="content" data-aos="fade-up">
+                            <h4>Эргономичные <br> пространства<br> для семьи</h4>
+                            <div class="text">755 квартир с авторскими планировками, созданными для гармоничной жизни
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='plan_block_wrapper plan_block_wrapper_dark'>
+                <div class='container'>
+                    <div class='plan_block plan_block_dark'>
+                        <div class="img" data-aos="fade-in"><img src="imgs/plan_2.png" alt=""></div>
+                        <div class="content" data-aos="fade_up">
+                            <h4>ОСОБЕННОЕ ПРЕДЛОЖЕНИЕ: Эксклюзивный пентхаус<br> до 410 м²</h4>
+                            <a href="#" class="btn -not_border">узнать подробности</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section photo_section photo_section_big">
+            <div class="bg"><img src="imgs/photo_5.jpg" alt="" /></div>
             <div class="container">
                 <div class="content">
-                    <h3 data-aos="fade-left">
-                        Крылатская 33 —<br />
-                        место, где природа и город соединяются
-                    </h3>
+                    <h2 data-aos="fade-left">
+                        Видовые<br> преимущества
+                    </h2>
                     <div class="text" data-aos="fade-up">
-                        Панорамы парка<br />
-                        и набережной Москвы-реки
+                        Для тех, кто ценит как природную красоту, так и урбанистическую эстетику
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='section text_section'>
+            <div class="container">
+                <div class="text_col_two">
+                    <div class="text" data-aos="fade-up">Уникальные квартиры в небоскрёбах с видами на Москву-реку,
+                        Живописный мост,
+                        сосновый бор, великолепный Ермогеновский храм и современный городской пейзаж.</div>
+                    <div class="text" data-aos="fade-up">Видовые секции 2–3–4 подарят вам возможность каждый день
+                        наслаждаться красотой
+                        столицы</div>
+                </div>
+            </div>
+        </section>
+        <section class='section content_img_section'>
+            <div class="container">
+                <div class="content_img">
+                    <div class='content'>
+                        <h2 class="title_animation" data-aos="">
+                            <span class="line"><span>Формат</span></span>
+                            <span class="line"><span>клубного дома</span></span>
+                        </h2>
+                        <h4 data-aos="fade-up">Для ценителей спокойствия и уюта</h4>
+                        <div class="text" data-aos="fade-up">Малоэтажный клубный формат — секции 6–7. Здесь вы найдёте
+                            не только
+                            комфортное проживание, но и камерную атмосферу клуба, где личное пространство становится
+                            приоритетом</div>
+                    </div>
+                    <div class="img" data-aos="fade-left"><img src="imgs/photo_6.jpg" alt=""></div>
+                </div>
+            </div>
+        </section>
+        <section class="section gallery_section">
+            <div class="container">
+                <h2 class="title_animation" data-aos="">
+                    <span class="line"><span>Галерея рендеров</span></span>
+                    <span class="line"><span>и интерьеров</span></span>
+                </h2>
+                <div class="tabs_block">
+                    <div class="tabs_nav tags">
+                        <a class="tabs_nav_item tag active" data-aos="fade-up" href="#tab-1">Виды</a>
+                        <a class="tabs_nav_item tag" data-aos="fade-up" href="#tab-2">Интерьеры</a>
+                        <a class="tabs_nav_item tag" data-aos="fade-up" href="#tab-3">Лобби</a>
+                    </div>
+                    <div class="tabs_content">
+                        <div class="tabs_content_item" id="tab-1">
+                            <div class="slider_gallery_wrapper">
+                                <div class="swiper slider_gallery">
+                                    <div class="swiper_arrows" data-aos="fade">
+                                        <div class="swiper-button-prev">
+                                            <svg>
+                                                <use xlink:href="imgs/sprite.symbol.svg#arrow_right"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-button-next">
+                                            <svg>
+                                                <use xlink:href="imgs/sprite.symbol.svg#arrow_left"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a data-aos="fade-left" data-aos-delay="100" class="item gallery_img"
+                                                data-src="imgs/img_11_big.png" data-fancybox="gallery_1">
+                                                <div class="img">
+                                                    <img src="imgs/img_11.jpg" alt="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a data-aos="fade-left" data-aos-delay="200" class="item gallery_img"
+                                                data-src="imgs/img_12_big.png" data-fancybox="gallery_1">
+                                                <div class="img">
+                                                    <img src="imgs/img_12.jpg" alt="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a data-aos="fade-left" data-aos-delay="300" class="item gallery_img"
+                                                data-src="imgs/img_11_big.png" data-fancybox="gallery_1">
+                                                <div class="img">
+                                                    <img src="imgs/img_13.jpg" alt="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a data-aos="fade-left" data-aos-delay="200" class="item gallery_img"
+                                                data-src="imgs/img_12_big.png" data-fancybox="gallery_1">
+                                                <div class="img">
+                                                    <img src="imgs/img_12.jpg" alt="" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

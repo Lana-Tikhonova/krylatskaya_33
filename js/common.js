@@ -578,7 +578,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     gsap.to(".photo_section .bg", {
-        y: "-30%",
+        y: "-20%",
         ease: "none",
         scrollTrigger: {
             trigger: ".photo_section",
@@ -587,26 +587,47 @@ document.addEventListener("DOMContentLoaded", function () {
             scrub: 1,
         }
     });
-    gsap.to(".text_img_section .text", {
-        y: "-10%",
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".text_img_section",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-        }
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 992px)", () => {
+        gsap.to(".text_img_big_section .text", {
+            y: "-10%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".text_img_big_section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            }
+        });
+
+        gsap.to(".text_img_big_section .img", {
+            y: "5%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".text_img_big_section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            }
+        });
+
+
+        document.querySelectorAll(".text_img").forEach(block => {
+            gsap.to(block.querySelector(".text"), {
+                y: "15%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: block, // Используем сам .text_img как триггер
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1,
+                }
+            });
+        });
     });
-    gsap.to(".text_img_section .img", {
-        y: "10%",
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".text_img_section",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-        }
-    });
+
     gsap.registerPlugin(ScrollTrigger);
 
 });
