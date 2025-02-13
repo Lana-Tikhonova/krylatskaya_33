@@ -200,12 +200,35 @@ $(document).ready(function () {
     //     headerFixed();
     // });
 
-    // высота секции не менше чем высота ее контента
-    let staticMap = $('.map_section');
-    if (staticMap) {
-        let staticMapHeight = staticMap.outerHeight();
-        staticMap.css('min-height', staticMapHeight)
-        staticMap.css('height', '100dvh')
+    // высота секции не меньше чем высота ее контента
+    let staticMap = $('.static_map');
+    let staticMapMap = $('#map');
+    let staticMapContent = $('.map_section .right');
+    if (staticMap.length) {
+        function adjustMapHeight() {
+            if ($(window).width() > 992) {
+                let staticMapHeight = staticMapContent.outerHeight();
+                staticMap.css('max-height', staticMapHeight);
+                staticMap.css('min-height', '100dvh');
+                staticMapMap.css('max-height', staticMapHeight);
+                staticMapMap.css('min-height', '100dvh');
+            }
+            else {
+                staticMap.css('max-height', 'initial');
+                staticMap.css('min-height', 'initial');
+                staticMapMap.css('max-height', 'initial');
+                staticMapMap.css('min-height', 'initial');
+            }
+
+        }
+
+        // Initial height adjustment
+        adjustMapHeight();
+
+        // Adjust on resize
+        $(window).on('resize', function () {
+            adjustMapHeight();
+        });
     }
 
     // высота svg равна ширине картинки под ней
@@ -636,7 +659,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 992px)", () => {
+    mm.add("(min-width: 993px)", () => {
         document.querySelectorAll(".text_img_big_section").forEach(block => {
             gsap.to(block.querySelector(".text"), {
                 y: "-10%",
@@ -672,10 +695,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         });
+        gsap.set(".static_map_svg_desktop .static_map_svg_circle", { opacity: 0 });
 
+        gsap.timeline({ repeat: -1, repeatDelay: 1 })
+            .to(".static_map_svg_desktop .static_map_svg_circle_1", { opacity: 1, duration: 0.5 })
+            .to(".static_map_svg_desktop .static_map_svg_circle_2", { opacity: 1, duration: 0.5 })
+            .to(".static_map_svg_desktop .static_map_svg_circle_3", { opacity: 1, duration: 0.5 })
+            .to(".static_map_svg_desktop .static_map_svg_circle", { opacity: 0, duration: 0.5 }, "+=1");
+
+    });
+    mm.add("(max-width: 992px)", () => {
+        gsap.set(".static_map_svg_mobile .static_map_svg_circle", { opacity: 0 });
+
+        gsap.timeline({ repeat: -1, repeatDelay: 1 })
+            .to(".static_map_svg_mobile .static_map_svg_circle_1", { opacity: 1, duration: 0.5 })
+            .to(".static_map_svg_mobile .static_map_svg_circle_2", { opacity: 1, duration: 0.5 })
+            .to(".static_map_svg_mobile .static_map_svg_circle_3", { opacity: 1, duration: 0.5 })
+            .to(".static_map_svg_mobile .static_map_svg_circle", { opacity: 0, duration: 0.5 }, "+=1");
     });
 
     gsap.registerPlugin(ScrollTrigger);
+
+
+    // маска для телефона
+    const phoneInputs = document.querySelectorAll('.form_input[name="tel"]');
+    phoneInputs.forEach(input => {
+        IMask(input, {
+            mask: '+{7}(000)000-00-00'
+        })
+    });
+
 
 });
 
