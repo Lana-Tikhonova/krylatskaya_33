@@ -618,7 +618,7 @@ svg.stroke_none {
 
 .header {
   position: relative;
-  height: 100dvh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -873,7 +873,7 @@ svg.stroke_none {
 .big_menu .menu_btn {
   position: absolute;
   margin: 0;
-  top: 23px;
+  top: 32px;
   left: 33px;
 }
 .big_menu.show {
@@ -1060,7 +1060,7 @@ svg.stroke_none {
 .choose_wrapper {
   color: #f8f0ec;
   position: relative;
-  height: 100dvh;
+  height: 100svh;
   min-height: 953px;
 }
 .choose_wrapper .title {
@@ -2401,7 +2401,7 @@ svg.stroke_none {
     width: 100%;
   }
   .static_map .left {
-    height: 100dvh;
+    height: 100svh;
   }
   .static_map_block_wrapper {
     display: flex;
@@ -2588,7 +2588,7 @@ svg.stroke_none {
 }
 @media screen and (max-width: 768px) {
   .static_map .left {
-    max-height: 100dvh;
+    max-height: 100svh;
     min-height: 424px;
   }
   .static_map_svg_desktop {
@@ -3404,7 +3404,7 @@ svg.stroke_none {
     transform: rotate(270deg);
   }
   .map_wrapper {
-    height: calc(100dvh - 108px);
+    height: calc(100svh - 108px);
   }
   .map_filters_dropdown {
     display: none;
@@ -3433,7 +3433,7 @@ svg.stroke_none {
 }
 @media screen and (max-width: 760px) {
   .map_wrapper {
-    height: calc(100dvh - 72px);
+    height: calc(100svh - 72px);
   }
 }
 @media screen and (max-width: 576px) {
@@ -3482,7 +3482,7 @@ svg.stroke_none {
   padding-left: 8.5%;
   padding-right: 6%;
   max-height: 1000px;
-  height: 100dvh;
+  height: 100svh;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -3539,7 +3539,7 @@ svg.stroke_none {
   }
 }
 .slider_big_img {
-  max-height: 100dvh;
+  max-height: 100svh;
 }
 .slider_big_img .item {
   position: relative;
@@ -4407,4 +4407,7 @@ svg.stroke_none {
   .choose_courtyard_modal_content {
     padding: 20px;
   }
+}
+.slider_menu {
+  height: 100%;
 }

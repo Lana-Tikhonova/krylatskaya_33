@@ -747,7 +747,7 @@ svg {
 // header
 .header {
     position: relative;
-    height: 100dvh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
 
@@ -1076,8 +1076,7 @@ svg {
     .menu_btn {
         position: absolute;
         margin: 0;
-
-        top: 23px;
+        top: 32px;
         left: 33px;
     }
 
@@ -1314,7 +1313,7 @@ svg {
 .choose_wrapper {
     color: $color_creamy;
     position: relative;
-    height: 100dvh;
+    height: 100svh;
     // height: 100%;
     min-height: 953px;
 
@@ -2981,7 +2980,7 @@ svg {
         }
 
         .left {
-            height: 100dvh;
+            height: 100svh;
         }
 
         .right {}
@@ -3239,7 +3238,7 @@ svg {
 
 @media screen and (max-width:768px) {
     .static_map .left {
-        max-height: 100dvh;
+        max-height: 100svh;
         min-height: 424px;
     }
 
@@ -4297,7 +4296,7 @@ svg {
     }
 
     .map_wrapper {
-        height: calc(100dvh - 108px);
+        height: calc(100svh - 108px);
     }
 
     .map_filters_dropdown {
@@ -4334,7 +4333,7 @@ svg {
 
 @media screen and (max-width: 760px) {
     .map_wrapper {
-        height: calc(100dvh - 72px);
+        height: calc(100svh - 72px);
     }
 }
 
@@ -4393,7 +4392,7 @@ svg {
     padding-right: 6%;
 
     max-height: 1000px;
-    height: 100dvh;
+    height: 100svh;
     padding-top: 40px;
     padding-bottom: 40px;
 
@@ -4467,7 +4466,7 @@ svg {
 }
 
 .slider_big_img {
-    max-height: 100dvh;
+    max-height: 100svh;
 
     .item {
         position: relative;
@@ -5633,4 +5632,8 @@ svg {
     .choose_courtyard_modal_content {
         padding: 20px;
     }
+}
+
+.slider_menu {
+    height: 100%;
 }

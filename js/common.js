@@ -80,19 +80,6 @@ $(document).ready(function () {
                 delay: 3000,
                 disableOnInteraction: false,
             },
-            // on: {
-            //     init() {
-            //         this.el.addEventListener('mouseenter', () => {
-            //             this.autoplay.stop();
-
-            //         });
-
-            //         this.el.addEventListener('mouseleave', () => {
-            //             this.autoplay.start();
-
-            //         });
-            //     }
-            // },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
@@ -230,9 +217,9 @@ $(document).ready(function () {
                 let staticMapHeight = staticMapContent.outerHeight();
                 let staticMaptitleHeight = staticMapTitle.outerHeight();
                 staticMap.css('min-height', staticMapHeight);
-                staticMap.css('height', `calc(100dvh - ${staticMaptitleHeight}px)`);
+                staticMap.css('height', `calc(100svh - ${staticMaptitleHeight}px)`);
                 // staticMapMap.css('min-height', staticMapHeight);
-                staticMapMap.css('height', `calc(100dvh - ${staticMaptitleHeight}px)`);
+                staticMapMap.css('height', `calc(100svh - ${staticMaptitleHeight}px)`);
             }
             else {
                 staticMap.css('max-height', 'initial');
@@ -337,7 +324,7 @@ $(document).ready(function () {
 
     let offset
     if ($(window).width() > 576) {
-        offset = 100;
+        offset = 200;
     } else {
         offset = 0;
     }
