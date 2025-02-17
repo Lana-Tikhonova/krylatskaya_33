@@ -15,7 +15,53 @@ $(document).ready(function () {
         $('.menu_btn').toggleClass('active')
         $('.big_menu').toggleClass('show')
 
+        // Проверяем, открыт ли .big_menu
+        if ($('.big_menu').hasClass('show')) {
+            swiperMenu.params.autoplay = { delay: 500, disableOnInteraction: false };
+            swiperMenu.autoplay.start();
+        } else {
+            swiperMenu.autoplay.stop();
+            swiperMenu.params.autoplay = false;
+        }
     })
+
+    // swiperMenu
+    const swiperMenu = new Swiper(".slider_menu", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        effect: 'fade',
+        speed: 1000,
+        loop: true,
+        autoplay: {
+            delay: 1000,
+            disableOnInteraction: false,
+        },
+    });
+    swiperMenu.autoplay.stop();
+
+    document.querySelectorAll(".menu .item").forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            const imgSrc = item.dataset.img;
+            if (!imgSrc) return; // Пропускаем пункты без data-img
+
+            swiperMenu.autoplay.stop(); // Останавливаем автоплей
+
+            const slides = document.querySelectorAll(".slider_menu .swiper-slide img");
+            slides.forEach((img, index) => {
+                if (img.getAttribute("src") === imgSrc) {
+                    swiperMenu.slideTo(index); // Переключаем слайд
+                }
+            });
+        });
+
+        item.addEventListener("mouseleave", () => {
+            swiperMenu.autoplay.start(); // Возвращаем автоплей
+        });
+    });
 
 
     // swiperPopups
@@ -144,28 +190,6 @@ $(document).ready(function () {
         },
     });
 
-    //фиксировать шапку
-    // let prevScroll = $(window).scrollTop();
-
-    // const header = document.querySelector('.header_block_fix');
-    // window.addEventListener('scroll', e => {
-    //     if (window.scrollY > 300) {
-    //         header.classList.add('fixed')
-    //     } else {
-    //         header.classList.remove('fixed')
-    //     }
-
-    //     let currentScroll;
-    //     currentScroll = $(window).scrollTop()
-    //     if (currentScroll < prevScroll && header.classList.contains('fixed')) {
-    //         header.classList.add('fix-on-scroll');
-    //     }
-    //     if (currentScroll > prevScroll && header.classList.contains('fixed') || window.scrollY < 300) {
-    //         header.classList.remove('fix-on-scroll');
-    //     }
-    //     prevScroll = currentScroll
-    // })
-
 
     //фиксировать шапку
     let prevScroll = window.scrollY;
@@ -194,22 +218,6 @@ $(document).ready(function () {
     });
 
 
-    // function headerFixed(e) {
-    //     let header = $('.header_block_fix');
-
-    //     if ($(this).scrollTop() > 300) {
-    //         header.addClass('fixed');
-    //     } else {
-    //         header.removeClass('fixed');
-    //     }
-
-    // }
-    // headerFixed();
-
-    // $(window).scroll(function (e) {
-    //     headerFixed();
-    // });
-
     // высота секции не меньше чем высота ее контента
     let staticMap = $('.static_map');
     let staticMapMap = $('#map');
@@ -235,10 +243,8 @@ $(document).ready(function () {
 
         }
 
-        // Initial height adjustment
         adjustMapHeight();
 
-        // Adjust on resize
         $(window).on('resize', function () {
             adjustMapHeight();
         });
@@ -456,56 +462,6 @@ document.addEventListener("DOMContentLoaded", function () {
             tabsNavItems[0].click();
         }
     });
-    document.querySelectorAll('.menu .item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            const imgSrc = item.dataset.img;
-            const bigMenuImg = document.querySelector('.big_menu_img img');
-            if (imgSrc) {
-                bigMenuImg.src = imgSrc;
-            }
-        });
-    });
-
-    // const images = new Set();
-    // document.querySelectorAll('.menu .item').forEach(item => {
-    //     if (item.dataset.img) {
-    //         const img = new Image();
-    //         img.src = item.dataset.img;
-    //         images.add(img);
-    //     }
-    // });
-
-    // const bigMenuImg = document.querySelector('.big_menu_img img');
-
-    // document.querySelectorAll('.menu .item').forEach(item => {
-    //     item.addEventListener('mouseenter', () => {
-    //         const imgSrc = item.dataset.img;
-    //         if (imgSrc && bigMenuImg.src !== imgSrc) {
-    //             const newImg = new Image();
-    //             newImg.src = imgSrc;
-    //             newImg.classList.add('active');
-
-    //             newImg.onload = () => {
-    //                 bigMenuImg.classList.remove('active'); // Скрываем старую
-    //                 bigMenuImg.src = imgSrc; // Меняем источник
-    //                 setTimeout(() => bigMenuImg.classList.add('active'), 10); // Показываем новую
-    //             };
-    //         }
-    //     });
-    // });
-
-
-
-    // document.querySelectorAll('.menu .item').forEach(item => {
-    //     item.addEventListener('mouseenter', () => {
-    //         const imgSrc = item.dataset.img;
-    //         const bigMenuImg = document.querySelector('.big_menu_img img');
-    //         if (imgSrc) {
-    //             bigMenuImg.src = imgSrc;
-    //         }
-    //     });
-    // });
-
     // открытие модаки 
     // нужно только поменять значени в data-modal и data-open-modal
     const body = document.querySelector('body');
@@ -633,22 +589,6 @@ document.addEventListener("DOMContentLoaded", function () {
         maxWidth: '462px',
         duration: [400, 200]
     });
-
-    // tippy('.choose_courtyard', {
-    //     trigger: 'click',
-    //     content(reference) {
-    //         const id = reference.getAttribute('data-template');
-    //         const template = document.getElementById(id);
-    //         return template.innerHTML;
-    //     },
-    //     allowHTML: true,
-    //     arrow: false,
-    //     theme: 'choose_courtyard_modal',
-    //     animation: 'scale',
-    //     placement: placement,
-    //     maxWidth: '642px',
-    // });
-
 
     document.querySelectorAll(".photo_section").forEach(block => {
         gsap.to(block.querySelector(".bg"), {
