@@ -107,6 +107,7 @@ $(document).ready(function () {
     // swiperTeam
     const swiperTeam = new Swiper(".slider_team", {
         slidesPerView: 'auto',
+        slidesPerGroup: 1,
         spaceBetween: 8,
         watchSlidesProgress: true,
         mousewheelControl: true,
@@ -122,12 +123,21 @@ $(document).ready(function () {
             1400: {
                 slidesPerView: 4,
                 spaceBetween: 20,
+                slidesPerGroup: 4,
+            },
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 13,
+                slidesPerGroup: 4,
             },
             1201: {
                 slidesPerView: 3,
                 spaceBetween: 20,
+                slidesPerGroup: 3,
             },
             577: {
+                slidesPerView: 'auto',
+                slidesPerGroup: 1,
                 spaceBetween: 20,
             },
 
@@ -203,15 +213,18 @@ $(document).ready(function () {
     // высота секции не меньше чем высота ее контента
     let staticMap = $('.static_map');
     let staticMapMap = $('#map');
-    let staticMapContent = $('.map_section .right');
+    let staticMapContent = $('.map_section .static_map_block_wrapper');
+    let staticMapTitle = $('.map_section_title');
+
     if (staticMap.length) {
         function adjustMapHeight() {
             if ($(window).width() > 992) {
                 let staticMapHeight = staticMapContent.outerHeight();
-                staticMap.css('max-height', staticMapHeight);
-                staticMap.css('min-height', '100dvh');
-                staticMapMap.css('max-height', staticMapHeight);
-                staticMapMap.css('min-height', '100dvh');
+                let staticMaptitleHeight = staticMapTitle.outerHeight();
+                staticMap.css('min-height', staticMapHeight);
+                staticMap.css('height', `calc(100dvh - ${staticMaptitleHeight}px)`);
+                // staticMapMap.css('min-height', staticMapHeight);
+                staticMapMap.css('height', `calc(100dvh - ${staticMaptitleHeight}px)`);
             }
             else {
                 staticMap.css('max-height', 'initial');
@@ -255,10 +268,13 @@ $(document).ready(function () {
 
         setElementWidth('.choose_block_svg');
         setElementWidth('.imgs_list');
+        setElementWidth('.choose_courtyard_wrapper');
 
         window.addEventListener('resize', () => {
             setElementWidth('.choose_block_svg');
             setElementWidth('.imgs_list');
+            setElementWidth('.choose_courtyard_wrapper');
+
         });
 
     }
@@ -279,16 +295,21 @@ $(document).ready(function () {
         },
     });
 
-    // 
-    $('.choose_courtyard').on('click', function () {
-        $('.choose_courtyard_modal').toggleClass('show');
-        $(this).parent().toggleClass('active');
-        $('html').toggleClass('locked');
 
-    })
+    $('.choose_courtyard').on('click', function () {
+        let modalClass = $(this).data('template');
+        $('.choose_courtyard_modal').removeClass('show');
+        $('.' + modalClass).addClass('show');
+        $('.choose_courtyard_wrapper').addClass('active');
+        if ($(window).width() < 993) {
+            $('html').addClass('locked');
+        } else {
+            $('html').removeClass('locked');
+        }
+    });
 
     $(document).on('click', function (e) {
-        if (!$(e.target).closest('.choose_courtyard, .choose_courtyard_modal').length) {
+        if (!$(e.target).closest('.choose_courtyard, .choose_courtyard_modal_content').length) {
             $('.choose_courtyard_modal').removeClass('show')
             $('.choose_courtyard_wrapper').removeClass('active');
             $('html').removeClass('locked');
@@ -299,9 +320,6 @@ $(document).ready(function () {
         $('.choose_courtyard_modal').removeClass('show')
         $('.choose_courtyard_wrapper').removeClass('active');
         $('html').removeClass('locked');
-
-
-
     });
 
 

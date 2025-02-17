@@ -47,6 +47,13 @@
                     <svg class="fill_brown">
                         <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
                     </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
                 </a>
                 <a href="#" class="btn">ВЫБРАТЬ КВАРТИРУ</a>
             </div>
@@ -60,6 +67,13 @@
                     <svg class="fill_creamy">
                         <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
                     </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
                 </a>
                 <a href="#" class="btn -not_border">ВЫБРАТЬ КВАРТИРУ</a>
             </div>
@@ -307,18 +321,24 @@
         <section class="section choose_section">
             <div class='choose_wrapper'>
                 <div class='choose_courtyard_wrapper'>
-                    <div class="choose_courtyard" data-template="choose_courtyard_modal">
-                        <svg class="w24 fill_none">
-                            <use xlink:href="imgs/sprite.symbol.svg#close"></use>
-                        </svg>
-                        <span>Внутренний двор</span>
+                    <div class="choose_courtyard" data-template="choose_courtyard_modal_01">
+                        <img src="imgs/plus.svg" alt="">
+                        <span>Сад познания</span>
                     </div>
-                    <div class="choose_courtyard_modal">
-
+                    <div class="choose_courtyard" data-template="choose_courtyard_modal_02">
+                        <img src="imgs/plus.svg" alt="">
+                        <span>Родник жизни</span>
+                    </div>
+                    <div class="choose_courtyard" data-template="choose_courtyard_modal_03">
+                        <img src="imgs/plus.svg" alt="">
+                        <span>ВОСХОЖДЕНИЕ жизненной силы</span>
+                    </div>
+                </div>
+                <div class='choose_courtyard_modal_wrapper'>
+                    <div class="choose_courtyard_modal choose_courtyard_modal_01">
                         <div class='choose_courtyard_modal_content'>
                             <div class="name">
-                                Внутренний<br />
-                                двор
+                                САД<br>ПОЗНАНИЯ
                             </div>
                             <div class="close">
                                 <svg class="w24 fill_none">
@@ -326,20 +346,55 @@
                                 </svg>
                             </div>
                             <div class="text">
-                                <img src="imgs/img_1.png" alt="" />
+                                <img src="imgs/img_20.jpg" alt="" />
                                 <p>
-                                    Уникальный проект от именитого
-                                    архитектурного бюро «Остоженка» в
-                                    Крылатском: самый высокий небоскреб в
-                                    районе, достигающий отметки в 150 метров, и
-                                    малоэтажный клубный формат от 42 метров.
-                                    Инновационный архитектурный концепт создает
-                                    ощущение естественности и нерукотворности
-                                    сооружения.
+                                    Амфитеатр в склоне, геопластика, места
+                                    для медитаций, озеленение на склоне, каменные
+                                    валуны, зонтичные формы, массивы кустарников, ароматное разнотравье, сезонная
+                                    декоративность
                                 </p>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="choose_courtyard_modal choose_courtyard_modal_02">
+                        <div class='choose_courtyard_modal_content'>
+                            <div class="name">
+                                РОДНИК<br> ЖИЗНИ
+                            </div>
+                            <div class="close">
+                                <svg class="w24 fill_none">
+                                    <use xlink:href="imgs/sprite.symbol.svg#close"></use>
+                                </svg>
+                            </div>
+                            <div class="text">
+                                <img src="imgs/img_21.jpg" alt="" />
+                                <p>
+                                    Центральное пространство с водной
+                                    гладью и тихим журчанием воды,
+                                    эффекты тумана и испарения, акцентные деревья и кустарники
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choose_courtyard_modal choose_courtyard_modal_03">
+                        <div class='choose_courtyard_modal_content'>
+                            <div class="name">
+                                ВОСХОЖДЕНИЕ<br>ЖИЗНЕННОЙ СИЛЫ
+                            </div>
+                            <div class="close">
+                                <svg class="w24 fill_none">
+                                    <use xlink:href="imgs/sprite.symbol.svg#close"></use>
+                                </svg>
+                            </div>
+                            <div class="text">
+                                <img src="imgs/img_22.jpg" alt="" />
+                                <p>
+                                    Двухярусное пространство с функциональными
+                                    нишами, многофункциональность и гибридность
+                                    пространства, вертикальное озеленение,
+                                    сад на крыше
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="container">
@@ -597,8 +652,7 @@
         <section class="section gallery_section">
             <div class="container">
                 <h2 class="title_animation" data-aos="">
-                    <span class="line"><span>Галерея визуальных</span></span>
-                    <span class="line"><span>материалов</span></span>
+                    <span class="line"><span>Галерея</span></span>
                 </h2>
                 <div class="tabs_block">
                     <div class="tabs_nav tags">
@@ -749,7 +803,7 @@
             </div>
         </section>
         <section class="section map_section">
-            <div class="container">
+            <div class="container map_section_title">
                 <h2 class="title_animation" data-aos="">
                     <span class="line"><span>Локация проекта</span></span>
                 </h2>
@@ -1225,73 +1279,75 @@
 
                             </div>
                             <div class="right">
-                                <div class="static_map_block">
-                                    <h5 class="name" data-aos="fade-up">
-                                        ИДТИ<br />
-                                        ПЕШКОМ
-                                    </h5>
-                                    <ul>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_1.svg" alt="" />
-                                            <div>
-                                                <span>5-7 МИНУТ </span>
-                                                До&nbsp;парка звезд,<br />
-                                                крылатского
-                                                и&nbsp;набережной
-                                                москвы-реки
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_7.svg" alt="" />
-                                            <div>
-                                                <span>15 МИНУТ </span>
-                                                ДО метро «крылатское»<br />
-                                                арбатско-покровской линии
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_3.svg" alt="" />
-                                            <div>
-                                                <span>15 МИНУТ </span>
-                                                До пристани<br />
-                                                «крылатская»
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="static_map_block">
-                                    <h5 class="name" data-aos="fade-up">
-                                        <span>
-                                            НА ЛИЧНОМ<br />
-                                            ТРАнспорте или такси
-                                        </span>
-                                        <span>ЛИЧНый ТРАнспорт или
-                                            такси</span>
-                                    </h5>
-                                    <ul>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_4.svg" alt="" />
-                                            <div>
-                                                <span>15 МИНУТ </span>
-                                                до садового кольца<br />
-                                                и москва-сити
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_5.svg" alt="" />
-                                            <div>
-                                                <span>20-30 МИНУТ </span>
-                                                до аэропорта внуково
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up">
-                                            <img src="imgs/static_map_img_5.svg" alt="" />
-                                            <div>
-                                                <span>30-40 МИНУТ </span>
-                                                до аэропорта шереметьево
-                                            </div>
-                                        </li>
-                                    </ul>
+                                <div class='static_map_block_wrapper'>
+                                    <div class="static_map_block">
+                                        <h5 class="name" data-aos="fade-up">
+                                            ИДТИ<br />
+                                            ПЕШКОМ
+                                        </h5>
+                                        <ul>
+                                            <li data-aos="fade-up">
+                                                <img src="imgs/static_map_img_1.svg" alt="" />
+                                                <div>
+                                                    <span>5-7 МИНУТ </span>
+                                                    До&nbsp;парка звезд,<br />
+                                                    крылатского
+                                                    и&nbsp;набережной
+                                                    москвы-реки
+                                                </div>
+                                            </li>
+                                            <li data-aos="fade-up">
+                                                <img src="imgs/static_map_img_7.svg" alt="" />
+                                                <div>
+                                                    <span>15 МИНУТ </span>
+                                                    ДО метро «крылатское»<br />
+                                                    арбатско-покровской линии
+                                                </div>
+                                            </li>
+                                            <li data-aos="fade-up">
+                                                <img src="imgs/static_map_img_3.svg" alt="" />
+                                                <div>
+                                                    <span>15 МИНУТ </span>
+                                                    До пристани<br />
+                                                    «крылатская»
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="static_map_block">
+                                        <h5 class="name" data-aos="fade-up">
+                                            <span>
+                                                НА ЛИЧНОМ<br />
+                                                ТРАнспорте или такси
+                                            </span>
+                                            <span>ЛИЧНый ТРАнспорт или
+                                                такси</span>
+                                        </h5>
+                                        <ul>
+                                            <li data-aos="fade-up">
+                                                <img src="imgs/static_map_img_4.svg" alt="" />
+                                                <div>
+                                                    <span>15 МИНУТ </span>
+                                                    до садового кольца<br />
+                                                    и москва-сити
+                                                </div>
+                                            </li>
+                                            <li data-aos="fade-up">
+                                                <img src="imgs/static_map_img_5.svg" alt="" />
+                                                <div>
+                                                    <span>20-30 МИНУТ </span>
+                                                    до аэропорта внуково
+                                                </div>
+                                            </li>
+                                            <li data-aos="fade-up">
+                                                <img src="imgs/static_map_img_5.svg" alt="" />
+                                                <div>
+                                                    <span>30-40 МИНУТ </span>
+                                                    до аэропорта шереметьево
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1367,10 +1423,6 @@
                             Крылатская 33 —<br />
                             место, где природа и город соединяются
                         </h3>
-                        <div class="text" data-aos="fade-up">
-                            Панорамы парка<br />
-                            и набережной Москвы-реки
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1553,7 +1605,7 @@
         </section>
         <section class="section info_section">
             <div class="container">
-                <div class="info_blocks">
+                <div class="info_blocks info_blocks_one">
                     <div class="left">
                         <h2 class="title_animation" data-aos="">
                             <span class="line"><span>Подписка</span></span>
@@ -1561,27 +1613,24 @@
                         </h2>
                     </div>
                     <div class="right" data-aos="fade-left">
-                        <div class="text">
-                            Следите за новостями<br />
-                            проекта
+                        <div class='social_list_text'>
+                            <a href="#" class="social_item">
+                                <img src="imgs/social/vk.svg" alt="" />
+                            </a>
+                            <div class="text">
+                                Следите за новостями<br />
+                                проекта
+                            </div>
                         </div>
-                        <ul class="social_list">
-                            <li>
-                                <a href="#" class="social_item">
-                                    <img src="imgs/social/vk.svg" alt="" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="social_item">
-                                    <img src="imgs/social/tg.svg" alt="" />
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="text">
-                            Подпишитесь на наш Telegram-канал и получайте
-                            свежие обновления
+                        <div class='social_list_text'>
+                            <a href="#" class="social_item">
+                                <img src="imgs/social/tg.svg" alt="" />
+                            </a>
+                            <div class="text">
+                                Подпишитесь на наш Telegram-канал и получайте
+                                свежие обновления
+                            </div>
                         </div>
-                        <a href="#" class="btn">ПОДПИСАТЬСЯ</a>
                     </div>
                 </div>
                 <div class="info_blocks">
@@ -1609,7 +1658,7 @@
                 </h2>
                 <div class='team_big_block' data-aos="fade-up">
                     <div class='img'>
-                        <img src="imgs/team_img_1.png" alt="">
+                        <img src="imgs/logo/logo_1.svg" alt="">
                     </div>
                     <div class="content">
                         <div class="title">девелопер проекта — специализированный застройщик ООО «Сияние»</div>
@@ -1637,7 +1686,7 @@
                                         московский<br> кредитный банк
                                     </div>
                                     <div class="img">
-                                        <img src="imgs/team_img_2.png" alt="" />
+                                        <img src="imgs/logo/logo_2.svg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -1648,7 +1697,7 @@
                                         бюро «остоженка»
                                     </div>
                                     <div class="img">
-                                        <img src="imgs/team_img_3.png" alt="" />
+                                        <img src="imgs/logo/logo_3.svg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -1659,7 +1708,7 @@
                                         александры фёдоровой»
                                     </div>
                                     <div class="img">
-                                        <img src="imgs/team_img_4.png" alt="" />
+                                        <img src="imgs/logo/logo_4.svg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -1667,23 +1716,55 @@
                                 <div class="item" data-aos="fade-left" data-aos-delay="400">
                                     <div class="text">
                                         Генеральный подрядчик
-                                        нулевого цикла —
+                                        нулевого цикла —<br>
                                         «бест-строй»
                                     </div>
                                     <div class="img">
-                                        <img src="imgs/team_img_5.png" alt="" />
+                                        <img src="imgs/logo/logo_5.svg" alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="item" data-aos="fade-left" data-aos-delay="500">
                                     <div class="text">
-                                        девелопер проекта —
-                                        специализированный застройщик ООО
-                                        «Сияние»
+                                        агенство<br> недвижимости,<br>
+                                        брокер проекта ricci
                                     </div>
                                     <div class="img">
-                                        <img src="imgs/team_img_1.png" alt="" />
+                                        <img src="imgs/logo/logo_6.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item" data-aos="fade-left" data-aos-delay="500">
+                                    <div class="text">
+                                        Благоустройство —архитектурное<br> бюро SCAPE
+                                    </div>
+                                    <div class="img">
+                                        <img src="imgs/logo/logo_7.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item" data-aos="fade-left" data-aos-delay="500">
+                                    <div class="text">
+                                        Общественные<br> пространства —<br>архитектурно-<br>строительная компания
+                                        Галерея
+                                        Проектов
+                                    </div>
+                                    <div class="img">
+                                        <img src="imgs/logo/logo_8.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item" data-aos="fade-left" data-aos-delay="500">
+                                    <div class="text">
+                                        маркетинг<br> и брендинг проекта —
+                                        агентство girafee
+                                    </div>
+                                    <div class="img">
+                                        <img src="imgs/logo/logo_9.svg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -1705,6 +1786,35 @@
                 <a href="#" class="btn" data-aos="fade-up">ПЕРЕЙТИ В РАЗДЕЛ</a>
             </div>
         </section>
+        <section class='section application_section'>
+            <div class="container">
+                <div class="application_block">
+                    <div>
+                        <h2>Оставьте <br>заявку</h2>
+                    </div>
+                    <div>
+                        <form action="" class='form'>
+                            <label class="form_input_group">
+                                <input type="text" name="name" placeholder="Имя" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <input type="tel" name="tel" placeholder="телефон" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <textarea name="message" placeholder="Сообщение"
+                                    class="form_input form_textarea"></textarea>
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <button class="btn" type="submit">отправить сообщение</button>
+                            <div class='text_bottom'>Свяжемся в ближайшее время</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="footer">
@@ -1741,16 +1851,16 @@
                         <a href="#" class="btn -not_border">Кабинет брокера</a>
                     </div>
                     <div class="text">
-                        Офис продаж<br />
+                        ДОМ продаж<br />
                         г. Москва ул. Большая Дмитровка, 11 стр. 1<br />
                         <a href="tel:+7 (495) 642 44 77">+7 (495) 642 44 77</a>
-                        <a href="mailto:info@k33.ru">info@k33.ru</a>
                     </div>
                 </div>
             </div>
             <div class="footer_bottom">
-                <div>© Крылатская 33, 2025. Все права защищены</div>
-                <div class="footer_bottom_design">Дизайн и разработка</div>
+                <div class='footer_bottom_copyright'>© Крылатская 33, 2025.<br /> Все права защищены</div>
+                <div class="footer_bottom_design">Дизайн и&nbsp;разработка — <img src="imgs/footer_logo.svg" alt="">
+                </div>
             </div>
         </div>
     </footer>

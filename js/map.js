@@ -175,7 +175,7 @@ function initMap() {
     balloonContent: ''
   }, {
     iconLayout: 'default#image',
-    iconImageHref: 'imgs/baloon.svg',  // Путь к вашей картинке
+    iconImageHref: 'imgs/marker.svg',  // Путь к вашей картинке
     iconImageSize: [70, 100],  // Размер изображения
     iconImageOffset: [-35, -100]  // Смещение, если нужно подправить положение
   });
