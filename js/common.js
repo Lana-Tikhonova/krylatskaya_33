@@ -63,6 +63,26 @@ $(document).ready(function () {
         });
     });
 
+    // 
+    const swiperSmallCard = new Swiper(".slider_small_card", {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        effect: 'slide',
+        speed: 1000,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
 
     // swiperPopups
     let sliderPopups = $('.slider_popups');
@@ -580,18 +600,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".photo_section").forEach(block => {
         gsap.to(block.querySelector(".bg"), {
             y: "-20%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: block,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-            }
-        });
-    });
-    document.querySelectorAll(".offer_block").forEach(block => {
-        gsap.to(block.querySelector(".img"), {
-            y: "15%",
             ease: "none",
             scrollTrigger: {
                 trigger: block,

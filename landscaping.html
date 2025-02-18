@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/common.css?4" />
+    <link rel="stylesheet" href="css/common.css?5" />
 </head>
 
 <body>
@@ -42,6 +42,13 @@
                     <svg class="fill_brown">
                         <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
                     </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
                 </a>
                 <a href="#" class="btn">ВЫБРАТЬ КВАРТИРУ</a>
             </div>
@@ -55,6 +62,13 @@
                     <svg class="fill_creamy">
                         <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
                     </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
                 </a>
                 <a href="#" class="btn -not_border">ВЫБРАТЬ КВАРТИРУ</a>
             </div>
@@ -63,12 +77,10 @@
                     <img src="imgs/head_img_5.jpg" alt="" />
                 </div>
                 <div class="head_content">
-                    <div class="head_subtitle" data-aos="fade-left">БЛАГОУСТРОЙСТВО</div>
+                    <div class="head_subtitle" data-aos="fade-up">БЛАГОУСТРОЙСТВО</div>
 
-                    <h1 class="title_animation" data-aos="">
-                        <span class="line"><span>На высоте удобства</span></span>
-                        <span class="line"><span>и эстетики</span></span>
-
+                    <h1 data-aos="fade-up">
+                        На высоте удобства<br>и эстетики
                     </h1>
                     <a href="#" class="btn" data-aos="fade-up">ВЫБРАТЬ КВАРТИРУ</a>
                 </div>
@@ -79,49 +91,98 @@
                 <span></span>
             </div>
             <ul class="menu">
+
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_1.png">Привелегии</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_2.png">Инфраструктура</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_3.png">Локация</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_4.png">архитектура</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">архитектура</a>
                 </li>
-                <li><a href="#" class="item">Окружение</a></li>
-                <li><a href="#" class="item">Благоустройство</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
                 <li>
-                    <a href="#" class="item">ВЫБРАТЬ Квартиры</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">ВЫБРАТЬ Квартиры</a>
                     <ul>
                         <li>
-                            <a href="#">Квартиры</a>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
                         </li>
                         <li>
-                            <a href="#">Машиноместа</a>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
                         </li>
                         <li>
-                            <a href="#">Кладовые</a>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_5.jpg">коммерция</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">коммерция</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_6.jpg">Ипотечные предложения</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_7.jpg">Технологии комфорта</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
                 </li>
-                <li><a href="#" class="item">КОМАНДА</a></li>
-                <li><a href="#" class="item">МЕДИА</a></li>
-                <li><a href="#" class="item">Контакты</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">МЕДИА</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
             </ul>
             <div class="big_menu_img">
-                <img src="imgs/menu_img.jpg" alt="" />
+                <div class='swiper slider_menu'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_6.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_7.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_8.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_9.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_10.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_11.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_12.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_13.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_14.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_15.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -131,13 +192,13 @@
             <div class="container">
                 <div class="text_img_big">
                     <div class="text">
-                        <div data-aos="fade-up">
-                            ВНИМАНИЕ К ДЕТАЛЯМ И ИННОВАЦИОННЫЕ РЕШЕНИЯ В БЛАГОУСТРОЙСТВЕ ТЕРРИТОРИИ ДЕЛАЮТ 1,4 ГА
-                            УНИКАЛЬНЫМ МЕСТОМдля жизни
+                        <div data-aos="fade-up" style="max-width: 770px;">
+                            ВНИМАНИЕ К&nbsp;ДЕТАЛЯМ И&nbsp;ИННОВАЦИОННЫЕ РЕШЕНИЯ В&nbsp;БЛАГОУСТРОЙСТВЕ ТЕРРИТОРИИ
+                            ДЕЛАЮТ 1,4&nbsp;ГА УНИКАЛЬНЫМ МЕСТОМдля жизни
                         </div>
                     </div>
                     <div class="img">
-                        <img src="imgs/img_19.jpg" alt="" data-aos="fade-left">
+                        <img src="imgs/img_19.jpg" alt="" data-aos="fade-up">
                     </div>
                 </div>
             </div>
@@ -153,8 +214,8 @@
                         <!-- в .swiper-slide . item есть атрибут data-aos-delay, значения в нем по нарастаюшей, шаг 100 -->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a data-aos="fade-left" data-aos-delay="100" href="#" data-open-modal="info_modal"
-                                    class="item" data-tab="tab_popup-1">
+                                <a data-aos="fade-up" href="#" data-open-modal="info_modal" class="item"
+                                    data-tab="tab_popup-1">
                                     <div class="img">
                                         <img src="imgs/slider_popups/slider_popups_img_14.jpg" alt="" />
                                     </div>
@@ -164,8 +225,8 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a data-aos="fade-left" data-aos-delay="200" href="#" class="item"
-                                    data-open-modal="info_modal" data-tab="tab_popup-2">
+                                <a data-aos="fade-up" href="#" class="item" data-open-modal="info_modal"
+                                    data-tab="tab_popup-2">
                                     <div class="img">
                                         <img src="imgs/slider_popups/slider_popups_img_15.jpg" alt="" />
                                     </div>
@@ -175,8 +236,8 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a data-aos="fade-left" data-aos-delay="300" href="#" class="item"
-                                    data-open-modal="info_modal" data-tab="tab_popup-3">
+                                <a data-aos="fade-up" href="#" class="item" data-open-modal="info_modal"
+                                    data-tab="tab_popup-3">
                                     <div class="img">
                                         <img src="imgs/slider_popups/slider_popups_img_16.jpg" alt="" />
                                     </div>
@@ -186,8 +247,8 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a data-aos="fade-left" data-aos-delay="400" href="#" class="item"
-                                    data-open-modal="info_modal" data-tab="tab_popup-4">
+                                <a data-aos="fade-up" href="#" class="item" data-open-modal="info_modal"
+                                    data-tab="tab_popup-4">
                                     <div class="img">
                                         <img src="imgs/slider_popups/slider_popups_img_17.jpg" alt="" />
                                     </div>
@@ -197,8 +258,8 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a data-aos="fade-left" data-aos-delay="500" href="#" class="item"
-                                    data-open-modal="info_modal" data-tab="tab_popup-5">
+                                <a data-aos="fade-up" href="#" class="item" data-open-modal="info_modal"
+                                    data-tab="tab_popup-5">
                                     <div class="img">
                                         <img src="imgs/slider_popups/slider_popups_img_18.jpg" alt="" />
                                     </div>
@@ -208,8 +269,8 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a data-aos="fade-left" data-aos-delay="500" href="#" class="item"
-                                    data-open-modal="info_modal" data-tab="tab_popup-5">
+                                <a data-aos="fade-up" href="#" class="item" data-open-modal="info_modal"
+                                    data-tab="tab_popup-5">
                                     <div class="img">
                                         <img src="imgs/slider_popups/slider_popups_img_19.jpg" alt="" />
                                     </div>
@@ -219,8 +280,8 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="swiper-pagination" data-aos="fade"></div>
-                        <div class="swiper_arrows" data-aos="fade">
+                        <div class="swiper-pagination" data-aos="fade-up"></div>
+                        <div class="swiper_arrows" data-aos="fade-up">
                             <div class="swiper-button-prev">
                                 <svg>
                                     <use xlink:href="imgs/sprite.symbol.svg#arrow_right"></use>
@@ -248,7 +309,7 @@
                             скандинавских садов, естественные природные изгибы и композиции
                         </div>
                     </div>
-                    <div class="imgs" data-aos="fade-right">
+                    <div class="imgs" data-aos="fade-up">
                         <img src="imgs/photo_long_13.jpg" alt="">
                     </div>
                 </div>
@@ -259,7 +320,7 @@
                             организм
                         </div>
                     </div>
-                    <div class="imgs" data-aos="fade-right">
+                    <div class="imgs" data-aos="fade-up">
                         <img src="imgs/photo_long_14.jpg" alt="">
                     </div>
 
@@ -275,7 +336,7 @@
                             спокойное освещение для создания комфортной атмосферы для отдыха и сна.
                         </div>
                     </div>
-                    <div class="imgs" data-aos="fade-left">
+                    <div class="imgs" data-aos="fade-up">
                         <img src="imgs/photo_vertical_7.jpg" alt="">
                         <img src="imgs/photo_vertical_8.jpg" alt="">
                     </div>
@@ -283,11 +344,11 @@
             </div>
         </section>
         <section class="section photo_section photo_section_big gradient_bottom">
-            <div class='photo_block'>
+            <div class='photo_block photo_block_4'>
                 <div class="bg"><img src="imgs/photo_11.jpg" alt="" /></div>
                 <div class="container">
                     <div class="content">
-                        <h2 class='mt-auto' data-aos="fade-left">
+                        <h2 class='mt-auto' data-aos="fade-up">
                             Крылатская 33 — место, где природа и комфорт встречаются
                         </h2>
                     </div>
@@ -296,7 +357,7 @@
         </section>
         <section class='section application_section'>
             <div class="container">
-                <div class='height_block'>
+                <div class='height_block' data-aos="fade-up">
                     <div class="item">
                         <img src="imgs/img_14.jpg" alt="">
                         <h3>На высоте<br> архитектурных<br> решений</h3>
@@ -310,10 +371,10 @@
                 </div>
                 <div class="application_block">
                     <div>
-                        <h2>Свяжитесь<br> с нами</h2>
+                        <h2 data-aos="fade-up">Свяжитесь<br> с нами</h2>
                     </div>
                     <div>
-                        <form action="" class='form'>
+                        <form action="" class='form' data-aos="fade-up">
                             <label class="form_input_group">
                                 <input type="text" name="name" placeholder="Имя" class="form_input">
                                 <span class="text_error">Заполните поле</span>
@@ -369,16 +430,16 @@
                         <a href="#" class="btn -not_border">Кабинет брокера</a>
                     </div>
                     <div class="text">
-                        Офис продаж<br />
+                        ДОМ продаж<br />
                         г. Москва ул. Большая Дмитровка, 11 стр. 1<br />
                         <a href="tel:+7 (495) 642 44 77">+7 (495) 642 44 77</a>
-                        <a href="mailto:info@k33.ru">info@k33.ru</a>
                     </div>
                 </div>
             </div>
             <div class="footer_bottom">
-                <div>© Крылатская 33, 2025. Все права защищены</div>
-                <div class="footer_bottom_design">Дизайн и разработка</div>
+                <div class='footer_bottom_copyright'>© Крылатская 33, 2025.<br /> Все права защищены</div>
+                <div class="footer_bottom_design">Дизайн и&nbsp;разработка — <img src="imgs/footer_logo.svg" alt="">
+                </div>
             </div>
         </div>
     </footer>
@@ -387,7 +448,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <button type="button" class="close" data-modal-close="">
-                    <svg class="w24 fill_none">
+                    <svg class="w24 fill_none stroke_brown">
                         <use xlink:href="imgs/sprite.symbol.svg#close"></use>
                     </svg>
                 </button>
@@ -471,7 +532,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?5"></script>
+    <script src="js/common.js?6"></script>
 </body>
 
 </html>

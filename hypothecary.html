@@ -25,8 +25,9 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/common.css?4" />
+    <link rel="stylesheet" href="css/common.css?5" />
 </head>
+<!-- здесь есть модалка оставить заявку offer_modal -->
 
 <body>
     <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
@@ -42,6 +43,13 @@
                     <svg class="fill_brown">
                         <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
                     </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
                 </a>
                 <a href="#" class="btn">ВЫБРАТЬ КВАРТИРУ</a>
             </div>
@@ -55,6 +63,13 @@
                     <svg class="fill_creamy">
                         <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
                     </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
                 </a>
                 <a href="#" class="btn -not_border">ВЫБРАТЬ КВАРТИРУ</a>
             </div>
@@ -63,10 +78,9 @@
                     <img src="imgs/head_img_6.jpg" alt="" />
                 </div>
                 <div class="head_content">
-                    <div class="head_subtitle" data-aos="fade-left">Ипотечные предложения</div>
-                    <h1 class="title_animation" data-aos="">
-                        <span class="line"><span>Выберите удобный</span></span>
-                        <span class="line"><span>способ покупки</span></span>
+                    <div class="head_subtitle" data-aos="fade-up">Ипотечные предложения</div>
+                    <h1 data-aos="fade-up">
+                        Выберите удобный<br>способ покупки
                     </h1>
                     <a href="#" class="btn" data-aos="fade-up">ВЫБРАТЬ КВАРТИРУ</a>
                 </div>
@@ -79,70 +93,109 @@
             <ul class="menu">
 
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_1.png">Привелегии</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_2.png">Инфраструктура</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_3.png">Локация</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_4.png">архитектура</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">архитектура</a>
                 </li>
-                <li><a href="#" class="item">Окружение</a></li>
-                <li><a href="#" class="item">Благоустройство</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
                 <li>
-                    <a href="#" class="item">ВЫБРАТЬ Квартиры</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">ВЫБРАТЬ Квартиры</a>
                     <ul>
                         <li>
-                            <a href="#">Квартиры</a>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
                         </li>
                         <li>
-                            <a href="#">Машиноместа</a>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
                         </li>
                         <li>
-                            <a href="#">Кладовые</a>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_5.jpg">коммерция</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">коммерция</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_6.jpg">Ипотечные предложения</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
                 </li>
                 <li>
-                    <a href="#" class="item" data-img="imgs/img_7.jpg">Технологии комфорта</a>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
                 </li>
-                <li><a href="#" class="item">КОМАНДА</a></li>
-                <li><a href="#" class="item">МЕДИА</a></li>
-                <li><a href="#" class="item">Контакты</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">МЕДИА</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
             </ul>
             <div class="big_menu_img">
-                <img src="imgs/menu_img.jpg" alt="" />
+                <div class='swiper slider_menu'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_6.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_7.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_8.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_9.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_10.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_11.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_12.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_13.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_14.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_15.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-
     <main>
         <section class="section card_section">
             <div class="container">
                 <div class="content">
-                    <h2 class="title_animation title_desktop" data-aos="">
-                        <span class="line"><span>Гибкие условия</span></span>
-                        <span class="line"><span>для комфортного приобретения</span></span>
-                        <span class="line"><span>вашего нового дома</span></span>
-                    </h2>
-                    <h2 class="title_animation title_mobile" data-aos="">
-                        <span class="line"><span>Гибкие условия</span></span>
-                        <span class="line"><span>для комфортного </span></span>
-                        <span class="line"><span>приобретения вашего</span></span>
-                        <span class="line"><span>нового дома</span></span>
+                    <h2 data-aos="fade-up">
+                        Гибкие условия<br>для комфортного приобретения<br>вашего нового дома
                     </h2>
                     <div class="card_list">
                         <div class="card_col">
-                            <div class="card_item" data-aos="zoom-in">
+                            <div class="card_item" data-aos="fade-up">
                                 <div class="top">
                                     <div class="left">
                                         <h3>Ипотека</h3>
@@ -169,7 +222,7 @@
                             </div>
                         </div>
                         <div class="card_col">
-                            <div class="card_item" data-aos="zoom-in">
+                            <div class="card_item" data-aos="fade-up">
                                 <div class="top">
                                     <div class="left">
                                         <h3>Рассрочка</h3>
@@ -195,7 +248,7 @@
                             </div>
                         </div>
                         <div class="card_col">
-                            <div class="card_item" data-aos="zoom-in">
+                            <div class="card_item" data-aos="fade-up">
                                 <div class="top">
                                     <div class="left">
                                         <h3>100% оплата</h3>
@@ -222,7 +275,7 @@
                             </div>
                         </div>
                         <div class="card_col">
-                            <div class="card_item" data-aos="zoom-in">
+                            <div class="card_item" data-aos="fade-up">
                                 <div class="top">
                                     <div class="left">
                                         <h3>Трейд-ин</h3>
@@ -253,25 +306,104 @@
         </section>
         <section class='section small_card_section'>
             <div class="container">
-                <ul class="small_card">
-                    <li class='col'>
-                        <div class='item' data-aos="zoom-in">Подробности о бонусах при покупке</div>
-                    </li>
-                    <li class='col'>
-                        <div class='item' data-aos="zoom-in">Условия возврата при отказе от сделки</div>
-                    </li>
-                    <li class='col'>
-                        <div class='item' data-aos="zoom-in">Контактная информация для вопросов о способах оплаты</div>
-                    </li>
-                </ul>
+                <h2 data-aos="fade-up">
+                    Акции в клубном доме
+                </h2>
+                <div class='swiper slider_small_card'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class='item' data-aos="fade-up">
+                                <h3 class='title'>Скидка 7%</h3>
+                                <a href="#" class="text">Специальные скидки от застройщика</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='item' data-aos="fade-up">
+                                <h3 class='title'>Снижение ПВ<br> до 20%</h3>
+                                <a href="#" class="text">Программа страхования жизни и здоровья при рассрочке</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='item' data-aos="fade-up">
+                                <h3 class='title'>Скидка 3,5%</h3>
+                                <a href="#" class="text">Максимальная скидка на сумму ПВ 3,5%</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='item' data-aos="fade-up">
+                                <h3 class='title'>Снижение ПВ<br> до 20%</h3>
+                                <a href="#" class="text">Программа страхования жизни и здоровья при рассрочке</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class='item' data-aos="fade-up">
+                                <h3 class='title'>Скидка 3,5%</h3>
+                                <a href="#" class="text">Максимальная скидка на сумму ПВ 3,5%</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination" data-aos="fade-up"></div>
+                    <div class="swiper_arrows" data-aos="fade-up">
+                        <div class="swiper-button-prev">
+                            <svg>
+                                <use xlink:href="imgs/sprite.symbol.svg#arrow_right"></use>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg>
+                                <use xlink:href="imgs/sprite.symbol.svg#arrow_left"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class='section offer_block_section'>
             <div class="container">
                 <div class="offer_block" data-aos="fade-up">
-                    <div class='img'><img src="imgs/offer.jpg" alt=""></div>
+                    <div class='img'><img src="imgs/img_23.jpg" alt=""></div>
                     <h2>Получите индивидуальное предложение прямо сейчас!</h2>
-                    <a href="#" class='btn -not_border'>оставить заявку</a>
+                    <a href="#" class='btn -not_border' data-open-modal="offer_modal">оставить заявку</a>
+                </div>
+            </div>
+        </section>
+
+        <section class='section application_section'>
+            <div class="container">
+                <div class='height_block' data-aos="fade-up">
+                    <div class="item">
+                        <img src="imgs/img_14.jpg" alt="">
+                        <h3>На высоте<br> архитектурных<br> решений</h3>
+                        <a href="#" class='btn -not_border'>окружение</a>
+                    </div>
+                    <div class="item">
+                        <img src="imgs/img_15.jpg" alt="">
+                        <h3>На высоте <br>чистого<br> воздуха</h3>
+                        <a href="#" class='btn -not_border'>архитектура</a>
+                    </div>
+                </div>
+                <div class="application_block">
+                    <div>
+                        <h2 data-aos="fade-up">Свяжитесь<br> с нами</h2>
+                    </div>
+                    <div>
+                        <form action="" class='form' data-aos="fade-up">
+                            <label class="form_input_group">
+                                <input type="text" name="name" placeholder="Имя" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <input type="tel" name="tel" placeholder="телефон" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <input type="text" name="message" placeholder="Сообщение" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <button class="btn" type="submit">отправить сообщение</button>
+                            <div class='text_bottom'>Свяжемся в ближайшее время</div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -325,12 +457,51 @@
             </div>
         </div>
     </footer>
-
+    <div class="modal offer_modal" data-modal="offer_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-modal-close="">
+                    <svg class="w24 fill_none stroke_white">
+                        <use xlink:href="imgs/sprite.symbol.svg#close"></use>
+                    </svg>
+                </button>
+                <div class="modal_body tabs_block">
+                    <div class='offer_modal_block'>
+                        <div class="left">
+                            <h2>Оставьте заявку </h2>
+                            <div class='text'>Мы свяжемся с вами в ближайшее время</div>
+                            <div class='form_wrapper'>
+                                <form action="" class='form' data-aos="fade-up">
+                                    <label class="form_input_group">
+                                        <input type="text" name="name" placeholder="Имя" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <label class="form_input_group">
+                                        <input type="tel" name="tel" placeholder="телефон" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <label class="form_input_group">
+                                        <input type="text" name="message" placeholder="Сообщение" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <button class="btn" type="submit">отправить сообщение</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <img src="imgs/img_27.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal_bg"></div>
+    </div>
     <div class="modal" data-modal="info_modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <button type="button" class="close" data-modal-close="">
-                    <svg class="w24 fill_none">
+                    <svg class="w24 fill_none stroke_brown">
                         <use xlink:href="imgs/sprite.symbol.svg#close"></use>
                     </svg>
                 </button>
@@ -430,7 +601,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?5"></script>
+    <script src="js/common.js?6"></script>
 </body>
 
 </html>
