@@ -1993,41 +1993,6 @@ svg {
         z-index: -1;
     }
 
-    &_1 {
-        height: 650px;
-    }
-
-    &_2 {
-        height: 994px;
-    }
-
-    &_3 {
-        height: 931px;
-
-        &:after {
-            background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
-            background-blend-mode: multiply;
-            transform: rotate(180deg);
-
-        }
-
-    }
-
-    &_4 {
-        height: 993px;
-    }
-
-    &_5 {
-        height: 580px;
-
-        &:after {
-            background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
-            background-blend-mode: multiply;
-            transform: rotate(180deg);
-
-        }
-    }
-
     .video_bg {
         display: block;
         position: absolute;
@@ -2108,6 +2073,55 @@ svg {
         }
 
     }
+
+    &_1 {
+        height: 650px;
+    }
+
+    &_2 {
+        height: 994px;
+
+        &:after {
+            background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
+            background-blend-mode: multiply;
+        }
+    }
+
+    &_3 {
+        height: 931px;
+
+        &:after {
+            background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
+            background-blend-mode: multiply;
+            transform: rotate(180deg);
+
+        }
+
+    }
+
+    &_4 {
+        height: 993px;
+
+        &:after {
+            background: rgba(5, 5, 5, 0.25);
+        }
+
+        .content {
+            max-width: 878px;
+        }
+    }
+
+    &_5 {
+        height: 580px;
+
+        &:after {
+            background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
+            background-blend-mode: multiply;
+            transform: rotate(180deg);
+
+        }
+    }
+
 }
 
 .card_list {
@@ -4685,6 +4699,7 @@ svg {
 
 .text_img {
     display: flex;
+    align-items: flex-start;
 
     .text {
         width: 34%;
@@ -4833,24 +4848,24 @@ svg {
 
 }
 
-.photo_section_big {
-    &.gradient_bottom {
-        &:after {
-            background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
-        }
-    }
+// .photo_section_big {
+//     &.gradient_bottom {
+//         &:after {
+//             background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
+//         }
+//     }
 
-    &.gradient_top {
-        &:after {
-            background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
-            transform: rotate(180deg);
-        }
-    }
+//     &.gradient_top {
+//         &:after {
+//             background: linear-gradient(0deg, rgba(30, 30, 30, 0.45) 0%, rgba(132, 131, 130, 0.00) 100%);
+//             transform: rotate(180deg);
+//         }
+//     }
 
-    // .content {
-    //     min-height: 833px;
-    // }
-}
+//     // .content {
+//     //     min-height: 833px;
+//     // }
+// }
 
 .text_col_two {
     display: flex;
@@ -5953,6 +5968,10 @@ svg {
     .offer_block {
         padding: 55px 100px;
     }
+
+    .photo_block_4 .content {
+        max-width: 560px;
+    }
 }
 
 @media screen and (max-width:1500px) {
@@ -5962,6 +5981,10 @@ svg {
 }
 
 @media screen and (max-width:992px) {
+    .photo_block_4 .content {
+        max-width: 560px;
+    }
+
     .slider_small_card_wrapper {
         overflow: hidden;
         margin-left: -36px;
@@ -6245,6 +6268,14 @@ svg {
 }
 
 @media screen and (max-width:576px) {
+
+    // h2,
+    // h3,
+    // h4,
+    // h5 {
+    //     text-transform: none;
+    // }
+
     .offer_block h2 {
         font-size: 20px;
     }
