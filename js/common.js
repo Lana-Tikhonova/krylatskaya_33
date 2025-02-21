@@ -358,7 +358,7 @@ $(document).ready(function () {
         easing: 'ease-in-out',
         delay: 100,
         once: true,
-        duration: 700,
+        duration: 400,
         offset: offset,
     });
 
@@ -676,7 +676,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
 
-    // маска для телефона
+    // маска для Телефона
     const phoneInputs = document.querySelectorAll('.form_input[name="tel"]');
     phoneInputs.forEach(input => {
         IMask(input, {

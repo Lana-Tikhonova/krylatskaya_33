@@ -2156,7 +2156,7 @@ svg.stroke_none {
 }
 @media screen and (max-width: 1600px) {
   .footer_bottom_design img {
-    width: 100px;
+    width: 80px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -2820,15 +2820,33 @@ svg.stroke_none {
   }
 }
 @media screen and (max-width: 576px) {
+  .card_item .top .left span {
+    text-transform: none;
+    font-weight: 400;
+  }
+  .card_item .bottom .text {
+    font-size: 11px;
+  }
+  .static_map_block ul li div {
+    text-transform: none;
+  }
+  .static_map_block ul li div span {
+    font-weight: 400;
+  }
   .slider_team_wrapper {
     margin-bottom: 34px;
   }
   .team_big_block {
     border-radius: 9.859px;
     margin-bottom: 8px;
+    min-height: 255px;
   }
   .team_big_block .img {
-    width: 70px;
+    width: 60px;
+  }
+  .team_big_block .text {
+    font-size: 11px;
+    line-height: 15px;
   }
   .team_big_block .text.text_desktop {
     display: none;
@@ -2837,8 +2855,10 @@ svg.stroke_none {
     display: block;
   }
   .team_big_block .title {
-    font-size: 11px;
-    line-height: 12.735px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+    text-transform: none;
   }
   .choose_courtyard_modal .close {
     top: 10px;
@@ -2876,7 +2896,8 @@ svg.stroke_none {
     margin-bottom: 26px;
   }
   h4 {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 23px;
   }
   p {
     margin-bottom: 17px;
@@ -2890,7 +2911,7 @@ svg.stroke_none {
   }
   .btn {
     min-height: 24px;
-    padding: 6px 14px;
+    padding: 10px 17px 13px;
     font-size: 11px;
     line-height: 100%;
   }
@@ -2911,6 +2932,7 @@ svg.stroke_none {
     padding: 4px 13px;
     width: -moz-fit-content;
     width: fit-content;
+    text-transform: none;
   }
   .tags {
     gap: 8px;
@@ -2919,12 +2941,15 @@ svg.stroke_none {
     padding-bottom: 17px;
   }
   .head .tags {
-    margin-bottom: 28px;
+    margin-bottom: 9px;
   }
   .head_content .btn {
-    margin-top: 25px;
+    margin-top: 9px;
     display: inline-flex;
     min-height: initial;
+  }
+  .btn {
+    text-transform: none;
   }
   .home_blocks_two .right {
     padding-top: 27px;
@@ -2940,7 +2965,9 @@ svg.stroke_none {
   }
   .slider_popups .item .text {
     margin-top: 11px;
-    line-height: 12.188px;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 18px;
   }
   .slider_gallery .swiper-slide {
     width: 225px;
@@ -2954,9 +2981,15 @@ svg.stroke_none {
     min-height: 193px;
   }
   .slider_team .item .text {
-    font-size: 11px;
-    line-height: 12.735px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
     margin-bottom: 26px;
+    text-transform: none;
+  }
+  .subtitle {
+    text-transform: none;
   }
   .choose_wrapper {
     height: 345px;
@@ -2966,7 +2999,7 @@ svg.stroke_none {
     padding-top: 0;
   }
   .choose_wrapper .title h2 {
-    margin-bottom: 10px;
+    margin-bottom: 3px;
   }
   .choose_block_img,
   .choose_block .imgs_list,
@@ -2986,7 +3019,7 @@ svg.stroke_none {
   }
   .choose_btn_mobile {
     width: 100%;
-    padding: 14px 20px;
+    padding: 10px 16px;
   }
   .gallery_section .tabs_nav {
     gap: 6px;
@@ -3021,9 +3054,6 @@ svg.stroke_none {
   .static_map_block ul li img {
     max-width: 14px;
   }
-  .card_section h2 {
-    margin-bottom: 10px;
-  }
   .card_item {
     border-radius: 10.414px;
     padding: 11px;
@@ -3039,11 +3069,11 @@ svg.stroke_none {
     max-height: 42px;
   }
   .card_item .top .left h3 {
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 4px;
   }
   .card_item .top .left span {
-    font-size: 11px;
+    font-size: 14px;
   }
   .card_item .bottom {
     align-items: center;
@@ -3087,7 +3117,7 @@ svg.stroke_none {
     margin-bottom: 22px;
   }
   .footer .btn_icon {
-    padding: 6px 12px 6px 11px;
+    padding: 10px 17px 12px 17px;
   }
   .footer_menu,
   .footer_block .text {
@@ -3095,6 +3125,7 @@ svg.stroke_none {
   }
   .footer_block .text {
     line-height: 18.075px;
+    text-transform: none;
   }
   .footer_bottom {
     font-size: 9px;
@@ -3118,7 +3149,7 @@ svg.stroke_none {
   }
   .footer_block .btns_block {
     margin-top: 31px;
-    row-gap: 34px;
+    row-gap: 18px;
   }
   .footer_bottom {
     align-items: flex-start;
@@ -3864,12 +3895,25 @@ svg.stroke_none {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.offer_block .img:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(132, 131, 130, 0) -111.5%, rgba(30, 30, 30, 0.45) -11.5%);
+  background-blend-mode: multiply;
+}
 
 .back_block {
-  border-top: 1px solid #63483F;
-  padding-top: 35px;
+  border-top: 1px solid rgba(99, 72, 63, 0.6);
+  padding-top: 21px;
   margin-top: 64px;
-  margin-bottom: 27px;
+  margin-bottom: 0;
 }
 
 .back_btn {
@@ -3885,11 +3929,24 @@ svg.stroke_none {
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 33px;
+  gap: 30px;
 }
 .back_btn svg {
   width: 46px;
   height: 25px;
+}
+.back_btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 1px solid #63483f;
+  width: 88px;
+  height: 88px;
+}
+
+.section_calc {
+  padding-top: 55px;
 }
 
 .calculator_block {
@@ -4001,6 +4058,16 @@ svg.stroke_none {
   margin-bottom: 37px;
 }
 
+@media screen and (min-width: 577px) {
+  .form_input::-moz-placeholder {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .form_input::placeholder {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+}
 .form_input {
   padding: 12px 0;
   font-size: 23px;
@@ -4016,14 +4083,10 @@ svg.stroke_none {
   font-family: "TTFirsNeue";
 }
 .form_input::-moz-placeholder {
-  text-transform: uppercase;
   color: #63483f;
-  font-weight: 500;
 }
 .form_input::placeholder {
-  text-transform: uppercase;
   color: #63483f;
-  font-weight: 500;
 }
 
 .form_textarea {
@@ -4068,6 +4131,10 @@ svg.stroke_none {
 
 .text_img_line_3 .line {
   top: 80px;
+}
+
+.text_img_line_4 .line {
+  width: 49%;
 }
 
 .photo_small {
@@ -4197,10 +4264,13 @@ svg.stroke_none {
 }
 @media screen and (max-width: 576px) {
   .form_input {
-    font-size: 11px;
-    line-height: normal;
-    padding: 7px 0;
-    height: 35px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15.322px;
+    padding: 11px 0;
+    text-transform: none;
+    height: 40px;
   }
   .form_input_group {
     margin-bottom: 20px;
@@ -4210,6 +4280,10 @@ svg.stroke_none {
   }
   .form .btn {
     margin-top: 6px;
+    text-transform: none;
+  }
+  .footer_menu a {
+    text-transform: none;
   }
 }
 @media screen and (max-width: 1800px) and (min-width: 1501px) {
@@ -4620,6 +4694,10 @@ svg.stroke_none {
   .offer_block {
     padding: 55px 100px;
   }
+  .text_img_line_4 .line {
+    width: 45%;
+    top: 150px;
+  }
   .photo_block_4 .content {
     max-width: 560px;
   }
@@ -4714,6 +4792,10 @@ svg.stroke_none {
   .photo_block_2 {
     height: 1028px;
   }
+  .photo_block_2:after {
+    background: rgba(30, 30, 30, 0.3);
+    background-blend-mode: multiply;
+  }
   .slider_big_img .swiper-pagination {
     bottom: 20px;
   }
@@ -4727,7 +4809,6 @@ svg.stroke_none {
   .title_wrapper h2,
   .title_wrapper h3 {
     width: 100%;
-    padding-right: 20px;
   }
   .title_wrapper .text {
     width: 100%;
@@ -4847,6 +4928,16 @@ svg.stroke_none {
   }
 }
 @media screen and (max-width: 576px) {
+  .title_wrapper .text {
+    text-transform: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-transform: none;
+  }
   .offer_block h2 {
     font-size: 20px;
   }
@@ -4899,9 +4990,6 @@ svg.stroke_none {
   .height_block .item h3 {
     margin-bottom: 36px;
   }
-  .height_block .item .btn {
-    width: 165px;
-  }
   :root {
     --border_radius: 16px;
   }
@@ -4914,5 +5002,13 @@ svg.stroke_none {
   .head_subtitle {
     font-size: 15px;
     margin-bottom: 9px;
+    text-transform: none;
+  }
+  .text_img_big_section {
+    padding-bottom: 0;
+  }
+  .height_block .btn {
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 }

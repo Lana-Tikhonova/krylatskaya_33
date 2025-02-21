@@ -2622,7 +2622,7 @@ svg {
 @media screen and (max-width:1600px) {
     .footer_bottom_design {
         img {
-            width: 100px;
+            width: 80px;
         }
     }
 }
@@ -3571,6 +3571,23 @@ svg {
 }
 
 @media screen and (max-width: 576px) {
+    .card_item .top .left span {
+        text-transform: none;
+        font-weight: 400;
+    }
+
+    .card_item .bottom .text {
+        font-size: 11px;
+    }
+
+    .static_map_block ul li div {
+        text-transform: none;
+    }
+
+    .static_map_block ul li div span {
+        font-weight: 400;
+    }
+
     .slider_team_wrapper {
         margin-bottom: 34px;
     }
@@ -3578,12 +3595,16 @@ svg {
     .team_big_block {
         border-radius: 9.859px;
         margin-bottom: 8px;
+        min-height: 255px;
 
         .img {
-            width: 70px;
+            width: 60px;
         }
 
         .text {
+            font-size: 11px;
+            line-height: 15px;
+
             &.text_desktop {
                 display: none;
             }
@@ -3594,8 +3615,10 @@ svg {
         }
 
         .title {
-            font-size: 11px;
-            line-height: 12.735px
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 15px;
+            text-transform: none;
         }
     }
 
@@ -3645,7 +3668,8 @@ svg {
     }
 
     h4 {
-        font-size: 18px;
+        font-size: 16px;
+        line-height: 23px;
     }
 
     p {
@@ -3664,7 +3688,7 @@ svg {
     .btn {
         min-height: 24px;
 
-        padding: 6px 14px;
+        padding: 10px 17px 13px;
         font-size: 11px;
         line-height: 100%;
     }
@@ -3688,6 +3712,7 @@ svg {
         line-height: auto;
         padding: 4px 13px;
         width: fit-content;
+        text-transform: none;
     }
 
     .tags {
@@ -3698,16 +3723,20 @@ svg {
         padding-bottom: 17px;
 
         .tags {
-            margin-bottom: 28px;
+            margin-bottom: 9px;
         }
     }
 
     .head_content {
         .btn {
-            margin-top: 25px;
+            margin-top: 9px;
             display: inline-flex;
             min-height: initial;
         }
+    }
+
+    .btn {
+        text-transform: none;
     }
 
     .home_blocks_two .right {
@@ -3727,7 +3756,9 @@ svg {
 
         .item .text {
             margin-top: 11px;
-            line-height: 12.188px;
+            font-size: 14px;
+            font-style: normal;
+            line-height: 18px
         }
     }
 
@@ -3746,9 +3777,12 @@ svg {
             min-height: 193px;
 
             .text {
-                font-size: 11px;
-                line-height: 12.735px;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 15px;
                 margin-bottom: 26px;
+                text-transform: none;
             }
 
             // .img {
@@ -3758,6 +3792,9 @@ svg {
         }
     }
 
+    .subtitle {
+        text-transform: none;
+    }
 
     .choose_wrapper {
         height: 345px;
@@ -3767,7 +3804,7 @@ svg {
             padding-top: 0;
 
             h2 {
-                margin-bottom: 10px;
+                margin-bottom: 3px;
             }
         }
     }
@@ -3794,7 +3831,7 @@ svg {
 
     .choose_btn_mobile {
         width: 100%;
-        padding: 14px 20px;
+        padding: 10px 16px;
     }
 
     .gallery_section .tabs_nav {
@@ -3849,12 +3886,12 @@ svg {
     //     }
     // }
 
-    .card_section {
+    // .card_section {
 
-        h2 {
-            margin-bottom: 10px;
-        }
-    }
+    //     h2 {
+    //         margin-bottom: 30px;
+    //     }
+    // }
 
     .card_item {
         border-radius: 10.414px;
@@ -3874,12 +3911,12 @@ svg {
 
             .left {
                 h3 {
-                    font-size: 20px;
+                    font-size: 16px;
                     margin-bottom: 4px;
                 }
 
                 span {
-                    font-size: 11px;
+                    font-size: 14px;
                 }
             }
         }
@@ -3938,7 +3975,7 @@ svg {
         }
 
         .btn_icon {
-            padding: 6px 12px 6px 11px;
+            padding: 10px 17px 12px 17px;
         }
     }
 
@@ -3949,6 +3986,7 @@ svg {
 
     .footer_block .text {
         line-height: 18.075px;
+        text-transform: none;
     }
 
     .footer_bottom {
@@ -3979,7 +4017,7 @@ svg {
 
     .footer_block .btns_block {
         margin-top: 31px;
-        row-gap: 34px;
+        row-gap: 18px;
     }
 
     .footer_bottom {
@@ -4947,14 +4985,28 @@ svg {
             height: 100%;
             object-fit: cover;
         }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(132, 131, 130, 0.00) -111.5%, rgba(30, 30, 30, 0.45) -11.5%);
+            background-blend-mode: multiply;
+        }
     }
 }
 
 .back_block {
-    border-top: 1px solid #63483F;
-    padding-top: 35px;
+    border-top: 1px solid rgb(99 72 63 / 60%);
+    padding-top: 21px;
     margin-top: 64px;
-    margin-bottom: 27px;
+    margin-bottom: 0;
 }
 
 .back_btn {
@@ -4969,12 +5021,26 @@ svg {
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 33px;
+    gap: 30px;
 
     svg {
         width: 46px;
         height: 25px;
     }
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        border: 1px solid $color_brown;
+        width: 88px;
+        height: 88px;
+    }
+}
+
+.section_calc {
+    padding-top: 55px;
 }
 
 .calculator_block {
@@ -5103,6 +5169,46 @@ svg {
     margin-bottom: 37px;
 }
 
+@media screen and (min-width:577px) {
+    .form_input {
+        &::-webkit-input-placeholder {
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+
+        &:-moz-placeholder {
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+
+        &::-moz-placeholder {
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+
+        &:-ms-input-placeholder {
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+
+        &::-ms-input-placeholder {
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+
+        &::placeholder {
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+    }
+}
+
 .form_input {
     padding: 12px 0;
     font-size: 23px;
@@ -5118,39 +5224,27 @@ svg {
     font-family: 'TTFirsNeue';
 
     &::-webkit-input-placeholder {
-        text-transform: uppercase;
         color: $color_brown;
-        font-weight: 500;
     }
 
     &:-moz-placeholder {
-        text-transform: uppercase;
         color: $color_brown;
-        font-weight: 500;
     }
 
     &::-moz-placeholder {
-        text-transform: uppercase;
         color: $color_brown;
-        font-weight: 500;
     }
 
     &:-ms-input-placeholder {
-        text-transform: uppercase;
         color: $color_brown;
-        font-weight: 500;
     }
 
     &::-ms-input-placeholder {
-        text-transform: uppercase;
         color: $color_brown;
-        font-weight: 500;
     }
 
     &::placeholder {
-        text-transform: uppercase;
         color: $color_brown;
-        font-weight: 500;
     }
 
 }
@@ -5207,6 +5301,12 @@ svg {
 .text_img_line_3 {
     .line {
         top: 80px;
+    }
+}
+
+.text_img_line_4 {
+    .line {
+        width: 49%;
     }
 }
 
@@ -5359,10 +5459,14 @@ svg {
 
 @media screen and (max-width:576px) {
     .form_input {
-        font-size: 11px;
-        line-height: normal;
-        padding: 7px 0;
-        height: 35px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 15.322px;
+        padding: 11px 0;
+        text-transform: none;
+        height: 40px;
+
     }
 
     .form_input_group {
@@ -5375,6 +5479,11 @@ svg {
 
     .form .btn {
         margin-top: 6px;
+        text-transform: none;
+    }
+
+    .footer_menu a {
+        text-transform: none;
     }
 }
 
@@ -5969,6 +6078,11 @@ svg {
         padding: 55px 100px;
     }
 
+    .text_img_line_4 .line {
+        width: 45%;
+        top: 150px;
+    }
+
     .photo_block_4 .content {
         max-width: 560px;
     }
@@ -6090,6 +6204,11 @@ svg {
 
     .photo_block_2 {
         height: 1028px;
+
+        &:after {
+            background: rgba(30, 30, 30, 0.30);
+            background-blend-mode: multiply;
+        }
     }
 
     .slider_big_img .swiper-pagination {
@@ -6108,7 +6227,7 @@ svg {
     .title_wrapper h2,
     .title_wrapper h3 {
         width: 100%;
-        padding-right: 20px;
+        // padding-right: 20px;
     }
 
     .title_wrapper .text {
@@ -6268,13 +6387,17 @@ svg {
 }
 
 @media screen and (max-width:576px) {
+    .title_wrapper .text {
+        text-transform: none;
+    }
 
-    // h2,
-    // h3,
-    // h4,
-    // h5 {
-    //     text-transform: none;
-    // }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        text-transform: none;
+    }
 
     .offer_block h2 {
         font-size: 20px;
@@ -6341,10 +6464,6 @@ svg {
             h3 {
                 margin-bottom: 36px;
             }
-
-            .btn {
-                width: 165px;
-            }
         }
     }
 
@@ -6365,6 +6484,16 @@ svg {
     .head_subtitle {
         font-size: 15px;
         margin-bottom: 9px;
+        text-transform: none;
+    }
+
+    .text_img_big_section {
+        padding-bottom: 0;
+    }
+
+    .height_block .btn {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
 }
