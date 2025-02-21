@@ -65,8 +65,8 @@ $(document).ready(function () {
 
     // 
     const swiperSmallCard = new Swiper(".slider_small_card", {
-        slidesPerView: 3,
-        spaceBetween: 20,
+        slidesPerView: 'auto',
+        spaceBetween: 14,
         watchSlidesProgress: true,
         mousewheelControl: true,
         watchOverflow: true,
@@ -81,6 +81,12 @@ $(document).ready(function () {
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            993: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
         },
     });
 
@@ -228,25 +234,25 @@ $(document).ready(function () {
     // высота секции не меньше чем высота ее контента
     let staticMap = $('.static_map');
     let staticMapMap = $('#map');
-    let staticMapContent = $('.map_section .static_map_block_wrapper');
+    // let staticMapContent = $('.map_section .static_map_block_wrapper');
     let staticMapTitle = $('.map_section_title');
 
     if (staticMap.length) {
         function adjustMapHeight() {
             if ($(window).width() > 992) {
-                let staticMapHeight = staticMapContent.outerHeight();
+                // let staticMapHeight = staticMapContent.outerHeight();
                 let staticMaptitleHeight = staticMapTitle.outerHeight();
-                staticMap.css('min-height', staticMapHeight);
-                staticMap.css('height', `calc(100svh - ${staticMaptitleHeight}px)`);
+                // staticMap.css('min-height', staticMapHeight);
+                // staticMap.css('height', `calc(100svh - ${staticMaptitleHeight}px)`);
                 // staticMapMap.css('min-height', staticMapHeight);
                 staticMapMap.css('height', `calc(100svh - ${staticMaptitleHeight}px)`);
             }
-            else {
-                staticMap.css('max-height', 'initial');
-                staticMap.css('min-height', 'initial');
-                staticMapMap.css('max-height', 'initial');
-                staticMapMap.css('min-height', 'initial');
-            }
+            // else {
+            //     staticMap.css('max-height', 'initial');
+            //     staticMap.css('min-height', 'initial');
+            //     staticMapMap.css('max-height', 'initial');
+            //     staticMapMap.css('min-height', 'initial');
+            // }
 
         }
 
@@ -357,34 +363,34 @@ $(document).ready(function () {
     });
 
 
-    let staticMapImg = $('.static_map_img');
-    if (staticMapImg.length) {
-        function setMapImgWidth(targetSelector) {
-            let staticMapImg = document.querySelector('.static_map .left');
-            let targetElement = document.querySelector(targetSelector);
+    // let staticMapImg = $('.static_map_img');
+    // if (staticMapImg.length) {
+    //     function setMapImgWidth(targetSelector) {
+    //         let staticMapImg = document.querySelector('.static_map .left');
+    //         let targetElement = document.querySelector(targetSelector);
 
-            if (staticMapImg && targetElement) {
-                let updateWidth = () => {
-                    targetElement.style.width = staticMapImg.offsetWidth + 'px';
-                };
+    //         if (staticMapImg && targetElement) {
+    //             let updateWidth = () => {
+    //                 targetElement.style.width = staticMapImg.offsetWidth + 'px';
+    //             };
 
-                // Устанавливаем ширину при загрузке
-                staticMapImg.addEventListener('load', updateWidth);
+    //             // Устанавливаем ширину при загрузке
+    //             staticMapImg.addEventListener('load', updateWidth);
 
-                // Если изображение уже загружено
-                if (staticMapImg.complete) {
-                    updateWidth();
-                }
-            }
-        }
+    //             // Если изображение уже загружено
+    //             if (staticMapImg.complete) {
+    //                 updateWidth();
+    //             }
+    //         }
+    //     }
 
-        setMapImgWidth('.static_map_logo');
+    //     setMapImgWidth('.static_map_logo');
 
-        window.addEventListener('resize', () => {
-            setMapImgWidth('.static_map_logo');
-        });
+    //     window.addEventListener('resize', () => {
+    //         setMapImgWidth('.static_map_logo');
+    //     });
 
-    }
+    // }
 
 });
 
@@ -597,18 +603,18 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: [400, 200]
     });
 
-    document.querySelectorAll(".photo_section").forEach(block => {
-        gsap.to(block.querySelector(".bg"), {
-            y: "-20%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: block,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-            }
-        });
-    });
+    // document.querySelectorAll(".photo_section_anim").forEach(block => {
+    //     gsap.to(block.querySelector(".bg"), {
+    //         y: "-20%",
+    //         ease: "none",
+    //         scrollTrigger: {
+    //             trigger: block,
+    //             start: "top bottom",
+    //             end: "bottom top",
+    //             scrub: 1,
+    //         }
+    //     });
+    // });
 
     let mm = gsap.matchMedia();
 
