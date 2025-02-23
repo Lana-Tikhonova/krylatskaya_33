@@ -630,16 +630,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     scrub: 1,
                 }
             });
-            gsap.to(block.querySelector(".img"), {
-                y: "5%",
-                ease: "none",
-                scrollTrigger: {
-                    trigger: block,
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: 1,
-                }
-            });
+            // gsap.to(block.querySelector(".img"), {
+            //     y: "5%",
+            //     ease: "none",
+            //     scrollTrigger: {
+            //         trigger: block,
+            //         start: "top bottom",
+            //         end: "bottom top",
+            //         scrub: 1,
+            //     }
+            // });
         });
 
         document.querySelectorAll(".text_img").forEach(block => {

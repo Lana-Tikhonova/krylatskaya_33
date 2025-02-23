@@ -2974,6 +2974,10 @@ svg {
 }
 
 @media screen and (max-width: 992px) {
+    h4 {
+        font-size: 30px;
+    }
+
     .big_menu {
         &:after {
             display: none;
@@ -4590,7 +4594,7 @@ svg {
     padding-left: 8.5%;
     padding-right: 6%;
 
-    max-height: 1000px;
+    max-height: calc(1000px - 80px);
     height: 100svh;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -4605,6 +4609,11 @@ svg {
     }
 }
 
+@media screen and (max-width: 1500px) and (min-width: 993px) {
+    .text_img_big {
+        max-height: 700px;
+    }
+}
 
 @media screen and (max-width:1500px) {
     .text_img_big {
@@ -5092,23 +5101,38 @@ svg {
     }
 }
 
-.line_2 {
+.section_line_2 {
     position: relative;
     overflow: hidden;
 
-    &:after {
-        z-index: -1;
-        content: '';
-        display: block;
-        position: absolute;
+    .img {
+        position: relative;
+    }
+
+    .line_2 {
         top: -10%;
-        right: 0;
-        width: 100%;
-        height: 110%;
-        background-repeat: no-repeat;
-        background-position: top right;
-        background-size: contain;
-        background-image: url(../imgs/line/line_2.svg)
+        right: -87%;
+        width: 164%;
+    }
+}
+
+@media screen and (max-width:1500px) {
+    .section_line_2 .line_2 {
+        top: -15%;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .section_line_2 .line_2 {
+        top: -13%;
+        right: -53%;
+        width: 119%;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .section_line_2 .line_2 {
+        right: -19%;
     }
 }
 
@@ -5262,53 +5286,543 @@ svg {
 
 .text_img_line {
     position: relative;
+}
 
-    .line {
-        display: block;
-        position: absolute;
-        width: auto;
-        height: auto;
-        z-index: -1;
+.line {
+    display: block;
+    position: absolute;
+    width: auto;
+    height: auto;
+    z-index: -1;
+
+    &.aos-animate {
+        [class^="svg-elem-"] {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    [class^="svg-elem-"] {
+        -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+        transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
     }
 }
 
-.text_img_line_left {
-    .line {
-        top: 23px;
-        left: -38px;
+.line_1,
+.line_2,
+.line_3,
+.line_5,
+.line_6,
+.line_7 {
+
+    .svg-elem-1,
+    .svg-elem-2,
+    .svg-elem-3,
+    .svg-elem-4,
+    .svg-elem-5 {
+        transition-delay: 0;
+    }
+
+    .svg-elem-6,
+    .svg-elem-7,
+    .svg-elem-8,
+    .svg-elem-9,
+    .svg-elem-10 {
+        transition-delay: 0.7s;
     }
 }
 
-.text_img_line_right {
-    .line {
-        top: 276px;
-        right: -38px;
+.line_1 {
+    .svg-elem-1 {
+        stroke-dashoffset: 1072.418701171875px;
+        stroke-dasharray: 1072.418701171875px;
+    }
+
+    .svg-elem-2 {
+        stroke-dashoffset: 1150.60888671875px;
+        stroke-dasharray: 1150.60888671875px;
+    }
+
+    .svg-elem-3 {
+        stroke-dashoffset: 1228.77001953125px;
+        stroke-dasharray: 1228.77001953125px;
+    }
+
+    .svg-elem-4 {
+        stroke-dashoffset: 1306.9107666015625px;
+        stroke-dasharray: 1306.9107666015625px;
+    }
+
+    .svg-elem-5 {
+        stroke-dashoffset: 1384.97314453125px;
+        stroke-dasharray: 1384.97314453125px;
+    }
+
+    .svg-elem-6 {
+        stroke-dashoffset: 1072.4169921875px;
+        stroke-dasharray: 1072.4169921875px;
+    }
+
+    .svg-elem-7 {
+        stroke-dashoffset: 1150.606689453125px;
+        stroke-dasharray: 1150.606689453125px;
+    }
+
+    .svg-elem-8 {
+        stroke-dashoffset: 1228.719482421875px;
+        stroke-dasharray: 1228.719482421875px;
+    }
+
+    .svg-elem-9 {
+        stroke-dashoffset: 1306.91015625px;
+        stroke-dasharray: 1306.91015625px;
+    }
+
+    .svg-elem-10 {
+        stroke-dashoffset: 1384.973388671875px;
+        stroke-dasharray: 1384.973388671875px;
     }
 }
 
-.text_img_line_1 {
-    .line {
-        top: 297px;
+.line_2 {
+
+    .svg-elem-1 {
+        stroke-dashoffset: 646.3541259765625px;
+        stroke-dasharray: 646.3541259765625px;
+    }
+
+    .svg-elem-2 {
+        stroke-dashoffset: 647.8048706054688px;
+        stroke-dasharray: 647.8048706054688px;
+    }
+
+    .svg-elem-3 {
+        stroke-dashoffset: 644.079345703125px;
+        stroke-dasharray: 644.079345703125px;
+    }
+
+    .svg-elem-4 {
+        stroke-dashoffset: 645.5084228515625px;
+        stroke-dasharray: 645.5084228515625px;
+    }
+
+    .svg-elem-5 {
+        stroke-dashoffset: 647.521484375px;
+        stroke-dasharray: 647.521484375px;
+    }
+
+    .svg-elem-6 {
+        stroke-dashoffset: 646.354248046875px;
+        stroke-dasharray: 646.354248046875px;
+    }
+
+    .svg-elem-7 {
+        stroke-dashoffset: 647.8052978515625px;
+        stroke-dasharray: 647.8052978515625px;
+    }
+
+    .svg-elem-8 {
+        stroke-dashoffset: 644.0792846679688px;
+        stroke-dasharray: 644.0792846679688px;
+    }
+
+    .svg-elem-9 {
+        stroke-dashoffset: 645.5081176757812px;
+        stroke-dasharray: 645.5081176757812px;
+    }
+
+    .svg-elem-10 {
+        stroke-dashoffset: 647.5222778320312px;
+        stroke-dasharray: 647.5222778320312px;
     }
 }
 
-.text_img_line_2 {
-    .line {
-        top: 113px;
+.line_3 {
+
+    .svg-elem-1 {
+        stroke-dashoffset: 952.8184814453125px;
+        stroke-dasharray: 952.8184814453125px;
+    }
+
+    .svg-elem-2 {
+        stroke-dashoffset: 1029.541259765625px;
+        stroke-dasharray: 1029.541259765625px;
+    }
+
+    .svg-elem-3 {
+        stroke-dashoffset: 1106.1380615234375px;
+        stroke-dasharray: 1106.1380615234375px;
+    }
+
+    .svg-elem-4 {
+        stroke-dashoffset: 1182.911376953125px;
+        stroke-dasharray: 1182.911376953125px;
+    }
+
+    .svg-elem-5 {
+        stroke-dashoffset: 1259.509765625px;
+        stroke-dasharray: 1259.509765625px;
+    }
+
+    .svg-elem-6 {
+        stroke-dashoffset: 1317.7857666015625px;
+        stroke-dasharray: 1317.7857666015625px;
+    }
+
+    .svg-elem-7 {
+        stroke-dashoffset: 1394.43896484375px;
+        stroke-dasharray: 1394.43896484375px;
+    }
+
+    .svg-elem-8 {
+        stroke-dashoffset: 1471.176513671875px;
+        stroke-dasharray: 1471.176513671875px;
+    }
+
+    .svg-elem-9 {
+        stroke-dashoffset: 1547.8446044921875px;
+        stroke-dasharray: 1547.8446044921875px;
+    }
+
+    .svg-elem-10 {
+        stroke-dashoffset: 1624.504638671875px;
+        stroke-dasharray: 1624.504638671875px;
+    }
+
+}
+
+.line_4 {
+    .svg-elem-1 {
+        stroke-dashoffset: 535.4669189453125px;
+        stroke-dasharray: 535.4669189453125px;
+    }
+
+    .svg-elem-2 {
+        stroke-dashoffset: 534.2630615234375px;
+        stroke-dasharray: 534.2630615234375px;
+    }
+
+    .svg-elem-3 {
+        stroke-dashoffset: 534.6138305664062px;
+        stroke-dasharray: 534.6138305664062px;
+    }
+
+    .svg-elem-4 {
+        stroke-dashoffset: 534.7559814453125px;
+        stroke-dasharray: 534.7559814453125px;
+    }
+
+    .svg-elem-5 {
+        stroke-dashoffset: 535.466064453125px;
+        stroke-dasharray: 535.466064453125px;
+    }
+
+    .svg-elem-6 {
+        stroke-dashoffset: 534.2630615234375px;
+        stroke-dasharray: 534.2630615234375px;
+    }
+
+    .svg-elem-7 {
+        stroke-dashoffset: 534.6129760742188px;
+        stroke-dasharray: 534.6129760742188px;
+    }
+
+    .svg-elem-8 {
+        stroke-dashoffset: 534.7559204101562px;
+        stroke-dasharray: 534.7559204101562px;
+    }
+
+    .svg-elem-9 {
+        stroke-dashoffset: 555.6066284179688px;
+        stroke-dasharray: 555.6066284179688px;
+        transition-delay: 0.7s;
+    }
+
+    .svg-elem-10 {
+        stroke-dashoffset: 555.6066284179688px;
+        stroke-dasharray: 555.6066284179688px;
+        transition-delay: 0.7s;
+    }
+
+    .svg-elem-11 {
+        stroke-dashoffset: 555.6066284179688px;
+        stroke-dasharray: 555.6066284179688px;
+        transition-delay: 0.7s;
+    }
+
+    .svg-elem-12 {
+        stroke-dashoffset: 555.6066284179688px;
+        stroke-dasharray: 555.6066284179688px;
+        transition-delay: 0.7s;
+    }
+
+    .svg-elem-13 {
+        stroke-dashoffset: 555.6066284179688px;
+        stroke-dasharray: 555.6066284179688px;
+        transition-delay: 0.7s;
+    }
+
+    .svg-elem-14 {
+        stroke-dashoffset: 555.6066284179688px;
+        stroke-dasharray: 555.6066284179688px;
+        transition-delay: 0.7s;
+    }
+
+    .svg-elem-15 {
+        stroke-dashoffset: 555.6066284179688px;
+        stroke-dasharray: 555.6066284179688px;
+        transition-delay: 0.7s;
+    }
+
+    .svg-elem-16 {
+        stroke-dashoffset: 555.6066284179688px;
+        stroke-dasharray: 555.6066284179688px;
+        transition-delay: 0.7s;
+    }
+
+}
+
+.line_5 {
+    .svg-elem-1 {
+        stroke-dashoffset: 2651.926025390625px;
+        stroke-dasharray: 2651.926025390625px;
+    }
+
+    .svg-elem-2 {
+        stroke-dashoffset: 2947.86572265625px;
+        stroke-dasharray: 2947.86572265625px;
+    }
+
+    .svg-elem-3 {
+        stroke-dashoffset: 3243.699951171875px;
+        stroke-dasharray: 3243.699951171875px;
+    }
+
+    .svg-elem-4 {
+        stroke-dashoffset: 3539.658935546875px;
+        stroke-dasharray: 3539.658935546875px;
+    }
+
+    .svg-elem-5 {
+        stroke-dashoffset: 3835.66259765625px;
+        stroke-dasharray: 3835.66259765625px;
     }
 }
 
-.text_img_line_3 {
-    .line {
-        top: 80px;
+.line_6 {
+    .svg-elem-1 {
+        stroke-dashoffset: 857.6968383789062px;
+        stroke-dasharray: 857.6968383789062px;
+    }
+
+    .svg-elem-2 {
+        stroke-dashoffset: 920.200439453125px;
+        stroke-dasharray: 920.200439453125px;
+    }
+
+    .svg-elem-3 {
+        stroke-dashoffset: 982.6845092773438px;
+        stroke-dasharray: 982.6845092773438px;
+    }
+
+    .svg-elem-4 {
+        stroke-dashoffset: 1045.150146484375px;
+        stroke-dasharray: 1045.150146484375px;
+    }
+
+    .svg-elem-5 {
+        stroke-dashoffset: 1107.5535888671875px;
+        stroke-dasharray: 1107.5535888671875px;
+    }
+
+    .svg-elem-6 {
+        stroke-dashoffset: 857.696044921875px;
+        stroke-dasharray: 857.696044921875px;
+    }
+
+    .svg-elem-7 {
+        stroke-dashoffset: 920.2010498046875px;
+        stroke-dasharray: 920.2010498046875px;
+    }
+
+    .svg-elem-8 {
+        stroke-dashoffset: 982.6450805664062px;
+        stroke-dasharray: 982.6450805664062px;
+    }
+
+    .svg-elem-9 {
+        stroke-dashoffset: 1045.15087890625px;
+        stroke-dasharray: 1045.15087890625px;
+    }
+
+    .svg-elem-10 {
+        stroke-dashoffset: 1107.5531005859375px;
+        stroke-dasharray: 1107.5531005859375px;
     }
 }
 
-.text_img_line_4 {
-    .line {
-        width: 49%;
+.line_7 {
+    .svg-elem-1 {
+        stroke-dashoffset: 947.9205322265625px;
+        stroke-dasharray: 947.9205322265625px;
+    }
+
+    .svg-elem-2 {
+        stroke-dashoffset: 1037.2294921875px;
+        stroke-dasharray: 1037.2294921875px;
+    }
+
+    .svg-elem-3 {
+        stroke-dashoffset: 1126.479736328125px;
+        stroke-dasharray: 1126.479736328125px;
+    }
+
+    .svg-elem-4 {
+        stroke-dashoffset: 1215.7086181640625px;
+        stroke-dasharray: 1215.7086181640625px;
+    }
+
+    .svg-elem-5 {
+        stroke-dashoffset: 1304.9586181640625px;
+        stroke-dasharray: 1304.9586181640625px;
+    }
+
+    .svg-elem-6 {
+        stroke-dashoffset: 986.037109375px;
+        stroke-dasharray: 986.037109375px;
+    }
+
+    .svg-elem-7 {
+        stroke-dashoffset: 986.03759765625px;
+        stroke-dasharray: 986.03759765625px;
+    }
+
+    .svg-elem-8 {
+        stroke-dashoffset: 986.0366821289062px;
+        stroke-dasharray: 986.0366821289062px;
+    }
+
+    .svg-elem-9 {
+        stroke-dashoffset: 986.0366821289062px;
+        stroke-dasharray: 986.0366821289062px;
+    }
+
+    .svg-elem-10 {
+        stroke-dashoffset: 986.0360107421875px;
+        stroke-dasharray: 986.0360107421875px;
+    }
+
+}
+
+.text_img_line_1 .line {
+    top: 35%;
+    left: -3%;
+    width: 31.5%;
+}
+
+.text_img_line_2 .line {
+    width: 50%;
+    top: 24%;
+    left: -9%;
+}
+
+.text_img_line_3 .line {
+    top: 23%;
+    left: -2%;
+    width: 31%;
+}
+
+.text_img_line_4 .line {
+    width: 46.5%;
+    right: -8%;
+    top: 56%;
+}
+
+.text_img_line_5 {
+    .line_5 {
+        top: 60%;
+        width: 52%;
+        right: -2%;
+    }
+
+    .line_6 {
+        display: none;
+        top: -20%;
+        right: -34%;
+        width: 66%;
     }
 }
+
+.text_img_line_6 .line_7 {
+    width: 56%;
+    left: -13%;
+    top: 10%;
+}
+
+
+@media screen and (max-width: 1500px) and (min-width: 993px) {
+    .text_img_line_2 {
+        .line_2 {
+            width: 54%;
+            top: 20%;
+
+        }
+    }
+
+    .text_img_line_4 {
+        .line_2 {
+            width: 50%;
+            right: -10%;
+            top: 51%;
+
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+
+    .text_img_line_1,
+    .text_img_line_3,
+    .text_img_line_4,
+    .text_img_line_6 {
+        .line {
+            display: none;
+        }
+    }
+
+    .text_img_line_5 {
+        .line_5 {
+            display: none;
+        }
+
+        .line_6 {
+            display: block;
+        }
+    }
+
+
+    .text_img_line_2 {
+        .line {
+            width: 100%;
+            top: -85%;
+            left: initial;
+            right: -45%;
+
+        }
+    }
+}
+
+@media screen and (max-width:760px) {
+
+    .text_img_line_2,
+    .text_img_line_5 {
+        .line {
+            display: none;
+        }
+    }
+}
+
+
+
 
 .photo_small {
     position: relative;
@@ -6076,11 +6590,6 @@ svg {
 
     .offer_block {
         padding: 55px 100px;
-    }
-
-    .text_img_line_4 .line {
-        width: 45%;
-        top: 150px;
     }
 
     .photo_block_4 .content {
