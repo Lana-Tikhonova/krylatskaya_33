@@ -304,9 +304,13 @@ $(document).ready(function () {
         infobar: false,
         buttons: false,
         loop: true,
-        animationEffect: "fade",
-        // animationDuration: 1000,
-        transitionDuration: 1000,
+        animationEffect: "zoom", // Анимация при открытии
+        animationDuration: 600,
+        transitionDuration: 600,
+        beforeClose: function (instance, current) {
+            instance.current.opts.animationEffect = "none"; // Убираем анимацию закрытия
+            instance.current.opts.animationDuration = 0;
+        },
         baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1"><div class="fancybox-bg"></div><div class="fancybox-inner"><div class="fancybox-stage"><button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.999998 22.631L22.1306 1.5M0.999998 1.50061L22.1306 22.6313" stroke="#63483F"/></svg></button><div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div><div class="fancybox-navigation">{{arrows}}</div></div></div></div>',
         btnTpl: {
             arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}"><svg><use xlink:href="imgs/sprite.symbol.svg#arrow_right"></use></svg></button>',
@@ -358,7 +362,7 @@ $(document).ready(function () {
         easing: 'ease-in-out',
         delay: 100,
         once: true,
-        duration: 400,
+        duration: 700,
         offset: offset,
     });
 
