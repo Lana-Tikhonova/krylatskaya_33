@@ -61,7 +61,7 @@ body {
   background: #f8f0ec;
 }
 body.brown_bg {
-  background: #63483f;
+  background: #63483F;
   color: #f8f0ec;
 }
 body.brown_bg a {
@@ -195,7 +195,7 @@ body {
   font: normal normal 16px/18px "TTFirsNeue", Arial, Helvetica, sans-serif;
   font-size: 23px;
   line-height: 130%;
-  color: #63483f;
+  color: #63483F;
   margin: 0;
   padding: 0;
 }
@@ -254,7 +254,7 @@ p:last-child {
 a {
   cursor: pointer;
   text-decoration: none;
-  color: #63483f;
+  color: #63483F;
   outline: none;
   display: inline-block;
   transition: all 0.3s ease;
@@ -354,8 +354,8 @@ ul {
 }
 .btn:hover {
   background: #f8f0ec;
-  color: #63483f;
-  box-shadow: #63483f 0px 0px 0px 1px;
+  color: #63483F;
+  box-shadow: #63483F 0px 0px 0px 1px;
 }
 .btn.-not_border:hover {
   box-shadow: none;
@@ -363,7 +363,7 @@ ul {
 
 .btn_white {
   background: #f8f0ec;
-  color: #63483f;
+  color: #63483F;
 }
 
 .btn_icon {
@@ -375,7 +375,7 @@ ul {
   fill: #f8f0ec;
 }
 .btn_icon:hover svg {
-  fill: #63483f;
+  fill: #63483F;
 }
 
 svg {
@@ -383,13 +383,13 @@ svg {
   flex: 0 0 auto;
 }
 svg.stroke_brown {
-  stroke: #63483f;
+  stroke: #63483F;
 }
 svg.stroke_white {
   stroke: #fff;
 }
 svg.fill_brown {
-  fill: #63483f;
+  fill: #63483F;
 }
 svg.fill_creamy {
   fill: #f8f0ec;
@@ -444,7 +444,7 @@ svg.stroke_none {
   border-radius: 0;
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: #63483f;
+  background: #63483F;
 }
 
 .swiper_arrows {
@@ -470,7 +470,7 @@ svg.stroke_none {
 .swiper-button-prev svg {
   width: 16.71px;
   height: 29.19px;
-  fill: #63483f;
+  fill: #63483F;
   transition: all 0.3s ease;
 }
 .swiper-button-next:not(.swiper-button-disabled):hover,
@@ -689,10 +689,10 @@ svg.stroke_none {
   flex-direction: column;
 }
 .header.header_dark .header_block_not_fix .favorites_btn {
-  box-shadow: #63483f 0px 0px 0px 1px;
+  box-shadow: #63483F 0px 0px 0px 1px;
 }
 .header.header_dark .header_block_not_fix .favorites_btn svg {
-  fill: #63483f;
+  fill: #63483F;
 }
 .header.header_dark .header_block_not_fix .favorites_btn:hover {
   box-shadow: none;
@@ -701,13 +701,13 @@ svg.stroke_none {
   fill: #f8f0ec;
 }
 .header.header_dark .header_block_not_fix .header_phone {
-  color: #63483f;
+  color: #63483F;
 }
 .header.header_dark .header_block_not_fix .btn.-not_border:hover {
-  box-shadow: #63483f 0px 0px 0px 1px;
+  box-shadow: #63483F 0px 0px 0px 1px;
 }
 .header.header_dark .header_block_not_fix .menu_btn span:after, .header.header_dark .header_block_not_fix .menu_btn span:before {
-  background: #63483f;
+  background: #63483F;
 }
 
 .logo {
@@ -753,16 +753,16 @@ svg.stroke_none {
   transform: translateY(0%);
 }
 .header_block_fix .favorites_btn {
-  box-shadow: #63483f 0px 0px 0px 1px;
+  box-shadow: #63483F 0px 0px 0px 1px;
 }
 .header_block_fix .favorites_btn:hover svg {
   fill: #f8f0ec;
 }
 .header_block_fix .header_phone {
-  color: #63483f;
+  color: #63483F;
 }
 .header_block_fix .menu_btn span:after, .header_block_fix .menu_btn span:before {
-  background: #63483f;
+  background: #63483F;
 }
 
 .head {
@@ -838,7 +838,7 @@ svg.stroke_none {
   padding: 24px 19px;
   width: 240px;
   min-height: 230px;
-  background: #63483f;
+  background: #63483F;
   font-size: 16px;
   color: #F8F0EC;
   text-transform: uppercase;
@@ -903,7 +903,7 @@ svg.stroke_none {
   display: flex;
   justify-content: space-between;
   padding: 80px;
-  background: #63483f;
+  background: #63483F;
   position: fixed;
   top: 0;
   left: 0;
@@ -1292,7 +1292,7 @@ svg.stroke_none {
   padding: 4.5px;
   background: #f8f0ec;
   border-radius: 48.309px;
-  color: #63483f;
+  color: #63483F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1342,7 +1342,7 @@ svg.stroke_none {
 }
 .tippy-box[data-theme~=choose_courtyard_modal] {
   background-color: #f8f0ec;
-  color: #63483f;
+  color: #63483F;
   border-radius: 0;
 }
 .tippy-box[data-theme~=choose_courtyard_modal] .tippy-content {
@@ -1360,7 +1360,7 @@ svg.stroke_none {
   border-radius: var(--border_radius);
   padding: 35px 35px 60px;
   background: #f8f0ec;
-  color: #63483f;
+  color: #63483F;
   scrollbar-width: none;
   position: relative;
 }
@@ -1598,7 +1598,7 @@ svg.stroke_none {
 }
 .static_map .right {
   width: 520px;
-  background: #63483f;
+  background: #63483F;
   color: #f8f0ec;
 }
 
@@ -2070,7 +2070,7 @@ svg.stroke_none {
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
-  color: #63483f;
+  color: #63483F;
   opacity: 1;
   transition: opacity 0.25s ease 0s, visibility 0s ease 0s;
   visibility: visible;
@@ -2105,7 +2105,7 @@ svg.stroke_none {
 .fancybox-navigation .fancybox-button svg {
   width: 16.71px;
   height: 29.19px;
-  fill: #63483f;
+  fill: #63483F;
   transition: all 0.3s ease;
 }
 .fancybox-navigation .fancybox-button:hover {
@@ -2124,7 +2124,7 @@ svg.stroke_none {
 
 .fancybox-button--close {
   padding: 0;
-  stroke: #63483f;
+  stroke: #63483F;
   top: 35px;
   right: 35px;
   position: absolute;
@@ -3355,7 +3355,7 @@ svg.stroke_none {
 }
 .tippy-box[data-theme~=creame] {
   background-color: #f8f0ec;
-  color: #63483f;
+  color: #63483F;
   border-radius: var(--border_radius);
 }
 .tippy-box[data-theme~=creame] .tippy-content {
@@ -3365,7 +3365,7 @@ svg.stroke_none {
 .tooltip_block {
   width: 462px;
   background: #f8f0ec;
-  color: #63483f;
+  color: #63483F;
   padding: 30px 25px 40px;
   border-radius: var(--border_radius);
 }
@@ -3483,7 +3483,7 @@ svg.stroke_none {
   width: 90%;
 }
 .map_filters button {
-  color: #63483f;
+  color: #63483F;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -3646,7 +3646,7 @@ svg.stroke_none {
     width: 20px;
     height: 20px;
     transform: rotate(90deg);
-    fill: #63483f;
+    fill: #63483F;
   }
   .map_filters_title.active svg {
     transform: rotate(270deg);
@@ -4091,7 +4091,7 @@ svg.stroke_none {
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  border: 1px solid #63483f;
+  border: 1px solid #63483F;
   width: 88px;
   height: 88px;
 }
@@ -4355,14 +4355,14 @@ svg.stroke_none {
   border: none;
   border-bottom: 1px solid #baada8;
   background: transparent;
-  color: #63483f;
+  color: #63483F;
   font-family: "TTFirsNeue";
 }
 .form_input::-moz-placeholder {
-  color: #63483f;
+  color: #63483F;
 }
 .form_input::placeholder {
-  color: #63483f;
+  color: #63483F;
 }
 
 .form_textarea {
@@ -5777,7 +5777,7 @@ svg.stroke_none {
 }
 .section_planning {
   background: #f8f0ec;
-  color: #63483f;
+  color: #63483F;
 }
 .section_planning .text_first {
   font-size: 37.473px;
@@ -6119,7 +6119,7 @@ span.btns_item:hover {
   padding-right: 51px;
 }
 .btns_item.btn_white {
-  box-shadow: #63483f 0px 0px 0px 1px;
+  box-shadow: #63483F 0px 0px 0px 1px;
 }
 
 .media_list {
@@ -6274,10 +6274,15 @@ span.btns_item:hover {
     padding-right: 20px;
   }
 }
+.media_progress {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #63483F;
+}
+
 .media_progress_control_wrapper {
   border-radius: 48.309px;
   background: #FFF;
-  padding: 7px 40px;
+  padding: 4px 17px 7px 40px;
   margin-bottom: 81px;
 }
 
@@ -6336,6 +6341,9 @@ span.btns_item:hover {
 .media_progress_list_wrapper {
   display: none;
 }
+.media_progress_list_wrapper .btn {
+  margin-top: 72px;
+}
 
 .media_progress_list .text {
   margin-top: 30px;
@@ -6355,10 +6363,47 @@ span.btns_item:hover {
     flex-wrap: wrap;
     margin-left: -10px;
     margin-right: -10px;
+    row-gap: 72px;
   }
   .media_progress_list .swiper-wrapper .swiper-slide {
     width: 25%;
     padding-left: 10px;
     padding-right: 10px;
   }
+}
+.camera_block {
+  margin-top: 98px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #63483F;
+}
+.camera_block .tabs_nav_item {
+  min-width: 119px;
+  text-align: center;
+}
+.camera_block .tabs_nav_item.active {
+  background: linear-gradient(90deg, #693528 0%, #c37a59 70%, #c47f5a 100%);
+  color: #f8f0ec;
+}
+
+.camera_block_img {
+  width: 100%;
+  display: flex;
+}
+.camera_block_img img {
+  width: 100%;
+}
+
+.camera_block_info {
+  display: flex;
+  align-items: center;
+  margin-top: 75px;
+}
+.camera_block_info .img {
+  max-width: 337px;
+  width: 100%;
+  display: flex;
+}
+.camera_block_info .text {
+  width: calc(100% - 337px);
+  padding-left: 7%;
 }

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/common.css?13" />
+    <link rel="stylesheet" href="css/common.css?14" />
 </head>
 
 <body class=''>
@@ -197,7 +197,7 @@
                     <span class='btns_item btn'>ход строительства</span>
                 </div>
                 <div class="media_progress">
-                    <div class='media_progress_control_wrapper'>
+                    <div class='media_progress_control_wrapper' data-aos="fade">
                         <div class='media_progress_control'>
                             <div class='year'>
                                 <!-- при клике на год скрываются все media_progress_list_wrapper, получается первый месяц внутри активного года и показывается егоЮ По умолчанию показывается последний год и последний месяц в этом году  -->
@@ -269,7 +269,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='media_progress_content'>
+                    <div class='media_progress_content' data-aos="fade">
                         <div class='media_progress_list_wrapper' data-year="2023" data-month="Февр">
                             <!-- тут галерея и нужно для каждого месяца прописать свой data-fancybox, можно например media_progress_2023_02 (год и месяц), но это без разницы, главное чтобы в одном media_progress_list были одинаковые data-fancybox у .item -->
                             <div class='media_progress_list media_slider swiper'>
@@ -288,9 +288,8 @@
                                             <div class="text">Август 2023 — завершены фасадные работы</div>
                                         </a>
                                     </div>
-
                                 </div>
-
+                                <button class='btn'>загрузить больше</button>
                             </div>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2024" data-month="Янв">
@@ -332,6 +331,7 @@
                                 </div>
 
                             </div>
+                            <button class='btn'>загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2024" data-month="Февр">
                             <div class='media_progress_list media_slider swiper'>
@@ -351,8 +351,8 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
+                            <button class='btn'>загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2024" data-month="Март">
                             <div class='media_progress_list media_slider swiper'>
@@ -371,8 +371,8 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
+                            <button class='btn'>загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2024" data-month="Апр">
                             <div class='media_progress_list media_slider swiper'>
@@ -399,8 +399,8 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
+                            <button class='btn'>загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2025" data-month="Февр">
                             <div class='media_progress_list media_slider swiper'>
@@ -441,7 +441,39 @@
                                 </div>
 
                             </div>
+                            <button class='btn'>загрузить больше</button>
                         </div>
+                    </div>
+                </div>
+
+                <div class='camera_block'>
+                    <h2 data-aos="fade">Online камеры</h2>
+                    <div class='tabs_block'>
+                        <div class="tabs_nav tags" data-aos="fade">
+                            <a class="tabs_nav_item tag active" href="#camera_tab-1">1</a>
+                            <a class="tabs_nav_item tag" href="#camera_tab-2">2</a>
+                            <a class="tabs_nav_item tag" href="#camera_tab-3">3</a>
+                            <a class="tabs_nav_item tag" href="#camera_tab-4">4</a>
+                        </div>
+                        <div class="tabs_content" data-aos="fade">
+                            <div class="tabs_content_item" id="camera_tab-1">
+                                <div class='camera_block_img'><img src="imgs/img_120.jpg" alt=""></div>
+                            </div>
+                            <div class="tabs_content_item" id="camera_tab-2">
+                                <div class='camera_block_img'><img src="imgs/img_93.jpg" alt=""></div>
+                            </div>
+                            <div class="tabs_content_item" id="camera_tab-3">
+                                <div class='camera_block_img'> <img src="imgs/img_94.jpg" alt=""></div>
+                            </div>
+                            <div class="tabs_content_item" id="camera_tab-4">
+                                <div class='camera_block_img'><img src="imgs/img_95.jpg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='camera_block_info' data-aos="fade">
+                        <div class="img"><img src="imgs/img_121.jpg" alt=""></div>
+                        <h2 class='text'>На данный момент выполнено: 75% фасадных работ, 60% внутренних отделочных работ
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -456,8 +488,7 @@
                     </div>
                     <div class="right" data-aos="fade">
                         <div class="text">
-                            Следите за прогрессом проекта в режиме реального
-                            времени
+                            Следите за новостями и ходом<br> строительства в режиме реального времени
                         </div>
                         <a href="#" class="btn">Подписаться на Telegram-канал</a>
                     </div>
@@ -650,7 +681,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?11"></script>
+    <script src="js/common.js?12"></script>
 </body>
 
 </html>

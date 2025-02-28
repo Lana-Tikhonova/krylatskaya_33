@@ -40,7 +40,7 @@
     src: url(../fonts/TTFirsNeue-Bold.woff) format('woff');
 }
 
-$color_brown: #63483f;
+$color_brown: #63483F;
 $color_creamy: #f8f0ec;
 $color_grey: #d1c6c2;
 $color_green: #203a25;
@@ -8090,11 +8090,15 @@ span {
     }
 }
 
+.media_progress {
+    padding-bottom: 50px;
+    border-bottom: 1px solid $color_brown;
+}
 
 .media_progress_control_wrapper {
     border-radius: 48.309px;
     background: #FFF;
-    padding: 7px 40px;
+    padding: 4px 17px 7px 40px;
     margin-bottom: 81px;
 
 }
@@ -8152,7 +8156,7 @@ span {
 
             &.active {
                 color: #634840;
-                border-bottom-color: #63483F;
+                border-bottom-color: $color_brown;
 
             }
         }
@@ -8161,12 +8165,16 @@ span {
 
 .media_progress_list_wrapper {
     display: none;
+
+    .btn {
+        margin-top: 72px;
+    }
 }
 
 .media_progress_list {
     .text {
         margin-top: 30px;
-        color: #63483F;
+        color: $color_brown;
         font-family: 'TTFirsNeue';
         line-height: 33px;
         max-width: 332px;
@@ -8187,6 +8195,7 @@ span {
             flex-wrap: wrap;
             margin-left: -10px;
             margin-right: -10px;
+            row-gap: 72px;
 
             .swiper-slide {
                 width: 25%;
@@ -8194,5 +8203,47 @@ span {
                 padding-right: 10px;
             }
         }
+    }
+}
+
+.camera_block {
+    margin-top: 98px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid $color_brown;
+
+    .tabs_nav_item {
+        min-width: 119px;
+        text-align: center;
+
+        &.active {
+            background: $color_gradient;
+            color: $color_creamy;
+        }
+    }
+}
+
+.camera_block_img {
+    width: 100%;
+    display: flex;
+
+    img {
+        width: 100%;
+    }
+}
+
+.camera_block_info {
+    display: flex;
+    align-items: center;
+    margin-top: 75px;
+
+    .img {
+        max-width: 337px;
+        width: 100%;
+        display: flex;
+    }
+
+    .text {
+        width: calc(100% - 337px);
+        padding-left: 7%;
     }
 }

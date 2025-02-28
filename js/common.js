@@ -514,6 +514,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (swiperInstance && swiperInstance.swiper) {
                         swiperInstance.swiper.update();
                     }
+                    // Пересчитываем позиции элементов для AOS.js
+                    AOS.refresh();
                 }
 
             });
@@ -804,6 +806,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (targetWrapper) {
             targetWrapper.style.display = 'block';
         }
+        // Пересчитываем позиции элементов для AOS.js
+        AOS.refresh();
     }
 
 
