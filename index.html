@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/common.css?12" />
+    <link rel="stylesheet" href="css/common.css?13" />
 
     <!-- подключать на страницах где есть карта, вставить свой ключ  -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=4c7e2233-a854-4da5-9483-7a55bd41dfc3&lang=ru_RU"
@@ -84,14 +84,14 @@
                     </video>
                 </div>
                 <div class="head_content" data-aos="fade" data-aos-offset="0">
-                    <div class="tags">
-                        <div class="tag">
+                    <div class="head_btns">
+                        <div class="item">
                             Цена от 14.2 млн ₽
                         </div>
-                        <div class="tag">
+                        <div class="item">
                             Стоимость от 475 000 ₽/м²
                         </div>
-                        <div class="tag">
+                        <div class="item">
                             Площадь от 30 м²
                         </div>
                     </div>
@@ -206,11 +206,11 @@
     <main>
         <section class="section section_two">
             <div class="container">
-                <div class="home_blocks_two">
+                <div class="blocks_two blocks_two_1">
                     <div class="left">
                         <h3 data-aos="fade" class='title_small'>
                             Клубный квартал
-                            &laquo;Kрылатская&nbsp;33&raquo;&nbsp;&mdash;
+                            &laquo;Kрылатская&nbsp;33&raquo;&nbsp;&mdash;<br>
                             новая точка притяжения <br />
                             в&nbsp;одном из&nbsp;самых престижных районов
                             Запада Москвы
@@ -693,7 +693,6 @@
                 <a href="#" class="btn choose_btn_mobile" data-aos="fade">Подбор по параметрам</a>
             </div>
         </section>
-
         <section class="section gallery_section">
             <div class="container">
                 <h2 data-aos="fade">
@@ -1629,8 +1628,10 @@
                 <div class="news_list">
                     <div class="news_col">
                         <a href="#" class="news_item" data-aos="fade">
-                            <div class="img">
-                                <img src="imgs/img_8.jpg" alt="" />
+                            <div class='img_wrapper'>
+                                <div class="img">
+                                    <img src="imgs/img_8.jpg" alt="" />
+                                </div>
                             </div>
                             <div class="text">
                                 Уникальные квартиры в небоскребах с
@@ -1642,8 +1643,10 @@
                     </div>
                     <div class="news_col">
                         <a href="#" class="news_item" data-aos="fade">
-                            <div class="img">
-                                <img src="imgs/img_9.jpg" alt="" />
+                            <div class='img_wrapper'>
+                                <div class="img">
+                                    <img src="imgs/img_9.jpg" alt="" />
+                                </div>
                             </div>
                             <div class="text">
                                 Публикация “Уникальные квартиры в
@@ -1656,8 +1659,10 @@
                     </div>
                     <div class="news_col">
                         <a href="#" class="news_item" data-aos="fade">
-                            <div class="img">
-                                <img src="imgs/img_10.jpg" alt="" />
+                            <div class='img_wrapper'>
+                                <div class="img">
+                                    <img src="imgs/img_10.jpg" alt="" />
+                                </div>
                             </div>
                             <div class="text">
                                 Уникальные квартиры в небоскребах с
@@ -1700,7 +1705,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="info_blocks">
+                <div class="info_blocks info_blocks_two">
                     <div class="left">
                         <h2 data-aos="fade">
                             Ход<br>строительства
@@ -1742,7 +1747,7 @@
                     </div>
                 </div>
                 <div class="slider_team_wrapper">
-                    <div class="swiper slider_team">
+                    <div class="swiper slider_team team_block">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="item" data-aos="fade">
@@ -1929,7 +1934,7 @@
         </div>
     </footer>
 
-    <div class="modal" data-modal="info_modal">
+    <div class="modal modal_tabs" data-modal="info_modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <button type="button" class="close" data-modal-close="">

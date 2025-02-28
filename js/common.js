@@ -234,25 +234,14 @@ $(document).ready(function () {
     // высота секции не меньше чем высота ее контента
     let staticMap = $('.static_map');
     let staticMapMap = $('#map');
-    // let staticMapContent = $('.map_section .static_map_block_wrapper');
     let staticMapTitle = $('.map_section_title');
 
     if (staticMap.length) {
         function adjustMapHeight() {
             if ($(window).width() > 992) {
-                // let staticMapHeight = staticMapContent.outerHeight();
                 let staticMaptitleHeight = staticMapTitle.outerHeight();
-                // staticMap.css('min-height', staticMapHeight);
-                // staticMap.css('height', `calc(100svh - ${staticMaptitleHeight}px)`);
-                // staticMapMap.css('min-height', staticMapHeight);
                 staticMapMap.css('height', `calc(100svh - ${staticMaptitleHeight}px)`);
             }
-            // else {
-            //     staticMap.css('max-height', 'initial');
-            //     staticMap.css('min-height', 'initial');
-            //     staticMapMap.css('max-height', 'initial');
-            //     staticMapMap.css('min-height', 'initial');
-            // }
 
         }
 
@@ -366,35 +355,91 @@ $(document).ready(function () {
         offset: offset,
     });
 
+    // медиа
 
-    // let staticMapImg = $('.static_map_img');
-    // if (staticMapImg.length) {
-    //     function setMapImgWidth(targetSelector) {
-    //         let staticMapImg = document.querySelector('.static_map .left');
-    //         let targetElement = document.querySelector(targetSelector);
+    let currentCategory = "all"; // По умолчанию показываем все
 
-    //         if (staticMapImg && targetElement) {
-    //             let updateWidth = () => {
-    //                 targetElement.style.width = staticMapImg.offsetWidth + 'px';
-    //             };
+    // Обработчик клика по фильтрам
+    $(".tag").on("click", function (e) {
+        e.preventDefault();
 
-    //             // Устанавливаем ширину при загрузке
-    //             staticMapImg.addEventListener('load', updateWidth);
+        $(".tag").removeClass("active");
+        $(this).addClass("active");
 
-    //             // Если изображение уже загружено
-    //             if (staticMapImg.complete) {
-    //                 updateWidth();
-    //             }
-    //         }
-    //     }
+        currentCategory = $(this).data("category");
 
-    //     setMapImgWidth('.static_map_logo');
+        $(".media_col").each(function () {
+            $(this).toggle(currentCategory === "all" || $(this).data("category") === currentCategory);
+        });
+    });
 
-    //     window.addEventListener('resize', () => {
-    //         setMapImgWidth('.static_map_logo');
-    //     });
+    // Обработчик клика по .media_col для открытия Fancybox
+    $(".media_col").on("click", function (e) {
+        e.preventDefault();
 
-    // }
+        let clickedElement = $(this); // Элемент, по которому кликнули
+
+        // Получаем все элементы, которые должны быть в галерее
+        let filteredItems = $(".media_col").filter(function () {
+            return currentCategory === "all" || $(this).data("category") === currentCategory;
+        });
+
+        // Формируем массив для Fancybox
+        let galleryItems = filteredItems.map(function () {
+            let $el = $(this);
+            let type = $el.data("type") === "video" ? "video" : "image"; // Проверяем, видео или изображение
+
+            return {
+                src: $el.data("src"),
+                type: type,
+                opts: { caption: $el.find("img").attr("alt") || "" }
+                // opts: {
+                //     caption: $el.find("img").attr("alt") || "",
+                //     video: {
+                //         autoStart: false, // ⬅️ Запрещаем автозапуск видео
+                //     },
+                // },
+            };
+        }).get();
+
+        // Определяем индекс кликнутого элемента в массиве
+        let startIndex = $.inArray(clickedElement[0], filteredItems);
+
+        // Открываем Fancybox с нужного элемента
+        $.fancybox.open(galleryItems, {
+            arrows: false,
+            infobar: false,
+            buttons: false,
+            loop: true,
+            animationEffect: "zoom",
+            animationDuration: 600,
+            transitionDuration: 600,
+            beforeClose: function (instance, current) {
+                instance.current.opts.animationEffect = "none";
+                instance.current.opts.animationDuration = 0;
+            },
+            index: startIndex, // <-- Указываем, с какого элемента начать просмотр
+            baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +
+                '<div class="fancybox-bg"></div>' +
+                '<div class="fancybox-inner">' +
+                '<div class="fancybox-stage">' +
+                '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
+                '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                '<path d="M0.999998 22.631L22.1306 1.5M0.999998 1.50061L22.1306 22.6313" stroke="#63483F"/>' +
+                '</svg></button>' +
+                '<div class="fancybox-infobar">' +
+                '<span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span>' +
+                '</div><div class="fancybox-navigation">{{arrows}}</div></div></div></div>',
+            btnTpl: {
+                arrowLeft:
+                    '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
+                    '<svg><use xlink:href="imgs/sprite.symbol.svg#arrow_right"></use></svg></button>',
+                arrowRight:
+                    '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
+                    '<svg><use xlink:href="imgs/sprite.symbol.svg#arrow_left"></use></svg></button>',
+            },
+        });
+    });
 
 });
 
@@ -687,6 +732,79 @@ document.addEventListener("DOMContentLoaded", function () {
             mask: '+{7}(000)000-00-00'
         })
     });
+
+    // Найти последний год
+    const lastYear = document.querySelector('.year:last-of-type');
+    if (lastYear) {
+        lastYear.classList.add('active');
+
+        // Найти последний месяц в этом году
+        const lastMonthButton = lastYear.querySelector('.month_btn:last-of-type');
+        if (lastMonthButton) {
+            lastMonthButton.classList.add('active');
+            const lastYearLabel = lastYear.querySelector('.year_btn').getAttribute('aria-label');
+            const lastMonthLabel = lastMonthButton.getAttribute('aria-label');
+
+            // Установить активный контент по умолчанию
+            updateContent(lastYearLabel, lastMonthLabel);
+        }
+    }
+
+
+    document.querySelectorAll('.year_btn').forEach(button => {
+        button.addEventListener('click', function () {
+            // Определяем выбранный год
+            const selectedYear = this.getAttribute('aria-label');
+
+            // Убираем класс active у всех годов
+            document.querySelectorAll('.year').forEach(year => year.classList.remove('active'));
+
+            // Добавляем класс active выбранному году
+            const yearElement = this.closest('.year');
+            yearElement.classList.add('active');
+
+            // Убираем класс active у всех кнопок месяцев
+            document.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
+
+            // Получаем первый месяц внутри активного года
+            const firstMonthButton = yearElement.querySelector('.month_btn');
+            if (!firstMonthButton) return; // Если месяца нет, выходим
+            firstMonthButton.classList.add('active'); // Добавляем класс active первому месяцу
+            const firstMonth = firstMonthButton.getAttribute('aria-label');
+
+            // Обновляем отображение контента
+            updateContent(selectedYear, firstMonth);
+        });
+    });
+
+    document.querySelectorAll('.month_btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const selectedMonth = this.getAttribute('aria-label');
+            const selectedYear = this.closest('.year').querySelector('.year_btn').getAttribute('aria-label');
+
+            // Убираем класс active у всех кнопок месяцев
+            document.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
+
+            // Добавляем класс active выбранному месяцу
+            this.classList.add('active');
+
+            // Обновляем отображение контента
+            updateContent(selectedYear, selectedMonth);
+        });
+    });
+
+    function updateContent(year, month) {
+        // Скрываем все блоки media_progress_list_wrapper
+        document.querySelectorAll('.media_progress_list_wrapper').forEach(wrapper => {
+            wrapper.style.display = 'none';
+        });
+
+        // Показываем нужный блок
+        const targetWrapper = document.querySelector(`.media_progress_list_wrapper[data-year="${year}"][data-month="${month}"]`);
+        if (targetWrapper) {
+            targetWrapper.style.display = 'block';
+        }
+    }
 
 
 });

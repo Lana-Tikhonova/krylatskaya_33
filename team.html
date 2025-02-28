@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="description" content="Крылатская 33" />
+    <meta name="keywords" content="" />
+    <title>Команда</title>
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ЖК «Крылатская 33»" />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+
+    <!-- шрифты -->
+    <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/TTFirsNeue-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/TTFirsNeue-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="vendors/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="vendors/animate/aos.min.css" />
+    <link rel="stylesheet" href="vendors/tippy/scale.css" />
+    <link rel="stylesheet" href="css/common.css?13" />
+    <!-- подключать на страницах где есть карта, вставить свой ключ  -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=4c7e2233-a854-4da5-9483-7a55bd41dfc3&lang=ru_RU"
+        type="text/javascript"></script>
+    <script src="js/map_contacts.js?1" type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
+    <header class="header">
+        <div class="container">
+            <div class="header_block header_block_fix">
+                <div class="menu_btn">
+                    <span></span>
+                </div>
+                <a href="/" class="logo"><img src="imgs/logo_brown.svg" alt="" /></a>
+                <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
+                <a href="#" class="favorites_btn">
+                    <svg class="fill_brown">
+                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                    </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="btn">Выбрать квартиру</a>
+            </div>
+            <div class="header_block header_block_not_fix" data-aos="fade">
+                <div class="menu_btn">
+                    <span></span>
+                </div>
+                <a href="/" class="logo"><img src="imgs/logo.svg" alt="" /></a>
+                <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
+                <a href="#" class="favorites_btn">
+                    <svg class="fill_creamy">
+                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                    </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="btn -not_border">Выбрать квартиру</a>
+            </div>
+            <div class="head">
+                <div class='head_img'>
+                    <img src="imgs/head_img_10.jpg" alt="">
+                </div>
+                <div class="head_content">
+                    <div class="head_subtitle" data-aos="fade" data-aos-offset="0">Команда</div>
+
+                    <h1 data-aos="fade" data-aos-offset="0">
+                        Надежность <br>ваших отношений
+                    </h1>
+                    <a href="#" class="btn" data-aos="fade">Выбрать квартиру</a>
+                </div>
+            </div>
+        </div>
+        <div class="big_menu">
+            <div class="menu_btn">
+                <span></span>
+            </div>
+            <ul class="menu">
+
+                <li>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">Архитектура</a>
+                </li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Выбрать квартиры</a>
+                    <ul>
+                        <li>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
+                        </li>
+                        <li>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
+                        </li>
+                        <li>
+                            <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">Коммерция</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
+                </li>
+                <li>
+                    <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
+                </li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
+                <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
+            </ul>
+            <div class="big_menu_img">
+                <div class='swiper slider_menu'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_6.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_7.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_8.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_9.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_10.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_11.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_12.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_13.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_14.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_15.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section team_section">
+            <div class="container">
+                <div class='team_big_block' data-aos="fade">
+                    <div class='img'>
+                        <img src="imgs/logo/logo_1.svg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">Девелопер проекта — специализированный застройщик ООО «Сияние»</div>
+                        <div class="text text_desktop">СЗ «СИЯНИЕ» — девелоперская компания с более чем 30-летним опытом
+                            работы в
+                            создании проектов жилой и коммерческой недвижимости в Москве и Московской области. На
+                            протяжении своей деятельности компания зарекомендовала себя как надежный партнер,
+                            объединяющий в своих проектах ведущие идеи и практики девелопмента и урбанистики. Интеграция
+                            инновационных технологий, экологически чистых материалов и энергоэффективных систем
+                            гарантирует долговечность и безопасность объектов. На данный момент компания подбирает
+                            лучшие площадки внутри Москвы для новых перспективных проектов.</div>
+                        <div class="text text_mobile">
+                            Уникальные квартиры в небоскребах с панорамой Москвы-реки, Живописного моста, Соснового
+                            Бора, великолепного Ермогеновского храма и современного городского пейзажа.
+                        </div>
+                    </div>
+                </div>
+                <div class='team_list team_block'>
+                    <div class='col'>
+                        <div class="item" data-aos="fade">
+                            <div class="text">
+                                Проектное<br> финансирование —
+                                московский<br> кредитный банк
+                            </div>
+                            <div class="img">
+                                <img src="imgs/logo/logo_2.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div class="item" data-aos="fade">
+                            <div class="text">
+                                Архитектор проекта — архитектурное
+                                бюро «остоженка»
+                            </div>
+                            <div class="img">
+                                <img src="imgs/logo/logo_3.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div class="item" data-aos="fade">
+                            <div class="text">
+                                Планировочные решения «бюро
+                                александры фёдоровой»
+                            </div>
+                            <div class="img">
+                                <img src="imgs/logo/logo_4.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div class="item" data-aos="fade">
+                            <div class="text">
+                                Генеральный подрядчик
+                                нулевого цикла —<br>
+                                «бест-строй»
+                            </div>
+                            <div class="img">
+                                <img src="imgs/logo/logo_5.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div class="item" data-aos="fade">
+                            <div class="text">
+                                Агенство<br> недвижимости,<br>
+                                брокер проекта ricci
+                            </div>
+                            <div class="img">
+                                <img src="imgs/logo/logo_6.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div class="item" data-aos="fade">
+                            <div class="text">
+                                Благоустройство —архитектурное<br> бюро SCAPE
+                            </div>
+                            <div class="img">
+                                <img src="imgs/logo/logo_7.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div class="item" data-aos="fade">
+                            <div class="text">
+                                Общественные<br> пространства —<br>архитектурно-<br>строительная компания
+                                Галерея
+                                Проектов
+                            </div>
+                            <div class="img">
+                                <img src="imgs/logo/logo_8.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div class="item" data-aos="fade">
+                            <div class="text">
+                                Маркетинг<br> и брендинг проекта —
+                                агентство girafee
+                            </div>
+                            <div class="img">
+                                <img src="imgs/logo/logo_9.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class='section offer_block_section'>
+            <div class="container">
+                <div class="offer_block offer_block_2" data-aos="fade">
+                    <div class='img'><img src="imgs/img_89.jpg" alt=""></div>
+                    <h2>Крылатская 33 — это уникальная архитектура, современные интерьеры <br>и зелёные зоны для жизни
+                    </h2>
+                    <a href="#" class='btn -not_border'>ВЫБОР квартиры</a>
+                </div>
+            </div>
+        </section>
+        <section class='section application_section'>
+            <div class="container">
+                <div class='height_block' data-aos="fade">
+                    <div class="item">
+                        <img src="imgs/img_14.jpg" alt="">
+                        <h3>На высоте<br> архитектурных<br> решений</h3>
+                        <a href="#" class='btn -not_border'>Окружение</a>
+                    </div>
+                    <div class="item">
+                        <img src="imgs/img_15.jpg" alt="">
+                        <h3>На высоте <br>чистого<br> воздуха</h3>
+                        <a href="#" class='btn -not_border'>Архитектура</a>
+                    </div>
+                </div>
+                <div class="application_block">
+                    <div>
+                        <h2 data-aos="fade">Свяжитесь<br> с нами</h2>
+                    </div>
+                    <div>
+                        <form action="" class='form' data-aos="fade">
+                            <label class="form_input_group">
+                                <input type="text" name="name" placeholder="Имя" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <input type="tel" name="tel" placeholder="Телефон" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <input type="text" name="message" placeholder="Сообщение" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <button class="btn" type="submit">Отправить</button>
+                            <div class='text_bottom'>Свяжемся в ближайшее время</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer_block">
+                <div class="left">
+                    <a href="/" class="logo"><img src="imgs/logo.svg" alt="" /></a>
+                    <ul class="footer_menu">
+                        <li><a href="#">Привелегии</a></li>
+                        <li><a href="#">Инфраструктура</a></li>
+                        <li><a href="#">Локация</a></li>
+                        <li><a href="#">Архитектура</a></li>
+                        <li><a href="#">Окружение</a></li>
+                        <li><a href="#">Благоустройство</a></li>
+                        <li><a href="#">Выбрать квартиры</a></li>
+                        <li><a href="#">Коммерция</a></li>
+                        <li><a href="#">Ипотечные предложения</a></li>
+                        <li><a href="#">Технологии комфорта</a></li>
+                        <li><a href="#">Команда</a></li>
+                        <li><a href="#">Медиа</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="btns_block">
+                        <a href="#" class="btn btn_icon -not_border">
+                            <svg>
+                                <use href="imgs/sprite.symbol.svg#nash_dom"
+                                    xlink:href="imgs/sprite.symbol.svg#nash_dom"></use>
+                            </svg>
+                            Проверить Наш.Дом.РФ
+                        </a>
+                        <a href="#" class="btn -not_border">Кабинет брокера</a>
+                    </div>
+                    <div class="text">
+                        Офис продаж<br />
+                        г. Москва ул. Большая Дмитровка, 11 стр. 1<br />
+                        <a href="tel:+7 (495) 642 44 77">+7 (495) 642 44 77</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class='footer_bottom_copyright'>© Крылатская 33, 2025.<br /> Все права защищены</div>
+                <div class="footer_bottom_design">Дизайн и&nbsp;разработка — <img src="imgs/footer_logo.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal modal_tabs" data-modal="info_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-modal-close="">
+                    <svg class="w24 fill_none stroke_brown">
+                        <use xlink:href="imgs/sprite.symbol.svg#close"></use>
+                    </svg>
+                </button>
+                <div class="modal_body tabs_block">
+                    <div class="left">
+                        <div class="tabs_content">
+                            <div class="tabs_content_item" id="tab_popup-1">
+                                <h2 class="modal_title">
+                                    Гребной канал в Крылатском
+                                </h2>
+                                <div class="modal_text">
+                                    <p>
+                                        Популярное место для олимпийцев и любителей гребли. Здесь проводятся
+                                        соревнования и тренировки по гребным видам спорта.
+                                    </p>
+                                    <img src="imgs/slider_popups/slider_popups_img_9.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div class="tabs_content_item" id="tab_popup-2">
+                                <h2 class="modal_title">
+                                    15 минут<br />
+                                    до центра столицы
+                                </h2>
+                                <div class="modal_text">
+                                    <p>
+                                        Уникальный проект от именитого
+                                        архитектурного бюро «Остоженка» в
+                                        Крылатском: самый высокий небоскреб
+                                        в районе, достигающий отметки в 150
+                                        метров, и малоэтажный клубный формат
+                                        от 42 метров. Инновационный
+                                        архитектурный концепт создает
+                                        ощущение естественности и
+                                        нерукотворности сооружения.
+                                    </p>
+                                    <img src="imgs/img_2.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="tabs_content_item" id="tab_popup-3">
+                                <h2 class="modal_title">
+                                    15 минут<br />
+                                    до центра столицы
+                                </h2>
+                                <div class="modal_text">
+                                    <p>
+                                        Уникальный проект от именитого
+                                        архитектурного бюро «Остоженка»
+                                    </p>
+                                    <img src="imgs/img_3.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="tabs_nav">
+                            <a href="#tab_popup-1" class="tabs_nav_item">Гребной канал в Крылатском</a>
+                            <a href="#tab_popup-2" class="tabs_nav_item">Легендарный велотрек
+                            </a>
+                            <a href="#tab_popup-3" class="tabs_nav_item">Ледовый дворец «Крылатское»
+                            </a>
+                            <a href="#tab_popup-4" class="tabs_nav_item">Лата Трэк
+                            </a>
+                            <a href="#tab_popup-5" class="tabs_nav_item">Ледовый дворец «Навка Арена» в Мнёвниковской
+                                пойме</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal_bg"></div>
+    </div>
+
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="vendors/jquery/jquery-3.5.1.min.js"></script>
+    <script src="vendors/fancybox/jquery.fancybox.min.js"></script>
+    <script src="vendors/animate/aos.min.js"></script>
+    <script src="vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="vendors/tippy/popper.min.js"></script>
+    <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
+    <script src="vendors/imask/imask.js"></script>
+    <script src="js/common.js?11"></script>
+</body>
+
+</html>
