@@ -343,7 +343,7 @@ $(document).ready(function () {
 
     let offset
     if ($(window).width() > 576) {
-        offset = 200;
+        offset = 100;
     } else {
         offset = 0;
     }
@@ -356,7 +356,6 @@ $(document).ready(function () {
     });
 
     // медиа
-
     let currentCategory = "all"; // По умолчанию показываем все
 
     // Обработчик клика по фильтрам
@@ -371,6 +370,8 @@ $(document).ready(function () {
         $(".media_col").each(function () {
             $(this).toggle(currentCategory === "all" || $(this).data("category") === currentCategory);
         });
+        // Пересчитываем позиции элементов для AOS.js
+        AOS.refresh();
     });
 
     // Обработчик клика по .media_col для открытия Fancybox
