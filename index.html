@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/common.css?14" />
+    <link rel="stylesheet" href="css/bundle.min.css?4" />
 
     <!-- подключать на страницах где есть карта, вставить свой ключ  -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=4c7e2233-a854-4da5-9483-7a55bd41dfc3&lang=ru_RU"
@@ -98,7 +98,6 @@
                     <h1>
                         На высоте<br>ваших ожиданий
                     </h1>
-                    <a href="#" class="btn">Выбрать квартиру</a>
                 </div>
             </div>
         </div>
@@ -106,49 +105,57 @@
             <div class="menu_btn">
                 <span></span>
             </div>
-            <ul class="menu">
+            <div class='menu_wrapper'>
+                <ul class="menu">
 
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">Архитектура</a>
-                </li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Выбрать квартиры</a>
-                    <ul>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
-                        </li>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
-                        </li>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">Коммерция</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
-                </li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
-            </ul>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">Архитектура</a>
+                    </li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
+                    <li>
+                        <a href="#" class="item btn" data-img="imgs/menu/menu_img_7.jpg">Выбрать квартиру</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">Коммерция</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
+                    </li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
+                </ul>
+                <a href="#" class='btn btn_border btn_play'>
+                    <svg class="fill_creamy">
+                        <use xlink:href="imgs/sprite.symbol.svg#play"></use>
+                    </svg>
+                    Посмотреть ролик о проекте
+                </a>
+            </div>
             <div class="big_menu_img">
                 <div class='swiper slider_menu'>
                     <div class="swiper-wrapper">
@@ -202,6 +209,10 @@
             </div>
         </div>
     </header>
+    <div class='mobile_btn_fix'>
+        <a href="#" class='btn btn_green'>Акция</a>
+        <a href="#" class='btn'>Выбрать квартиру</a>
+    </div>
 
     <main>
         <section class="section section_two">
@@ -1365,27 +1376,33 @@
                                             <li data-aos="fade">
                                                 <img src="imgs/static_map_img_1.svg" alt="" />
                                                 <div>
-                                                    <span>5-7 минут</span>
-                                                    До&nbsp;парка звезд,<br />
-                                                    крылатского
-                                                    и&nbsp;набережной
-                                                    москвы-реки
+                                                    <div class='number'>5—7 <span>минут</span></div>
+                                                    <div class='text'>
+                                                        До&nbsp;парка Звезд,<br />
+                                                        Крылатского
+                                                        и&nbsp;набережной
+                                                        Москвы-реки
+                                                    </div>
                                                 </div>
                                             </li>
                                             <li data-aos="fade">
                                                 <img src="imgs/static_map_img_7.svg" alt="" />
                                                 <div>
-                                                    <span>15 минут</span>
-                                                    ДО метро «крылатское»<br />
-                                                    арбатско-покровской линии
+                                                    <div class='number'>15 <span>минут</span></div>
+                                                    <div class='text'>
+                                                        До метро «Крылатское»<br />
+                                                        Арбатско-покровской линии
+                                                    </div>
                                                 </div>
                                             </li>
                                             <li data-aos="fade">
                                                 <img src="imgs/static_map_img_3.svg" alt="" />
                                                 <div>
-                                                    <span>15 минут</span>
-                                                    До пристани<br />
-                                                    «крылатская»
+                                                    <div class='number'>15 <span>минут</span></div>
+                                                    <div class='text'>
+                                                        До пристани<br />
+                                                        «Крылатская»
+                                                    </div>
                                                 </div>
                                             </li>
                                         </ul>
@@ -1403,23 +1420,25 @@
                                             <li data-aos="fade">
                                                 <img src="imgs/static_map_img_4.svg" alt="" />
                                                 <div>
-                                                    <span>15 минут</span>
-                                                    до садового кольца<br />
-                                                    и москва-сити
+                                                    <div class='number'>15 <span>минут</span></div>
+                                                    <div class='text'>
+                                                        До садового кольца<br />
+                                                        и Москва-сити
+                                                    </div>
                                                 </div>
                                             </li>
                                             <li data-aos="fade">
                                                 <img src="imgs/static_map_img_5.svg" alt="" />
                                                 <div>
-                                                    <span>20-30 минут</span>
-                                                    до аэропорта внуково
+                                                    <div class='number'>20-30 <span>минут</span></div>
+                                                    <div class='text'>До аэропорта Внуково</div>
                                                 </div>
                                             </li>
                                             <li data-aos="fade">
                                                 <img src="imgs/static_map_img_5.svg" alt="" />
                                                 <div>
-                                                    <span>30-40 минут</span>
-                                                    до аэропорта шереметьево
+                                                    <div class='number'>30-40 <span>минут</span></div>
+                                                    <div class='text'>До аэропорта Шереметьево</div>
                                                 </div>
                                             </li>
                                         </ul>
@@ -1877,8 +1896,11 @@
                                     class="form_input form_textarea"></textarea>
                                 <span class="text_error">Заполните поле</span>
                             </label>
-                            <button class="btn" type="submit">Отправить</button>
-                            <div class='text_bottom'>Свяжемся в ближайшее время</div>
+                            <label class="checkbox_block">
+                                <input type="checkbox" required="">
+                                <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
+                            </label>
+                            <button class="btn" type="submit">Отправить сообщение</button>
                         </form>
                     </div>
                 </div>
@@ -2038,7 +2060,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?12"></script>
+    <script src="js/common.js?13"></script>
 </body>
 
 </html>

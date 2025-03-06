@@ -134,7 +134,7 @@ body.calculator_page .header {
   padding-bottom: 0 !important;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   .section {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -2273,7 +2273,7 @@ svg.stroke_none {
     margin-left: 11px;
   }
 }
-@media screen and (max-width: 1500px) and (min-width: 993px) {
+@media screen and (max-width: 1600px) and (min-width: 993px) {
   .footer_bottom_design img {
     width: 90px;
     margin-left: 11px;
@@ -2328,7 +2328,7 @@ svg.stroke_none {
     max-width: 1300px;
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   .swiper-button-next,
   .swiper-button-prev {
     width: 60px;
@@ -3744,12 +3744,12 @@ svg.stroke_none {
   max-width: 570px;
 }
 
-@media screen and (max-width: 1500px) and (min-width: 993px) {
+@media screen and (max-width: 1600px) and (min-width: 993px) {
   .text_img_big {
     max-height: 700px;
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   .text_img_big {
     padding-left: 5%;
     padding-right: 5%;
@@ -4259,7 +4259,7 @@ svg.stroke_none {
   width: 164%;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   .section_line_2 .line_wrapper_2 {
     top: -15%;
   }
@@ -4827,7 +4827,7 @@ svg.stroke_none {
     display: none;
   }
 }
-@media screen and (max-width: 1500px) and (min-width: 993px) {
+@media screen and (max-width: 1600px) and (min-width: 993px) {
   .text_img_line_2 .line_wrapper_2 {
     width: 54%;
     top: 20%;
@@ -5028,7 +5028,7 @@ svg.stroke_none {
     text-transform: none;
   }
 }
-@media screen and (max-width: 1800px) and (min-width: 1501px) {
+@media screen and (max-width: 1800px) and (min-width: 1601px) {
   .static_map_block_wrapper {
     padding: 40px;
   }
@@ -5039,7 +5039,7 @@ svg.stroke_none {
     width: 400px;
   }
 }
-@media screen and (max-width: 1500px) and (min-width: 993px) {
+@media screen and (max-width: 1600px) and (min-width: 993px) {
   body {
     font-size: 15px;
   }
@@ -5441,7 +5441,7 @@ svg.stroke_none {
     max-width: 560px;
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   .text_img:not(:last-child) {
     margin-bottom: 50px;
   }
@@ -5844,7 +5844,7 @@ svg.stroke_none {
   padding-top: 150px;
 }
 
-@media screen and (max-width: 1500px) and (min-width: 993px) {
+@media screen and (max-width: 1600px) and (min-width: 993px) {
   .penthouse_page .section_two {
     padding-top: 100px;
   }
@@ -5918,7 +5918,7 @@ svg.stroke_none {
   z-index: -1;
 }
 
-@media screen and (max-width: 1500px) and (min-width: 993px) {
+@media screen and (max-width: 1600px) and (min-width: 993px) {
   .list_info_wrapper {
     padding-top: 36px;
     height: 600px;

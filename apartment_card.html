@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta name="description" content="Крылатская 33" />
     <meta name="keywords" content="" />
-    <title>Медиа Фото</title>
+    <title>Карточка квартиры</title>
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
@@ -28,9 +28,14 @@
     <link rel="stylesheet" href="css/bundle.min.css?4" />
 </head>
 
-<body class=''>
+<!-- эта страница отличается от остальных:
+ 1) лого в шапке (.header_block_not_fix) другое - logo_brown.svg
+ 2) есть класс у боди calculator_page
+ 3) есть класс header_dark у header -->
+
+<body class='small_header'>
     <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
-    <header class="header">
+    <header class="header header_dark">
         <div class="container">
             <div class="header_block header_block_fix">
                 <div class="menu_btn">
@@ -56,7 +61,7 @@
                 <div class="menu_btn">
                     <span></span>
                 </div>
-                <a href="/" class="logo"><img src="imgs/logo.svg" alt="" /></a>
+                <a href="/" class="logo"><img src="imgs/logo_brown.svg" alt="" /></a>
                 <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
                 <a href="#" class="favorites_btn">
                     <svg class="fill_creamy">
@@ -71,19 +76,6 @@
                     </div>
                 </a>
                 <a href="#" class="btn -not_border">Выбрать квартиру</a>
-            </div>
-            <div class="head">
-                <div class='head_img'>
-                    <img src="imgs/head_img_13.jpg" alt="">
-                </div>
-                <div class="head_content">
-                    <div class="head_subtitle" data-aos="fade" data-aos-offset="0">Медиа о Крылатской 33</div>
-
-                    <h1 data-aos="fade" data-aos-offset="0">
-                        Следите за новостями, публикациями и ходом строительства
-                    </h1>
-
-                </div>
             </div>
         </div>
         <div class="big_menu">
@@ -196,82 +188,200 @@
     </header>
 
     <main>
-        <section class='section'>
+        <section class='apartment_section'>
             <div class="container">
-                <div class='btns_list' data-aos="fade">
-                    <!-- если текушая страница, то span -->
-                    <span class='btns_item btn'>Фото- и видеогалерея</span>
-                    <a href="media_news.html" class='btns_item btn btn_white'>новости и публикации</a>
-                    <a href="media_construction_progress.html" class='btns_item btn btn_white'>ход строительства</a>
-                </div>
-                <!-- если видео то доабвляется data-type="video" -->
-                <div class='media_wrapper'>
-                    <div class="tags" data-aos="fade">
-                        <span class="tag active" data-category="all">Все</span>
-                        <span class="tag" data-category="exteriors">Экстерьеры</span>
-                        <span class="tag" data-category="interiors">Интерьеры</span>
-                        <span class="tag" data-category="landscaping">Благоустройство</span>
-                        <span class="tag" data-category="videos">Видеоролики</span>
-                        <span class="tag" data-category="mop">МОПы</span>
-                        <span class="tag" data-category="commerce">Коммерция</span>
-                    </div>
-                    <div class='media_list' data-aos="fade">
-                        <a class='media_col' data-category="interiors" data-src="imgs/img_5_big.png">
-                            <div class='media_item'>
-                                <div class='media_images'><img src="imgs/img_5.jpg" alt=""></div>
-                            </div>
+                <div class='apartment_block tabs_block'>
+                    <div class='top'>
+                        <a href="#" class='back_btn back_btn_two'>
+                            <span class='back_btn_icon'>
+                                <svg width="18" height="30" viewBox="0 0 18 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1669_4605)">
+                                        <path
+                                            d="M15.3019 0.81L17.4219 2.94L4.95187 15.41L17.4219 27.88L15.3019 30L0.711875 15.41L15.3019 0.81Z"
+                                            fill="#63483F" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1669_4605">
+                                            <rect width="16.71" height="29.19" fill="white"
+                                                transform="translate(17.4219 30) rotate(180)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                            Назад
                         </a>
-                        <a class='media_col' data-category="exteriors" data-src="imgs/img_6_big.jpeg">
-                            <div class='media_item'>
-                                <div class='media_images'><img src="imgs/img_6.jpg" alt=""></div>
-                            </div>
-                        </a>
-                        <a class='media_col' data-category="interiors" data-src="imgs/img_7_big.png">
-                            <div class='media_item'>
-                                <div class='media_images'><img src="imgs/img_7.jpg" alt=""></div>
-                            </div>
-                        </a>
-                        <a class='media_col' data-category="exteriors" data-src="imgs/img_1.png">
-                            <div class='media_item'>
-                                <div class='media_images'><img src="imgs/img_1.png" alt=""></div>
-                            </div>
-                        </a>
-                        <a class='media_col' data-category="videos" data-src="imgs/video/Blago.mp4" data-type="video">
-                            <div class='media_item'>
-                                <div class='media_images'><img src="imgs/head_img_3.jpg" alt=""></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="container">
-                <div class="info_blocks info_blocks_three -no_border">
-                    <div class="left">
-                        <h2 data-aos="fade">
-                            Подписка<br>на обновления
-                        </h2>
-                    </div>
-                    <div class="right" data-aos="fade">
-                        <div class="text">
-                            Следите за прогрессом проекта в режиме реального
-                            времени
+                        <div class="tabs_nav tags" data-aos="fade">
+                            <a class="tabs_nav_item tag active" href="#apartment_1">Планировка</a>
+                            <a class="tabs_nav_item tag" href="#apartment_2">Вид из окна</a>
                         </div>
-                        <a href="#" class="btn">Подписаться на Telegram-канал</a>
+                    </div>
+                    <div class='left'>
+                        <div class="title">
+                            <h2>Квартира<br>
+                                136</h2>
+                            <div class='favorites_btn --brown'>
+                                <svg class="fill_brown">
+                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="link">выбрать условия оплаты</div>
+                        <div class='crayons_item --red'>
+                            <img src="imgs/fire.svg" alt="">
+                            Горящее предложение
+                        </div>
+                        <!-- <div class='crayons_item --blue'>
+                            <img src="imgs/diamond.svg" alt="">
+                            Эксклюзив
+                        </div> -->
+                        <div class='price_block'>
+                            <div class="price">45 235 956 ₽</div>
+                            <div class="price_old">45 235 956 ₽</div>
+                        </div>
+                        <div class="btn">забронировать</div>
+                        <a href="#" class='link'>Скачать <br>планировку</a>
+                    </div>
+                    <div class="right">
+                        <div class="tabs_content">
+                            <div class="tabs_content_item" id="apartment_1">
+                                <div class='img img_plan'><img src="imgs/plan_big.png" alt=""></div>
+                            </div>
+                            <div class="tabs_content_item" id="apartment_2">
+                                <div class='img img_image'><img src="imgs/img_43.jpg" alt=""></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class='section offer_block_section'>
+        <section class='section slider_text_section'>
             <div class="container">
-                <div class="offer_block offer_block_2" data-aos="fade">
-                    <div class='img'><img src="imgs/img_89.jpg" alt=""></div>
-                    <h2>Крылатская 33 — это уникальная архитектура, современные интерьеры <br>и зелёные зоны для жизни
-                    </h2>
-                    <a href="#" class='btn -not_border'>ВЫБОР квартиры</a>
+                <h2>Как может выглядеть квартира<br> с отделкой по дизайну<br> Александры Федоровой</h2>
+                <div class='slider_text_block'>
+                    <div class='left'>
+                        <h3>Авторские <br>планировочные<br> решения</h3>
+                        <div class="text">Современные продуманные решения 755 квартир от знаменитого архитектурного
+                            бюро Александры Федоровой встречаются с эстетикой, превращая пространство в идеальное
+                            место для жизни.</div>
+                    </div>
+                    <div class="right">
+                        <div class="swiper slider_text">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="imgs/img_122.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <img src="imgs/img_122.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper_arrows">
+                                <div class="swiper-button-prev">
+                                    <svg>
+                                        <use xlink:href="imgs/sprite.symbol.svg#arrow_right"></use>
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <svg>
+                                        <use xlink:href="imgs/sprite.symbol.svg#arrow_left"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='similar_apartment_wrapper'>
+                    <h3>ПОХОЖИЕ <br>КВАРТИРЫ</h3>
+                    <div class='similar_apartment_list'>
+                        <div class="col">
+                            <div class="item">
+                                <div class="top">
+                                    <div class='label'>БКТ6</div>
+                                    <div class='location'>1 секция, 51 этаж</div>
+                                </div>
+                                <div class="img">
+                                    <img src="imgs/plan_card.png" alt="">
+                                </div>
+                                <div class="text">1-комнатная, 45,31 м² </div>
+                                <div class="bottom">
+                                    <div class="price">32 195 391 ₽</div>
+                                    <div class='favorites_btn --brown'>
+                                        <svg class="fill_brown">
+                                            <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="item">
+                                <div class="top">
+                                    <div class='label'>БКТ6</div>
+                                    <div class='location'>1 секция, 51 этаж</div>
+                                </div>
+                                <div class="img">
+                                    <img src="imgs/plan_card.png" alt="">
+                                </div>
+                                <div class="text">1-комнатная, 45,31 м² </div>
+                                <div class="bottom">
+                                    <div class="price">32 195 391 ₽</div>
+                                    <div class='favorites_btn --brown'>
+                                        <svg class="fill_brown">
+                                            <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="item">
+                                <div class="top">
+                                    <div class='label'>БКТ6</div>
+                                    <div class='location'>1 секция, 51 этаж</div>
+                                </div>
+                                <div class="img">
+                                    <img src="imgs/plan_card.png" alt="">
+                                </div>
+                                <div class="text">1-комнатная, 45,31 м² </div>
+                                <div class="bottom">
+                                    <div class="price">32 195 391 ₽</div>
+                                    <div class='favorites_btn --brown'>
+                                        <svg class="fill_brown">
+                                            <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="item">
+                                <div class="top">
+                                    <div class='label'>БКТ6</div>
+                                    <div class='location'>1 секция, 51 этаж</div>
+                                </div>
+                                <div class="img">
+                                    <img src="imgs/plan_card.png" alt="">
+                                </div>
+                                <div class="text">1-комнатная, 45,31 м² </div>
+                                <div class="bottom">
+                                    <div class="price">32 195 391 ₽</div>
+                                    <div class='favorites_btn --brown'>
+                                        <svg class="fill_brown">
+                                            <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </section>
         <section class='section application_section'>
             <div class="container">
@@ -316,6 +426,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="footer">
@@ -364,7 +475,46 @@
             </div>
         </div>
     </footer>
-
+    <div class="modal offer_modal" data-modal="offer_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-modal-close="">
+                    <svg class="w24 fill_none stroke_white">
+                        <use xlink:href="imgs/sprite.symbol.svg#close"></use>
+                    </svg>
+                </button>
+                <div class="modal_body">
+                    <div class='offer_modal_block'>
+                        <div class="left">
+                            <h2>Оставьте заявку </h2>
+                            <div class='text'>Мы свяжемся с вами в ближайшее время</div>
+                            <div class='form_wrapper'>
+                                <form action="" class='form' data-aos="fade">
+                                    <label class="form_input_group">
+                                        <input type="text" name="name" placeholder="Имя" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <label class="form_input_group">
+                                        <input type="tel" name="tel" placeholder="Телефон" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <label class="form_input_group">
+                                        <input type="text" name="message" placeholder="Сообщение" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <button class="btn" type="submit">Отправить</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <img src="imgs/img_27.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal_bg"></div>
+    </div>
     <div class="modal modal_tabs" data-modal="info_modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -378,20 +528,35 @@
                         <div class="tabs_content">
                             <div class="tabs_content_item" id="tab_popup-1">
                                 <h2 class="modal_title">
-                                    Гребной канал в Крылатском
+                                    15 минут<br />
+                                    до центра столицы
                                 </h2>
                                 <div class="modal_text">
                                     <p>
-                                        Популярное место для олимпийцев и любителей гребли. Здесь проводятся
-                                        соревнования и тренировки по гребным видам спорта.
+                                        Уникальный проект от именитого
+                                        архитектурного бюро «Остоженка» в
+                                        Крылатском: самый высокий небоскреб
+                                        в районе, достигающий отметки в 150
+                                        метров, и малоэтажный клубный формат
+                                        от 42 метров. Инновационный
+                                        архитектурный концепт создает
+                                        ощущение естественности и
+                                        нерукотворности сооружения.
                                     </p>
-                                    <img src="imgs/slider_popups/slider_popups_img_9.jpg" alt="" />
+                                    <p>
+                                        Витражная система «в пол», прямая
+                                        солнечная инсоляция на всех фасадах
+                                        и великолепные виды на излучину
+                                        Москвы-реки, Живописный мост,
+                                        Ермогеновский храм и урбанистический
+                                        облик города.
+                                    </p>
+                                    <img src="imgs/img_1.png" alt="" />
                                 </div>
                             </div>
                             <div class="tabs_content_item" id="tab_popup-2">
                                 <h2 class="modal_title">
-                                    15 минут<br />
-                                    до центра столицы
+                                    1,4 гектара приватной территории для всех возрастов
                                 </h2>
                                 <div class="modal_text">
                                     <p>
@@ -410,8 +575,7 @@
                             </div>
                             <div class="tabs_content_item" id="tab_popup-3">
                                 <h2 class="modal_title">
-                                    15 минут<br />
-                                    до центра столицы
+                                    От 28 до 410 м² – квартиры на любой вкус
                                 </h2>
                                 <div class="modal_text">
                                     <p>
@@ -425,15 +589,17 @@
                     </div>
                     <div class="right">
                         <div class="tabs_nav">
-                            <a href="#tab_popup-1" class="tabs_nav_item">Гребной канал в Крылатском</a>
-                            <a href="#tab_popup-2" class="tabs_nav_item">Легендарный велотрек
+                            <a href="#tab_popup-1" class="tabs_nav_item">15 минут до центра столицы</a>
+                            <a href="#tab_popup-2" class="tabs_nav_item">175 гектаров заповедной зоны
                             </a>
-                            <a href="#tab_popup-3" class="tabs_nav_item">Ледовый дворец «Крылатское»
+                            <a href="#tab_popup-3" class="tabs_nav_item">5 спортивных локаций рядом
                             </a>
-                            <a href="#tab_popup-4" class="tabs_nav_item">Лата Трэк
+                            <a href="#tab_popup-4" class="tabs_nav_item">1,4 гектара приватной территории
                             </a>
-                            <a href="#tab_popup-5" class="tabs_nav_item">Ледовый дворец «Навка Арена» в Мнёвниковской
-                                пойме</a>
+                            <a href="#tab_popup-5" class="tabs_nav_item">От 28 до 410 м² – квартиры на любой вкус</a>
+                            <a href="#tab_popup-6" class="tabs_nav_item">Планировочные решения для 755 квартир</a>
+                            <a href="#tab_popup-7" class="tabs_nav_item">124/7: инновации в каждой детали</a>
+                            <a href="#tab_popup-8" class="tabs_nav_item">271 машино-мест</a>
                         </div>
                     </div>
                 </div>

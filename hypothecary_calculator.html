@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/common.css?14" />
+    <link rel="stylesheet" href="css/bundle.min.css?4" />
 </head>
 
 <!-- эта страница отличается от остальных:
@@ -33,7 +33,7 @@
  2) есть класс у боди calculator_page
  3) есть класс header_dark у header -->
 
-<body class='calculator_page'>
+<body class='small_header'>
     <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
     <header class="header header_dark">
         <div class="container">
@@ -82,49 +82,57 @@
             <div class="menu_btn">
                 <span></span>
             </div>
-            <ul class="menu">
+            <div class='menu_wrapper'>
+                <ul class="menu">
 
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">Архитектура</a>
-                </li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Выбрать квартиры</a>
-                    <ul>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
-                        </li>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
-                        </li>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">Коммерция</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
-                </li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
-            </ul>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">Архитектура</a>
+                    </li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
+                    <li>
+                        <a href="#" class="item btn" data-img="imgs/menu/menu_img_7.jpg">Выбрать квартиру</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">Коммерция</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
+                    </li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
+                </ul>
+                <a href="#" class='btn btn_border btn_play'>
+                    <svg class="fill_creamy">
+                        <use xlink:href="imgs/sprite.symbol.svg#play"></use>
+                    </svg>
+                    Посмотреть ролик о проекте
+                </a>
+            </div>
             <div class="big_menu_img">
                 <div class='swiper slider_menu'>
                     <div class="swiper-wrapper">
@@ -183,7 +191,7 @@
         <div class='container'>
             <div class='back_block' data-aos="fade">
                 <a href="#" class='back_btn'>
-                    <span>
+                    <span class='back_btn_icon'>
                         <svg width="18" height="30" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1669_4605)">
                                 <path
@@ -371,11 +379,15 @@
                                 <span class="text_error">Заполните поле</span>
                             </label>
                             <label class="form_input_group">
-                                <input type="text" name="message" placeholder="Сообщение" class="form_input">
+                                <textarea name="message" placeholder="Сообщение"
+                                    class="form_input form_textarea"></textarea>
                                 <span class="text_error">Заполните поле</span>
                             </label>
-                            <button class="btn" type="submit">Отправить</button>
-                            <div class='text_bottom'>Свяжемся в ближайшее время</div>
+                            <label class="checkbox_block">
+                                <input type="checkbox" required="">
+                                <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
+                            </label>
+                            <button class="btn" type="submit">Отправить сообщение</button>
                         </form>
                     </div>
                 </div>
@@ -574,7 +586,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?12"></script>
+    <script src="js/common.js?13"></script>
 </body>
 
 </html>

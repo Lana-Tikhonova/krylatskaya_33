@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/common.css?14" />
+    <link rel="stylesheet" href="css/bundle.min.css?4" />
 </head>
 
 <body>
@@ -84,7 +84,7 @@
                     <h1 data-aos="fade" data-aos-offset="0">
                         На высоте<br>чистого воздуха
                     </h1>
-                    <a href="#" class="btn" data-aos="fade">Выбрать квартиру</a>
+
                 </div>
             </div>
         </div>
@@ -92,49 +92,57 @@
             <div class="menu_btn">
                 <span></span>
             </div>
-            <ul class="menu">
+            <div class='menu_wrapper'>
+                <ul class="menu">
 
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">Архитектура</a>
-                </li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Выбрать квартиры</a>
-                    <ul>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
-                        </li>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
-                        </li>
-                        <li>
-                            <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">Коммерция</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
-                </li>
-                <li>
-                    <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
-                </li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
-                <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
-            </ul>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">Архитектура</a>
+                    </li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
+                    <li>
+                        <a href="#" class="item btn" data-img="imgs/menu/menu_img_7.jpg">Выбрать квартиру</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">Коммерция</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
+                    </li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
+                </ul>
+                <a href="#" class='btn btn_border btn_play'>
+                    <svg class="fill_creamy">
+                        <use xlink:href="imgs/sprite.symbol.svg#play"></use>
+                    </svg>
+                    Посмотреть ролик о проекте
+                </a>
+            </div>
             <div class="big_menu_img">
                 <div class='swiper slider_menu'>
                     <div class="swiper-wrapper">
@@ -470,26 +478,6 @@
                     <div class="imgs" data-aos="fade">
                         <img src="imgs/photo_long_10.jpg" alt="">
                     </div>
-                    <div class='line_wrapper line_wrapper_5' data-aos>
-                        <svg width="948" height="100%" viewBox="0 0 948 775" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" class="line line_5">
-                            <path
-                                d="M1089.43 189.375H386.9C277.521 189.375 188.853 278.078 188.853 387.498V387.545C188.853 496.965 277.521 585.668 386.9 585.668H1089.43C1198.81 585.668 1287.47 496.965 1287.47 387.545V387.498C1287.47 278.078 1198.81 189.375 1089.43 189.375Z"
-                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-1"></path>
-                            <path
-                                d="M1089.43 142.258H386.9C251.509 142.258 141.753 252.056 141.753 387.498C141.753 522.941 251.509 632.739 386.9 632.739H1089.43C1224.82 632.739 1334.57 522.941 1334.57 387.498C1334.57 252.056 1224.82 142.258 1089.43 142.258Z"
-                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-2"></path>
-                            <path
-                                d="M1089.47 95.1875H386.898C225.521 95.1875 94.6982 226.06 94.6982 387.499C94.6982 548.938 225.521 679.81 386.898 679.81H1089.47C1250.85 679.81 1381.67 548.938 1381.67 387.499C1381.67 226.06 1250.85 95.1875 1089.47 95.1875Z"
-                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-3"></path>
-                            <path
-                                d="M1089.47 48.0703H386.899C199.509 48.0703 47.5996 200.027 47.5996 387.476C47.5996 574.924 199.509 726.882 386.899 726.882H1089.47C1276.86 726.882 1428.77 574.924 1428.77 387.476C1428.77 200.027 1276.86 48.0703 1089.47 48.0703Z"
-                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-4"></path>
-                            <path
-                                d="M1089.52 1H386.853C173.476 1 0.5 174.042 0.5 387.5C0.5 600.958 173.476 774 386.853 774H1089.52C1302.9 774 1475.87 600.958 1475.87 387.5C1475.87 174.042 1302.9 1 1089.52 1Z"
-                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-5"></path>
-                        </svg>
-                    </div>
                     <div class='line_wrapper line_wrapper_6' data-aos>
                         <svg width="461" height="461" viewBox="0 0 461 461" fill="none"
                             xmlns="http://www.w3.org/2000/svg" class="line line_6">
@@ -528,7 +516,7 @@
 
 
                 </div>
-                <div class='text_img'>
+                <div class='text_img text_img_line text_img_line_9'>
                     <div class="text">
                         <div data-aos="fade">
                             Официальная футбольная Академия Paris Saint-Germain — лицензированный UEFA тренерский штаб с
@@ -539,6 +527,26 @@
                     </div>
                     <div class="imgs" data-aos="fade">
                         <img src="imgs/photo_long_11.jpg" alt="">
+                    </div>
+                    <div class='line_wrapper line_wrapper_5' data-aos>
+                        <svg width="948" height="100%" viewBox="0 0 948 775" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" class="line line_5">
+                            <path
+                                d="M1089.43 189.375H386.9C277.521 189.375 188.853 278.078 188.853 387.498V387.545C188.853 496.965 277.521 585.668 386.9 585.668H1089.43C1198.81 585.668 1287.47 496.965 1287.47 387.545V387.498C1287.47 278.078 1198.81 189.375 1089.43 189.375Z"
+                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-1"></path>
+                            <path
+                                d="M1089.43 142.258H386.9C251.509 142.258 141.753 252.056 141.753 387.498C141.753 522.941 251.509 632.739 386.9 632.739H1089.43C1224.82 632.739 1334.57 522.941 1334.57 387.498C1334.57 252.056 1224.82 142.258 1089.43 142.258Z"
+                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-2"></path>
+                            <path
+                                d="M1089.47 95.1875H386.898C225.521 95.1875 94.6982 226.06 94.6982 387.499C94.6982 548.938 225.521 679.81 386.898 679.81H1089.47C1250.85 679.81 1381.67 548.938 1381.67 387.499C1381.67 226.06 1250.85 95.1875 1089.47 95.1875Z"
+                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-3"></path>
+                            <path
+                                d="M1089.47 48.0703H386.899C199.509 48.0703 47.5996 200.027 47.5996 387.476C47.5996 574.924 199.509 726.882 386.899 726.882H1089.47C1276.86 726.882 1428.77 574.924 1428.77 387.476C1428.77 200.027 1276.86 48.0703 1089.47 48.0703Z"
+                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-4"></path>
+                            <path
+                                d="M1089.52 1H386.853C173.476 1 0.5 174.042 0.5 387.5C0.5 600.958 173.476 774 386.853 774H1089.52C1302.9 774 1475.87 600.958 1475.87 387.5C1475.87 174.042 1302.9 1 1089.52 1Z"
+                                stroke="#67473D" stroke-miterlimit="10" class="svg-elem-5"></path>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -584,11 +592,15 @@
                                 <span class="text_error">Заполните поле</span>
                             </label>
                             <label class="form_input_group">
-                                <input type="text" name="message" placeholder="Сообщение" class="form_input">
+                                <textarea name="message" placeholder="Сообщение"
+                                    class="form_input form_textarea"></textarea>
                                 <span class="text_error">Заполните поле</span>
                             </label>
-                            <button class="btn" type="submit">Отправить</button>
-                            <div class='text_bottom'>Свяжемся в ближайшее время</div>
+                            <label class="checkbox_block">
+                                <input type="checkbox" required="">
+                                <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
+                            </label>
+                            <button class="btn" type="submit">Отправить сообщение</button>
                         </form>
                     </div>
                 </div>
@@ -731,7 +743,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?12"></script>
+    <script src="js/common.js?13"></script>
 </body>
 
 </html>

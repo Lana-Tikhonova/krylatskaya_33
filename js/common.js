@@ -242,7 +242,6 @@ $(document).ready(function () {
                 let staticMaptitleHeight = staticMapTitle.outerHeight();
                 staticMapMap.css('height', `calc(100svh - ${staticMaptitleHeight}px)`);
             }
-
         }
 
         adjustMapHeight();
@@ -251,6 +250,29 @@ $(document).ready(function () {
             adjustMapHeight();
         });
     }
+    // высота секции - высота хедера
+    function adjustChooseSectionHeight(chooseSelector, breakpoint) {
+        let chooseSection = $(chooseSelector);
+
+        if (chooseSection.length) {
+            function updateHeight() {
+                if ($(window).width() > breakpoint) {
+                    let headerHeight = $('.header').outerHeight();
+                    chooseSection.css('height', `calc(100svh - ${headerHeight}px)`);
+                } else {
+                    chooseSection.css('height', '');
+                }
+            }
+
+            updateHeight();
+
+            $(window).on('resize', updateHeight);
+        }
+    }
+
+    // Используем для разных секций с разными брейкпоинтами
+    adjustChooseSectionHeight('.choose_section_one .choose_wrapper', 721);
+    adjustChooseSectionHeight('.floors_plan_block', 0);
 
     // высота svg равна ширине картинки под ней
     let chooseImg = $('.choose_block_img');
@@ -440,6 +462,46 @@ $(document).ready(function () {
                     '<svg><use xlink:href="imgs/sprite.symbol.svg#arrow_left"></use></svg></button>',
             },
         });
+    });
+
+
+    const sliderWrapper = document.querySelector(".floors_plan_slider_wrapper");
+    if (sliderWrapper) {
+        const swiperFloorsPlan = new Swiper(".floors_plan_slider", {
+            spaceBetween: 4,
+            slidesPerView: 3,
+            direction: 'vertical',
+            grabCursor: true,
+            watchOverflow: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            centeredSlides: true,
+            // loop: true,
+            navigation: {
+                nextEl: sliderWrapper.querySelector(".swiper-button-next"),
+                prevEl: sliderWrapper.querySelector(".swiper-button-prev"),
+            },
+        });
+    }
+
+    const sliderText = new Swiper(".slider_text", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        effect: 'slide',
+        speed: 1000,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+
+        },
     });
 
 });
