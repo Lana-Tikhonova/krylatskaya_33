@@ -203,9 +203,28 @@ $(document).ready(function () {
         },
     });
 
+    // swiperBigImg
+    const swiperHeight_block = new Swiper(".height_block_slider", {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        effect: 'slide',
+        speed: 1000,
+        breakpoints: {
+            577: {
+                slidesPerView: 'auto',
+                spaceBetween: 24,
+            },
+
+        },
+    });
+
+    let prevScroll = window.scrollY;
 
     //фиксировать шапку
-    let prevScroll = window.scrollY;
     const header = document.querySelector('.header_block_fix');
 
     window.addEventListener('scroll', () => {
@@ -229,6 +248,21 @@ $(document).ready(function () {
 
         prevScroll = currentScroll;
     });
+
+    let mobileBtnFix = document.querySelector('.mobile_btn_fix');
+    let footer = document.querySelector('.footer');
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        const isAtTarget = footer.getBoundingClientRect().top <= window.innerHeight;
+
+        if (currentScroll > 300 && !isAtTarget) {
+            mobileBtnFix.classList.add('visible');
+        } else {
+            mobileBtnFix.classList.remove('visible');
+        }
+    });
+
 
 
     // высота секции не меньше чем высота ее контента
@@ -315,6 +349,7 @@ $(document).ready(function () {
         infobar: false,
         buttons: false,
         loop: true,
+        // autoStart: false,
         animationEffect: "zoom", // Анимация при открытии
         animationDuration: 600,
         transitionDuration: 600,
@@ -329,32 +364,43 @@ $(document).ready(function () {
         },
     });
 
+    // для одного видео
+    $('[data-video-fancybox]').fancybox({
+        arrows: false,
+        infobar: false,
+        buttons: false,
+        loop: false,
+        animationEffect: "zoom",
+        animationDuration: 600,
+        transitionDuration: 600,
+        beforeClose: function (instance, current) {
+            instance.current.opts.animationEffect = "none";
+            instance.current.opts.animationDuration = 0;
+        },
+        baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1"><div class="fancybox-bg"></div><div class="fancybox-inner"><div class="fancybox-stage"><button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.999998 22.631L22.1306 1.5M0.999998 1.50061L22.1306 22.6313" stroke="#63483F"/></svg></button></div></div></div>',
+    });
+
 
     $('.choose_courtyard').on('click', function () {
         let modalClass = $(this).data('template');
         $('.choose_courtyard_modal').removeClass('show');
         $('.' + modalClass).addClass('show');
         $('.choose_courtyard_wrapper').addClass('active');
-        if ($(window).width() < 993) {
+        if ($(window).width() < 721) {
             $('html').addClass('locked');
         } else {
             $('html').removeClass('locked');
         }
     });
 
-    $(document).on('click', function (e) {
-        if (!$(e.target).closest('.choose_courtyard, .choose_courtyard_modal_content').length) {
-            $('.choose_courtyard_modal').removeClass('show')
-            $('.choose_courtyard_wrapper').removeClass('active');
+    $('.choose_courtyard_modal').on('click', function (e) {
+        if (!$(e.target).closest('.choose_courtyard_modal_content').length || $(e.target).closest('.close').length) {
             $('html').removeClass('locked');
-
+            $('.choose_courtyard_modal').removeClass('show');
+            $('.choose_courtyard_wrapper').removeClass('active');
         }
     });
-    $('.choose_courtyard_modal .close').on('click', function (e) {
-        $('.choose_courtyard_modal').removeClass('show')
-        $('.choose_courtyard_wrapper').removeClass('active');
-        $('html').removeClass('locked');
-    });
+
 
 
     $('.map_filters_title').on('click', function (e) {

@@ -41,7 +41,7 @@ function initMap() {
     balloonContent: ''
   }, {
     iconLayout: 'default#image',
-    iconImageHref: 'imgs/marker_3.png',  // Путь к вашей картинке
+    iconImageHref: 'imgs/marker_4.png',  // Путь к вашей картинке
     iconImageSize: [84, 117],  // Размер изображения
     iconImageOffset: [-42, -117]  // Смещение, если нужно подправить положение
   });

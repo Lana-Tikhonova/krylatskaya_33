@@ -25,10 +25,10 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?4" />
+    <link rel="stylesheet" href="css/bundle.min.css?7" />
 </head>
 
-<body>
+<body class='hypothecary_installment_page'>
     <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
     <header class="header">
         <div class="container">
@@ -133,7 +133,7 @@
                     <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
                     <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
                 </ul>
-                <a href="#" class='btn btn_border btn_play'>
+                <a href="imgs/video/output_1.mp4" class='btn btn_border btn_play' data-video-fancybox="video_btn_1">
                     <svg class="fill_creamy">
                         <use xlink:href="imgs/sprite.symbol.svg#play"></use>
                     </svg>
@@ -193,6 +193,10 @@
             </div>
         </div>
     </header>
+    <div class='mobile_btn_fix'>
+        <a href="#" class='btn btn_green'>Акция</a>
+        <a href="#" class='btn'>Выбрать квартиру</a>
+    </div>
 
     <main>
         <section class="section section_two">
@@ -349,15 +353,30 @@
         <section class='section application_section'>
             <div class="container">
                 <div class='height_block' data-aos="fade">
-                    <div class="item">
-                        <img src="imgs/img_14.jpg" alt="">
-                        <h3>На высоте<br> архитектурных<br> решений</h3>
-                        <a href="#" class='btn -not_border'>Окружение</a>
-                    </div>
-                    <div class="item">
-                        <img src="imgs/img_15.jpg" alt="">
-                        <h3>На высоте <br>чистого<br> воздуха</h3>
-                        <a href="#" class='btn -not_border'>Архитектура</a>
+                    <div class="swiper height_block_slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="item">
+                                    <img src="imgs/img_14.jpg" alt="">
+                                    <h3>На высоте<br> архитектурных<br> решений</h3>
+                                    <a href="#" class='btn -not_border'>Окружение</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item">
+                                    <img src="imgs/img_15.jpg" alt="">
+                                    <h3>На высоте <br>чистого<br> воздуха</h3>
+                                    <a href="#" class='btn -not_border'>Архитектура</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="item">
+                                    <img src="imgs/img_123.jpg" alt="">
+                                    <h3>Новости,<br> Публикации,<br> Ход строительства</h3>
+                                    <a href="#" class='btn -not_border'>Медиа</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="application_block">
@@ -383,7 +402,7 @@
                                 <input type="checkbox" required="">
                                 <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
                             </label>
-                            <button class="btn" type="submit">Отправить сообщение</button>
+                            <button class="btn" type="submit">Отправить</button>
                         </form>
                     </div>
                 </div>
@@ -581,7 +600,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?13"></script>
+    <script src="js/common.js?14"></script>
 </body>
 
 </html>
