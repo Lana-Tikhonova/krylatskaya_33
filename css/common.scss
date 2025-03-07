@@ -275,8 +275,8 @@ body {
 
 @media screen and (max-width:576px) {
     .section {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 25px;
+        padding-bottom: 25px;
 
         &:first-child {
             padding-top: 46px;
@@ -2943,7 +2943,7 @@ svg {
 @media screen and (max-width: 1600px) and (min-width: 993px) {
     .footer_bottom_design {
         img {
-            width: 90px;
+            width: 70px;
             margin-left: 11px;
         }
     }
@@ -3987,7 +3987,7 @@ svg {
     h2,
     h3 {
         font-size: 20px;
-        margin-bottom: 26px;
+        margin-bottom: 21px;
         line-height: 115%;
     }
 
@@ -5174,6 +5174,7 @@ svg {
     .text_small {
         max-width: 650px;
         width: 50%;
+        margin-bottom: 30px;
     }
 
 }
@@ -8129,6 +8130,7 @@ svg {
         justify-content: center;
         position: relative;
         max-width: 1036px;
+        width: 59%;
 
         .compass {
             width: 11.59%;
@@ -8195,6 +8197,10 @@ svg {
 }
 
 @media screen and (max-width: 1600px) and (min-width: 993px) {
+    .planning_block ul {
+        padding-left: 60px;
+    }
+
     .penthouse_page {
         .section_two {
             padding-top: 100px;
@@ -8207,8 +8213,8 @@ svg {
         margin-bottom: 38px;
     }
 
-    .section_planning .title {
-        margin-bottom: 90px;
+    .planning_block:not(:last-child) {
+        margin-bottom: 51px;
     }
 
     .planning_block {
@@ -8239,6 +8245,10 @@ svg {
 
             }
         }
+    }
+
+    .section_planning .title {
+        margin-bottom: 60px;
     }
 }
 
@@ -9559,6 +9569,22 @@ span {
     margin-top: 30px;
 }
 
+@media screen and (max-width:1600px) {
+
+    .section_line_3 {
+
+        .line_wrapper_8 {
+            width: 54%;
+            top: 15%;
+            right: -35%;
+
+            svg {
+                transform: scaleX(-1);
+            }
+        }
+    }
+}
+
 @media screen and (max-width:1600px) and (min-width:993px) {
     .after_form_submit {
         min-width: 260px;
@@ -9667,5 +9693,108 @@ span {
         .big_img_section {
             padding-top: 0;
         }
+    }
+}
+
+@media screen and (max-width:992px) {
+    .penthouse_page .section_two {
+        padding-top: 50px;
+    }
+
+    .image_one {
+        height: 651px;
+        object-fit: cover;
+    }
+
+    .title_wrapper_2 .text_small {
+        width: 100%;
+    }
+
+    .h2_2 {
+        font-size: 30px;
+        margin-bottom: 24px;
+    }
+
+    .title_wrapper_2 {
+        margin-bottom: 86px;
+    }
+
+    .section_line_3 .line_wrapper_8 {
+        width: 75%;
+        top: 25%;
+        right: -48%;
+    }
+
+    .section_planning .text_first {
+        font-size: 19px;
+        line-height: normal;
+
+        span {
+            font-size: 30px;
+            margin-bottom: 17px;
+        }
+    }
+
+    .section_planning .title {
+        font-size: 22px;
+        margin-bottom: 40px;
+    }
+
+    .planning_block ul {
+        padding-left: 0;
+    }
+
+    .planning_block ul li div {
+        text-transform: none;
+    }
+
+    .planning_block ul li img {
+        max-width: 85px;
+    }
+
+    .planning_block {
+        gap: 20px;
+        padding-right: 0;
+    }
+
+    .planning_block .right .compass {
+        bottom: 34.5%;
+        right: 18%;
+    }
+
+    .planning_block:not(:last-child) {
+        margin-bottom: 56px;
+    }
+
+    .planning_block:last-child {
+        margin-bottom: 12px;
+    }
+
+    .blocks_two_2 {
+        flex-direction: row;
+
+        .right {
+            padding-top: 0;
+        }
+    }
+}
+
+@media screen and (max-width:760px) {
+    .image_one {
+        height: 410px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .h2_2 {
+        font-size: 20px;
+    }
+
+    .title_wrapper_2 {
+        margin-bottom: 54px;
+    }
+
+    .section_line_3 .line_wrapper_8 {
+        top: 37%;
     }
 }
