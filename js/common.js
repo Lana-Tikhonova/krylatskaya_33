@@ -1,14 +1,4 @@
 $(document).ready(function () {
-    // плавный скролл
-    // const lenis = new Lenis({
-
-    // });
-    // function raf(time) {
-    //     lenis.raf(time);
-    //     requestAnimationFrame(raf);
-    // }
-    // requestAnimationFrame(raf);
-
     // открытие меню
     $('.menu_btn').on('click', function () {
         $('html').toggleClass('locked')
@@ -306,7 +296,6 @@ $(document).ready(function () {
 
     // Используем для разных секций с разными брейкпоинтами
     adjustChooseSectionHeight('.choose_section_one .choose_wrapper', 721);
-    adjustChooseSectionHeight('.floors_plan_block', 0);
 
     // высота svg равна ширине картинки под ней
     let chooseImg = $('.choose_block_img');
@@ -465,7 +454,7 @@ $(document).ready(function () {
                 // opts: {
                 //     caption: $el.find("img").attr("alt") || "",
                 //     video: {
-                //         autoStart: false, // ⬅️ Запрещаем автозапуск видео
+                //         autoStart: false, 
                 //     },
                 // },
             };
@@ -510,25 +499,6 @@ $(document).ready(function () {
         });
     });
 
-
-    const sliderWrapper = document.querySelector(".floors_plan_slider_wrapper");
-    if (sliderWrapper) {
-        const swiperFloorsPlan = new Swiper(".floors_plan_slider", {
-            spaceBetween: 4,
-            slidesPerView: 3,
-            direction: 'vertical',
-            grabCursor: true,
-            watchOverflow: true,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
-            centeredSlides: true,
-            // loop: true,
-            navigation: {
-                nextEl: sliderWrapper.querySelector(".swiper-button-next"),
-                prevEl: sliderWrapper.querySelector(".swiper-button-prev"),
-            },
-        });
-    }
 
     const sliderText = new Swiper(".slider_text", {
         slidesPerView: 1,
@@ -736,6 +706,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 choosePathsImgList.classList.remove("dimmed");
                 document.querySelectorAll(".imgs_list img").forEach((p) => p.classList.remove("dimmed"));
             });
+
+            path.addEventListener("click", (event) => {
+                const link = event.target.getAttribute("data-link");
+                if (link) window.open(link, "_blank");
+            });
         });
     }
 
@@ -921,5 +896,216 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+// план этажа
+
+document.addEventListener("DOMContentLoaded", function () {
+    const floorsPlanSection = document.querySelector(".floors_plan_section");
+    const floorsPlanImg = document.querySelector(".floors_plan_img");
+    const floorsPlanTitle = document.querySelector(".floors_plan_title span");
+    const preloader = document.querySelector(".preloader");
+    const swiperContainer = document.querySelector(".floors_plan_slider");
+    let lastLoadedFloor = null;
+
+    const swiperFloorsPlan = new Swiper(swiperContainer, {
+        spaceBetween: 4,
+        slidesPerView: 3,
+        direction: "vertical",
+        watchOverflow: true,
+        // watchSlidesVisibility: true,
+        // watchSlidesProgress: true,
+        centeredSlides: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        }
+    });
+
+    // Обработчик клика по стрелкам (вызов AJAX)
+    floorsPlanSection.querySelectorAll(".swiper-button-next, .swiper-button-prev").forEach(button => {
+        button.addEventListener("click", function () {
+            triggerAjaxForActiveSlide();
+        });
+    });
+
+    // Обработчик клика по слайдам (вызов AJAX)
+    Array.from(swiperFloorsPlan.slides).forEach(slide => {
+        slide.addEventListener("click", function () {
+            const index = [...swiperFloorsPlan.slides].indexOf(slide);
+            swiperFloorsPlan.slideTo(index);
+            triggerAjaxForActiveSlide();
+        });
+    });
+
+    function triggerAjaxForActiveSlide() {
+        const activeSlide = swiperFloorsPlan.slides[swiperFloorsPlan.activeIndex];
+        const floorNumber = activeSlide.getAttribute("data-floor");
+        console.log(lastLoadedFloor, floorNumber);
+
+        // Если этаж уже загружен, не выполняем повторный запрос
+        if (lastLoadedFloor === floorNumber) return;
+
+        // Удаляем класс у всех слайдов перед добавлением новому
+        swiperFloorsPlan.slides.forEach(slide => slide.classList.remove("active"));
+
+        if (!activeSlide.classList.contains("active")) {
+            loadFloorData(floorNumber);
+            activeSlide.classList.add("active"); // Добавляем класс загруженного слайда
+            lastLoadedFloor = floorNumber; // Обновляем последний загруженный этаж
+        }
+    }
+    // Загружаем первый этаж и добавляем слайду класс active по умолчанию
+    function initFirstFloor() {
+        if (!swiperFloorsPlan.slides.length) return; // Проверяем, есть ли слайды
+        const firstSlideIndex = swiperFloorsPlan.slides.findIndex(el => el.classList.contains('current-slide'));
+        // console.log(firstSlideIndex);
+
+        const firstSlide = swiperFloorsPlan.slides[firstSlideIndex >= 0 ? firstSlideIndex : 0];
+        if (!firstSlide) return;
+
+        firstSlide.classList.add("active");
+        const firstFloor = firstSlide.getAttribute("data-floor");
+        swiperFloorsPlan.slideTo(firstSlideIndex, 0);
+        loadFloorData(firstFloor);
+    }
+
+    initFirstFloor();
+
+    async function loadFloorData(floorNumber) {
+        // if (floorsPlanSection.classList.contains("sending")) return;
+        try {
+            // floorsPlanSection.classList.add("sending");
+            preloader.style.opacity = "1";
+            preloader.style.display = "block"; // Показываем прелоадер
+
+            const response = await fetch(`http://127.0.0.1:5504/json/floor_${floorNumber}.json`);
+            if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
+
+            const data = await response.json();
+            floorsPlanImg.innerHTML = "";
+
+            filterModule.removeEventListeners();
+
+            // подставляем цифру этажа в заголовок
+            floorsPlanTitle.innerHTML = floorNumber;
+
+            // Создаем и добавляем изображение
+            const img = document.createElement("img");
+            img.src = data.image;
+            img.alt = `План ${floorNumber}`;
+            img.classList.add("img");
+
+            // Создаем контейнер для SVG
+            const svgContainer = document.createElement("div");
+            svgContainer.classList.add("svg-container");
+            svgContainer.innerHTML = data.svg;
+
+            floorsPlanImg.append(img, svgContainer);
+
+            updateTooltips(data.tooltips);
+            applyFilters();
+
+            filterModule.init();
+        } catch (error) {
+            console.error("Ошибка загрузки JSON:", error);
+        } finally {
+            setTimeout(() => {
+                preloader.style.opacity = "0";
+                setTimeout(() => {
+                    preloader.style.display = "none";
+                    // floorsPlanSection.classList.remove("sending");
+                }, 300); // 300 мс задержка перед скрытием
+            }, 300); // небольшая задержка для плавного исчезновения
+        }
+
+    }
+
+    function updateTooltips(tooltipsData) {
+        let tooltipContainer = document.getElementById("tooltipContainer");
+
+        if (!tooltipContainer) {
+            tooltipContainer = document.createElement("div");
+            tooltipContainer.id = "tooltipContainer";
+            tooltipContainer.style.display = "none";
+            document.body.appendChild(tooltipContainer);
+        } else {
+            tooltipContainer.innerHTML = "";
+        }
+
+        Object.entries(tooltipsData).forEach(([id, content]) => {
+            const div = document.createElement("div");
+            div.id = id;
+            div.classList.add("tooltip_block", "tooltip_block_flat");
+            div.innerHTML = content;
+            tooltipContainer.appendChild(div);
+        });
+
+        setTimeout(() => { // Даем время DOM обновиться
+            let placement
+            if ($(window).width() > 992) {
+                placement = 'left-start';
+            } else {
+                placement = 'bottom';
+            }
+            tippy(".tippy_btn", {
+                // trigger: 'click',
+                content(reference) {
+                    const id = reference.getAttribute("data-template");
+                    const template = document.getElementById(id);
+                    return template ? template.innerHTML : "Нет данных";
+                },
+                allowHTML: true,
+                theme: "creame",
+                animation: "scale",
+                placement: placement,
+                followCursor: true,
+                maxWidth: "412px",
+                duration: [400, 200]
+            });
+        }, 50);
+    }
 
 
+    function applyFilters() {
+        const activeBtn = document.querySelector("[data-rooms-quantity].active");
+        const roomsQuantity = activeBtn?.getAttribute("data-rooms-quantity") || "all";
+
+        document.querySelectorAll(".floors_plan_img polygon").forEach(polygon => {
+            const polygonRooms = polygon.getAttribute("data-rooms-quantity") || "all";
+            const isVisible = roomsQuantity === "all" || polygonRooms === roomsQuantity;
+            polygon.style.opacity = isVisible ? "1" : "0";
+            polygon.style.pointerEvents = isVisible ? "auto" : "none";
+        });
+    }
+
+
+    const filterModule = (() => {
+        let filterButtons, polygons;
+
+        function init() {
+            filterButtons = document.querySelectorAll(".quantity_rooms_list div");
+            polygons = document.querySelectorAll(".floors_plan_img polygon");
+
+            filterButtons.forEach(btn => btn.addEventListener("click", handleFilterClick));
+            polygons.forEach(poly => poly.addEventListener("click", handlePolygonClick));
+        }
+
+        function handleFilterClick(event) {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            event.target.classList.add("active");
+            applyFilters();
+        }
+
+        function handlePolygonClick(event) {
+            const link = event.target.getAttribute("data-link");
+            if (link) window.open(link, "_blank");
+        }
+
+        function removeEventListeners() {
+            filterButtons?.forEach(btn => btn.removeEventListener("click", handleFilterClick));
+            polygons?.forEach(poly => poly.removeEventListener("click", handlePolygonClick));
+        }
+
+        return { init, removeEventListeners };
+    })();
+
+});

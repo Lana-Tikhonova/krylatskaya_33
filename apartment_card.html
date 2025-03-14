@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?8" />
+    <link rel="stylesheet" href="css/bundle.min.css?11" />
 </head>
 
 <!-- эта страница отличается от остальных:
@@ -230,7 +230,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="link">выбрать условия оплаты</div>
+                        <a href="#" data-open-modal="terms_payment" class="link">выбрать условия оплаты</a>
                         <div class='crayons_item --red'>
                             <img src="imgs/fire.svg" alt="">
                             Горящее предложение
@@ -454,7 +454,7 @@
                 <div class="left">
                     <a href="/" class="logo"><img src="imgs/logo.svg" alt="" /></a>
                     <ul class="footer_menu">
-                        <li><a href="#">Привелегии</a></li>
+                        <li><a href="#">Привилегии</a></li>
                         <li><a href="#">Инфраструктура</a></li>
                         <li><a href="#">Локация</a></li>
                         <li><a href="#">Архитектура</a></li>
@@ -494,47 +494,7 @@
             </div>
         </div>
     </footer>
-    <div class="modal offer_modal" data-modal="offer_modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <button type="button" class="close" data-modal-close="">
-                    <svg class="w24 fill_none stroke_white">
-                        <use xlink:href="imgs/sprite.symbol.svg#close"></use>
-                    </svg>
-                </button>
-                <div class="modal_body">
-                    <div class='offer_modal_block'>
-                        <div class="left">
-                            <h2>Оставьте заявку </h2>
-                            <div class='text'>Мы свяжемся с вами в ближайшее время</div>
-                            <div class='form_wrapper'>
-                                <form action="" class='form' data-aos="fade">
-                                    <label class="form_input_group">
-                                        <input type="text" name="name" placeholder="Имя" class="form_input">
-                                        <span class="text_error">Заполните поле</span>
-                                    </label>
-                                    <label class="form_input_group">
-                                        <input type="tel" name="tel" placeholder="Телефон" class="form_input">
-                                        <span class="text_error">Заполните поле</span>
-                                    </label>
-                                    <label class="form_input_group">
-                                        <input type="text" name="message" placeholder="Сообщение" class="form_input">
-                                        <span class="text_error">Заполните поле</span>
-                                    </label>
-                                    <button class="btn" type="submit">Отправить</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <img src="imgs/img_27.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal_bg"></div>
-    </div>
-    <div class="modal modal_tabs" data-modal="info_modal">
+    <div class="modal terms_payment_modal" data-modal="terms_payment">
         <div class="modal-dialog">
             <div class="modal-content">
                 <button type="button" class="close" data-modal-close="">
@@ -542,83 +502,142 @@
                         <use xlink:href="imgs/sprite.symbol.svg#close"></use>
                     </svg>
                 </button>
-                <div class="modal_body tabs_block">
-                    <div class="left">
-                        <div class="tabs_content">
-                            <div class="tabs_content_item" id="tab_popup-1">
-                                <h2 class="modal_title">
-                                    15 минут<br />
-                                    до центра столицы
-                                </h2>
-                                <div class="modal_text">
-                                    <p>
-                                        Уникальный проект от именитого
-                                        архитектурного бюро «Остоженка» в
-                                        Крылатском: самый высокий небоскреб
-                                        в районе, достигающий отметки в 150
-                                        метров, и малоэтажный клубный формат
-                                        от 42 метров. Инновационный
-                                        архитектурный концепт создает
-                                        ощущение естественности и
-                                        нерукотворности сооружения.
-                                    </p>
-                                    <p>
-                                        Витражная система «в пол», прямая
-                                        солнечная инсоляция на всех фасадах
-                                        и великолепные виды на излучину
-                                        Москвы-реки, Живописный мост,
-                                        Ермогеновский храм и урбанистический
-                                        облик города.
-                                    </p>
-                                    <img src="imgs/img_1.png" alt="" />
+                <div class="modal_body">
+                    <div class='terms_payment_block'>
+                        <div class="terms_payment_list">
+                            <div class="col">
+                                <input type="radio" name="terms_payment" value="1">
+                                <div class='item'>
+                                    <span class='circle'></span>
+                                    <div class='left'>
+                                        <h3>Семейная Ипотека 19% </h3>
+                                        <div class="text">Для семей, у которых есть ребенок до 7 лет</div>
+                                        <ul>
+                                            <li>Первый взнос — 20,1%</li>
+                                            <li>Ставка — от 3,5%</li>
+                                            <li>Срок — до 30 лет</li>
+                                            <li>Сумма кредита — до 30 млн</li>
+                                        </ul>
+                                    </div>
+                                    <div class="right">
+                                        <div class="price">
+                                            <h3>45 235 956 ₽</h3>
+                                        </div>
+                                        <a href="#" class='btn'>Забронировать</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="tabs_content_item" id="tab_popup-2">
-                                <h2 class="modal_title">
-                                    1,4 гектара приватной территории для всех возрастов
-                                </h2>
-                                <div class="modal_text">
-                                    <p>
-                                        Уникальный проект от именитого
-                                        архитектурного бюро «Остоженка» в
-                                        Крылатском: самый высокий небоскреб
-                                        в районе, достигающий отметки в 150
-                                        метров, и малоэтажный клубный формат
-                                        от 42 метров. Инновационный
-                                        архитектурный концепт создает
-                                        ощущение естественности и
-                                        нерукотворности сооружения.
-                                    </p>
-                                    <img src="imgs/img_2.png" alt="" />
+                            <div class="col">
+                                <input type="radio" name="terms_payment" value="2">
+                                <div class='item'>
+                                    <span class='circle'></span>
+                                    <div class='left'>
+                                        <h3>100% оплата</h3>
+                                        <div class="text">Для семей, у которых есть ребенок до 7 лет</div>
+                                        <ul>
+                                            <li>Первый взнос — 20,1%</li>
+                                            <li>Ставка — от 3,5%</li>
+                                            <li>Срок — до 30 лет</li>
+                                            <li>Сумма кредита — до 30 млн</li>
+                                        </ul>
+                                    </div>
+                                    <div class="right">
+                                        <div class="price">
+                                            <h3>40 453 000 ₽</h3>
+                                        </div>
+                                        <a href="#" class='btn'>Забронировать</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="tabs_content_item" id="tab_popup-3">
-                                <h2 class="modal_title">
-                                    От 28 до 410 м² – квартиры на любой вкус
-                                </h2>
-                                <div class="modal_text">
-                                    <p>
-                                        Уникальный проект от именитого
-                                        архитектурного бюро «Остоженка»
-                                    </p>
-                                    <img src="imgs/img_3.png" alt="" />
+                            <div class="col">
+                                <input type="radio" name="terms_payment" value="3">
+                                <div class='item'>
+                                    <span class='circle'></span>
+                                    <div class='left'>
+                                        <h3>Рассрочка
+                                            на 2 года</h3>
+                                        <div class="text">Для семей, у которых есть ребенок до 7 лет</div>
+                                        <ul>
+                                            <li>Первый взнос — 20,1%</li>
+                                            <li>Ставка — от 3,5%</li>
+                                            <li>Срок — до 30 лет</li>
+                                            <li>Сумма кредита — до 30 млн</li>
+                                        </ul>
+                                    </div>
+                                    <div class="right">
+                                        <div class="price">
+                                            <h3>45 235 956 ₽</h3>
+                                        </div>
+                                        <a href="#" class='btn'>Забронировать</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="tabs_nav">
-                            <a href="#tab_popup-1" class="tabs_nav_item">15 минут до центра столицы</a>
-                            <a href="#tab_popup-2" class="tabs_nav_item">175 гектаров заповедной зоны
-                            </a>
-                            <a href="#tab_popup-3" class="tabs_nav_item">5 спортивных локаций рядом
-                            </a>
-                            <a href="#tab_popup-4" class="tabs_nav_item">1,4 гектара приватной территории
-                            </a>
-                            <a href="#tab_popup-5" class="tabs_nav_item">От 28 до 410 м² – квартиры на любой вкус</a>
-                            <a href="#tab_popup-6" class="tabs_nav_item">Планировочные решения для 755 квартир</a>
-                            <a href="#tab_popup-7" class="tabs_nav_item">124/7: инновации в каждой детали</a>
-                            <a href="#tab_popup-8" class="tabs_nav_item">271 машино-мест</a>
+                            <div class="col">
+                                <input type="radio" name="terms_payment" value="4">
+                                <div class='item'>
+                                    <span class='circle'></span>
+                                    <div class='left'>
+                                        <h3>трейд-ин</h3>
+                                        <div class="text">Для семей, у которых есть ребенок до 7 лет</div>
+                                        <ul>
+                                            <li>Первый взнос — 20,1%</li>
+                                            <li>Ставка — от 3,5%</li>
+                                            <li>Срок — до 30 лет</li>
+                                            <li>Сумма кредита — до 30 млн</li>
+                                        </ul>
+                                    </div>
+                                    <div class="right">
+                                        <div class="price">
+                                            <h3>43 453 000 ₽</h3>
+                                        </div>
+                                        <a href="#" class='btn'>Забронировать</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <input type="radio" name="terms_payment" value="5">
+                                <div class='item'>
+                                    <span class='circle'></span>
+                                    <div class='left'>
+                                        <h3>Семейная Ипотека 19% </h3>
+                                        <div class="text">Для семей, у которых есть ребенок до 7 лет</div>
+                                        <ul>
+                                            <li>Первый взнос — 20,1%</li>
+                                            <li>Ставка — от 3,5%</li>
+                                            <li>Срок — до 30 лет</li>
+                                            <li>Сумма кредита — до 30 млн</li>
+                                        </ul>
+                                    </div>
+                                    <div class="right">
+                                        <div class="price">
+                                            <h3>45 235 956 ₽</h3>
+                                        </div>
+                                        <a href="#" class='btn'>Забронировать</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <input type="radio" name="terms_payment" value="6">
+                                <div class='item'>
+                                    <span class='circle'></span>
+                                    <div class='left'>
+                                        <h3>Семейная Ипотека 19% </h3>
+                                        <div class="text">Для семей, у которых есть ребенок до 7 лет</div>
+                                        <ul>
+                                            <li>Первый взнос — 20,1%</li>
+                                            <li>Ставка — от 3,5%</li>
+                                            <li>Срок — до 30 лет</li>
+                                            <li>Сумма кредита — до 30 млн</li>
+                                        </ul>
+                                    </div>
+                                    <div class="right">
+                                        <div class="price">
+                                            <h3>45 235 956 ₽</h3>
+                                        </div>
+                                        <a href="#" class='btn'>Забронировать</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -627,9 +646,9 @@
         <div class="modal_bg"></div>
     </div>
 
-    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="vendors/gsap/gsap.min.js"></script>
+    <script src="vendors/gsap/ScrollTrigger.min.js"></script>
 
     <script src="vendors/jquery/jquery-3.5.1.min.js"></script>
     <script src="vendors/fancybox/jquery.fancybox.min.js"></script>
