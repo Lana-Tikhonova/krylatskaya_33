@@ -1,4 +1,46 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
+    let prevScroll = window.scrollY;
+
+    //фиксировать шапку
+    const header = document.querySelector('.header_block_fix');
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+
+        if (currentScroll > 300) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+            header.classList.remove('fix-on-scroll');
+        }
+
+        if ((currentScroll < prevScroll && header.classList.contains('fixed')) || isAtBottom) {
+            header.classList.add('fix-on-scroll');
+        }
+
+        if (currentScroll > prevScroll && header.classList.contains('fixed') && !isAtBottom) {
+            header.classList.remove('fix-on-scroll');
+        }
+
+        prevScroll = currentScroll;
+    });
+
+    // фиксировать кнопки на мобилке и убирать когда долистали до футера
+    let mobileBtnFix = document.querySelector('.mobile_btn_fix');
+    let footer = document.querySelector('.footer');
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        const isAtTarget = footer.getBoundingClientRect().top <= window.innerHeight;
+
+        if (currentScroll > 300 && !isAtTarget) {
+            mobileBtnFix.classList.add('visible');
+        } else {
+            mobileBtnFix.classList.remove('visible');
+        }
+    });
+
     // открытие меню
     $('.menu_btn').on('click', function () {
         $('html').toggleClass('locked')
@@ -81,57 +123,58 @@ $(document).ready(function () {
     });
 
     // swiperPopups
-    let sliderPopups = $('.slider_popups');
+    let sliderPopups = document.querySelectorAll(".slider_popups");
     if (sliderPopups.length) {
-        const swiperPopups = new Swiper('.slider_popups', {
-            slidesPerView: 'auto',
-            spaceBetween: 10,
-            watchSlidesProgress: true,
-            mousewheelControl: true,
-            watchOverflow: true,
-            watchSlidesVisibility: true,
-            effect: 'slide',
-            speed: 1000,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-                1201: {
-                    slidesPerView: 4,
-                    spaceBetween: 20,
+        sliderPopups.forEach(slider => {
+            const swiperPopups = new Swiper(slider, {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+                watchSlidesProgress: true,
+                mousewheelControl: true,
+                watchOverflow: true,
+                watchSlidesVisibility: true,
+                effect: 'slide',
+                speed: 1000,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
                 },
-            },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
 
-        });
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    1201: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                },
 
-        // Функция для управления автоплеем в зависимости от видимости
-        function handleVisibility(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    swiperPopups.autoplay.start();
-                } else {
-                    swiperPopups.autoplay.stop();
-                }
             });
-        }
 
-        const observer = new IntersectionObserver(handleVisibility, {
-            root: null,
-            threshold: 0.2
-        });
-        observer.observe(document.querySelector('.slider_popups'));
+            // Функция для управления автоплеем в зависимости от видимости
+            function handleVisibility(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        swiperPopups.autoplay.start();
+                    } else {
+                        swiperPopups.autoplay.stop();
+                    }
+                });
+            }
+
+            const observer = new IntersectionObserver(handleVisibility, {
+                root: null,
+                threshold: 0.2
+            });
+            observer.observe(slider);
+        })
     }
-
     // swiperBigImg
     const swiperBigImg = new Swiper(".slider_big_img", {
         slidesPerView: 1,
@@ -211,49 +254,6 @@ $(document).ready(function () {
 
         },
     });
-
-    let prevScroll = window.scrollY;
-
-    //фиксировать шапку
-    const header = document.querySelector('.header_block_fix');
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
-
-        if (currentScroll > 300) {
-            header.classList.add('fixed');
-        } else {
-            header.classList.remove('fixed');
-            header.classList.remove('fix-on-scroll');
-        }
-
-        if ((currentScroll < prevScroll && header.classList.contains('fixed')) || isAtBottom) {
-            header.classList.add('fix-on-scroll');
-        }
-
-        if (currentScroll > prevScroll && header.classList.contains('fixed') && !isAtBottom) {
-            header.classList.remove('fix-on-scroll');
-        }
-
-        prevScroll = currentScroll;
-    });
-
-    let mobileBtnFix = document.querySelector('.mobile_btn_fix');
-    let footer = document.querySelector('.footer');
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        const isAtTarget = footer.getBoundingClientRect().top <= window.innerHeight;
-
-        if (currentScroll > 300 && !isAtTarget) {
-            mobileBtnFix.classList.add('visible');
-        } else {
-            mobileBtnFix.classList.remove('visible');
-        }
-    });
-
-
 
     // высота секции не меньше чем высота ее контента
     let staticMap = $('.static_map');
@@ -391,7 +391,6 @@ $(document).ready(function () {
     });
 
 
-
     $('.map_filters_title').on('click', function (e) {
         $(this).next().toggleClass('show');
         $(this).toggleClass('active');
@@ -519,10 +518,6 @@ $(document).ready(function () {
 
         },
     });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-
     const swipers = {};
 
     document.querySelectorAll(".slider_gallery").forEach((el, index) => {
@@ -604,6 +599,7 @@ document.addEventListener("DOMContentLoaded", function () {
             tabsNavItems[0].click();
         }
     });
+
     // открытие модаки 
     // нужно только поменять значени в data-modal и data-open-modal
     const body = document.querySelector('body');
@@ -638,7 +634,6 @@ document.addEventListener("DOMContentLoaded", function () {
             body.style.paddingRight = ``;
         }
     });
-
 
     // табы в модалке
     document.addEventListener("click", function (e) {
@@ -738,19 +733,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // document.querySelectorAll(".photo_section_anim").forEach(block => {
-    //     gsap.to(block.querySelector(".bg"), {
-    //         y: "-20%",
-    //         ease: "none",
-    //         scrollTrigger: {
-    //             trigger: block,
-    //             start: "top bottom",
-    //             end: "bottom top",
-    //             scrub: 1,
-    //         }
-    //     });
-    // });
-
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 993px)", () => {
@@ -821,8 +803,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Найти последний год
     const mediaProgress = document.querySelector('.media_progress_control');
-    const lastYear = mediaProgress.querySelector('.year:last-of-type');
-    if (lastYear) {
+    if (mediaProgress) {
+        const lastYear = mediaProgress.querySelector('.year:last-of-type');
         lastYear.classList.add('active');
 
         // Найти последний месяц в этом году
@@ -835,99 +817,98 @@ document.addEventListener("DOMContentLoaded", function () {
             // Установить активный контент по умолчанию
             updateContent(lastYearLabel, lastMonthLabel);
         }
-    }
+        mediaProgress.querySelectorAll('.year_btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Определяем выбранный год
+                const selectedYear = this.getAttribute('aria-label');
 
+                // Убираем класс active у всех годов
+                mediaProgress.querySelectorAll('.year').forEach(year => year.classList.remove('active'));
 
-    mediaProgress.querySelectorAll('.year_btn').forEach(button => {
-        button.addEventListener('click', function () {
-            // Определяем выбранный год
-            const selectedYear = this.getAttribute('aria-label');
+                // Добавляем класс active выбранному году
+                const yearElement = this.closest('.year');
+                yearElement.classList.add('active');
 
-            // Убираем класс active у всех годов
-            mediaProgress.querySelectorAll('.year').forEach(year => year.classList.remove('active'));
+                // Убираем класс active у всех кнопок месяцев
+                mediaProgress.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
 
-            // Добавляем класс active выбранному году
-            const yearElement = this.closest('.year');
-            yearElement.classList.add('active');
+                // Получаем первый месяц внутри активного года
+                const firstMonthButton = yearElement.querySelector('.month_btn');
+                if (!firstMonthButton) return; // Если месяца нет, выходим
+                firstMonthButton.classList.add('active'); // Добавляем класс active первому месяцу
+                const firstMonth = firstMonthButton.getAttribute('aria-label');
 
-            // Убираем класс active у всех кнопок месяцев
-            mediaProgress.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
-
-            // Получаем первый месяц внутри активного года
-            const firstMonthButton = yearElement.querySelector('.month_btn');
-            if (!firstMonthButton) return; // Если месяца нет, выходим
-            firstMonthButton.classList.add('active'); // Добавляем класс active первому месяцу
-            const firstMonth = firstMonthButton.getAttribute('aria-label');
-
-            // Обновляем отображение контента
-            updateContent(selectedYear, firstMonth);
-        });
-    });
-
-    mediaProgress.querySelectorAll('.month_btn').forEach(button => {
-        button.addEventListener('click', function () {
-            const selectedMonth = this.getAttribute('aria-label');
-            const selectedYear = this.closest('.year').querySelector('.year_btn').getAttribute('aria-label');
-
-            // Убираем класс active у всех кнопок месяцев
-            mediaProgress.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
-
-            // Добавляем класс active выбранному месяцу
-            this.classList.add('active');
-
-            // Обновляем отображение контента
-            updateContent(selectedYear, selectedMonth);
-        });
-    });
-
-    function updateContent(year, month) {
-        // Скрываем все блоки media_progress_list_wrapper
-        document.querySelectorAll('.media_progress_list_wrapper').forEach(wrapper => {
-            wrapper.style.display = 'none';
+                // Обновляем отображение контента
+                updateContent(selectedYear, firstMonth);
+            });
         });
 
-        // Показываем нужный блок
-        const targetWrapper = document.querySelector(`.media_progress_list_wrapper[data-year="${year}"][data-month="${month}"]`);
-        if (targetWrapper) {
-            targetWrapper.style.display = 'block';
+        mediaProgress.querySelectorAll('.month_btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const selectedMonth = this.getAttribute('aria-label');
+                const selectedYear = this.closest('.year').querySelector('.year_btn').getAttribute('aria-label');
+
+                // Убираем класс active у всех кнопок месяцев
+                mediaProgress.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
+
+                // Добавляем класс active выбранному месяцу
+                this.classList.add('active');
+
+                // Обновляем отображение контента
+                updateContent(selectedYear, selectedMonth);
+            });
+        });
+
+        function updateContent(year, month) {
+            // Скрываем все блоки media_progress_list_wrapper
+            document.querySelectorAll('.media_progress_list_wrapper').forEach(wrapper => {
+                wrapper.style.display = 'none';
+            });
+
+            // Показываем нужный блок
+            const targetWrapper = document.querySelector(`.media_progress_list_wrapper[data-year="${year}"][data-month="${month}"]`);
+            if (targetWrapper) {
+                targetWrapper.style.display = 'block';
+            }
+            // Пересчитываем позиции элементов для AOS.js
+            AOS.refresh();
         }
-        // Пересчитываем позиции элементов для AOS.js
-        AOS.refresh();
     }
+
 
     // эффект "перетаскивания"
-    const slider = document.querySelector('.media_progress_control');
+    const sliderMediaProgress = document.querySelector('.media_progress_control');
 
     let isDown = false;
     let startX;
     let scrollLeft;
+    if (sliderMediaProgress) {
+        sliderMediaProgress.addEventListener('mousedown', (e) => {
+            isDown = true;
+            sliderMediaProgress.classList.add('active');
+            startX = e.pageX - sliderMediaProgress.offsetLeft;
+            scrollLeft = sliderMediaProgress.scrollLeft;
+        });
 
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.classList.add('active');
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-    });
+        sliderMediaProgress.addEventListener('mouseleave', () => {
+            isDown = false;
+            sliderMediaProgress.classList.remove('active');
+        });
 
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.classList.remove('active');
-    });
+        sliderMediaProgress.addEventListener('mouseup', () => {
+            isDown = false;
+            sliderMediaProgress.classList.remove('active');
+        });
 
-    slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.classList.remove('active');
-    });
+        sliderMediaProgress.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - sliderMediaProgress.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            sliderMediaProgress.scrollLeft = scrollLeft - walk;
+        });
 
-    slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        slider.scrollLeft = scrollLeft - walk;
-    });
-
-
+    }
 
 
     const filterButtons = document.querySelectorAll(".floors_selection_section .quantity_rooms_list div");
@@ -956,6 +937,33 @@ document.addEventListener("DOMContentLoaded", function () {
             if (link) window.open(link, "_blank");
         });
     })
+
+    let swiperNewsList = null; // Переменная для хранения экземпляра Swiper
+    const swiperNewsListSlider = document.querySelector(".news_list_slider");
+
+    function initSwiperNewsList() {
+        if (window.innerWidth > 576 && window.innerWidth <= 992 && swiperNewsListSlider) {
+            if (!swiperNewsList) {
+                swiperNewsList = new Swiper(swiperNewsListSlider, {
+                    slidesPerView: 'auto',
+                    spaceBetween: 27,
+                    watchSlidesProgress: true,
+                    mousewheelControl: true,
+                    watchOverflow: true,
+                    watchSlidesVisibility: true,
+                });
+            }
+        } else {
+            if (swiperNewsList) {
+                swiperNewsList.destroy(true, true);
+                swiperNewsList = null;
+            }
+        }
+    }
+
+    initSwiperNewsList();
+    window.addEventListener("resize", initSwiperNewsList);
+
 
 });
 // план этажа
@@ -1084,25 +1092,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     preloader.style.display = "none";
                 }, 300);
             };
-
-            // // подставляем цифру этажа в заголовок
-            // floorsPlanTitle.innerHTML = floorNumber;
-
-            // // Создаем и добавляем изображение
-            // const img = document.createElement("img");
-            // img.src = data.image;
-            // img.alt = `План ${floorNumber}`;
-            // img.classList.add("img");
-
-            // // Создаем контейнер для SVG
-            // const svgContainer = document.createElement("div");
-            // svgContainer.classList.add("svg-container");
-            // svgContainer.innerHTML = data.svg;
-
-            // floorsPlanImg.append(img, svgContainer);
-            // updateTooltips(data.tooltips);
-            // applyFilters();
-            // filterModule.init();
         } catch (error) {
             console.error("Ошибка загрузки JSON:", error);
         }

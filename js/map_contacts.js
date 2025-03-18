@@ -11,6 +11,38 @@ function initMap() {
   });
   map.behaviors.disable('scrollZoom');
 
+  // Функция для обновления зума
+  function updateZoomAndMarkers() {
+    // if (window.matchMedia("(max-width: 576px)").matches) {
+    //   map.setZoom(10);
+    // } else if (window.matchMedia("(max-width: 992px)").matches) {
+    //   map.setZoom(11.5);
+    // } else {
+    //   map.setZoom(12.5);
+    // }
+    let zoomLevel;
+    let iconOffset;
+
+    if (window.matchMedia("(max-width: 576px)").matches) {
+      zoomLevel = 10.5;
+      iconOffset = [-21, -58];
+      iconSize = [42, 58];
+    } else if (window.matchMedia("(max-width: 992px)").matches) {
+      zoomLevel = 11.5;
+      iconOffset = [-39, -109];
+      iconSize = [78, 109];
+    } else {
+      zoomLevel = 12.5;
+      iconOffset = [-42, -117];
+      iconSize = [84, 117];
+    }
+
+    map.setZoom(zoomLevel);
+    newMarker.options.set("iconImageOffset", iconOffset);
+    newMarkerTwo.options.set("iconImageOffset", iconOffset);
+    newMarker.options.set("iconImageSize", iconSize);
+    newMarkerTwo.options.set("iconImageSize", iconSize);
+  }
 
   // Кнопки для управления зумом
   document.getElementById("zoom-in").addEventListener("click", function () {
@@ -57,4 +89,7 @@ function initMap() {
   // Добавляем новый маркер на карту
   map.geoObjects.add(newMarker);
   map.geoObjects.add(newMarkerTwo);
+
+  updateZoomAndMarkers();
+  window.addEventListener("resize", updateZoomAndMarkers);
 }

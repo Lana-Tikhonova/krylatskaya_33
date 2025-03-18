@@ -25,11 +25,11 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?14" />
+    <link rel="stylesheet" href="css/bundle.min.css?15" />
     <!-- подключать на страницах где есть карта, вставить свой ключ  -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=4c7e2233-a854-4da5-9483-7a55bd41dfc3&lang=ru_RU"
         type="text/javascript"></script>
-    <script src="js/map_contacts.js?1" type="text/javascript"></script>
+    <script src="js/map_contacts.js?2" type="text/javascript"></script>
 </head>
 
 <body>
@@ -208,10 +208,10 @@
             <div class="container">
                 <div class="contacts_block">
                     <div class="left" data-aos="fade">
-                        <h2>ДОМ продаж</h2>
-                        <p>СЗ “ СИЯНИЕ”</p>
-                        <h4>г. Москва, ул. Большая Дмитровка, 11 стр.1</h4>
-                        <p>КРЫЛАТСКАЯ 33 - открытие весна 2025 г.</p>
+                        <h2>Дом продаж</h2>
+                        <p>СЗ «Сияние»</p>
+                        <h4>г. Москва, ул. Большая<br> Дмитровка, 11 стр.1</h4>
+                        <p>Крылатская 33 — открытие весна 2025 г.</p>
                         <h4>г. Москва, ул. крылатская, 33</h4>
                         <div class='phone'>
                             <p>Телефон</p>
@@ -239,7 +239,10 @@
                                 <input type="checkbox" required="">
                                 <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
                             </label>
-                            <button class="btn" type="submit">Отправить</button>
+                            <button class="btn" type="submit">
+                                <span class='text_desktop'>Отправить сообщение</span>
+                                <span class='text_mobile'>Отправить</span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -250,7 +253,7 @@
                 <div id='map_contacts'></div>
                 <a target="_blank"
                     href="https://yandex.ru/maps/ru/213/moscow/?indoorLevel=1&ll=37.613691%2C55.761958&mode=routes&rtext=~55.761958%2C37.613692&rtt=auto&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjcyMjQxMhJM0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINGD0LvQuNGG0LAg0JHQvtC70YzRiNCw0Y8g0JTQvNC40YLRgNC-0LLQutCwLCAxMSIKDWt0FkIVPgxfQg%2C%2C&z=16.97"
-                    class='btn'>построить маршрут</a>
+                    class='btn'>Построить маршрут</a>
                 <div class="map_zoom_btn">
                     <button id="zoom-in">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
@@ -381,7 +384,10 @@
                                 <input type="checkbox" required="">
                                 <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
                             </label>
-                            <button class="btn" type="submit">Отправить</button>
+                            <button class="btn" type="submit">
+                                <span class='text_desktop'>Отправить сообщение</span>
+                                <span class='text_mobile'>Отправить</span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -524,7 +530,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?17"></script>
+    <script src="js/common.js?18"></script>
 </body>
 
 </html>

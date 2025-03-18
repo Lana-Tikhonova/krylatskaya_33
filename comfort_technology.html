@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?14" />
+    <link rel="stylesheet" href="css/bundle.min.css?15" />
 </head>
 
 <body class='comfort_technology_page'>
@@ -365,43 +365,54 @@
                 <h2 data-aos="fade">
                     Разделение зон<br> для резидентов квартала<br> и сервисного обслуживания
                 </h2>
-                <div class="news_list">
-                    <div class="news_col">
-                        <div class="news_item" data-aos="fade">
-                            <div class='img_wrapper'>
-                                <div class="img">
-                                    <img src="imgs/img_56.jpg" alt="" />
+                <!-- эта ебанина отличается от того, что на главной, тут решили на одном разрешении (планшете) чтобы был слайдер, слезы грусти  -->
+                <div class='news_list_slider_wrapper'>
+                    <div class='swiper news_list_slider'>
+                        <div class="news_list swiper-wrapper">
+                            <div class="news_col swiper-slide">
+                                <div class="news_item" data-aos="fade">
+                                    <div class='img_wrapper'>
+                                        <div class="img">
+                                            <img src="imgs/img_56.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        Система служебных входов<br> и грузовых лифтов обеспечивает<br> разделение
+                                        потоков
+                                        резидентов<br>
+                                        и технической транспортировки<br> строительных материалов,<br> курьерских служб
+                                        и
+                                        доставок
+                                    </div>
                                 </div>
                             </div>
-                            <div class="text">
-                                Система служебных входов<br> и грузовых лифтов обеспечивает<br> разделение потоков
-                                резидентов<br>
-                                и технической транспортировки строительных материалов,<br> курьерских служб и доставок
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news_col">
-                        <div class="news_item" data-aos="fade">
-                            <div class='img_wrapper'>
-                                <div class="img">
-                                    <img src="imgs/img_57.jpg" alt="" />
+                            <div class="news_col  swiper-slide">
+                                <div class="news_item" data-aos="fade">
+                                    <div class='img_wrapper'>
+                                        <div class="img">
+                                            <img src="imgs/img_57.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        В каждой секции предусмотрен<br> грузовой лифтовой холл с возможностью<br>
+                                        подъезда
+                                        автотранспорта для удобной<br> загрузки мебели и крупногабаритных<br> бытовых
+                                        грузов
+                                    </div>
                                 </div>
                             </div>
-                            <div class="text">
-                                В каждой секции предусмотрен<br> грузовой лифтовой холл с возможностью подъезда
-                                автотранспорта для удобной загрузки мебели и крупногабаритных бытовых грузов
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news_col">
-                        <div class="news_item" data-aos="fade">
-                            <div class='img_wrapper'>
-                                <div class="img">
-                                    <img src="imgs/img_58.jpg" alt="" />
+                            <div class="news_col  swiper-slide">
+                                <div class="news_item" data-aos="fade">
+                                    <div class='img_wrapper'>
+                                        <div class="img">
+                                            <img src="imgs/img_58.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        Во встроенные нежилые<br> (коммерческие) помещения<br> запланированы отдельные
+                                        входы
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text">
-                                Во встроенные нежилые<br> (коммерческие) помещения<br> запланированы отдельные входы
                             </div>
                         </div>
                     </div>
@@ -419,11 +430,15 @@
                         <li>Современная отделка, приятное освещение и ясная навигация</li>
                         <li>Машино-места с зарядкой для электромобилей</li>
                     </ul>
-                    <img src="imgs/img_124.jpg" alt="" class='bg'>
+
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="imgs/img_127.jpg">
+                        <img src="imgs/img_124.jpg" alt="" class='bg'>
+                    </picture>
                 </div>
             </div>
         </section>
-        <section class='section text_img_section'>
+        <section class='section text_img_section text_img_section_2'>
             <div class="container">
                 <div class='title_wrapper'>
                     <h2 data-aos="fade">
@@ -434,7 +449,8 @@
                         входных групп разработан с акцентом на современные технологии, элегантность, экологичность и
                         внимание к деталям.</div>
                 </div>
-                <h3 data-aos="fade">Пространство, которое вдохновляет<br> вас каждый день и отражает ваш<br> стиль жизни
+                <h3 data-aos="fade" class='sm:fz-16'>Пространство, которое вдохновляет<br> вас каждый день и отражает
+                    ваш<br> стиль жизни
                 </h3>
                 <div class='text_img text_img_revers'>
                     <div class="text">
@@ -567,7 +583,10 @@
                                 <input type="checkbox" required="">
                                 <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
                             </label>
-                            <button class="btn" type="submit">Отправить</button>
+                            <button class="btn" type="submit">
+                                <span class='text_desktop'>Отправить сообщение</span>
+                                <span class='text_mobile'>Отправить</span>
+                            </button>
                         </form>
                     </div>
                 </div>

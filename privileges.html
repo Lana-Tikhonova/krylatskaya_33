@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?14" />
+    <link rel="stylesheet" href="css/bundle.min.css?15" />
 </head>
 
 <body>
@@ -77,10 +77,13 @@
                     <img src="imgs/head_img_18.jpg" alt="">
                 </div>
                 <div class="head_content">
-                    <div class="head_subtitle" data-aos="fade" data-aos-offset="0">ПРИВиЛЕГИИ для резиденТов </div>
+                    <div class="head_subtitle" data-aos="fade" data-aos-offset="0">Привилегии для резидентов </div>
 
-                    <h1 data-aos="fade" data-aos-offset="0">
+                    <h1 data-aos="fade" data-aos-offset="0" class='text_desktop'>
                         Добро пожаловать в Дом будущего, где жизнь обретает
+                        новый уровень удобства
+                    </h1>
+                    <h1 data-aos="fade" data-aos-offset="0" class='text_mobile'>
                         новый уровень удобства
                     </h1>
 
@@ -495,7 +498,10 @@
                                 <input type="checkbox" required="">
                                 <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
                             </label>
-                            <button class="btn" type="submit">Отправить</button>
+                            <button class="btn" type="submit">
+                                <span class='text_desktop'>Отправить сообщение</span>
+                                <span class='text_mobile'>Отправить</span>
+                            </button>
                         </form>
                     </div>
                 </div>
