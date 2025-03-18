@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 spaceBetween: 20,
                 slidesPerGroup: 4,
             },
-            1280: {
+            1230: {
                 slidesPerView: 4,
                 spaceBetween: 13,
                 slidesPerGroup: 4,
@@ -1051,8 +1051,8 @@ document.addEventListener("DOMContentLoaded", function () {
             preloader.style.opacity = "1";
             preloader.style.display = "block"; // Показываем прелоадер
 
-            const response = await fetch(`http://127.0.0.1:5504/json/floor_${floorNumber}.json`);
-            // const response = await fetch(`https://крылатская33.рф/new.site/json/floor_${floorNumber}.json`);
+            // const response = await fetch(`http://127.0.0.1:5504/json/floor_${floorNumber}.json`);
+            const response = await fetch(`https://крылатская33.рф/new.site/json/floor_${floorNumber}.json`);
             if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
             const data = await response.json();
