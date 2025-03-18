@@ -519,7 +519,6 @@ $(document).ready(function () {
 
         },
     });
-
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -738,6 +737,7 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: [400, 200]
     });
 
+
     // document.querySelectorAll(".photo_section_anim").forEach(block => {
     //     gsap.to(block.querySelector(".bg"), {
     //         y: "-20%",
@@ -820,7 +820,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Найти последний год
-    const lastYear = document.querySelector('.year:last-of-type');
+    const mediaProgress = document.querySelector('.media_progress_control');
+    const lastYear = mediaProgress.querySelector('.year:last-of-type');
     if (lastYear) {
         lastYear.classList.add('active');
 
@@ -837,20 +838,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    document.querySelectorAll('.year_btn').forEach(button => {
+    mediaProgress.querySelectorAll('.year_btn').forEach(button => {
         button.addEventListener('click', function () {
             // Определяем выбранный год
             const selectedYear = this.getAttribute('aria-label');
 
             // Убираем класс active у всех годов
-            document.querySelectorAll('.year').forEach(year => year.classList.remove('active'));
+            mediaProgress.querySelectorAll('.year').forEach(year => year.classList.remove('active'));
 
             // Добавляем класс active выбранному году
             const yearElement = this.closest('.year');
             yearElement.classList.add('active');
 
             // Убираем класс active у всех кнопок месяцев
-            document.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
+            mediaProgress.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
 
             // Получаем первый месяц внутри активного года
             const firstMonthButton = yearElement.querySelector('.month_btn');
@@ -863,13 +864,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.querySelectorAll('.month_btn').forEach(button => {
+    mediaProgress.querySelectorAll('.month_btn').forEach(button => {
         button.addEventListener('click', function () {
             const selectedMonth = this.getAttribute('aria-label');
             const selectedYear = this.closest('.year').querySelector('.year_btn').getAttribute('aria-label');
 
             // Убираем класс active у всех кнопок месяцев
-            document.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
+            mediaProgress.querySelectorAll('.month_btn').forEach(btn => btn.classList.remove('active'));
 
             // Добавляем класс active выбранному месяцу
             this.classList.add('active');
@@ -894,6 +895,67 @@ document.addEventListener("DOMContentLoaded", function () {
         AOS.refresh();
     }
 
+    // эффект "перетаскивания"
+    const slider = document.querySelector('.media_progress_control');
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
+
+
+
+    const filterButtons = document.querySelectorAll(".floors_selection_section .quantity_rooms_list div");
+    const floors = document.querySelectorAll(".building_img svg .floor");
+
+    //фильтр по этажам, показываем те, где есть нужыне квартиры
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            const roomsQuantity = this.getAttribute("data-rooms-quantity");
+
+            floors.forEach(floor => {
+                const floorRooms = floor.getAttribute("data-rooms-quantity") || "all";
+                const isVisible = roomsQuantity === "all" || floorRooms === roomsQuantity;
+                floor.style.opacity = isVisible ? "1" : "0";
+                floor.style.pointerEvents = isVisible ? "auto" : "none";
+            });
+        });
+    });
+
+    // при клике на активный этаж (path у которого есть data-link) делаем переход на сраницу
+    floors.forEach((floor) => {
+        floor.addEventListener("click", (event) => {
+            const link = event.target.getAttribute("data-link");
+            if (link) window.open(link, "_blank");
+        });
+    })
 
 });
 // план этажа
@@ -920,12 +982,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Обработчик клика по стрелкам (вызов AJAX)
-    floorsPlanSection.querySelectorAll(".swiper-button-next, .swiper-button-prev").forEach(button => {
-        button.addEventListener("click", function () {
-            triggerAjaxForActiveSlide();
+    if (floorsPlanSection) {
+        // Обработчик клика по стрелкам (вызов AJAX)
+        floorsPlanSection.querySelectorAll(".swiper-button-next, .swiper-button-prev").forEach(button => {
+            button.addEventListener("click", function () {
+                triggerAjaxForActiveSlide();
+            });
         });
-    });
+
+    }
+
 
     // Обработчик клика по слайдам (вызов AJAX)
     Array.from(swiperFloorsPlan.slides).forEach(slide => {
@@ -978,44 +1044,77 @@ document.addEventListener("DOMContentLoaded", function () {
             preloader.style.display = "block"; // Показываем прелоадер
 
             const response = await fetch(`http://127.0.0.1:5504/json/floor_${floorNumber}.json`);
+            // const response = await fetch(`https://крылатская33.рф/new.site/json/floor_${floorNumber}.json`);
             if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
             const data = await response.json();
-            floorsPlanImg.innerHTML = "";
+
+
+            // floorsPlanImg.innerHTML = "";
 
             filterModule.removeEventListeners();
 
-            // подставляем цифру этажа в заголовок
-            floorsPlanTitle.innerHTML = floorNumber;
+            // Создаем новое изображение
+            const newImg = new Image();
+            newImg.src = data.image;
+            newImg.classList.add("img");
+            newImg.alt = `План ${floorNumber}`;
 
-            // Создаем и добавляем изображение
-            const img = document.createElement("img");
-            img.src = data.image;
-            img.alt = `План ${floorNumber}`;
-            img.classList.add("img");
+            newImg.onload = function () {
+                console.log("Картинка загружена", newImg.src);
 
-            // Создаем контейнер для SVG
-            const svgContainer = document.createElement("div");
-            svgContainer.classList.add("svg-container");
-            svgContainer.innerHTML = data.svg;
+                // Очищаем контейнер и вставляем новое изображение
+                floorsPlanImg.innerHTML = "";
+                floorsPlanImg.appendChild(newImg);
 
-            floorsPlanImg.append(img, svgContainer);
+                // Создаём и добавляем новый SVG-контейнер
+                const newSvg = document.createElement("div");
+                newSvg.classList.add("svg-container");
+                newSvg.innerHTML = data.svg;
+                floorsPlanImg.appendChild(newSvg);
 
-            updateTooltips(data.tooltips);
-            applyFilters();
+                // Обновляем тултипы и фильтры
+                updateTooltips(data.tooltips);
+                applyFilters();
+                filterModule.init(); // Заново вешаем обработчики событий
 
-            filterModule.init();
-        } catch (error) {
-            console.error("Ошибка загрузки JSON:", error);
-        } finally {
-            setTimeout(() => {
+                // Прелоадер скрываем после полной загрузки
                 preloader.style.opacity = "0";
                 setTimeout(() => {
                     preloader.style.display = "none";
-                    // floorsPlanSection.classList.remove("sending");
-                }, 300); // 300 мс задержка перед скрытием
-            }, 300); // небольшая задержка для плавного исчезновения
+                }, 300);
+            };
+
+            // // подставляем цифру этажа в заголовок
+            // floorsPlanTitle.innerHTML = floorNumber;
+
+            // // Создаем и добавляем изображение
+            // const img = document.createElement("img");
+            // img.src = data.image;
+            // img.alt = `План ${floorNumber}`;
+            // img.classList.add("img");
+
+            // // Создаем контейнер для SVG
+            // const svgContainer = document.createElement("div");
+            // svgContainer.classList.add("svg-container");
+            // svgContainer.innerHTML = data.svg;
+
+            // floorsPlanImg.append(img, svgContainer);
+            // updateTooltips(data.tooltips);
+            // applyFilters();
+            // filterModule.init();
+        } catch (error) {
+            console.error("Ошибка загрузки JSON:", error);
         }
+        // finally {
+        //     setTimeout(() => {
+        //         preloader.style.opacity = "0";
+        //         setTimeout(() => {
+        //             preloader.style.display = "none";
+        //             // floorsPlanSection.classList.remove("sending");
+        //         }, 300); // 300 мс задержка перед скрытием
+        //     }, 300); // небольшая задержка для плавного исчезновения
+        // }
 
     }
 
@@ -1055,6 +1154,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 allowHTML: true,
                 theme: "creame",
+                arrow: false,
                 animation: "scale",
                 placement: placement,
                 followCursor: true,

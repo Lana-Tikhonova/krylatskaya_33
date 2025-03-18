@@ -643,11 +643,15 @@ svg {
         gap: 6px;
         z-index: 50;
         padding: 0 70px 16px 12px;
-        transform: translateY(100%);
+        transform: translateY(150%);
         transition: transform 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
 
         &.visible {
             transform: translateY(0%);
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
@@ -4591,6 +4595,27 @@ svg {
     }
 }
 
+.tooltip_block_floor {
+    width: 373px !important;
+    background: #fff;
+
+    h3 {
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        text-transform: none;
+        font-size: 23px;
+    }
+
+    ul {
+        margin-top: 30px;
+        border-top: none;
+        padding-top: 0;
+    }
+}
+
 @media screen and (max-width: 1440px) {
     .tooltip_block {
         padding: 20px;
@@ -4617,9 +4642,9 @@ svg {
         width: 330px;
     }
 
-    .tippy-box[data-theme~='creame'] {
-        max-width: 330px !important;
-    }
+    // .tippy-box[data-theme~='creame'] {
+    //     max-width: 330px !important;
+    // }
 }
 
 @media screen and (max-width: 576px) {
@@ -6812,11 +6837,41 @@ svg {
         }
     }
 
-    .text_img_line_8 .line_wrapper_2 {
-        top: -4%;
-        display: block;
-        left: 0%;
-        width: 100%;
+    .text_img_line_8 {
+        margin-top: 27px;
+
+        .line_wrapper_2 {
+            top: -4%;
+            display: block;
+            left: 1%;
+            width: 140%;
+            height: 80%;
+        }
+
+        .text {
+            margin-top: 48px !important;
+        }
+    }
+
+    .text_img_line_9 {
+        margin-top: 48px;
+
+        .imgs {
+            min-height: 195px;
+
+            img {
+                object-fit: cover;
+            }
+        }
+
+        .line_wrapper_5 {
+            top: -11%;
+            width: 91%;
+            right: -45%;
+            height: 64%;
+        }
+
+
     }
 
 
@@ -8787,31 +8842,43 @@ span {
 .media_progress_control_wrapper {
     border-radius: 48.309px;
     background: #FFF;
-    padding: 4px 17px 7px 40px;
+    overflow: hidden;
     margin-bottom: 81px;
+    position: relative;
+
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 57px;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    &:after {
+        right: 0;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 72%);
+    }
+
+    &:before {
+        left: 0;
+        background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.00) 72%);
+    }
 
 }
 
 .media_progress_control {
+    padding: 4px 40px 7px 40px;
     display: flex;
     gap: 42px;
     overflow-x: auto;
-    scrollbar-color: $color_brown transparent;
-    scrollbar-width: thin;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
-        width: 3px;
-        height: 3px;
-        background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: $color_brown;
-        border-radius: 5px;
+        display: none;
     }
 
     .year {
@@ -9025,6 +9092,17 @@ span {
         width: 100%;
         height: 100%;
         min-height: 1330px;
+
+        path {
+            &.floor {
+                transition: fill 0.3s ease;
+                fill: rgba(209, 198, 194, 0.75);
+
+                &:hover {
+                    fill: #D1C6C2;
+                }
+            }
+        }
     }
 }
 
@@ -9044,7 +9122,8 @@ span {
         right: 3%;
 
         img {
-            min-width: 270px;
+            width: 270px;
+            object-fit: contain;
             margin-top: -160px;
         }
     }
@@ -9071,7 +9150,7 @@ span {
 .floors_selection_block_item {
     position: absolute;
     top: 130px;
-
+    z-index: 1;
     height: calc(100% - 130px);
 }
 
@@ -9195,6 +9274,7 @@ span {
     flex-direction: column;
     align-items: center;
     padding-bottom: 47px;
+    padding-top: 30px;
     width: 100%;
 
     .compass {
@@ -9340,6 +9420,10 @@ span {
         z-index: 1;
         cursor: pointer;
         fill: none;
+
+        &[data-rooms-quantity="c"] {
+            fill: #E3E3E3;
+        }
 
         &[data-rooms-quantity="1"] {
             fill: rgba(197, 88, 88, 0.30);

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?11" />
+    <link rel="stylesheet" href="css/bundle.min.css?14" />
 </head>
 
 <body class='small_header floors_plan_page'>
@@ -225,6 +225,11 @@
                         </div>
                     </div>
                     <div class='floors_plan_wrapper'>
+                        <!-- коммент для внутренностей svg:
+                         1) если есть квартира то у polygon есть класс tippy_btn (он нужен для всплывашек)
+                         2) есть атрибут data-link - отсюда берется путь к странице, т.е. в data-link нужно просписать url странцы на которую мы должны попасть при клике на элемент  
+                         3) в атрибуте data-rooms-quantity нужно просписать кол-во комнат (для фильтра)
+                          -->
                         <!-- img,svg, контент тултипов для svg загружается через json -->
                         <div class='floors_plan_list'>
                             <div class='floors_plan_img_wrapper'>
@@ -297,7 +302,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?15"></script>
+    <script src="js/common.js?17"></script>
 </body>
 
 </html>
