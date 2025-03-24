@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?16" />
+    <link rel="stylesheet" href="css/bundle.min.css?19" />
 </head>
 
 <body class=''>
@@ -80,7 +80,7 @@
                     <div class="head_subtitle" data-aos="fade" data-aos-offset="0">Медиа о Крылатской 33</div>
 
                     <h1 data-aos="fade" data-aos-offset="0">
-                        Следите за новостями, публикациями и ходом строительства
+                        Следите за новостями, публикациями и ходом строительства.
                     </h1>
 
                 </div>
@@ -205,14 +205,14 @@
                 <div class='btns_list' data-aos="fade">
                     <!-- если текушая страница, то span -->
                     <a href="media_photo.html" class='btns_item btn btn_white'>Фото- и видеогалерея</a>
-                    <a href="media_news.html" class='btns_item btn btn_white'>новости и публикации</a>
-                    <span class='btns_item btn'>ход строительства</span>
+                    <a href="media_news.html" class='btns_item btn btn_white'>Новости и публикации</a>
+                    <span class='btns_item btn'>Ход строительства</span>
                 </div>
                 <div class="media_progress">
                     <div class='media_progress_control_wrapper' data-aos="fade">
                         <div class='media_progress_control'>
                             <div class='year'>
-                                <!-- при клике на год скрываются все media_progress_list_wrapper, получается первый месяц внутри активного года и показывается егоЮ По умолчанию показывается последний год и последний месяц в этом году  -->
+                                <!-- при клике на год скрываются все media_progress_list_wrapper, получается первый месяц внутри активного года и показывается его. По умолчанию показывается последний год и последний месяц в этом году  -->
                                 <button aria-label="2021" class='year_btn'>2021</button>
                                 <div class='month'>
                                     <button aria-label="Февр" class='month_btn'>Февр</button>
@@ -266,178 +266,216 @@
                         </div>
                     </div>
                     <div class='media_progress_content' data-aos="fade">
-                        <div class='media_progress_list_wrapper' data-year="2023" data-month="Февр">
+                        <div class='media_progress_list_wrapper' data-year="2021" data-month="Февр">
                             <!-- тут галерея и нужно для каждого месяца прописать свой data-fancybox, можно например media_progress_2023_02 (год и месяц), но это без разницы, главное чтобы в одном media_progress_list были одинаковые data-fancybox у .item -->
-                            <div class='media_progress_list media_slider swiper'>
-                                <div class='swiper-wrapper'>
-
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_7_big.png" class="item"
-                                            data-fancybox="media_progress_2023_02">
-                                            <div class="media_images"><img src="imgs/img_7.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_1.png" class="item" data-fancybox="media_progress_2023_02">
-                                            <div class="media_images"><img src="imgs/img_1.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
+                            <!-- на мобилке превращается в слайдер -->
+                            <div class='media_progress_list'>
+                                <div class='media_slider swiper'>
+                                    <div class='swiper-wrapper'>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_7_big.png" class="item"
+                                                data-fancybox="media_progress_2023_02">
+                                                <div class="media_images"><img src="imgs/img_7.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_1.png" class="item"
+                                                data-fancybox="media_progress_2023_02">
+                                                <div class="media_images"><img src="imgs/img_1.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                                <button class='btn'>загрузить больше</button>
                             </div>
+                            <button class='btn media_progress_btn'>Загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2024" data-month="Янв">
-                            <div class='media_progress_list media_slider swiper'>
-                                <div class='swiper-wrapper'>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_5_big.png" class="item"
-                                            data-fancybox="media_progress_2024_01">
-                                            <div class="media_images"><img src="imgs/img_5.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_6_big.jpeg" class="item"
-                                            data-fancybox="media_progress_2024_01">
-                                            <div class="media_images"><img src="imgs/img_6.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_7_big.png" class="item"
-                                            data-fancybox="media_progress_2024_01">
-                                            <div class="media_images"><img src="imgs/img_7.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_1.png" class="item" data-fancybox="media_progress_2024_01">
-                                            <div class="media_images"><img src="imgs/img_1.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_2.png" class="item" data-fancybox="media_progress_2024_01">
-                                            <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
+                            <div class='media_progress_list'>
+                                <div class='media_slider swiper'>
+                                    <div class='swiper-wrapper'>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_5_big.png" class="item"
+                                                data-fancybox="media_progress_2024_01">
+                                                <div class="media_images"><img src="imgs/img_5.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_6_big.jpeg" class="item"
+                                                data-fancybox="media_progress_2024_01">
+                                                <div class="media_images"><img src="imgs/img_6.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_7_big.png" class="item"
+                                                data-fancybox="media_progress_2024_01">
+                                                <div class="media_images"><img src="imgs/img_7.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_1.png" class="item"
+                                                data-fancybox="media_progress_2024_01">
+                                                <div class="media_images"><img src="imgs/img_1.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_2.png" class="item"
+                                                data-fancybox="media_progress_2024_01">
+                                                <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
-                            <button class='btn'>загрузить больше</button>
+                            <button class='btn media_progress_btn'>Загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2024" data-month="Февр">
-                            <div class='media_progress_list media_slider swiper'>
-                                <div class='swiper-wrapper'>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_5_big.png" class="item"
-                                            data-fancybox="media_progress_2024_02">
-                                            <div class="media_images"><img src="imgs/img_5.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
+                            <div class='media_progress_list'>
+                                <div class='media_slider swiper'>
+                                    <div class='swiper-wrapper'>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_5_big.png" class="item"
+                                                data-fancybox="media_progress_2024_02">
+                                                <div class="media_images"><img src="imgs/img_5.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
 
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_2.png" class="item" data-fancybox="media_progress_2024_02">
-                                            <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_2.png" class="item"
+                                                data-fancybox="media_progress_2024_02">
+                                                <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class='btn'>загрузить больше</button>
+                            <button class='btn media_progress_btn'>Загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2024" data-month="Март">
-                            <div class='media_progress_list media_slider swiper'>
-                                <div class='swiper-wrapper'>
-
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_1.png" class="item" data-fancybox="media_progress_2024_03">
-                                            <div class="media_images"><img src="imgs/img_1.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_2.png" class="item" data-fancybox="media_progress_2024_03">
-                                            <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
+                            <div class='media_progress_list'>
+                                <div class='media_slider swiper'>
+                                    <div class='swiper-wrapper'>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_1.png" class="item"
+                                                data-fancybox="media_progress_2024_03">
+                                                <div class="media_images"><img src="imgs/img_1.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_2.png" class="item"
+                                                data-fancybox="media_progress_2024_03">
+                                                <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class='btn'>загрузить больше</button>
+                            <button class='btn media_progress_btn'>Загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2024" data-month="Апр">
-                            <div class='media_progress_list media_slider swiper'>
-                                <div class='swiper-wrapper'>
-
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_2.png" class="item" data-fancybox="media_progress_2024_04">
-                                            <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
+                            <div class='media_progress_list '>
+                                <div class='media_slider swiper'>
+                                    <div class='swiper-wrapper'>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_2.png" class="item"
+                                                data-fancybox="media_progress_2024_04">
+                                                <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2025" data-month="Янв">
-                            <div class='media_progress_list media_slider swiper'>
-                                <div class='swiper-wrapper'>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_5_big.png" class="item"
-                                            data-fancybox="media_progress_2025_01">
-                                            <div class="media_images"><img src="imgs/img_5.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
+                            <div class='media_progress_list'>
+                                <div class='media_slider swiper'>
+                                    <div class='swiper-wrapper'>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_5_big.png" class="item"
+                                                data-fancybox="media_progress_2025_01">
+                                                <div class="media_images"><img src="imgs/img_5.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class='btn'>загрузить больше</button>
                         </div>
                         <div class='media_progress_list_wrapper' data-year="2025" data-month="Февр">
-                            <div class='media_progress_list media_slider swiper'>
-                                <div class='swiper-wrapper'>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_5_big.png" class="item"
-                                            data-fancybox="media_progress_2025_02">
-                                            <div class="media_images"><img src="imgs/img_5.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_6_big.jpeg" class="item"
-                                            data-fancybox="media_progress_2025_02">
-                                            <div class="media_images"><img src="imgs/img_6.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_7_big.png" class="item"
-                                            data-fancybox="media_progress_2025_02">
-                                            <div class="media_images"><img src="imgs/img_7.jpg" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_1.png" class="item" data-fancybox="media_progress_2025_02">
-                                            <div class="media_images"><img src="imgs/img_1.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="imgs/img_2.png" class="item" data-fancybox="media_progress_2025_02">
-                                            <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
-                                            <div class="text">Август 2023 — завершены фасадные работы</div>
-                                        </a>
+                            <div class='media_progress_list '>
+                                <div class='media_slider swiper'>
+                                    <div class='swiper-wrapper'>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_5_big.png" class="item"
+                                                data-fancybox="media_progress_2025_02">
+                                                <div class="media_images"><img src="imgs/img_5.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_6_big.jpeg" class="item"
+                                                data-fancybox="media_progress_2025_02">
+                                                <div class="media_images"><img src="imgs/img_6.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_7_big.png" class="item"
+                                                data-fancybox="media_progress_2025_02">
+                                                <div class="media_images"><img src="imgs/img_7.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_1.png" class="item"
+                                                data-fancybox="media_progress_2025_02">
+                                                <div class="media_images"><img src="imgs/img_1.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_2.png" class="item"
+                                                data-fancybox="media_progress_2025_02">
+                                                <div class="media_images"><img src="imgs/img_2.png" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_20.jpg" class="item"
+                                                data-fancybox="media_progress_2025_02">
+                                                <div class="media_images"><img src="imgs/img_20.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_46.jpg" class="item"
+                                                data-fancybox="media_progress_2025_02">
+                                                <div class="media_images"><img src="imgs/img_46.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="imgs/img_114.jpg" class="item"
+                                                data-fancybox="media_progress_2025_02">
+                                                <div class="media_images"><img src="imgs/img_114.jpg" alt=""></div>
+                                                <div class="text">Август 2023 — завершены фасадные работы</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
-                            <button class='btn'>загрузить больше</button>
+                            <button class='btn media_progress_btn'>Загрузить больше</button>
                         </div>
                     </div>
                 </div>
@@ -453,22 +491,44 @@
                         </div>
                         <div class="tabs_content" data-aos="fade">
                             <div class="tabs_content_item" id="camera_tab-1">
-                                <div class='camera_block_img'><img src="imgs/img_120.jpg" alt=""></div>
+                                <div class='camera_block_img'>
+                                    <span class='preloader'>
+                                        <span class='loader'></span>
+                                    </span>
+                                    <img data-src="http://178.218.157.246:555/vT8uu3Ib?container=mjpeg&amp;stream=main">
+                                </div>
                             </div>
                             <div class="tabs_content_item" id="camera_tab-2">
-                                <div class='camera_block_img'><img src="imgs/img_93.jpg" alt=""></div>
+                                <div class='camera_block_img'>
+                                    <span class='preloader'>
+                                        <span class='loader'></span>
+                                    </span>
+                                    <img data-src="http://178.218.157.246:555/uNLhHwqL?container=mjpeg&amp;stream=main">
+                                </div>
                             </div>
                             <div class="tabs_content_item" id="camera_tab-3">
-                                <div class='camera_block_img'> <img src="imgs/img_94.jpg" alt=""></div>
+                                <div class='camera_block_img'>
+                                    <span class='preloader'>
+                                        <span class='loader'></span>
+                                    </span>
+                                    <img data-src="http://178.218.157.246:555/VO7yDRxf?container=mjpeg&amp;stream=main">
+                                </div>
                             </div>
                             <div class="tabs_content_item" id="camera_tab-4">
-                                <div class='camera_block_img'><img src="imgs/img_95.jpg" alt=""></div>
+                                <div class='camera_block_img'>
+                                    <span class='preloader'>
+                                        <span class='loader'></span>
+                                    </span>
+                                    <img class=''
+                                        data-src="http://178.218.157.246:555/tpngdale?container=mjpeg&amp;stream=main">
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class='camera_block_info' data-aos="fade">
                         <div class="img"><img src="imgs/img_121.jpg" alt=""></div>
-                        <h2 class='text'>На данный момент выполнено: 75% фасадных работ, 60% внутренних отделочных работ
+                        <h2 class='text'>На данный момент выполнено: 75% фасадных работ, 60% внутренних отделочных
+                            работ.
                         </h2>
                     </div>
                 </div>
@@ -484,7 +544,7 @@
                     </div>
                     <div class="right" data-aos="fade">
                         <div class="text">
-                            Следите за новостями и ходом<br> строительства в режиме реального времени
+                            Следите за новостями и ходом<br> строительства в режиме реального времени.
                         </div>
                         <a href="#" class="btn">Подписаться на Telegram-канал</a>
                     </div>
@@ -494,10 +554,10 @@
         <section class='section offer_block_section'>
             <div class="container">
                 <div class="offer_block offer_block_2" data-aos="fade">
-                    <div class='img'><img src="imgs/img_125.png" alt=""></div>
-                    <h2>Крылатская 33 — это уникальная архитектура, современные интерьеры <br>и зелёные зоны для жизни
+                    <div class='img'><img src="imgs/offer_img_1.jpg" alt=""></div>
+                    <h2>Крылатская 33 — это уникальная архитектура, современные интерьеры <br>и зелёные зоны для жизни.
                     </h2>
-                    <a href="#" class='btn -not_border'>ВЫБОР квартиры</a>
+                    <a href="#" class='btn -not_border'>Выбор квартиры</a>
                 </div>
             </div>
         </section>
@@ -699,7 +759,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?18"></script>
+    <script src="js/common.js?21"></script>
 </body>
 
 </html>

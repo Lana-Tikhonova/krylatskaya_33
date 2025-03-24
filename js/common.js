@@ -115,8 +115,12 @@ document.addEventListener("DOMContentLoaded", function () {
             prevEl: ".swiper-button-prev",
         },
         breakpoints: {
-            993: {
-                slidesPerView: 3,
+            577: {
+                slidesPerView: 'auto',
+                spaceBetween: 24,
+            },
+            1101: {
+                slidesPerView: 4,
                 spaceBetween: 20,
             },
         },
@@ -413,19 +417,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // медиа
     let currentCategory = "all"; // По умолчанию показываем все
-
-    // Обработчик клика по фильтрам
-    $(".tag").on("click", function (e) {
+    $(".media_wrapper .tag").on("click", function (e) {
         e.preventDefault();
 
-        $(".tag").removeClass("active");
+        const $wrapper = $(this).closest(".media_wrapper");
+        const $tags = $wrapper.find(".tag");
+        const $mediaCols = $wrapper.find(".media_col");
+
+        $tags.removeClass("active");
         $(this).addClass("active");
 
-        currentCategory = $(this).data("category");
+        const currentCategory = $(this).data("category");
 
-        $(".media_col").each(function () {
+        $mediaCols.each(function () {
             $(this).toggle(currentCategory === "all" || $(this).data("category") === currentCategory);
         });
+
         // Пересчитываем позиции элементов для AOS.js
         AOS.refresh();
     });
@@ -555,7 +562,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const tabsNavItems = tabsBlock.querySelectorAll(".tabs_nav_item");
         const tabsContentItems = tabsBlock.querySelectorAll(".tabs_content .tabs_content_item");
 
-        tabsNavItems.forEach((tab) => {
+        tabsNavItems.forEach((tab, index) => {
             tab.addEventListener("click", function (e) {
                 e.preventDefault();
 
@@ -569,8 +576,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     targetTab.style.display = "block";
                 }
 
-                // Удаляем и добавляем класс активности внутри текущего блока
+                // Обновляем активный класс
                 tabsNavItems.forEach((nav) => nav.classList.remove("active"));
+                this.classList.add("active");
 
                 if (this.classList.contains("static_map_svg_g")) {
                     console.log(this);
@@ -581,15 +589,38 @@ document.addEventListener("DOMContentLoaded", function () {
                     this.classList.add("active");
                 }
 
-                // Обновляем Swiper в текущем активном табе
                 if (targetTab) {
+                    // Обновляем Swiper в текущем активном табе
                     const swiperInstance = targetTab.querySelector(".slider_gallery");
                     if (swiperInstance && swiperInstance.swiper) {
                         swiperInstance.swiper.update();
                     }
                     // Пересчитываем позиции элементов для AOS.js
                     AOS.refresh();
+
+                    // Загружаем камеру только если в табе есть .camera_block_img
+                    const cameraBlock = targetTab.querySelector(".camera_block_img");
+                    if (cameraBlock) {
+                        const img = cameraBlock.querySelector("img");
+                        if (img && img.dataset.src) {
+                            img.src = img.dataset.src; // Включаем поток
+                        }
+                    }
                 }
+
+
+                // Очищаем потоки в других табах
+                tabsContentItems.forEach((item, itemIndex) => {
+                    if (itemIndex !== index) {
+                        const otherCameraBlock = item.querySelector(".camera_block_img");
+                        if (otherCameraBlock) {
+                            const otherImg = otherCameraBlock.querySelector("img");
+                            if (otherImg) {
+                                otherImg.src = ""; // Очищаем поток
+                            }
+                        }
+                    }
+                });
 
             });
         });
@@ -638,6 +669,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // табы в модалке
     document.addEventListener("click", function (e) {
         const target = e.target.closest('[data-open-modal]');
+        console.log(target);
 
         if (target) {
             const modalId = target.dataset.openModal;
@@ -656,7 +688,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const tabsNavItems = tabsBlock.querySelectorAll('.tabs_nav_item');
         const tabsContentItems = tabsBlock.querySelectorAll('.tabs_content .tabs_content_item');
-
+        console.log(2423424);
 
         tabsContentItems.forEach(item => item.style.display = "none");
 
@@ -801,9 +833,121 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     });
 
-    // Найти последний год
+    const filterButtons = document.querySelectorAll(".floors_selection_section .quantity_rooms_list div");
+    const floors = document.querySelectorAll(".building_img svg .floor");
+
+    //фильтр по этажам, показываем те, где есть нужные квартиры
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            const roomsQuantity = this.getAttribute("data-rooms-quantity");
+
+            floors.forEach(floor => {
+                const floorRooms = floor.getAttribute("data-rooms-quantity") || "all";
+                const isVisible = roomsQuantity === "all" || floorRooms === roomsQuantity;
+                floor.style.opacity = isVisible ? "1" : "0";
+                floor.style.pointerEvents = isVisible ? "auto" : "none";
+            });
+        });
+    });
+
+    // при клике на активный этаж (path у которого есть data-link) делаем переход на сраницу
+    floors.forEach((floor) => {
+        floor.addEventListener("click", (event) => {
+            const link = event.target.getAttribute("data-link");
+            if (link) window.open(link, "_blank");
+        });
+    })
+
+    // 
+    let swiperInstancesNews = new Map();
+    const swiperNewsListSliders = document.querySelectorAll(".news_list_slider");
+
+    function initSwipersNews() {
+        swiperNewsListSliders.forEach((slider) => {
+            if (window.innerWidth > 576 && window.innerWidth <= 992) {
+                if (!swiperInstancesNews.has(slider)) {
+                    swiperInstancesNews.set(slider, new Swiper(slider, {
+                        slidesPerView: 'auto',
+                        spaceBetween: 27,
+                        watchSlidesProgress: true,
+                        mousewheelControl: true,
+                        watchOverflow: true,
+                        watchSlidesVisibility: true,
+                    }));
+                }
+            } else {
+                if (swiperInstancesNews.has(slider)) {
+                    swiperInstancesNews.get(slider).destroy(true, true);
+                    swiperInstancesNews.delete(slider);
+                }
+            }
+        });
+    }
+    initSwipersNews();
+    window.addEventListener("resize", initSwipersNews);
+});
+
+// ход строительства
+document.addEventListener("DOMContentLoaded", function () {
+    // 
+    let swiperInstancesMedia = new Map();
+    const swiperMediaSliders = document.querySelectorAll(".media_slider");
+
+    function initSwipersMedia() {
+        swiperMediaSliders.forEach((slider) => {
+            if (window.innerWidth <= 992) {
+                if (!swiperInstancesMedia.has(slider)) {
+                    const swiper = new Swiper(slider, {
+                        slidesPerView: 'auto',
+                        spaceBetween: 8,
+                        watchSlidesProgress: true,
+                        watchOverflow: true,
+                        init: false,
+                        breakpoints: {
+                            577: {
+                                slidesPerView: 'auto',
+                                spaceBetween: 19,
+                            },
+                        },
+                    });
+
+                    swiperInstancesMedia.set(slider, swiper);
+                    swiper.init();
+                }
+            } else {
+                if (swiperInstancesMedia.has(slider)) {
+                    swiperInstancesMedia.get(slider).destroy(true, true);
+                    swiperInstancesMedia.delete(slider);
+                }
+            }
+        });
+    }
+
+    initSwipersMedia();
+    window.addEventListener("resize", initSwipersMedia);
+
+    // прокрутка к активному месяцу
+    function scrollToActiveMonth() {
+        const activeMonth = document.querySelector('.month_btn.active');
+        const container = document.querySelector('.media_progress_control_wrapper');
+        if (activeMonth) {
+            container.scrollTo({
+                left: activeMonth.offsetLeft - container.offsetWidth / 2 + activeMonth.offsetWidth / 2,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+
     const mediaProgress = document.querySelector('.media_progress_control');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
     if (mediaProgress) {
+        // Найти последний год
         const lastYear = mediaProgress.querySelector('.year:last-of-type');
         lastYear.classList.add('active');
 
@@ -869,105 +1013,47 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetWrapper = document.querySelector(`.media_progress_list_wrapper[data-year="${year}"][data-month="${month}"]`);
             if (targetWrapper) {
                 targetWrapper.style.display = 'block';
+
+                swiperInstancesMedia.forEach((swiper) => { swiper.update(); });
             }
+
+            // Вызываем прокрутку после установки активного месяца
+            scrollToActiveMonth();
+
             // Пересчитываем позиции элементов для AOS.js
             AOS.refresh();
         }
-    }
 
-
-    // эффект "перетаскивания"
-    const sliderMediaProgress = document.querySelector('.media_progress_control');
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    if (sliderMediaProgress) {
-        sliderMediaProgress.addEventListener('mousedown', (e) => {
+        // эффект "перетаскивания"
+        mediaProgress.addEventListener('mousedown', (e) => {
             isDown = true;
-            sliderMediaProgress.classList.add('active');
-            startX = e.pageX - sliderMediaProgress.offsetLeft;
-            scrollLeft = sliderMediaProgress.scrollLeft;
+            // mediaProgress.classList.add('active');
+            startX = e.pageX - mediaProgress.offsetLeft;
+            scrollLeft = mediaProgress.scrollLeft;
         });
 
-        sliderMediaProgress.addEventListener('mouseleave', () => {
+        mediaProgress.addEventListener('mouseleave', () => {
             isDown = false;
-            sliderMediaProgress.classList.remove('active');
+            // mediaProgress.classList.remove('active');
         });
 
-        sliderMediaProgress.addEventListener('mouseup', () => {
+        mediaProgress.addEventListener('mouseup', () => {
             isDown = false;
-            sliderMediaProgress.classList.remove('active');
+            // mediaProgress.classList.remove('active');
         });
 
-        sliderMediaProgress.addEventListener('mousemove', (e) => {
+        mediaProgress.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
-            const x = e.pageX - sliderMediaProgress.offsetLeft;
+            const x = e.pageX - mediaProgress.offsetLeft;
             const walk = (x - startX) * 1.5;
-            sliderMediaProgress.scrollLeft = scrollLeft - walk;
+            mediaProgress.scrollLeft = scrollLeft - walk;
         });
-
     }
-
-
-    const filterButtons = document.querySelectorAll(".floors_selection_section .quantity_rooms_list div");
-    const floors = document.querySelectorAll(".building_img svg .floor");
-
-    //фильтр по этажам, показываем те, где есть нужыне квартиры
-    filterButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
-            const roomsQuantity = this.getAttribute("data-rooms-quantity");
-
-            floors.forEach(floor => {
-                const floorRooms = floor.getAttribute("data-rooms-quantity") || "all";
-                const isVisible = roomsQuantity === "all" || floorRooms === roomsQuantity;
-                floor.style.opacity = isVisible ? "1" : "0";
-                floor.style.pointerEvents = isVisible ? "auto" : "none";
-            });
-        });
-    });
-
-    // при клике на активный этаж (path у которого есть data-link) делаем переход на сраницу
-    floors.forEach((floor) => {
-        floor.addEventListener("click", (event) => {
-            const link = event.target.getAttribute("data-link");
-            if (link) window.open(link, "_blank");
-        });
-    })
-
-    let swiperNewsList = null; // Переменная для хранения экземпляра Swiper
-    const swiperNewsListSlider = document.querySelector(".news_list_slider");
-
-    function initSwiperNewsList() {
-        if (window.innerWidth > 576 && window.innerWidth <= 992 && swiperNewsListSlider) {
-            if (!swiperNewsList) {
-                swiperNewsList = new Swiper(swiperNewsListSlider, {
-                    slidesPerView: 'auto',
-                    spaceBetween: 27,
-                    watchSlidesProgress: true,
-                    mousewheelControl: true,
-                    watchOverflow: true,
-                    watchSlidesVisibility: true,
-                });
-            }
-        } else {
-            if (swiperNewsList) {
-                swiperNewsList.destroy(true, true);
-                swiperNewsList = null;
-            }
-        }
-    }
-
-    initSwiperNewsList();
-    window.addEventListener("resize", initSwiperNewsList);
-
 
 });
-// план этажа
 
+// план этажа
 document.addEventListener("DOMContentLoaded", function () {
     const floorsPlanSection = document.querySelector(".floors_plan_section");
     const floorsPlanImg = document.querySelector(".floors_plan_img");
