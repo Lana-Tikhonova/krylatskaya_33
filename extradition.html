@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta name="description" content="Крылатская 33" />
     <meta name="keywords" content="" />
-    <title>План этажа</title>
+    <title>Выдача</title>
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
@@ -25,10 +25,11 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?19" />
+    <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="css/bundle.min.css?20" />
 </head>
 
-<body class='small_header floors_plan_page'>
+<body class='small_header extradition_page'>
     <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
     <header class="header header_dark">
         <div class="container">
@@ -187,107 +188,450 @@
     </div>
 
     <main>
-        <section class='floors_plan_section'>
+        <!-- тут есть подключения css и js -  nouislider, в шапке и в конце боди -->
+        <section class='catalog_section'>
             <div class="container">
-                <div class='floors_plan_block'>
-                    <div class='floors_block_info floors_plan_block_item left'>
-                        <a href="#" class='back_btn back_btn_two'>
-                            <span class='back_btn_icon'>
+                <div class="catalog_block tabs_block">
+                    <div class="top">
+                        <a href="#" class="back_btn back_btn_two">
+                            <span class="back_btn_icon">
                                 <svg width="18" height="30" viewBox="0 0 18 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_1669_4605)">
                                         <path
                                             d="M15.3019 0.81L17.4219 2.94L4.95187 15.41L17.4219 27.88L15.3019 30L0.711875 15.41L15.3019 0.81Z"
-                                            fill="#63483F" />
+                                            fill="#63483F"></path>
                                     </g>
                                     <defs>
                                         <clipPath id="clip0_1669_4605">
                                             <rect width="16.71" height="29.19" fill="white"
-                                                transform="translate(17.4219 30) rotate(180)" />
+                                                transform="translate(17.4219 30) rotate(180)"></rect>
                                         </clipPath>
                                     </defs>
                                 </svg>
                             </span>
-                            К выбору этажа
+                            Назад
                         </a>
-                        <h2 class='floors_plan_title'><span>30</span> этаж</h2>
-                        <a href="#" class='btn'>ПОДБОР ПО ПАРАМЕТРАМ</a>
-                        <div class='quantity_rooms'>
-                            <span>Количество комнат</span>
-                            <div class='quantity_rooms_list'>
-                                <div data-rooms-quantity="all" class='active'>Все</div>
-                                <div data-rooms-quantity="c">С</div>
-                                <div data-rooms-quantity="1">1</div>
-                                <div data-rooms-quantity="2">2</div>
-                                <div data-rooms-quantity="3">3</div>
-                                <div data-rooms-quantity="4">4</div>
+                        <div class="tabs_nav tags" data-aos="fade">
+                            <a class="tabs_nav_item tag active" href="#apartment_1">Плитка</a>
+                            <a class="tabs_nav_item tag" href="#apartment_2">Список</a>
+                        </div>
+                    </div>
+                    <div class="left">
+                        <div class='catalog_list'>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class="price price_new">32 195 391 ₽</div>
+                                            <div class="price_old">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
+                                            </div>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
+                            </div>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class="price price_new">32 195 391 ₽</div>
+                                            <div class="price_old">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
+                                            </div>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
+                            </div>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class="price price_new">32 195 391 ₽</div>
+                                            <div class="price_old">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='crayons_item --blue'>
+                                                <img src="imgs/diamond.svg" alt="">
+                                            </div>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
+                            </div>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <div class="price">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
+                            </div>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <div class="price">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
+                            </div>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <div class="price">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
+                            </div>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <div class="price">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
+                            </div>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <div class="price">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
+                            </div>
+                            <div class="catalog_col">
+                                <div class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_price'>
+                                            <div class="price">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class='floors_plan_wrapper'>
-                        <!-- коммент для внутренностей svg:
-                         1) если есть квартира то у polygon есть класс tippy_btn (он нужен для всплывашек)
-                         2) есть атрибут data-link - отсюда берется путь к странице, т.е. в data-link нужно просписать url странцы на которую мы должны попасть при клике на элемент  
-                         3) в атрибуте data-rooms-quantity нужно просписать кол-во комнат (для фильтра)
-                          -->
-                        <!-- img,svg, контент тултипов для svg загружается через json -->
-                        <div class='floors_plan_list'>
-                            <div class='floors_plan_img_wrapper'>
-                                <div class='floors_plan_img_block'>
-                                    <span class='floors_plan_img_view --courtyard'><img src="imgs/view_courtyard.svg"
-                                            alt=""></span>
-                                    <span class='floors_plan_img_view --street'><img src="imgs/view_street.svg"
-                                            alt=""></span>
-                                    <span class='floors_plan_img_view --church'><img src="imgs/view_church.svg"
-                                            alt=""></span>
-                                    <div class='floors_plan_img'></div>
+                    <div class="right">
+                        <div class='filter_wrapper'>
+                            <div class="filter">
+                                <div class='filter_top'>
+                                    <h3 class="title">
+                                        Параметры
+                                    </h3>
+                                    <div class='filter_reset'>
+                                        <svg class="fill_none stroke_brown">
+                                            <use xlink:href="imgs/sprite.symbol.svg#close"></use>
+                                        </svg>
+                                        <span>Сбросить</span>
+                                    </div>
                                 </div>
-                                <div class="preloader">
-                                    <span class="loader"></span>
+                                <div class='filter_block'>
+                                    <div class="title">Секция</div>
+                                    <div class='filter_list'>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>1</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>2</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>3</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>4</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>5</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>6</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>7</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='filter_block'>
+                                    <div class='filter_list_checkbox'>
+                                        <label class='filter_item_checkbox'>
+                                            <input type="checkbox" name="filter_section" checked>
+                                            <span>Квартиры<br>с террасой</span>
+                                        </label>
+                                        <label class='filter_item_checkbox'>
+                                            <input type="checkbox" name="filter_section" checked>
+                                            <span>Спецпредложения</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class='filter_block'>
+                                    <div class="title">Количество комнат</div>
+                                    <div class='filter_list'>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>C</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>1</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>2</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>3</span>
+                                        </div>
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>4</span>
+                                        </div>
+                                        <!-- тут svg -->
+                                        <div class='filter_item'>
+                                            <input type="checkbox" name="filter_section">
+                                            <span>
+                                                <svg width="22" height="23" viewBox="0 0 22 23" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.988 22.168V12.502H0.808V10.072H9.988V0.459997H12.472V10.072H21.652V12.502H12.472V22.168H9.988Z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- from_to_block все три одинаковые отличаются классом у первого from_to_block_price, для форматирование в js-->
+                                    <div class='filter_block'>
+                                        <div class="title">Стоимость, млн ₽</div>
+                                        <div class='from_to_block from_to_block_price' data-step="100000">
+                                            <div class="from-to">
+                                                <div class="from_to_text from_to_text_right">
+                                                    <input type="text" class="filter-price price_from" value=""
+                                                        data-value="15344089" data-min="15344089" data-max="54554821"
+                                                        placeholder="15344089" name="price_min">
+                                                </div>
+                                                <div class="from_to_text from_to_text_left">
+                                                    <input type="text" class="filter-price price_to" value=""
+                                                        data-value="54554821" data-min="15344089" data-max="54554821"
+                                                        placeholder="54554821" name="price_max">
+                                                </div>
+                                                <input type="hidden" data-name="" name="" value="" class="form_input2">
+                                            </div>
+                                            <div class="sliderMinMax"></div>
+                                        </div>
+                                    </div>
+                                    <div class='filter_block'>
+                                        <div class="title">Этаж</div>
+                                        <div class='from_to_block' data-step="1">
+                                            <div class="from-to">
+                                                <div class="from_to_text from_to_text_right">
+                                                    <input type="text" class="filter-price price_from" value=""
+                                                        data-value="2" data-min="2" data-max="40" placeholder="2"
+                                                        name="price_min">
+                                                </div>
+                                                <div class="from_to_text from_to_text_left">
+                                                    <input type="text" class="filter-price price_to" value=""
+                                                        data-value="40" data-min="2" data-max="40" placeholder="40"
+                                                        name="price_max">
+                                                </div>
+                                                <input type="hidden" data-name="" name="" value="" class="form_input2">
+                                            </div>
+                                            <div class="sliderMinMax"></div>
+                                        </div>
+                                    </div>
+                                    <div class='filter_block'>
+                                        <div class="title">Площадь, м²</div>
+                                        <div class='from_to_block' data-step="1">
+                                            <div class="from-to">
+                                                <div class="from_to_text from_to_text_right">
+                                                    <input type="text" class="filter-price price_from" value=""
+                                                        data-value="22" data-min="22" data-max="124" placeholder="22"
+                                                        name="price_min">
+                                                </div>
+                                                <div class="from_to_text from_to_text_left">
+                                                    <input type="text" class="filter-price price_to" value=""
+                                                        data-value="124" data-min="22" data-max="124" placeholder="124"
+                                                        name="price_max">
+                                                </div>
+                                                <input type="hidden" data-name="" name="" value="" class="form_input2">
+                                            </div>
+                                            <div class="sliderMinMax"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class='floors_plan_master_plan'>
-                                <img src="imgs/master_plan.png" alt="" class='floors_plan_master_plan_img'>
-                            </div>
-                        </div>
-                        <div class='compass'><img src="imgs/compass.svg" alt=""></div>
-                    </div>
-                    <div class='floors_block_info floors_plan_block_item right'>
-                        <div class='floors_plan_slider_wrapper'>
-                            <span class='name'>Этажи</span>
-                            <div class="swiper-button-prev">
-                                <svg>
-                                    <use xlink:href="imgs/sprite.symbol.svg#arrow_right"></use>
+                            <div class='scrollup'>
+                                <svg width="14" height="9" viewBox="0 0 14 9" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M-4.61299e-08 7.94467L1.0171 9L7.02417 2.42441L7.48367 2.90333L12.863 9L14 7.94351L7.02417 1.60031e-06L-4.61299e-08 7.94467Z"
+                                        fill="#63483F" />
                                 </svg>
-                            </div>
-                            <div class='swiper floors_plan_slider'>
-                                <div class='swiper-wrapper'>
-                                    <div class="swiper-slide current-slide" data-floor="30">
-                                        <div class='item'>30</div>
-                                    </div>
-                                    <div class="swiper-slide" data-floor="31">
-                                        <div class='item'>31</div>
-                                    </div>
-                                    <div class="swiper-slide" data-floor="32">
-                                        <div class='item'>32</div>
-                                    </div>
-                                    <div class="swiper-slide" data-floor="33">
-                                        <div class='item'>33</div>
-                                    </div>
-                                    <div class="swiper-slide " data-floor="34">
-                                        <div class='item'>34</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next">
-                                <svg>
-                                    <use xlink:href="imgs/sprite.symbol.svg#arrow_left"></use>
-                                </svg>
+
+                                К началу
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
     </main>
 
@@ -302,7 +646,9 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?21"></script>
+    <script src="vendors/nouislider/nouislider.min.js"></script>
+    <script src="vendors/nouislider/wNumb.min.js"></script>
+    <script src="js/common.js?22"></script>
 </body>
 
 </html>

@@ -1,45 +1,81 @@
 document.addEventListener("DOMContentLoaded", function () {
     let prevScroll = window.scrollY;
 
-    //фиксировать шапку
+
     const header = document.querySelector('.header_block_fix');
+    const mobileBtnFix = document.querySelector('.mobile_btn_fix');
+    const footer = document.querySelector('.footer');
+    const filter = document.querySelector('.filter_wrapper');
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+    //фиксировать шапку
+    function fixHeader() {
+        if (header) {
+            const currentScroll = window.scrollY;
+            const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
 
-        if (currentScroll > 300) {
-            header.classList.add('fixed');
-        } else {
-            header.classList.remove('fixed');
-            header.classList.remove('fix-on-scroll');
+            if (currentScroll > 300) {
+                header.classList.add('fixed');
+            } else {
+                header.classList.remove('fixed');
+                header.classList.remove('fix-on-scroll');
+            }
+
+            if ((currentScroll < prevScroll && header.classList.contains('fixed')) || isAtBottom) {
+                header.classList.add('fix-on-scroll');
+            }
+
+            if (currentScroll > prevScroll && header.classList.contains('fixed') && !isAtBottom) {
+                header.classList.remove('fix-on-scroll');
+            }
+
+            prevScroll = currentScroll;
         }
-
-        if ((currentScroll < prevScroll && header.classList.contains('fixed')) || isAtBottom) {
-            header.classList.add('fix-on-scroll');
-        }
-
-        if (currentScroll > prevScroll && header.classList.contains('fixed') && !isAtBottom) {
-            header.classList.remove('fix-on-scroll');
-        }
-
-        prevScroll = currentScroll;
-    });
+    }
+    fixHeader()
 
     // фиксировать кнопки на мобилке и убирать когда долистали до футера
-    let mobileBtnFix = document.querySelector('.mobile_btn_fix');
-    let footer = document.querySelector('.footer');
+    function fixMobileBtn() {
+        if (mobileBtnFix) {
+            const currentScroll = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const isAtBottom = currentScroll + windowHeight >= docHeight;
+            const isAtTarget = footer ? footer.getBoundingClientRect().top <= windowHeight : isAtBottom;
+
+            if (currentScroll > 300 && !isAtTarget) {
+                mobileBtnFix.classList.add('visible');
+            } else {
+                mobileBtnFix.classList.remove('visible');
+            }
+        }
+    };
+    fixMobileBtn()
+
+    // задать фильтру top в зависимости от - фиксированна шапки или нет
+    function updateFilterPosition() {
+        if (!header || !filter) return;
+
+        if (header.classList.contains('fix-on-scroll')) {
+            filter.style.top = `${header.offsetHeight + 20}px`;
+        } else {
+            filter.style.top = '20px';
+        }
+    }
 
     window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        const isAtTarget = footer.getBoundingClientRect().top <= window.innerHeight;
-
-        if (currentScroll > 300 && !isAtTarget) {
-            mobileBtnFix.classList.add('visible');
-        } else {
-            mobileBtnFix.classList.remove('visible');
-        }
+        fixHeader();
+        fixMobileBtn();
+        updateFilterPosition();
     });
+
+
+    // scroll up
+    $('.scrollup').on('click', function () {
+        $('html, body').animate({ scrollTop: 0, }, 1000);
+        return false;
+    });
+
+
 
     // открытие меню
     $('.menu_btn').on('click', function () {
@@ -669,7 +705,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // табы в модалке
     document.addEventListener("click", function (e) {
         const target = e.target.closest('[data-open-modal]');
-        console.log(target);
 
         if (target) {
             const modalId = target.dataset.openModal;
@@ -887,6 +922,99 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     initSwipersNews();
     window.addEventListener("resize", initSwipersNews);
+
+    // Диапазон цен
+    const sliders = document.querySelectorAll('.sliderMinMax');
+
+    const priceFormat = wNumb({
+        decimals: 0,
+        thousand: ' ',
+        suffix: ' ₽'
+    });
+
+    function formatInputValue(input) {
+        let value = input.value.replace(/\D/g, ''); // Убираем все нечисловые символы
+        if (value) {
+            input.value = priceFormat.to(Number(value)); // Форматируем с помощью wNumb
+        }
+    }
+
+    function numberFormat(value) {
+        return isNaN(value) ? '' : new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
+    }
+
+    if (sliders.length) {
+        let needUseJsFormFilterChange = 0;
+
+        sliders.forEach((element, index) => {
+            const fromToBlock = element.closest('.from_to_block');
+            const isFormatted = fromToBlock.classList.contains('from_to_block_price');
+            const step = Number(fromToBlock.dataset.step) || 1;;
+            const fromTo = fromToBlock.querySelector('.from-to');
+            const inputFrom = fromTo.querySelector('.price_from');
+            const inputTo = fromTo.querySelector('.price_to');
+            const formInput2 = fromTo.querySelector('.form_input2');
+            const min = Number(inputFrom.dataset.min) || 0;
+            const max = Number(inputTo.dataset.max) || 100;
+            const startFrom = Number(inputFrom.dataset.value) || min;
+            const startTo = Number(inputTo.dataset.value) || max;
+
+            inputFrom.classList.add(`js_from_${index}`);
+            inputTo.classList.add(`js_to_${index}`);
+
+            if (isFormatted) { // Применяем только если блок требует форматирования
+                inputFrom.addEventListener('input', () => formatInputValue(inputFrom));
+                inputTo.addEventListener('input', () => formatInputValue(inputTo));
+            }
+            noUiSlider.create(element, {
+                start: [startFrom, startTo],
+                connect: true,
+                range: {
+                    min: min,
+                    max: max
+                },
+                step: step,
+                format: isFormatted ? wNumb({
+                    decimals: 0,
+                    thousand: ' ',
+                    suffix: ' ₽'
+                }) : wNumb({
+                    decimals: 0
+                })
+            });
+
+            element.noUiSlider.on('update', (values) => {
+                let valMin = parseInt(values[0].replace(/\D/g, ''), 10);
+                let valMax = parseInt(values[1].replace(/\D/g, ''), 10);
+
+                if (isFormatted) { // Только для блока с классом from_to_block_price
+                    inputFrom.value = numberFormat(valMin);
+                    inputTo.value = numberFormat(valMax);
+                } else {
+                    inputFrom.value = valMin;
+                    inputTo.value = valMax;
+                }
+                formInput2.value = `${valMin}-${valMax}`;
+            });
+
+            document.addEventListener('change', (event) => {
+                if (event.target.matches(`.js_from_${index}, .js_to_${index}`)) {
+                    const from = Number(inputFrom.value.replace(/\s/g, '')) || min;
+                    const to = Number(inputTo.value.replace(/\s/g, '')) || max;
+                    element.noUiSlider.set([from, to]);
+
+                    // Повторно форматируем, чтобы не сбивалось
+                    if (isFormatted) {
+                        inputFrom.value = priceFormat.to(from);
+                        inputTo.value = priceFormat.to(to);
+                    }
+                }
+            });
+        });
+
+        needUseJsFormFilterChange = 1;
+    }
+
 });
 
 // ход строительства
