@@ -25,10 +25,12 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?20" />
+    <link rel="stylesheet" href="css/bundle.min.css?25" />
 </head>
 
-<body class='hypothecary_installment_page'>
+<!--в ипотечных (всех) в боди помимо названиеСтраницы_page есть еще hypothecary_pages -->
+
+<body class='hypothecary_payment_page hypothecary_pages'>
     <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
     <header class="header">
         <div class="container">
@@ -77,9 +79,9 @@
                     <img src="imgs/head_img_20.jpg" alt="" />
                 </div>
                 <div class="head_content">
-                    <div class="head_subtitle" data-aos="fade" data-aos-offset="0">Способы оплаты</div>
+                    <div class="head_subtitle" data-aos="fade" data-aos-offset="0">100% оплата</div>
                     <h1 data-aos="fade" data-aos-offset="0">
-                        100% рассрочка
+                        умеем делать лучшие<br> условия приобретения<br> при единовременной оплате
                     </h1>
 
                 </div>
@@ -199,31 +201,36 @@
     </div>
 
     <main>
-        <section class="section section_two">
+        <section class='section application_section'>
             <div class="container">
-                <div class="blocks_two">
-                    <div class="left">
-                        <h2 data-aos="fade">
-                            Экономьте время<br>
-                            и получайте<br> дополнительные<br> бонусы
-                        </h2>
+                <div class="application_block">
+                    <div>
+                        <h2 data-aos="fade">Получить<br> индивидуальные<br> условия</h2>
                     </div>
-                    <div class="right" data-aos="fade">
-                        <div class="text">
-                            <p>
-                                Рассрочка — это один из способов оплаты покупок, при котором стоимость товара или
-                                услуги разбивается на несколько частей, чтобы клиент мог выплачивать ее постепенно. Срок
-                                выплаты в таком случае может составлять от нескольких месяцев до одного-двух лет в
-                                зависимости от условий конкретной программы.
-                            </p>
-                            <p>
-                                В случае если покупатель не производит в установленный договором срок очередной платёж
-                                за проданный в рассрочку и переданный ему товар, продавец вправе, если иное не
-                                предусмотрено договором, отказаться от исполнения договора и потребовать возврата
-                                проданного товара, за исключением случаев, когда сумма платежей, полученных от
-                                покупателя, превышает половину цены товара.
-                            </p>
-                        </div>
+                    <div>
+                        <form action="" class='form' data-aos="fade">
+                            <label class="form_input_group">
+                                <input type="text" name="name" placeholder="Имя" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <input type="tel" name="tel" placeholder="Телефон" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <textarea name="message" placeholder="Сообщение"
+                                    class="form_input form_textarea"></textarea>
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="checkbox_block">
+                                <input type="checkbox" required="">
+                                <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
+                            </label>
+                            <button class="btn" type="submit">
+                                <span class='text_desktop'>Отправить сообщение</span>
+                                <span class='text_mobile'>Отправить</span>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -378,36 +385,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="application_block">
-                    <div>
-                        <h2 data-aos="fade">Свяжитесь<br> с нами</h2>
-                    </div>
-                    <div>
-                        <form action="" class='form' data-aos="fade">
-                            <label class="form_input_group">
-                                <input type="text" name="name" placeholder="Имя" class="form_input">
-                                <span class="text_error">Заполните поле</span>
-                            </label>
-                            <label class="form_input_group">
-                                <input type="tel" name="tel" placeholder="Телефон" class="form_input">
-                                <span class="text_error">Заполните поле</span>
-                            </label>
-                            <label class="form_input_group">
-                                <textarea name="message" placeholder="Сообщение"
-                                    class="form_input form_textarea"></textarea>
-                                <span class="text_error">Заполните поле</span>
-                            </label>
-                            <label class="checkbox_block">
-                                <input type="checkbox" required="">
-                                <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
-                            </label>
-                            <button class="btn" type="submit">
-                                <span class='text_desktop'>Отправить сообщение</span>
-                                <span class='text_mobile'>Отправить</span>
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -607,7 +584,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?22"></script>
+    <script src="js/common.js?27"></script>
 </body>
 
 </html>

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?20" />
+    <link rel="stylesheet" href="css/bundle.min.css?25" />
 </head>
 
 <!-- эта страница отличается от остальных:
@@ -224,10 +224,13 @@
                         <div class="title">
                             <h2>Квартира<br>
                                 136</h2>
-                            <div class='favorites_btn --brown'>
-                                <svg class="fill_brown">
-                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                </svg>
+                            <div class='favorites_btn_wrapper'>
+                                <input type="checkbox" name="favorite">
+                                <div class='favorites_btn --brown'>
+                                    <svg class="fill_brown">
+                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                         <a href="#" data-open-modal="terms_payment" class="link">выбрать условия оплаты</a>
@@ -311,25 +314,32 @@
                                 <div class="catalog_img">
                                     <img src="imgs/plan_card.png" alt="">
                                 </div>
-                                <div class="catalog_text">1-комнатная, 45,31 м² </div>
                                 <div class="catalog_bottom">
-                                    <div class='catalog_price'>
-                                        <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                        <div class="price price_new">32 195 391 ₽</div>
-                                        <div class="price_old">32 195 391 ₽</div>
+                                    <div class='catalog_content'>
+                                        <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                        <div class='catalog_price'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class="price price_new">32 195 391 ₽</div>
+                                            <div class="price_old">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                        </div>
                                     </div>
                                     <div class='catalog_btns'>
                                         <div class='crayons_item --red'>
                                             <img src="imgs/fire.svg" alt="">
                                         </div>
-                                        <div class='favorites_btn --brown'>
-                                            <svg class="fill_brown">
-                                                <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                            </svg>
+                                        <div class='favorites_btn_wrapper'>
+                                            <input type="checkbox" name="favorite">
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+
                             </div>
                         </div>
                         <div class="catalog_col">
@@ -341,25 +351,32 @@
                                 <div class="catalog_img">
                                     <img src="imgs/plan_card.png" alt="">
                                 </div>
-                                <div class="catalog_text">1-комнатная, 45,31 м² </div>
                                 <div class="catalog_bottom">
-                                    <div class='catalog_price'>
-                                        <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                        <div class="price price_new">32 195 391 ₽</div>
-                                        <div class="price_old">32 195 391 ₽</div>
+                                    <div class='catalog_content'>
+                                        <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                        <div class='catalog_price'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class="price price_new">32 195 391 ₽</div>
+                                            <div class="price_old">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                        </div>
                                     </div>
                                     <div class='catalog_btns'>
                                         <div class='crayons_item --red'>
                                             <img src="imgs/fire.svg" alt="">
                                         </div>
-                                        <div class='favorites_btn --brown'>
-                                            <svg class="fill_brown">
-                                                <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                            </svg>
+                                        <div class='favorites_btn_wrapper'>
+                                            <input type="checkbox" name="favorite">
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+
                             </div>
                         </div>
                         <div class="catalog_col">
@@ -371,25 +388,32 @@
                                 <div class="catalog_img">
                                     <img src="imgs/plan_card.png" alt="">
                                 </div>
-                                <div class="catalog_text">1-комнатная, 45,31 м² </div>
                                 <div class="catalog_bottom">
-                                    <div class='catalog_price'>
-                                        <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                        <div class="price price_new">32 195 391 ₽</div>
-                                        <div class="price_old">32 195 391 ₽</div>
+                                    <div class='catalog_content'>
+                                        <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                        <div class='catalog_price'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class="price price_new">32 195 391 ₽</div>
+                                            <div class="price_old">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                        </div>
                                     </div>
                                     <div class='catalog_btns'>
                                         <div class='crayons_item --blue'>
                                             <img src="imgs/diamond.svg" alt="">
                                         </div>
-                                        <div class='favorites_btn --brown'>
-                                            <svg class="fill_brown">
-                                                <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                            </svg>
+                                        <div class='favorites_btn_wrapper'>
+                                            <input type="checkbox" name="favorite">
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+
                             </div>
                         </div>
                         <div class="catalog_col">
@@ -401,25 +425,27 @@
                                 <div class="catalog_img">
                                     <img src="imgs/plan_card.png" alt="">
                                 </div>
-                                <div class="catalog_text">1-комнатная, 45,31 м² </div>
                                 <div class="catalog_bottom">
-                                    <div class='catalog_price'>
-                                        <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                        <div class="price price_new">32 195 391 ₽</div>
-                                        <div class="price_old">32 195 391 ₽</div>
+                                    <div class='catalog_content'>
+                                        <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                        <div class='catalog_price'>
+                                            <div class="price">32 195 391 ₽</div>
+                                        </div>
+                                        <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                        </div>
                                     </div>
                                     <div class='catalog_btns'>
-                                        <div class='crayons_item --blue'>
-                                            <img src="imgs/diamond.svg" alt="">
-                                        </div>
-                                        <div class='favorites_btn --brown'>
-                                            <svg class="fill_brown">
-                                                <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                            </svg>
+                                        <div class='favorites_btn_wrapper'>
+                                            <input type="checkbox" name="favorite">
+                                            <div class='favorites_btn --brown'>
+                                                <svg class="fill_brown">
+                                                    <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a></div>
+
                             </div>
                         </div>
                     </div>
@@ -700,7 +726,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?22"></script>
+    <script src="js/common.js?27"></script>
 </body>
 
 </html>

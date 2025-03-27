@@ -68,14 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
         updateFilterPosition();
     });
 
-
     // scroll up
     $('.scrollup').on('click', function () {
         $('html, body').animate({ scrollTop: 0, }, 1000);
         return false;
     });
-
-
 
     // открытие меню
     $('.menu_btn').on('click', function () {
@@ -92,6 +89,31 @@ document.addEventListener("DOMContentLoaded", function () {
             swiperMenu.params.autoplay = false;
         }
     })
+
+    // открытие фильтра на мобилке
+    $('.filter_btn_drop').on('click', function () {
+        $(this).toggleClass('active')
+        $(this).prev().slideToggle()
+        $(this).prev().toggleClass('show')
+    })
+
+    // 
+    function toggleTableInfo(state) {
+        $('.catalog_table_row').off('click'); // Убираем старые обработчики
+
+        if (state) {
+            $('.catalog_table_row').on('click', function () {
+                $(this).next().slideToggle();
+            });
+        }
+    }
+
+    function checkViewport() {
+        toggleTableInfo($(window).width() <= 700);
+    }
+
+    $(window).on('resize', checkViewport);
+    checkViewport();
 
     // swiperMenu
     const swiperMenu = new Swiper(".slider_menu", {
@@ -134,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 
     const swiperSmallCard = new Swiper(".slider_small_card", {
         slidesPerView: 'auto',
-        spaceBetween: 14,
+        spaceBetween: 10,
         watchSlidesProgress: true,
         mousewheelControl: true,
         watchOverflow: true,
@@ -776,28 +798,79 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // всплывающие подсказки
-    let placement
-    if ($(window).width() > 992) {
-        placement = 'right-start';
-    } else {
-        placement = 'bottom';
+    // let placement
+    // if ($(window).width() > 992) {
+    //     placement = 'right-start';
+    // } else {
+    //     placement = 'bottom';
+    // }
+    // tippy('.tippy_btn', {
+    //     trigger: 'click',
+    //     content(reference) {
+    //         const id = reference.getAttribute('data-template');
+    //         const template = document.getElementById(id);
+    //         return template.innerHTML;
+    //     },
+    //     allowHTML: true,
+    //     arrow: false,
+    //     theme: 'creame',
+    //     animation: 'scale',
+    //     placement: placement,
+    //     followCursor: true,
+    //     maxWidth: '462px',
+    //     duration: [400, 200]
+    // });
+
+    let tippyInstances = [];
+    let isTouchDevice = detectTouchDevice();
+
+    // Функция определения сенсорного устройства
+    function detectTouchDevice() {
+        return ('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            window.matchMedia('(pointer: coarse)').matches;
     }
-    tippy('.tippy_btn', {
-        // trigger: 'click',
-        content(reference) {
-            const id = reference.getAttribute('data-template');
-            const template = document.getElementById(id);
-            return template.innerHTML;
-        },
-        allowHTML: true,
-        arrow: false,
-        theme: 'creame',
-        animation: 'scale',
-        placement: placement,
-        followCursor: true,
-        maxWidth: '462px',
-        duration: [400, 200]
+
+    // Функция инициализации Tippy
+    function initTippy() {
+        // Удаляем старые инстансы перед пересозданием
+        tippyInstances.forEach(instance => instance.destroy());
+        tippyInstances = [];
+
+        if (!isTouchDevice) {
+            tippyInstances = tippy('.tippy_btn', {
+                // trigger: 'click',
+                content(reference) {
+                    const id = reference.getAttribute('data-template');
+                    const template = document.getElementById(id);
+                    return template ? template.innerHTML : '';
+                },
+                allowHTML: true,
+                arrow: false,
+                theme: 'creame',
+                animation: 'scale',
+                placement: 'right-start',
+                followCursor: true,
+                maxWidth: '462px',
+                duration: [400, 200]
+            });
+        }
+    }
+
+    // Запускаем при загрузке
+    initTippy();
+
+    // Отслеживаем изменения ввода (тач/мышь) и ресайз
+    window.matchMedia('(pointer: coarse)').addEventListener('change', (e) => {
+        isTouchDevice = detectTouchDevice();
+        initTippy();
     });
+
+    window.addEventListener('resize', () => {
+        isTouchDevice = detectTouchDevice();
+        initTippy();
+    });
+
 
 
     let mm = gsap.matchMedia();
@@ -867,34 +940,6 @@ document.addEventListener("DOMContentLoaded", function () {
             mask: '+{7}(000)000-00-00'
         })
     });
-
-    const filterButtons = document.querySelectorAll(".floors_selection_section .quantity_rooms_list div");
-    const floors = document.querySelectorAll(".building_img svg .floor");
-
-    //фильтр по этажам, показываем те, где есть нужные квартиры
-    filterButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            this.classList.add("active");
-            const roomsQuantity = this.getAttribute("data-rooms-quantity");
-
-            floors.forEach(floor => {
-                const floorRooms = floor.getAttribute("data-rooms-quantity") || "all";
-                const isVisible = roomsQuantity === "all" || floorRooms === roomsQuantity;
-                floor.style.opacity = isVisible ? "1" : "0";
-                floor.style.pointerEvents = isVisible ? "auto" : "none";
-            });
-        });
-    });
-
-    // при клике на активный этаж (path у которого есть data-link) делаем переход на сраницу
-    floors.forEach((floor) => {
-        floor.addEventListener("click", (event) => {
-            const link = event.target.getAttribute("data-link");
-            if (link) window.open(link, "_blank");
-        });
-    })
-
     // 
     let swiperInstancesNews = new Map();
     const swiperNewsListSliders = document.querySelectorAll(".news_list_slider");
@@ -926,24 +971,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Диапазон цен
     const sliders = document.querySelectorAll('.sliderMinMax');
 
-    const priceFormat = wNumb({
-        decimals: 0,
-        thousand: ' ',
-        suffix: ' ₽'
-    });
-
-    function formatInputValue(input) {
-        let value = input.value.replace(/\D/g, ''); // Убираем все нечисловые символы
-        if (value) {
-            input.value = priceFormat.to(Number(value)); // Форматируем с помощью wNumb
-        }
-    }
-
-    function numberFormat(value) {
-        return isNaN(value) ? '' : new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
-    }
-
     if (sliders.length) {
+        const priceFormat = wNumb({
+            decimals: 0,
+            thousand: ' ',
+            // suffix: ' ₽'
+        });
+
+        function formatInputValue(input) {
+            let val = input.value.replace(/\D/g, '');
+            if (val) {
+                const formattedVal = priceFormat.to(Number(val));
+                input.value = formattedVal;
+            }
+        }
+
+        function numberFormat(value) {
+            return isNaN(value) ? '' : new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
+        }
         let needUseJsFormFilterChange = 0;
 
         sliders.forEach((element, index) => {
@@ -962,10 +1007,6 @@ document.addEventListener("DOMContentLoaded", function () {
             inputFrom.classList.add(`js_from_${index}`);
             inputTo.classList.add(`js_to_${index}`);
 
-            if (isFormatted) { // Применяем только если блок требует форматирования
-                inputFrom.addEventListener('input', () => formatInputValue(inputFrom));
-                inputTo.addEventListener('input', () => formatInputValue(inputTo));
-            }
             noUiSlider.create(element, {
                 start: [startFrom, startTo],
                 connect: true,
@@ -973,7 +1014,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     min: min,
                     max: max
                 },
-                step: step,
+                // step: step,
                 format: isFormatted ? wNumb({
                     decimals: 0,
                     thousand: ' ',
@@ -986,7 +1027,6 @@ document.addEventListener("DOMContentLoaded", function () {
             element.noUiSlider.on('update', (values) => {
                 let valMin = parseInt(values[0].replace(/\D/g, ''), 10);
                 let valMax = parseInt(values[1].replace(/\D/g, ''), 10);
-
                 if (isFormatted) { // Только для блока с классом from_to_block_price
                     inputFrom.value = numberFormat(valMin);
                     inputTo.value = numberFormat(valMax);
@@ -997,23 +1037,122 @@ document.addEventListener("DOMContentLoaded", function () {
                 formInput2.value = `${valMin}-${valMax}`;
             });
 
-            document.addEventListener('change', (event) => {
-                if (event.target.matches(`.js_from_${index}, .js_to_${index}`)) {
-                    const from = Number(inputFrom.value.replace(/\s/g, '')) || min;
-                    const to = Number(inputTo.value.replace(/\s/g, '')) || max;
-                    element.noUiSlider.set([from, to]);
-
-                    // Повторно форматируем, чтобы не сбивалось
-                    if (isFormatted) {
-                        inputFrom.value = priceFormat.to(from);
-                        inputTo.value = priceFormat.to(to);
+            const inputs = document.querySelectorAll(`.js_from_${index}, .js_to_${index}`);
+            inputs.forEach(inp => {
+                inp.addEventListener('blur', (event) => {
+                    inp.dispatchEvent(new Event('change', { bubbles: true }));
+                });
+                inp.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter') {
+                        inp.dispatchEvent(new Event('change', { bubbles: true }));
                     }
-                }
-            });
+                });
+                inp.addEventListener('change', (event) => {
+                    console.log('change event');
+                    let fromRaw = inputFrom.value.replace(/[^\d]/g, ''); // Убираем всё кроме цифр
+                    let toRaw = inputTo.value.replace(/[^\d]/g, '');
+
+                    let from = fromRaw !== '' ? Number(fromRaw) : Number(element.noUiSlider.get()[0]);
+                    let to = toRaw !== '' ? Number(toRaw) : Number(element.noUiSlider.get()[1]);
+
+                    element.noUiSlider.set([from, to]);
+                });
+            })
+            // Форматирование ввода при ручном вводе
+            if (isFormatted) {
+                inputFrom.addEventListener('input', (e) => {
+                    formatInputValue(inputFrom);
+                });
+                inputTo.addEventListener('input', (e) => {
+                    formatInputValue(inputTo);
+                });
+
+            }
         });
 
         needUseJsFormFilterChange = 1;
     }
+
+
+});
+// выбор этажа
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".floors_selection_section .quantity_rooms_list div");
+    const floors = document.querySelectorAll(".building_img svg .floor");
+
+    //фильтр по этажам, показываем те, где есть нужные квартиры
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            const roomsQuantity = this.getAttribute("data-rooms-quantity");
+
+            floors.forEach(floor => {
+                const floorRooms = floor.getAttribute("data-rooms-quantity") || "all";
+                const isVisible = roomsQuantity === "all" || floorRooms === roomsQuantity;
+                floor.style.opacity = isVisible ? "1" : "0";
+                floor.style.pointerEvents = isVisible ? "auto" : "none";
+            });
+        });
+    });
+
+    // при клике на активный этаж (path у которого есть data-link) делаем переход на сраницу
+    // floors.forEach((floor) => {
+    //     floor.addEventListener("click", (event) => {
+    //         const link = event.target.getAttribute("data-link");
+    //         if (link) window.open(link, "_blank");
+    //     });
+    // })
+
+    const floorsSelectionSlider = new Swiper(".floors_selection_slider", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        watchOverflow: true,
+        watchSlidesVisibility: true,
+        direction: "vertical",
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        on: {
+            // slideChangeTransitionEnd(slider) {
+            //     const currentSlide = slider.slides[slider.activeIndex];
+            //     const floorId = currentSlide.getAttribute('data-floor-id');
+
+            //     // Удаляем класс active у всех элементов с data-floor
+            //     document.querySelectorAll('[data-floor].active').forEach(el => {
+            //         el.classList.remove('active');
+            //     });
+
+            //     // Добавляем класс active к текущему и прокручиваем к нему
+            //     const currentPath = document.querySelector(`[data-floor="${floorId}"]`);
+            //     if (currentPath) {
+            //         currentPath.classList.add('active')
+            //         currentPath.scrollIntoView({ block: "center", behavior: "smooth" })
+            //     }
+            // }
+            slideChangeTransitionEnd(slider) {
+                const currentSlide = slider.slides[slider.activeIndex];
+                const floorId = currentSlide.getAttribute('data-floor-id');
+
+                // Удаляем класс active у всех элементов с data-floor
+                $('[data-floor].active').removeClass('active');
+
+                // Добавляем класс active к текущему и плавно скроллим
+                const $currentPath = $(`[data-floor="${floorId}"]`);
+                if ($currentPath.length) {
+                    $currentPath.addClass('active');
+
+                    // Плавный скролл
+                    $('.building_wrapper').animate({
+                        scrollTop: $currentPath.offset().top - $(window).height() / 2
+                    }, 800);
+                }
+            }
+        }
+    });
 
 });
 

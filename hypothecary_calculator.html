@@ -25,21 +25,18 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?20" />
+    <link rel="stylesheet" href="css/bundle.min.css?25" />
 </head>
 
-<!-- эта страница отличается от остальных:
- 1) лого в шапке (.header_block_not_fix) другое - logo_brown.svg
- 2) есть класс у боди calculator_page
- 3) есть класс header_dark у header -->
+<!--в ипотечных (всех) в боди помимо названиеСтраницы_page есть еще hypothecary_pages -->
 
-<body class='small_header'>
+<body class='hypothecary_calculator_page hypothecary_pages'>
     <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
-    <header class="header header_dark">
+    <header class="header">
         <div class="container">
             <div class="header_block header_block_fix">
                 <div class="menu_btn">
-                    <span></span>
+                    <div> <span></span></div>
                 </div>
                 <a href="/" class="logo"><img src="imgs/logo_brown.svg" alt="" /></a>
                 <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
@@ -61,7 +58,7 @@
                 <div class="menu_btn">
                     <span></span>
                 </div>
-                <a href="/" class="logo"><img src="imgs/logo_brown.svg" alt="" /></a>
+                <a href="/" class="logo"><img src="imgs/logo.svg" alt="" /></a>
                 <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
                 <a href="#" class="favorites_btn">
                     <svg class="fill_creamy">
@@ -76,6 +73,18 @@
                     </div>
                 </a>
                 <a href="#" class="btn -not_border">Выбрать квартиру</a>
+            </div>
+            <div class="head">
+                <div class="head_img">
+                    <img src="imgs/head_img_21.jpg" alt="" />
+                </div>
+                <div class="head_content">
+                    <div class="head_subtitle" data-aos="fade" data-aos-offset="0">Ипотека</div>
+                    <h1 data-aos="fade" data-aos-offset="0">
+                        Выгодные предложения <br>от ведущих банков
+                    </h1>
+
+                </div>
             </div>
         </div>
         <div class="big_menu">
@@ -192,28 +201,95 @@
     </div>
 
     <main>
-        <div class='container'>
-            <div class='back_block' data-aos="fade">
-                <a href="#" class='back_btn'>
-                    <span class='back_btn_icon'>
-                        <svg width="18" height="30" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_1669_4605)">
-                                <path
-                                    d="M15.3019 0.81L17.4219 2.94L4.95187 15.41L17.4219 27.88L15.3019 30L0.711875 15.41L15.3019 0.81Z"
-                                    fill="#63483F" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_1669_4605">
-                                    <rect width="16.71" height="29.19" fill="white"
-                                        transform="translate(17.4219 30) rotate(180)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </span>
-                    Назад
-                </a>
+        <section class="section section_two">
+            <div class="container">
+                <div class="blocks_two">
+                    <div class="left">
+                        <h2 data-aos="fade">
+                            Специальные условия<br> ипотеки на квартиры<br> в Клубном Квартале<br> Крылатская 33
+                        </h2>
+                    </div>
+                    <div class="right" data-aos="fade">
+                        <div class="text">
+                            <p>
+                                Заполните заявку на ипотеку, получите одобрение<br> в одном из банков-партнеров
+                                Застройщика.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class='small_card small_card_two'>
+                    <div class="col">
+                        <div class="item" data-aos="fade">
+                            <h3>1</h3>
+                            <div class='text'>Выбираете квартиру на сайте <a href="#">крылатская33.рф</a> </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item" data-aos="fade">
+                            <h3>2</h3>
+                            <div class='text'>Бронируете квартиру на 14 дней</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item" data-aos="fade">
+                            <h3>3</h3>
+                            <div class='text'>Подаете заявку ипотечному брокеру</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item" data-aos="fade">
+                            <h3>4</h3>
+                            <div class='text'>Получаете решение</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item" data-aos="fade">
+                            <h3>5</h3>
+                            <div class='text'>Проводите кредитную сделку в банке</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="item" data-aos="fade">
+                            <h3>6</h3>
+                            <div class='text'>Подписываете документы<br> по сделке онлайн<br> из любой точки мира! 
+                                <div class='small_text'>(при наличии доступа<br> в интернет)</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+        <section class='section  application_section_two'>
+            <div class="container">
+                <div class="application_block">
+                    <div>
+                        <h2 data-aos="fade">Заявка <br>на ипотеку</h2>
+                    </div>
+                    <div>
+                        <form action="" class='form' data-aos="fade">
+                            <label class="form_input_group">
+                                <input type="text" name="name" placeholder="Имя" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="form_input_group">
+                                <input type="tel" name="tel" placeholder="Телефон" class="form_input">
+                                <span class="text_error">Заполните поле</span>
+                            </label>
+                            <label class="checkbox_block">
+                                <input type="checkbox" required="">
+                                <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
+                            </label>
+                            <button class="btn" type="submit">
+                                <span class='text_desktop'>Отправить сообщение</span>
+                                <span class='text_mobile'>Отправить</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class='section section_calc'>
             <div class="container">
                 <h2 data-aos="fade">
@@ -611,7 +687,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?22"></script>
+    <script src="js/common.js?27"></script>
 </body>
 
 </html>

@@ -213,33 +213,124 @@
                             Назад
                         </a>
                         <div class="tags" data-aos="fade">
-                            <span class="tag active">Плитка</span>
-                            <a class="tag" href="extradition_list.html">Список</a>
+                            <a href="extradition.html" class="tag">Плитка</a>
+                            <span class="tag active">Список</span>
                         </div>
                     </div>
                     <div class="left">
-                        <div class='catalog_list'>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                                <div class="price price_new">32 195 391 ₽</div>
-                                                <div class="price_old">32 195 391 ₽</div>
+                        <div class='catalog_table'>
+                            <div class='catalog_table_head'>
+                                <!-- если по блоку можно сортировать, то у него есть svg и класс clickable, для курсора -->
+                                <div class='catalog_table_item --section'><span>Секция</span></div>
+                                <div class='catalog_table_item --number'>Номер квартиры</div>
+                                <div class='catalog_table_item --floor'>Этаж</div>
+                                <div class='catalog_table_item --rooms'>Комнат</div>
+                                <div class='catalog_table_item --square clickable'>
+                                    Площадь
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"
+                                        fill="none">
+                                        <path
+                                            d="M14 1.05533L12.9829 1.75334e-06L6.97583 6.57559L6.51633 6.09667L1.13699 1.68678e-06L-8.15133e-07 1.05649L6.97583 9L14 1.05533Z"
+                                            fill="#63483F" />
+                                    </svg>
+                                </div>
+                                <div class='catalog_table_item --cost clickable'>
+                                    Стоимость
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"
+                                        fill="none">
+                                        <path
+                                            d="M14 1.05533L12.9829 1.75334e-06L6.97583 6.57559L6.51633 6.09667L1.13699 1.68678e-06L-8.15133e-07 1.05649L6.97583 9L14 1.05533Z"
+                                            fill="#63483F" />
+                                    </svg>
+                                </div>
+                                <div class='catalog_table_item --terrace'>Квартиры с террасой</div>
+                                <div class='catalog_table_item --favorite'></div>
+                            </div>
+                            <div class='catalog_table_body'>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>1</div>
+                                        <div class='catalog_table_item --number'>БКТ6</div>
+                                        <div class='catalog_table_item --floor'>51</div>
+                                        <div class='catalog_table_item --rooms'>1</div>
+                                        <div class='catalog_table_item --square'>66,96 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <!-- форматирование для цены в мобилке другое -->
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price'>19 123 456 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price'>19.12 млн ₽</div>
                                             </div>
                                         </div>
-                                        <div class='catalog_btns'>
+                                        <div class='catalog_table_item --terrace'>Да</div>
+                                        <div class='catalog_table_item --favorite'>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" checked name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  появляется на мобилке при клике на .catalog_table_row  -->
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
+                                            </div>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" checked name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class='btn'>Подробнее</a>
+                                    </div>
+                                </div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>1</div>
+                                        <div class='catalog_table_item --number'>БКТ7</div>
+                                        <div class='catalog_table_item --floor'>52</div>
+                                        <div class='catalog_table_item --rooms'>1</div>
+                                        <div class='catalog_table_item --square'>79,02 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price price_new'>19 123 456 ₽</div>
+                                                <div class='price_old'>19 123 456 ₽</div>
+                                            </div>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price price_new'>19.12 млн ₽</div>
+                                                <div class='price_old'>19.12 млн ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class='catalog_table_item --terrace'>Нет</div>
+                                        <div class='catalog_table_item --favorite'>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
                                             <div class='crayons_item --red'>
                                                 <img src="imgs/fire.svg" alt="">
                                             </div>
@@ -252,31 +343,41 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="#" class='btn'>Подробнее</a>
                                     </div>
-
                                 </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                                <div class="price price_new">32 195 391 ₽</div>
-                                                <div class="price_old">32 195 391 ₽</div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>5</div>
+                                        <div class='catalog_table_item --number'>БКТ8</div>
+                                        <div class='catalog_table_item --floor'>49</div>
+                                        <div class='catalog_table_item --rooms'>2</div>
+                                        <div class='catalog_table_item --square'>81,12 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price'>21 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price'>21.19 млн ₽</div>
                                             </div>
                                         </div>
-                                        <div class='catalog_btns'>
+                                        <div class='catalog_table_item --terrace'>Да</div>
+                                        <div class='catalog_table_item --favorite'>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
                                             <div class='crayons_item --red'>
                                                 <img src="imgs/fire.svg" alt="">
                                             </div>
@@ -289,34 +390,26 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="#" class='btn'>Подробнее</a>
                                     </div>
-
                                 </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                                <div class="price price_new">32 195 391 ₽</div>
-                                                <div class="price_old">32 195 391 ₽</div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>6</div>
+                                        <div class='catalog_table_item --number'>БКТ9</div>
+                                        <div class='catalog_table_item --floor'>48</div>
+                                        <div class='catalog_table_item --rooms'>1</div>
+                                        <div class='catalog_table_item --square'>85,21 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price'>29 123 456 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price'>29.12 млн ₽</div>
                                             </div>
                                         </div>
-                                        <div class='catalog_btns'>
-                                            <div class='crayons_item --blue'>
-                                                <img src="imgs/diamond.svg" alt="">
-                                            </div>
+                                        <div class='catalog_table_item --terrace'>Да</div>
+                                        <div class='catalog_table_item --favorite'>
                                             <div class='favorites_btn_wrapper'>
                                                 <input type="checkbox" name="favorite">
                                                 <div class='favorites_btn --brown'>
@@ -327,126 +420,11 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <div class="price">32 195 391 ₽</div>
-                                            </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
-                                            </div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
                                         </div>
-                                        <div class='catalog_btns'>
-                                            <div class='favorites_btn_wrapper'>
-                                                <input type="checkbox" name="favorite">
-                                                <div class='favorites_btn --brown'>
-                                                    <svg class="fill_brown">
-                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <div class="price">32 195 391 ₽</div>
-                                            </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
-                                            </div>
-                                        </div>
-                                        <div class='catalog_btns'>
-                                            <div class='favorites_btn_wrapper'>
-                                                <input type="checkbox" name="favorite">
-                                                <div class='favorites_btn --brown'>
-                                                    <svg class="fill_brown">
-                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <div class="price">32 195 391 ₽</div>
-                                            </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
-                                            </div>
-                                        </div>
-                                        <div class='catalog_btns'>
-                                            <div class='favorites_btn_wrapper'>
-                                                <input type="checkbox" name="favorite">
-                                                <div class='favorites_btn --brown'>
-                                                    <svg class="fill_brown">
-                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                                <div class="price price_new">32 195 391 ₽</div>
-                                                <div class="price_old">32 195 391 ₽</div>
-                                            </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
-                                            </div>
-                                        </div>
-                                        <div class='catalog_btns'>
+                                        <div class='catalog_table_btns'>
                                             <div class='crayons_item --red'>
                                                 <img src="imgs/fire.svg" alt="">
                                             </div>
@@ -459,31 +437,41 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="#" class='btn'>Подробнее</a>
                                     </div>
-
                                 </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                                <div class="price price_new">32 195 391 ₽</div>
-                                                <div class="price_old">32 195 391 ₽</div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>1</div>
+                                        <div class='catalog_table_item --number'>БКТ10</div>
+                                        <div class='catalog_table_item --floor'>47</div>
+                                        <div class='catalog_table_item --rooms'>2</div>
+                                        <div class='catalog_table_item --square'>88,23 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price'>54 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price'>54.19 млн ₽</div>
                                             </div>
                                         </div>
-                                        <div class='catalog_btns'>
+                                        <div class='catalog_table_item --terrace'>Да</div>
+                                        <div class='catalog_table_item --favorite'>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
                                             <div class='crayons_item --red'>
                                                 <img src="imgs/fire.svg" alt="">
                                             </div>
@@ -496,34 +484,26 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="#" class='btn'>Подробнее</a>
                                     </div>
-
                                 </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                                <div class="price price_new">32 195 391 ₽</div>
-                                                <div class="price_old">32 195 391 ₽</div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>1</div>
+                                        <div class='catalog_table_item --number'>БКТ6</div>
+                                        <div class='catalog_table_item --floor'>51</div>
+                                        <div class='catalog_table_item --rooms'>1</div>
+                                        <div class='catalog_table_item --square'>66,96 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price'>21 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price'>21.19 млн ₽</div>
                                             </div>
                                         </div>
-                                        <div class='catalog_btns'>
-                                            <div class='crayons_item --blue'>
-                                                <img src="imgs/diamond.svg" alt="">
-                                            </div>
+                                        <div class='catalog_table_item --terrace'>Да</div>
+                                        <div class='catalog_table_item --favorite'>
                                             <div class='favorites_btn_wrapper'>
                                                 <input type="checkbox" name="favorite">
                                                 <div class='favorites_btn --brown'>
@@ -534,28 +514,43 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <div class="price">32 195 391 ₽</div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class='catalog_btns'>
+                                        <a href="#" class='btn'>Подробнее</a>
+                                    </div>
+                                </div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>1</div>
+                                        <div class='catalog_table_item --number'>БКТ6</div>
+                                        <div class='catalog_table_item --floor'>51</div>
+                                        <div class='catalog_table_item --rooms'>1</div>
+                                        <div class='catalog_table_item --square'>66,96 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price'>21 195 391 ₽</div>
+                                            </div>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price'>21.19 млн ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class='catalog_table_item --terrace'>Да</div>
+                                        <div class='catalog_table_item --favorite'>
                                             <div class='favorites_btn_wrapper'>
                                                 <input type="checkbox" name="favorite">
                                                 <div class='favorites_btn --brown'>
@@ -566,28 +561,43 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <div class="price">32 195 391 ₽</div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class='catalog_btns'>
+                                        <a href="#" class='btn'>Подробнее</a>
+                                    </div>
+                                </div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>1</div>
+                                        <div class='catalog_table_item --number'>БКТ11</div>
+                                        <div class='catalog_table_item --floor'>32</div>
+                                        <div class='catalog_table_item --rooms'>1</div>
+                                        <div class='catalog_table_item --square'>90,32 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price'>34 123 456 ₽</div>
+                                            </div>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price'>34.12 млн ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class='catalog_table_item --terrace'>Да</div>
+                                        <div class='catalog_table_item --favorite'>
                                             <div class='favorites_btn_wrapper'>
                                                 <input type="checkbox" name="favorite">
                                                 <div class='favorites_btn --brown'>
@@ -598,28 +608,46 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <div class="price">32 195 391 ₽</div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class='catalog_btns'>
+                                        <a href="#" class='btn'>Подробнее</a>
+                                    </div>
+                                </div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>1</div>
+                                        <div class='catalog_table_item --number'>БКТ12</div>
+                                        <div class='catalog_table_item --floor'>52</div>
+                                        <div class='catalog_table_item --rooms'>4</div>
+                                        <div class='catalog_table_item --square'>91,54 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price price_new'>19 123 456 ₽</div>
+                                                <div class='price_old'>19 123 456 ₽</div>
+                                            </div>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price price_new'>19.12 млн ₽</div>
+                                                <div class='price_old'>19.12 млн ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class='catalog_table_item --terrace'>Нет</div>
+                                        <div class='catalog_table_item --favorite'>
                                             <div class='favorites_btn_wrapper'>
                                                 <input type="checkbox" name="favorite">
                                                 <div class='favorites_btn --brown'>
@@ -630,7 +658,122 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
+                                            </div>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class='btn'>Подробнее</a>
+                                    </div>
+                                </div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>7</div>
+                                        <div class='catalog_table_item --number'>БКТ13</div>
+                                        <div class='catalog_table_item --floor'>51</div>
+                                        <div class='catalog_table_item --rooms'>3</div>
+                                        <div class='catalog_table_item --square'>108,96 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price'>32 195 391 ₽</div>
+                                            </div>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price'>32.19 млн ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class='catalog_table_item --terrace'>Да</div>
+                                        <div class='catalog_table_item --favorite'>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
+                                            </div>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class='btn'>Подробнее</a>
+                                    </div>
+                                </div>
+                                <div class='catalog_table_body_item'>
+                                    <div class='catalog_table_row'>
+                                        <div class='catalog_table_item --section'>1</div>
+                                        <div class='catalog_table_item --number'>БКТ7</div>
+                                        <div class='catalog_table_item --floor'>52</div>
+                                        <div class='catalog_table_item --rooms'>1</div>
+                                        <div class='catalog_table_item --square'>79,02 м²</div>
+                                        <div class='catalog_table_item --cost'>
+                                            <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                            <div class='price_wrapper price_desktop'>
+                                                <div class='price price_new'>19 123 456 ₽</div>
+                                                <div class='price_old'>19 123 456 ₽</div>
+                                            </div>
+                                            <div class='price_wrapper price_mobile'>
+                                                <div class='price price_new'>19.12 млн ₽</div>
+                                                <div class='price_old'>19.12 млн ₽</div>
+                                            </div>
+                                        </div>
+                                        <div class='catalog_table_item --terrace'>Нет</div>
+                                        <div class='catalog_table_item --favorite'>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='catalog_table_dropdown'>
+                                        <div class="catalog_table_img">
+                                            <img src="imgs/plan_card.png" alt="">
+                                        </div>
+                                        <div class='catalog_table_btns'>
+                                            <div class='crayons_item --red'>
+                                                <img src="imgs/fire.svg" alt="">
+                                            </div>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class='btn'>Подробнее</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
