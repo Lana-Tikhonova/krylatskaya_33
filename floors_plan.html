@@ -25,11 +25,10 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?25" />
+    <link rel="stylesheet" href="css/bundle.min.css?27" />
 </head>
 
 <body class='small_header floors_plan_page'>
-    <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
     <header class="header header_dark">
         <div class="container">
             <div class="header_block header_block_fix">
@@ -228,7 +227,8 @@
                         <!-- коммент для внутренностей svg:
                          1) если есть квартира то у polygon есть класс tippy_btn (он нужен для всплывашек)
                          2) есть атрибут data-link - отсюда берется путь к странице, т.е. в data-link нужно просписать url странцы на которую мы должны попасть при клике на элемент  
-                         3) в атрибуте data-rooms-quantity нужно просписать кол-во комнат (для фильтра)
+                         3) в атрибуте data-rooms-quantity нужно просписать кол-во комнат (для фильтра) и так же для стилей, они могут быть такими - https://skr.sh/sUrEBPNRZ1W
+                         4) если квартира в брони, у polygon есть атрибут data-booked. А в контенте tooltip_block появляется доп поле  <span class='subtext'>Забронировано</span>. Я не стала добавляется его везде, есть только в первом tooltip_block в файле floor_30.json
                           -->
                         <!-- img,svg, контент тултипов для svg загружается через json -->
                         <div class='floors_plan_list'>
@@ -286,6 +286,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class='compass compass_desktop'><img src="imgs/compass.svg" alt=""></div>
                 </div>
             </div>
         </section>
@@ -302,7 +303,7 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
-    <script src="js/common.js?27"></script>
+    <script src="js/common.js?28"></script>
 </body>
 
 </html>

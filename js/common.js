@@ -820,6 +820,15 @@ document.addEventListener("DOMContentLoaded", function () {
     //     maxWidth: '462px',
     //     duration: [400, 200]
     // });
+    tippy('[data-tippy-content]', {
+        // trigger: 'click',
+        arrow: false,
+        theme: 'small_tooltip',
+        animation: 'scale',
+        placement: 'bottom-start',
+        maxWidth: '200px',
+        duration: [400, 200]
+    });
 
     let tippyInstances = [];
     let isTouchDevice = detectTouchDevice();

@@ -6,6 +6,34 @@
     outline: none;
 }
 
+:root {
+    --header_height: 130px;
+}
+
+@media screen and (max-width:1600px) and (min-width:993px) {
+    :root {
+        --header_height: 89px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    :root {
+        --header_height: 114px;
+    }
+}
+
+@media screen and (max-width:760px) {
+    :root {
+        --header_height: 72px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    :root {
+        --header_height: 64px;
+    }
+}
+
 /* Вычисление размеров*/
 @function compute($min, $max) {
     $number: calc($max / 19.2);
@@ -4637,6 +4665,13 @@ svg {
         font-weight: 500;
     }
 
+    .subtext {
+        font-size: 16px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 10px;
+    }
+
     ul {
         padding-top: 23px;
         margin-top: 13px;
@@ -4680,7 +4715,7 @@ svg {
     }
 }
 
-@media screen and (max-width: 16000px) {
+@media screen and (max-width: 1600px) {
     .tooltip_block {
         padding: 20px;
 
@@ -4691,6 +4726,11 @@ svg {
         .number {
             font-size: 60px;
             margin-bottom: 7px;
+        }
+
+        .subtext {
+            margin-bottom: 5px;
+            font-size: 14px;
         }
 
         ul {
@@ -5600,8 +5640,11 @@ svg {
     gap: 30px;
 
     svg {
-        width: 46px;
-        height: 25px;
+        // width: 46px;
+        // height: 25px;
+
+        width: 16.71px;
+        height: 29.19px;
     }
 
     span {
@@ -5644,6 +5687,11 @@ svg {
         span {
             width: 58px;
             height: 58px;
+        }
+
+        svg {
+            width: 11.14px;
+            height: 19.46px;
         }
     }
 }
@@ -5725,6 +5773,8 @@ svg {
     .back_btn {
         font-size: 10px;
         gap: 11px;
+        text-transform: none;
+        gap: 5px;
 
         span {
             width: 40px;
@@ -9403,7 +9453,7 @@ span {
 .building_wrapper {
     overflow: auto;
     scrollbar-width: none;
-    margin-top: -130px;
+    margin-top: calc(-1 * var(--header_height));
     height: 100vh;
     height: 100svh;
     display: flex;
@@ -9519,9 +9569,9 @@ span {
 
 .floors_selection_block_item {
     position: absolute;
-    top: 130px;
+    top: var(--header_height);
     z-index: 1;
-    height: calc(100% - 130px);
+    height: calc(100% - var(--header_height));
 }
 
 .quantity_rooms {
@@ -9566,18 +9616,71 @@ span {
     display: none;
 }
 
+@media screen and (max-height:800px) and (min-width:1601px) {
+    .floors_selection_block .right img {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width:1600px) and (min-width:993px) {
+    .floors_plan_slider_wrapper {
+        margin-top: -60px;
+
+        .name {
+            font-size: 10px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 38px;
+            height: 38px;
+        }
+    }
+
+    .floors_plan_slider {
+        height: 122px;
+
+        .item {
+            width: 38px;
+            height: 38px;
+        }
+    }
+
+}
+
 @media screen and (max-width:1600px) {
+    .floors_plan_block .floors_block_info.right {
+        width: 90px;
+    }
+
+    .floors_plan_master_plan {
+        width: 210px;
+        position: initial;
+    }
+
+    .floors_plan_list {
+        align-items: inherit;
+    }
+
+    .compass img {
+        width: 55px;
+    }
+
+    .compass_desktop {}
+
+    .floors_plan_master_plan_img {
+        height: auto;
+        position: absolute;
+        bottom: 26px;
+        width: 158px;
+        right: 0;
+    }
+
     .building_img {
         max-width: 400px;
     }
 
-    .floors_selection_block_item {
-        top: 89px;
-        height: calc(100% - 89px);
-    }
-
     .building_wrapper {
-        margin-top: -89px;
         min-height: 550px;
     }
 
@@ -9601,12 +9704,17 @@ span {
     }
 
     .floors_block_info.left {
-        padding-bottom: 40px;
-        padding-top: 10px;
+        padding-bottom: 50px;
+        padding-top: 30px;
 
         .back_btn_two {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 24px;
         }
+    }
+
+    .floors_plan_block .floors_block_info h2 {
+        margin-bottom: 54px;
     }
 
     .floors_selection_block .right img {
@@ -9615,11 +9723,6 @@ span {
     }
 }
 
-@media screen and (max-height:800px) and (min-width:1601px) {
-    .floors_selection_block .right img {
-        margin-top: 0;
-    }
-}
 
 @media screen and (max-width:992px) {
     .building_img svg path.active {
@@ -9632,22 +9735,16 @@ span {
         }
     }
 
-    .floors_selection_block_item {
-        top: 114px;
-        height: calc(100% - 114px);
-    }
-
     .building_wrapper {
-        margin-top: -114px;
         padding-bottom: 180px;
         padding-top: 120px;
     }
 
-    .floors_block_info.right {
+    .floors_selection_block_item.right {
         display: none;
     }
 
-    .floors_block_info.left {
+    .floors_selection_block_item.left {
         .btn {
             display: none;
         }
@@ -9748,13 +9845,7 @@ span {
 }
 
 @media screen and (max-width:760px) {
-    .floors_selection_block_item {
-        top: 72px;
-        height: calc(100% - 72px);
-    }
-
     .building_wrapper {
-        margin-top: -72px;
         padding-bottom: 123px;
         padding-top: 86px;
     }
@@ -9876,13 +9967,7 @@ span {
 }
 
 @media screen and (max-width:576px) {
-    .floors_selection_block_item {
-        top: 64px;
-        height: calc(100% - 64px);
-    }
-
     .building_wrapper {
-        margin-top: -64px;
         padding-bottom: 123px;
         padding-top: 86px;
     }
@@ -9897,15 +9982,12 @@ span {
     }
 }
 
-:root {
-    --header_height: 130px;
-}
-
 .floors_plan_block {
     display: flex;
     justify-content: space-between;
     min-height: calc(100vh - var(--header_height));
     min-height: calc(100svh - var(--header_height));
+    position: relative;
 
     .floors_block_info {
         .back_btn_two {
@@ -9940,25 +10022,47 @@ span {
 
 }
 
+.compass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 83px;
+    }
+}
+
 .floors_plan_wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 47px;
+    padding-bottom: 150px;
     padding-top: 30px;
     width: 100%;
+    position: relative;
 
     .compass {
-        margin-top: 40px;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: none;
 
-        img {
-            width: 83px;
+    }
+}
 
-        }
+.compass_desktop {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+}
+
+@media screen and (max-height:1000px) and (min-width:1601px) {
+    .floors_plan_wrapper {
+        padding-bottom: 130px;
+    }
+
+    .compass_desktop {
+        bottom: 20px;
+
     }
 }
 
@@ -10104,23 +10208,37 @@ span {
         fill: none;
 
         &[data-rooms-quantity="c"] {
-            fill: #E3E3E3;
+            fill: rgba(238, 228, 226, 0.50);
         }
 
         &[data-rooms-quantity="1"] {
-            fill: rgba(197, 88, 88, 0.30);
+            fill: rgba(231, 215, 211, 0.50);
         }
 
         &[data-rooms-quantity="2"] {
-            fill: rgba(118, 88, 197, 0.30);
+            fill: rgba(187, 172, 166, 0.50);
         }
 
         &[data-rooms-quantity="3"] {
-            fill: rgba(88, 197, 101, 0.30);
+            fill: rgba(187, 169, 162, 0.50);
         }
 
         &[data-rooms-quantity="4"] {
-            fill: rgba(138, 113, 104, 0.30);
+            fill: rgba(167, 146, 139, 0.50);
+        }
+
+        &[data-rooms-quantity="5"] {
+            fill: rgba(161, 137, 128, 0.50);
+        }
+
+        &[data-rooms-quantity="p"] {
+            fill: rgba(155, 129, 121, 0.50);
+        }
+
+        &[data-booked] {
+            &:hover {
+                fill: rgba(99, 72, 63, 0.85)
+            }
         }
 
         &:hover {
@@ -10417,8 +10535,9 @@ span {
             height: 33px;
 
             svg {
-                width: 16.029px;
-                height: 15.085px;
+                height: 53%;
+                width: 51%;
+                object-fit: contain;
             }
         }
 
@@ -10674,12 +10793,6 @@ span {
                 margin-left: 0;
                 width: 22px;
                 height: 22px;
-
-                svg {
-                    width: 10.686px;
-                    height: 10.057px;
-                }
-
             }
         }
     }
@@ -10779,11 +10892,6 @@ span {
         .favorites_btn {
             width: 25px;
             height: 25px;
-
-            svg {
-                width: 12.25px;
-                height: 11.529px;
-            }
         }
     }
 
@@ -10845,11 +10953,6 @@ span {
     .catalog_list .catalog_item .favorites_btn {
         width: 22px;
         height: 22px;
-
-        svg {
-            width: 10.686px;
-            height: 10.057px;
-        }
     }
 
     .gallery_section_1 {
@@ -11332,7 +11435,9 @@ span {
 
 }
 
-.selection_page {
+.selection_page,
+.floors_selection_page,
+.floors_plan_page {
     .header_block_fix {
         display: none !important;
     }
@@ -12411,6 +12516,7 @@ span {
 .catalog_block {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 10px;
 
     .back_btn_two {
         margin-bottom: 0;
@@ -13069,10 +13175,10 @@ span {
         width: 33px;
         height: 33px;
 
-
         svg {
-            width: 16.029px;
-            height: 15.085px;
+            height: 53%;
+            width: 51%;
+            object-fit: contain;
         }
     }
 
@@ -13150,8 +13256,9 @@ span {
         height: 22px;
 
         svg {
-            width: 10.686px;
-            height: 10.057px;
+            height: 53%;
+            width: 51%;
+            object-fit: contain;
         }
     }
 
@@ -13188,11 +13295,6 @@ span {
         .favorites_btn {
             width: 22px;
             height: 22px;
-
-            svg {
-                width: 10.686px;
-                height: 10.057px;
-            }
         }
     }
 
@@ -13605,5 +13707,35 @@ span {
 
     .small_card .item .small_text {
         left: 61%;
+    }
+}
+
+.tippy-box[data-theme~='small_tooltip'] {
+    font-size: 16px;
+    padding: 5px 37px;
+    text-transform: uppercase;
+    background: $color_brown;
+    color: $color_creamy;
+    border-radius: 40px;
+
+    .tippy-content {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width:1600px) and (min-width:993px) {
+    .tippy-box[data-theme~='small_tooltip'] {
+        font-size: 13px;
+        padding: 5px 27px;
+        border-radius: 30px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .tippy-box[data-theme~='small_tooltip'] {
+        font-size: 12px;
+        padding: 5px 17px;
+        border-radius: 20px;
+        text-transform: none;
     }
 }
