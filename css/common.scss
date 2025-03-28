@@ -9649,6 +9649,10 @@ span {
 }
 
 @media screen and (max-width:1600px) {
+    .floors_plan_img_block {
+        padding: 50px;
+    }
+
     .floors_plan_block .floors_block_info.right {
         width: 90px;
     }
@@ -9738,6 +9742,29 @@ span {
     .building_wrapper {
         padding-bottom: 180px;
         padding-top: 120px;
+
+        &_3 {
+            padding-top: var(--header_height) !important;
+
+            .building_img {
+                max-width: 100%;
+                height: 100%;
+
+                img {
+                    height: 100%;
+
+                }
+
+                svg {
+                    height: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    height: auto;
+                    /* min-height: 100%; */
+                    max-height: 100%;
+                }
+            }
+        }
     }
 
     .floors_selection_block_item.right {
@@ -9872,11 +9899,11 @@ span {
             }
         }
 
-        &_3 {
-            .building_img {
-                max-width: 250px;
-            }
-        }
+        // &_3 {
+        //     .building_img {
+        //         max-width: 250px;
+        //     }
+        // }
 
         &_4 {
             .building_img {
@@ -10136,7 +10163,7 @@ span {
 
 .floors_plan_img_block {
     position: relative;
-    padding: 20px;
+    padding: 70px;
     // max-height: 100%;
     display: flex;
     align-items: center;
