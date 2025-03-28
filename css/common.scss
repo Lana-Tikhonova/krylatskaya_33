@@ -533,6 +533,18 @@ ul {
     text-transform: uppercase;
 }
 
+.lg\:none {
+    @media (max-width: 992px) {
+        display: none !important;
+    }
+}
+
+.sm\:fz-16 {
+    @media (max-width: 576) {
+        font-size: 16px !important;
+    }
+}
+
 //  button
 .btn {
     display: inline-flex;
@@ -805,6 +817,7 @@ svg {
     overflow-x: hidden;
     display: none;
     overflow-y: auto;
+    overscroll-behavior: contain;
 
     &.show {
         display: block;
@@ -5638,11 +5651,10 @@ svg {
     align-items: center;
     text-transform: uppercase;
     gap: 30px;
+    font-size: 19px;
+    margin-bottom: 25px;
 
-    svg {
-        // width: 46px;
-        // height: 25px;
-
+    img {
         width: 16.71px;
         height: 29.19px;
     }
@@ -5658,9 +5670,50 @@ svg {
     }
 }
 
-.back_btn_two {
-    font-size: 19px;
-    margin-bottom: 25px;
+@media screen and (max-width:1600px) {
+    .back_btn {
+        gap: 20px;
+        font-size: 15px;
+
+
+        span {
+            width: 58px;
+            height: 58px;
+        }
+
+        img {
+            width: 11.14px;
+            height: 19.46px;
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+
+    .back_btn {
+        font-size: 19px;
+    }
+}
+
+
+@media screen and (max-width:576px) {
+    .back_btn {
+        font-size: 10px;
+        gap: 11px;
+        text-transform: none;
+        gap: 5px;
+
+        span {
+            width: 24px;
+            height: 24px;
+        }
+
+        img {
+            width: 9px;
+            height: 11px;
+        }
+
+    }
 }
 
 .calculator_block {
@@ -5677,22 +5730,6 @@ svg {
     .back_block {
         padding-top: 15px;
         margin-top: 31px;
-    }
-
-    .back_btn {
-        gap: 20px;
-        font-size: 15px;
-
-
-        span {
-            width: 58px;
-            height: 58px;
-        }
-
-        svg {
-            width: 11.14px;
-            height: 19.46px;
-        }
     }
 }
 
@@ -5768,24 +5805,6 @@ svg {
         img {
             max-width: calc(100% + 14px);
         }
-    }
-
-    .back_btn {
-        font-size: 10px;
-        gap: 11px;
-        text-transform: none;
-        gap: 5px;
-
-        span {
-            width: 40px;
-            height: 40px;
-
-            svg {
-                width: 9px;
-                height: 11px;
-            }
-        }
-
     }
 
     .back_block {
@@ -9711,7 +9730,7 @@ span {
         padding-bottom: 50px;
         padding-top: 30px;
 
-        .back_btn_two {
+        .back_btn {
             margin-bottom: 20px;
             padding-bottom: 24px;
         }
@@ -9920,13 +9939,13 @@ span {
         padding-top: 22px;
     }
 
-    .floors_block_info.left {
+    .floors_selection_block_item.left {
         h2 {
             font-size: 20px;
             max-width: 80px;
         }
 
-        .back_btn_two {
+        .back_btn {
             font-size: 11px;
             line-height: 13px;
             text-transform: none;
@@ -9938,7 +9957,7 @@ span {
                 height: 26px;
                 flex: 0 0 auto;
 
-                svg {
+                img {
                     width: 9px;
                     height: 11px;
                 }
@@ -10017,7 +10036,7 @@ span {
     position: relative;
 
     .floors_block_info {
-        .back_btn_two {
+        .back_btn {
             margin-bottom: 33px;
             width: 100%;
             border-bottom: 1px solid #BAADA8;
@@ -10607,16 +10626,24 @@ span {
     background: #fff;
     padding-top: 42px;
     padding-bottom: 40px;
-    min-height: calc(100vh - 130px);
-    min-height: calc(100svh - 130px);
+}
+
+@media screen and (min-width:993px) {
+    .apartment_section {
+        background: #fff;
+        padding-top: 42px;
+        padding-bottom: 40px;
+        min-height: calc(100vh - 130px);
+        min-height: calc(100svh - 130px);
+    }
 }
 
 .apartment_block {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 20px;
-
+    column-gap: 20px;
+    row-gap: 43px;
 
     .left {
         border-top: 1px solid #BAADA8;
@@ -10646,9 +10673,9 @@ span {
 
     .top {
         width: 100%;
-        margin-bottom: 23px;
         display: flex;
         align-items: flex-end;
+        position: relative;
     }
 
     .left {
@@ -10660,14 +10687,19 @@ span {
         width: calc(100% - 445px - 20px);
     }
 
-    .back_btn_two {
+    .back_btn {
         margin-bottom: 0;
     }
 
     .tabs_nav {
         margin: 0 auto;
-        position: relative;
-        left: -93px;
+    }
+
+    .tabs_nav_wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .tabs_nav_item.active {
@@ -10678,6 +10710,10 @@ span {
         padding-top: 28px;
         border-top: 1px solid #BAADA8;
 
+        img {
+            width: 100%;
+            max-width: 90.7%;
+        }
     }
 
     .img_image {
@@ -10695,6 +10731,14 @@ span {
             right: 0;
             width: 100%;
             height: 100%;
+        }
+    }
+
+    .link_wrapper {
+        .link {
+            &:last-child {
+                display: none;
+            }
         }
     }
 }
@@ -10757,6 +10801,72 @@ span {
 
 
 @media screen and (max-width:1600px) and (min-width:993px) {
+    .link {
+        font-size: 10.669px;
+    }
+
+    .apartment_section {
+        padding-top: 28px;
+    }
+
+    .apartment_block {
+        column-gap: 13px;
+        row-gap: 28px;
+
+        .title {
+            padding-bottom: 34px;
+        }
+
+        .left {
+            width: 300px;
+            padding-top: 18px;
+            gap: 25px;
+
+            .btn {
+                min-width: 204px;
+            }
+        }
+
+        .right {
+            width: calc(100% - 300px - 13px);
+        }
+    }
+
+    .price_block {
+        gap: 6px;
+
+        .price {
+            font-size: 26.005px;
+        }
+
+        .price_old {
+            font-size: 12.692px;
+        }
+    }
+
+    .crayons_item {
+        font-size: 10.669px;
+        padding: 2px 9px;
+
+        img {
+            width: 9px;
+        }
+
+    }
+
+    .slider_text_block h3 {
+        margin-bottom: 18px;
+    }
+
+    .slider_text_block .left .text {
+        max-width: 338px;
+    }
+
+    .slider_text .swiper_arrows {
+        bottom: 14px;
+        padding-right: 33px;
+    }
+
     .gallery_section_2 {
         .slider_gallery_wrapper {
             padding-bottom: 80px;
@@ -10869,7 +10979,174 @@ span {
     }
 }
 
+.apartment_mobile {
+    display: none;
+}
+
 @media screen and (max-width:992px) {
+    .apartment_mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #BAADA8;
+        padding-top: 38px;
+
+        h2 {
+            br {
+                display: none;
+            }
+        }
+
+        .title {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+    }
+
+    .apartment_section {
+        padding-top: 17px;
+        padding-bottom: 50px;
+    }
+
+    .crayons_item {
+        font-size: 19px;
+        gap: 9px;
+    }
+
+    .price_block {
+        margin-bottom: 16px;
+        gap: 0;
+
+        .price {
+            font-size: 30px;
+        }
+
+        .price_old {
+            font-size: 12.692px;
+        }
+    }
+
+    .apartment_block {
+        flex-direction: column;
+        gap: 0;
+
+        .top {
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 13px;
+
+            .tag {
+                font-size: 12.7px;
+                padding: 5px 11px;
+
+            }
+        }
+
+        .img_plan {
+            border-top: none;
+            padding-top: 22px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .left {
+            width: 100%;
+            order: 1;
+            border-top: none;
+            margin-bottom: 0;
+            padding-top: 0;
+            gap: 13px;
+
+            .btn {
+                min-width: initial;
+                font-size: 12.669px;
+                padding: 12px 20px;
+            }
+
+            .title {
+                display: none;
+            }
+        }
+
+        .right {
+            width: 100%;
+        }
+
+        .tabs_nav_wrapper {
+            position: relative;
+            transform: none;
+            left: initial;
+            bottom: initial;
+        }
+
+        .link_wrapper {
+            display: flex;
+            column-gap: 55px;
+            row-gap: 20px;
+
+            .link {
+                font-size: 19px;
+                min-width: 184px;
+                text-transform: none;
+
+                &:last-child {
+                    display: block;
+                }
+            }
+        }
+
+    }
+
+    .slider_text_block {
+        flex-direction: column;
+        padding-bottom: 0;
+        border-bottom: none;
+
+        .left {
+            width: 100%;
+            margin-bottom: 35px;
+
+            h3 {
+                br {
+                    display: none;
+                }
+            }
+
+            .text {
+                max-width: 100%;
+            }
+        }
+
+        .right {
+            width: 100%;
+        }
+    }
+
+    .slider_text {
+
+        .swiper-pagination,
+        .swiper_arrows {
+            display: none;
+        }
+    }
+
+    .similar_apartment_wrapper {
+        h2 {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    .similar_apartment_list {
+        .catalog_col {
+            width: 50%;
+        }
+    }
+
     .catalog_block {
         .top {
             width: 100%;
@@ -10932,6 +11209,17 @@ span {
             padding-bottom: 0;
         }
     }
+
+    .slider_text_block h3 {
+        margin-bottom: 35px;
+    }
+
+    .apartment_block .img_image {
+        margin-top: 10px;
+        padding-bottom: 64.491%;
+        margin-bottom: 40px;
+
+    }
 }
 
 @media screen and (max-width:700px) {
@@ -10946,6 +11234,118 @@ span {
 }
 
 @media screen and (max-width:576px) {
+    .apartment_block .img_image {
+        margin-top: 15px;
+        padding-bottom: 58.491%;
+        margin-bottom: 12px;
+    }
+
+    .slider_text_block h3 {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    .slider_text {
+        .item {
+            min-height: 230px;
+        }
+    }
+
+    .similar_apartment_list {
+        .catalog_col {
+            width: 100%;
+        }
+    }
+
+    .apartment_section {
+        padding-bottom: 30px;
+    }
+
+    .apartment_block {
+        .crayons_item {
+            font-size: 9.863px;
+            padding: 0px 7px;
+            gap: 5px;
+
+
+            img {
+                width: 7px;
+            }
+        }
+
+        .favorites_btn {
+            width: 22px;
+            height: 22px;
+
+            svg {
+                height: 53%;
+                width: 51%;
+                object-fit: contain;
+            }
+        }
+
+        .img_plan {
+            margin-left: -10px;
+            margin-right: -10px;
+            padding-top: 7px;
+        }
+
+        .top {
+            margin-bottom: 19px;
+
+            .tag {
+                font-size: 11px;
+            }
+        }
+
+        .title {
+            align-items: center;
+
+            h2 {
+                font-size: 28px;
+                text-transform: uppercase;
+            }
+        }
+
+        .left {
+            gap: 6px;
+
+            .btn {
+                font-size: 11px;
+                padding: 6.5px 20px;
+            }
+        }
+    }
+
+    .apartment_block .link_wrapper {
+        column-gap: 34px;
+        margin-top: 18px;
+
+        .link {
+            font-size: 14px;
+            min-width: 126px;
+        }
+    }
+
+    .price_block {
+        gap: 4px;
+        margin-bottom: 24px;
+
+        .price {
+            font-size: 21px;
+        }
+
+        .price_old {
+            font-size: 8.969px;
+        }
+    }
+
+    .apartment_mobile {
+        padding-top: 20px;
+    }
+
+
+
     .catalog_section .catalog_list .catalog_col {
         width: 100%;
     }
@@ -11344,6 +11744,7 @@ span {
                             height: 100%;
                             background-repeat: no-repeat;
                             background-position: center;
+                            background-size: 70%;
                             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='17' viewBox='0 0 22 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2 6.88889L8.69767 14L20 2' stroke='%23F8F0EC' stroke-width='4'/%3e%3c/svg%3e ");
                         }
                     }
@@ -11432,7 +11833,8 @@ span {
                     content: '';
                     display: block;
                     position: absolute;
-                    top: 15px;
+                    top: 50%;
+                    margin-top: -1.5px;
                     left: 0;
                     bottom: 0;
                     right: 0;
@@ -11458,7 +11860,7 @@ span {
 }
 
 .terms_payment_block {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 
 }
 
@@ -11600,7 +12002,77 @@ span {
     }
 }
 
+@media screen and (max-width:1700px) and (min-width: 1601px) {
+    .terms_payment_list .item h3 {
+        font-size: 33px;
+    }
+}
+
 @media screen and (max-width: 1600px) and (min-width: 993px) {
+    .terms_payment_modal {
+        .close {
+            top: 14px;
+            right: 14px;
+
+            svg {
+                width: 20px;
+            }
+        }
+
+        .modal-content {
+            padding: 77px 26px;
+        }
+    }
+
+    .terms_payment_block {
+        padding-bottom: 40px;
+    }
+
+    .terms_payment_list {
+        gap: 16px;
+
+        .col {
+            width: calc(50% - 8px);
+        }
+
+        .item {
+            border-radius: 16px;
+            padding: 12px 17px 24px 21px;
+
+            h3 {
+                margin-bottom: 11px;
+            }
+
+            .text {
+                margin-bottom: 19px;
+            }
+
+            ul li {
+                position: relative;
+                padding-left: 12px;
+                line-height: 21px;
+            }
+
+            &:before {
+                top: 14px;
+                height: calc(100% - 28px);
+            }
+
+            .circle {
+                width: 22px;
+                height: 22px;
+                top: 14px;
+                right: 18px;
+            }
+
+            .right {
+                padding-left: 34px;
+            }
+
+        }
+    }
+
+
     .contacts_block {
         .left {
             h2 {
@@ -11852,7 +12324,78 @@ span {
     }
 }
 
+@media screen and (max-width:1200px) and (min-width:993px) {
+    .terms_payment_list .item h3 {
+        font-size: 22px;
+    }
+
+    .terms_payment_list .item {
+        .right {
+            padding-left: 20px;
+        }
+
+        .left {
+            padding-right: 20px;
+        }
+    }
+}
+
 @media screen and (max-width:992px) {
+    .terms_payment_list {
+        gap: 18px;
+
+        .col {
+            width: 100%;
+        }
+    }
+
+    .terms_payment_list .item {
+        padding: 13px 23px 27px;
+        border-radius: 16px;
+
+        .circle {
+            width: 24px;
+            height: 24px;
+            top: 16px;
+            right: 21px;
+        }
+
+        &:before {
+            top: 16px;
+            height: calc(100% - 32px);
+        }
+
+        .right {
+            padding-left: 40px;
+
+            .btn {
+                font-size: 12.667px;
+                padding: 13px 23px;
+
+            }
+        }
+
+        .left {
+            padding-right: 40px;
+        }
+
+        h3 {
+            font-size: 26px;
+        }
+
+        .text {
+            font-size: 15px;
+            max-width: 220px;
+            margin-bottom: 23px;
+        }
+
+        ul li {
+            font-size: 15px;
+            line-height: 20px;
+            padding-left: 12px;
+        }
+    }
+
     .media_slider {
         overflow: initial;
 
@@ -12191,7 +12734,21 @@ span {
 }
 
 @media screen and (max-width:700px) {
+    .terms_payment_list .item {
+        .right {
+            padding-left: 20px;
+        }
 
+        .left {
+            padding-right: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+
+    }
 
     .team_list {
         .col {
@@ -12205,6 +12762,71 @@ span {
 }
 
 @media screen and (max-width:576px) {
+    .terms_payment_modal .modal-content {
+        padding: 65px 12px;
+    }
+
+    .terms_payment_list {
+        gap: 16px;
+
+        .item {
+            .circle {
+                width: 19px;
+                height: 19px;
+                top: 16px;
+                right: 14px;
+            }
+
+            flex-direction: column;
+            padding: 21px 17px 20px;
+
+            h3 {
+                font-size: 17px;
+            }
+
+            &:before {
+                display: none;
+            }
+
+            .text {
+                font-size: 12px;
+                max-width: 195px;
+                margin-bottom: 17px;
+                line-height: 15px;
+            }
+
+            ul li {
+                font-size: 12px;
+                line-height: 16px;
+            }
+
+            .right {
+                width: 100%;
+                padding-left: 0;
+                margin-top: 20px;
+
+                .btn {
+                    // display: flex;
+                    width: fit-content;
+                    padding: 9px 23px 11px;
+                    font-size: 11px;
+                }
+            }
+
+            .left {
+                width: 100%;
+                padding-right: 0;
+
+                h3 {
+                    max-width: 50%;
+                }
+            }
+        }
+
+
+
+    }
+
     .media_progress_control {
         padding: 5px 20px 5px;
         gap: 22px;
@@ -12496,10 +13118,6 @@ span {
             object-position: 58%;
         }
     }
-
-    .sm\:fz-16 {
-        font-size: 16px !important;
-    }
 }
 
 @media screen and (max-width:992px) and (min-width:577px) {
@@ -12545,7 +13163,7 @@ span {
     flex-wrap: wrap;
     margin-top: 10px;
 
-    .back_btn_two {
+    .back_btn {
         margin-bottom: 0;
     }
 
@@ -12988,15 +13606,6 @@ span {
     .catalog_block {
         .top {
             margin-bottom: 10px;
-        }
-
-        .back_btn {
-            font-size: 11px;
-
-            span {
-                width: 24px;
-                height: 24px;
-            }
         }
 
         .tags .tag {

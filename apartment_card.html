@@ -25,13 +25,8 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?28" />
+    <link rel="stylesheet" href="css/bundle.min.css?31" />
 </head>
-
-<!-- эта страница отличается от остальных:
- 1) лого в шапке (.header_block_not_fix) другое - logo_brown.svg
- 2) есть класс у боди calculator_page
- 3) есть класс header_dark у header -->
 
 <body class='small_header'>
     <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
@@ -198,26 +193,15 @@
                     <div class='top'>
                         <a href="#" class='back_btn back_btn_two'>
                             <span class='back_btn_icon'>
-                                <svg width="18" height="30" viewBox="0 0 18 30" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_1669_4605)">
-                                        <path
-                                            d="M15.3019 0.81L17.4219 2.94L4.95187 15.41L17.4219 27.88L15.3019 30L0.711875 15.41L15.3019 0.81Z"
-                                            fill="#63483F" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1669_4605">
-                                            <rect width="16.71" height="29.19" fill="white"
-                                                transform="translate(17.4219 30) rotate(180)" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
+                                <img src="imgs/arrow_left.svg" alt="">
                             </span>
                             Назад
                         </a>
-                        <div class="tabs_nav tags" data-aos="fade">
-                            <a class="tabs_nav_item tag active" href="#apartment_1">Планировка</a>
-                            <a class="tabs_nav_item tag" href="#apartment_2">Вид из окна</a>
+                        <div class='tabs_nav_wrapper'>
+                            <div class="tabs_nav tags" data-aos="fade">
+                                <a class="tabs_nav_item tag active" href="#apartment_1">Планировка</a>
+                                <a class="tabs_nav_item tag" href="#apartment_2">Вид из окна</a>
+                            </div>
                         </div>
                     </div>
                     <div class='left'>
@@ -233,7 +217,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" data-open-modal="terms_payment" class="link">выбрать условия оплаты</a>
+                        <a href="#" data-open-modal="terms_payment" class="link lg:none">выбрать условия оплаты</a>
                         <div class='crayons_item --red'>
                             <img src="imgs/fire.svg" alt="">
                             Горящее предложение
@@ -246,10 +230,27 @@
                             <div class="price">45 235 956 ₽</div>
                             <div class="price_old">45 235 956 ₽</div>
                         </div>
-                        <div class="btn">забронировать</div>
-                        <a href="#" class='link'>Скачать <br>планировку</a>
+                        <div class="btn">Забронировать</div>
+                        <div class='link_wrapper'>
+                            <a href="#" class='link'>Скачать <br>планировку</a>
+                            <a href="#" data-open-modal="terms_payment" class="link">Выбрать условия<br> оплаты</a>
+                        </div>
                     </div>
                     <div class="right">
+                        <div class='apartment_mobile'>
+                            <div class='title'>
+                                <h2>Квартира<br>
+                                    136</h2>
+                                <div class='favorites_btn_wrapper'>
+                                    <input type="checkbox" name="favorite">
+                                    <div class='favorites_btn --brown'>
+                                        <svg class="fill_brown">
+                                            <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="tabs_content">
                             <div class="tabs_content_item" id="apartment_1">
                                 <div class='img img_plan'><img src="imgs/plan_big.png" alt=""></div>
@@ -303,7 +304,7 @@
                     </div>
                 </div>
                 <div class='similar_apartment_wrapper'>
-                    <h3>ПОХОЖИЕ <br>КВАРТИРЫ</h3>
+                    <h2>Похожие<br> квартиры</h2>
                     <div class='similar_apartment_list catalog_list'>
                         <div class="catalog_col">
                             <div class="catalog_item">
