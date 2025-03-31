@@ -629,7 +629,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Показываем нужный таб
                 const targetId = this.getAttribute("href");
-                const targetTab = document.querySelector(targetId);
+                const targetTab = tabsBlock.querySelector(targetId);
                 if (targetTab) {
                     targetTab.style.display = "block";
                 }
@@ -639,10 +639,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.classList.add("active");
 
                 if (this.classList.contains("static_map_svg_g")) {
-                    console.log(this);
                     const mapTabBtn = document.querySelector('[href="#tab_map-2"]');
                     mapTabBtn && mapTabBtn.classList.add('active');
-
                 } else {
                     this.classList.add("active");
                 }
@@ -1330,17 +1328,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // план этажа
+let flatsData = {}; // Должен загружаться динамически
+
 document.addEventListener("DOMContentLoaded", function () {
     const floorsPlanSection = document.querySelector(".floors_plan_section");
     const floorsPlanImg = document.querySelector(".floors_plan_img");
     const floorsPlanTitle = document.querySelector(".floors_plan_title span");
     const preloader = document.querySelector(".preloader");
     const swiperContainer = document.querySelector(".floors_plan_slider");
+    const floorsPlanWrapper = document.querySelector(".floors_plan_flat_wrapper");
     let lastLoadedFloor = null;
 
     const swiperFloorsPlan = new Swiper(swiperContainer, {
         spaceBetween: 4,
-        slidesPerView: 3,
+        slidesPerView: 1,
         direction: "vertical",
         watchOverflow: true,
         // watchSlidesVisibility: true,
@@ -1349,7 +1350,13 @@ document.addEventListener("DOMContentLoaded", function () {
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
-        }
+        },
+        breakpoints: {
+            993: {
+                spaceBetween: 4,
+                slidesPerView: 3,
+            },
+        },
     });
 
     if (floorsPlanSection) {
@@ -1387,6 +1394,12 @@ document.addEventListener("DOMContentLoaded", function () {
             loadFloorData(floorNumber);
             activeSlide.classList.add("active"); // Добавляем класс загруженного слайда
             lastLoadedFloor = floorNumber; // Обновляем последний загруженный этаж
+
+            // Переключаем активный таб на #floors
+            const floorsTabBtn = document.querySelector('.tabs_nav_item[href="#floors"]');
+            if (floorsTabBtn) {
+                floorsTabBtn.click();
+            }
         }
     }
     // Загружаем первый этаж и добавляем слайду класс active по умолчанию
@@ -1454,18 +1467,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     preloader.style.display = "none";
                 }, 300);
             };
+            flatsData = data; // Сохраняем данные для клика по flats
+
+            // **Выбираем первый шаблон по умолчанию**
+            const firstFlatKey = Object.keys(flatsData.flats)[0]; // Берём первый ключ
+            if (firstFlatKey) {
+                floorsPlanWrapper.innerHTML = flatsData.flats[firstFlatKey];
+            }
         } catch (error) {
             console.error("Ошибка загрузки JSON:", error);
         }
-        // finally {
-        //     setTimeout(() => {
-        //         preloader.style.opacity = "0";
-        //         setTimeout(() => {
-        //             preloader.style.display = "none";
-        //             // floorsPlanSection.classList.remove("sending");
-        //         }, 300); // 300 мс задержка перед скрытием
-        //     }, 300); // небольшая задержка для плавного исчезновения
-        // }
 
     }
 
@@ -1490,28 +1501,43 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         setTimeout(() => { // Даем время DOM обновиться
-            let placement
-            if ($(window).width() > 992) {
-                placement = 'left-start';
-            } else {
-                placement = 'bottom';
+            let tippyInstances = [];
+
+            function initTippy() {
+                destroyTippy(); // Уничтожаем старые инстансы перед созданием новых
+                tippyInstances = tippy(".floor_tippy_btn", {
+                    content(reference) {
+                        const id = reference.getAttribute("data-template");
+                        const template = document.getElementById(id);
+                        return template ? template.innerHTML : "Нет данных";
+                    },
+                    allowHTML: true,
+                    theme: "creame",
+                    arrow: false,
+                    animation: "scale",
+                    placement: "left-start",
+                    followCursor: true,
+                    maxWidth: "412px",
+                    duration: [400, 200],
+                });
             }
-            tippy(".tippy_btn", {
-                // trigger: 'click',
-                content(reference) {
-                    const id = reference.getAttribute("data-template");
-                    const template = document.getElementById(id);
-                    return template ? template.innerHTML : "Нет данных";
-                },
-                allowHTML: true,
-                theme: "creame",
-                arrow: false,
-                animation: "scale",
-                placement: placement,
-                followCursor: true,
-                maxWidth: "412px",
-                duration: [400, 200]
-            });
+
+            function destroyTippy() {
+                tippyInstances.forEach(instance => instance.destroy());
+                tippyInstances = [];
+            }
+
+            function checkTippy() {
+                if (window.innerWidth > 992) {
+                    initTippy();
+                } else {
+                    destroyTippy();
+                }
+            }
+
+            checkTippy();
+            window.addEventListener("resize", checkTippy);
+
         }, 50);
     }
 
@@ -1547,8 +1573,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function handlePolygonClick(event) {
-            const link = event.target.getAttribute("data-link");
-            if (link) window.open(link, "_blank");
+            if (window.innerWidth > 992) {
+                const link = event.target.getAttribute("data-link");
+                if (link) window.open(link, "_blank");
+            } else {
+                const template = event.target.getAttribute("data-template");
+                if (template && flatsData?.flats?.[template]) {
+                    floorsPlanWrapper.innerHTML = flatsData.flats[template];
+                } else {
+                    console.warn("Шаблон квартиры не найден:", template);
+                }
+            }
+
         }
 
         function removeEventListeners() {

@@ -9598,6 +9598,8 @@ span {
     border: 1px solid #BAADA8;
     padding: 26px 30px;
     margin-top: 100px;
+    position: relative;
+    z-index: 1;
 
     span {
         font-size: 16px;
@@ -9642,17 +9644,26 @@ span {
 }
 
 @media screen and (max-width:1600px) and (min-width:993px) {
-    .floors_plan_slider_wrapper {
+    .floors_plan_slider_container {
         margin-top: -60px;
 
         .name {
             font-size: 10px;
         }
 
+    }
+
+    .floors_plan_slider_wrapper {
+
         .swiper-button-next,
         .swiper-button-prev {
             width: 38px;
             height: 38px;
+
+            svg {
+                width: 20px;
+                height: 11px;
+            }
         }
     }
 
@@ -9668,36 +9679,6 @@ span {
 }
 
 @media screen and (max-width:1600px) {
-    .floors_plan_img_block {
-        padding: 50px;
-    }
-
-    .floors_plan_block .floors_block_info.right {
-        width: 90px;
-    }
-
-    .floors_plan_master_plan {
-        width: 210px;
-        position: initial;
-    }
-
-    .floors_plan_list {
-        align-items: inherit;
-    }
-
-    .compass img {
-        width: 55px;
-    }
-
-    .compass_desktop {}
-
-    .floors_plan_master_plan_img {
-        height: auto;
-        position: absolute;
-        bottom: 26px;
-        width: 158px;
-        right: 0;
-    }
 
     .building_img {
         max-width: 400px;
@@ -9726,26 +9707,11 @@ span {
 
     }
 
-    .floors_block_info.left {
-        padding-bottom: 50px;
-        padding-top: 30px;
-
-        .back_btn {
-            margin-bottom: 20px;
-            padding-bottom: 24px;
-        }
-    }
-
-    .floors_plan_block .floors_block_info h2 {
-        margin-bottom: 54px;
-    }
-
     .floors_selection_block .right img {
         width: 178px;
         margin-top: -110px;
     }
 }
-
 
 @media screen and (max-width:992px) {
     .building_img svg path.active {
@@ -9837,7 +9803,7 @@ span {
         }
     }
 
-    .floors_block_info.left {
+    .floors_selection_block_item.left {
         padding-top: 37px;
     }
 
@@ -9935,11 +9901,9 @@ span {
         height: 123px;
     }
 
-    .floors_block_info.left {
-        padding-top: 22px;
-    }
-
     .floors_selection_block_item.left {
+        padding-top: 22px;
+
         h2 {
             font-size: 20px;
             max-width: 80px;
@@ -10034,38 +9998,48 @@ span {
     min-height: calc(100vh - var(--header_height));
     min-height: calc(100svh - var(--header_height));
     position: relative;
+}
 
-    .floors_block_info {
-        .back_btn {
-            margin-bottom: 33px;
-            width: 100%;
-            border-bottom: 1px solid #BAADA8;
-            padding-bottom: 33px;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            margin-bottom: 73px;
-        }
-
-        .btn {
-            margin-bottom: 30px;
-        }
-
-        .quantity_rooms {
-            margin-top: auto;
-        }
-
-        &.left {
-            width: 445px;
-        }
-
-        &.right {
-            width: 396px;
-        }
+.floors_plan_block_item {
+    .back_btn {
+        margin-bottom: 33px;
+        width: 100%;
+        border-bottom: 1px solid #BAADA8;
+        padding-bottom: 33px;
+        margin-bottom: 30px;
     }
 
+    h2 {
+        margin-bottom: 73px;
+    }
 
+    .btn {
+        margin-bottom: 30px;
+    }
+
+    .quantity_rooms {
+        margin-top: auto;
+    }
+
+    &.left {
+        width: 445px;
+    }
+
+    &.right {
+        width: 396px;
+        padding-right: 10px;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    &.top {
+        display: none;
+    }
+
+    .compass {
+        display: none;
+    }
 }
 
 .compass {
@@ -10157,12 +10131,22 @@ span {
     }
 }
 
+@media screen and (min-width:577px) {
+    .floors_plan_img_wrapper {
+        display: flex !important;
+    }
+
+    .floors_plan_master_plan {
+        display: block !important;
+    }
+}
+
 .floors_plan_img_wrapper {
     position: relative;
     width: 100%;
     margin: auto;
     min-height: 100%;
-    display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -10188,6 +10172,7 @@ span {
     align-items: center;
     justify-content: center;
     width: 100%;
+    min-height: 301px;
 }
 
 .floors_plan_img_view {
@@ -10199,7 +10184,7 @@ span {
     &.--courtyard {
         top: 0;
         // bottom: 100%;
-        border-bottom: 1px solid #878787;
+        border-bottom: 1px solid rgba(135, 135, 135, 0.5);
         padding-bottom: 10px;
     }
 
@@ -10208,7 +10193,7 @@ span {
         // right: 100%;
         top: 50%;
         transform: translateY(-50%);
-        border-right: 1px solid #878787;
+        border-right: 1px solid rgba(135, 135, 135, 0.5);
         padding-right: 5px;
         height: 301px;
     }
@@ -10216,7 +10201,7 @@ span {
     &.--church {
         bottom: 0;
         // top: 100%;
-        border-top: 1px solid #878787;
+        border-top: 1px solid rgba(135, 135, 135, 0.5);
         padding-top: 10px;
     }
 
@@ -10308,25 +10293,53 @@ span {
 
 }
 
-.floors_plan_slider_wrapper {
-    position: relative;
-    overflow: hidden;
+.floors_plan_slider_container {
     margin-top: -123px;
-    flex: 0 0 auto;
 
     .name {
         font-size: 16px;
         text-transform: uppercase;
         margin-bottom: 10px;
+
+    }
+
+    .name_one {
         display: block;
     }
+
+    .name_two {
+        display: none;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .floors_plan_slider_wrapper {
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            svg {
+                fill: $color_brown !important;
+            }
+        }
+    }
+}
+
+.floors_plan_slider_wrapper {
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 auto;
 
     .swiper-button-next,
     .swiper-button-prev {
         width: 57px;
         height: 57px;
-        transform: rotate(90deg);
         background: transparent;
+
+        svg {
+            width: 30px;
+            height: 17px;
+            margin: 0;
+        }
 
     }
 
@@ -10372,16 +10385,6 @@ span {
     }
 }
 
-.floors_plan_block_item {
-    &.right {
-        padding-right: 10px;
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 20px;
-    }
-}
-
-
 .slider_text_block {
     display: flex;
     justify-content: space-between;
@@ -10411,6 +10414,9 @@ span {
     width: 414px;
 }
 
+.floors_plan_flat_wrapper {
+    display: none;
+}
 
 @media screen and (max-width:1850px) {
     .floors_plan_list {
@@ -10418,7 +10424,7 @@ span {
         margin-left: 30px;
     }
 
-    .floors_plan_block .floors_block_info.right {
+    .floors_plan_block_item.right {
         width: 100px;
     }
 
@@ -10428,12 +10434,600 @@ span {
 }
 
 @media screen and (max-width:1600px) {
+    .floors_plan_block_item {
+
+
+        .back_btn {
+            margin-bottom: 20px;
+            padding-bottom: 24px;
+        }
+
+        h2 {
+            margin-bottom: 54px;
+        }
+
+        &.left {
+            width: 300px;
+            padding-bottom: 50px;
+            padding-top: 30px;
+        }
+
+        &.right {
+            width: 90px;
+        }
+    }
+
     .tooltip_block_flat {
         width: 275px;
     }
 
-    .floors_plan_block .floors_block_info.left {
-        width: 300px;
+    .floors_plan_img_block {
+        padding: 40px;
+        min-height: 200px;
+    }
+
+
+    .floors_plan_master_plan {
+        width: 210px;
+        position: initial;
+    }
+
+    .floors_plan_list {
+        align-items: inherit;
+    }
+
+    .compass img {
+        width: 55px;
+    }
+
+    .floors_plan_wrapper {
+        padding-left: 30px;
+    }
+
+    .floors_plan_img_view {
+        &.--courtyard {
+            img {
+                width: 54.271px;
+            }
+        }
+
+        &.--courtyard,
+        &.--church {
+            width: 200px;
+        }
+
+        &.--church {
+            img {
+                width: 73.158px;
+            }
+        }
+
+        &.--street {
+            height: 200px;
+
+            img {
+                height: 93.7px;
+            }
+        }
+
+    }
+
+    .floors_plan_master_plan_img {
+        height: auto;
+        position: absolute;
+        bottom: 26px;
+        width: 158px;
+        right: 0;
+    }
+
+}
+
+@media screen and (max-width:1200px) {
+    .floors_plan_master_plan {
+        width: 140px;
+    }
+
+    .floors_plan_master_plan_img {
+        width: 120px;
+    }
+
+    .floors_plan_block_item.left {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width:992px) and (min-width:701px) {
+    .floors_plan_img_block {
+        min-height: 280px;
+    }
+
+    .floors_plan_img_view {
+        &.--courtyard {
+            img {
+                width: 75.993px;
+            }
+        }
+
+        &.--courtyard,
+        &.--church {
+            width: 280px;
+        }
+
+        &.--church {
+            img {
+                width: 102.426px;
+            }
+        }
+
+        &.--street {
+            height: 280px;
+
+            img {
+                height: 134.292px;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width:992px) {
+
+    .quantity_rooms {
+        padding: 12px 25px 28px;
+
+        span {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+    }
+
+    .quantity_rooms_list {
+        div {
+            height: 28px;
+            padding: 5px 8px;
+        }
+    }
+
+    .floors_plan_block_item,
+    .floors_selection_block_item {
+        .back_btn {
+            gap: 16px;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+    }
+
+    .floors_plan_block {
+        flex-direction: column;
+        padding-top: 40px;
+        justify-content: inherit;
+    }
+
+    .floors_plan_slider .item {
+        width: 46px;
+        height: 46px;
+    }
+
+    .floors_plan_slider {
+        height: 46px;
+    }
+
+    .floors_plan_slider_container {
+        margin-top: 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        position: absolute;
+        top: 10px;
+        right: 34px;
+
+        .name {
+            color: #BAADA8;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 18px;
+        }
+
+        .name_one {
+            display: none;
+        }
+
+        .name_two {
+            display: block;
+        }
+    }
+
+    .floors_plan_img_block {
+        padding: 70px 40px;
+    }
+
+    .floors_plan_slider_wrapper {
+        .swiper-button-prev {
+
+            margin-bottom: 0;
+        }
+
+        .swiper-button-next {
+
+            margin-top: 0;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 46px;
+            height: 20px;
+            background: transparent !important;
+            box-shadow: none;
+
+            svg {
+                width: 14px;
+                height: 8px;
+            }
+        }
+    }
+
+    .floors_plan_block_item {
+        &.top {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: auto;
+
+            .btn {
+                flex: 0 0 auto;
+                margin-bottom: 0;
+                font-size: 13px;
+                line-height: 11.022px;
+                padding: 12px 20px;
+            }
+
+            .tags {
+                display: none;
+            }
+        }
+
+        &.left {
+            padding-bottom: 55px;
+            padding-top: 11px;
+            order: 1;
+            margin-top: auto;
+
+            .back_btn,
+            .floors_plan_title,
+            .btn {
+                display: none;
+            }
+        }
+
+        &.right {
+            position: relative;
+            order: 5;
+            width: calc(100% + 72px);
+            padding: 27px 36px;
+            background: $color_creamy;
+            margin-left: -36px;
+            margin-right: -36px;
+            min-height: 100px;
+        }
+
+        .back_btn {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+    }
+
+    .floors_plan_wrapper {
+        padding-left: 0;
+        padding-top: 60px;
+        padding-bottom: 0;
+
+        .compass {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .floors_plan_master_plan {
+        width: 0;
+    }
+
+    .compass {
+        margin-top: 10px;
+
+        img {
+            width: 68px;
+        }
+    }
+
+    .floors_plan_list {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .floors_plan_master_plan_img {
+        width: 158px;
+        bottom: 40px;
+        bottom: initial;
+        top: calc(100% - 80px);
+    }
+
+    .compass_desktop {
+        display: none;
+    }
+
+    .floors_plan_flat_wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    .floors_plan_flat {
+        .btn {
+            width: 100%;
+            font-size: 13px;
+            padding: 12px;
+            margin-bottom: 0;
+            margin-top: 25px;
+        }
+    }
+
+    .floors_plan_flat_list {
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 100px;
+        padding-left: 9px;
+        column-gap: 8%;
+        row-gap: 15px;
+
+        .item_title {
+            color: #BAADA8;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .item_text {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .floors_plan_wrapper {
+        padding-top: 30px;
+    }
+
+    .floors_plan_master_plan_img {
+        width: 130px;
+    }
+
+    .compass img {
+        width: 34px;
+    }
+
+    .floors_plan_block {
+        padding-top: 17px;
+    }
+
+    .floors_plan_block_item.right {
+        padding: 27px 20px;
+    }
+
+    .floors_plan_slider_container {
+        right: 20px;
+    }
+
+    .floors_plan_flat_list {
+        column-gap: 5%
+    }
+}
+
+@media screen and (max-width:576px) {
+    .floors_plan_wrapper {
+        .compass {
+            display: none;
+        }
+    }
+
+    .floors_plan_block_item.right {
+        margin-left: -12px;
+        padding-right: -12px;
+        width: calc(100% + 24px);
+        padding: 26px 12px 20px;
+    }
+
+    .floors_plan_block_item .back_btn,
+    .floors_selection_block_item .back_btn {
+        gap: 5px;
+        font-size: 11px;
+        width: fit-content;
+    }
+
+    .floors_plan_block_item {
+        &.top {
+            .btn {
+                display: none;
+            }
+
+            .tags {
+                display: flex;
+                flex-wrap: nowrap;
+                margin-bottom: 0;
+            }
+
+            .tag {
+                &.active {
+                    background: $color_creamy;
+                }
+            }
+        }
+    }
+
+    .floors_plan_img_wrapper {
+        display: none;
+    }
+
+    .floors_plan_master_plan {
+        width: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        &[style*="display: block"] {
+            display: flex !important;
+        }
+    }
+
+    .floors_plan_master_plan_img {
+        position: relative;
+        top: initial;
+
+    }
+
+    .floors_plan_img_view {
+        &.--courtyard {
+            padding-bottom: 4px;
+
+            img {
+                width: 31.198px;
+            }
+        }
+
+        &.--courtyard,
+        &.--church {
+            width: 115px;
+        }
+
+        &.--church {
+            padding-top: 4px;
+
+            img {
+                width: 42.05px;
+
+            }
+        }
+
+        &.--street {
+            height: 115px;
+
+            img {
+                height: 55.128px;
+            }
+        }
+
+    }
+
+    .floors_plan_flat_list {
+        .item_title {
+            font-size: 8px;
+            line-height: normal;
+            margin-bottom: 1px;
+        }
+
+        .item_text {
+            font-size: 11px;
+        }
+    }
+
+    .floors_plan_slider_container {
+        right: 12px;
+        top: 1px;
+
+        .name {
+            font-size: 8px;
+            margin-top: 22px;
+        }
+    }
+
+    .floors_plan_slider_wrapper .swiper-button-next,
+    .floors_plan_slider_wrapper .swiper-button-prev {
+        width: 26px;
+        height: 18px;
+
+        svg {
+            height: 4.7px;
+            width: 8.211px;
+        }
+    }
+
+    .floors_plan_slider {
+        height: 26px;
+
+        .item {
+            font-size: 13px;
+            width: 26px;
+            height: 26px;
+        }
+    }
+
+    .floors_plan_flat_list {
+        padding-right: 65px;
+        padding-left: 0;
+    }
+
+    .floors_plan_flat .btn {
+        font-size: 15px;
+        padding: 10px;
+        margin-top: 18px;
+    }
+
+    .quantity_rooms {
+        padding: 10px 10px 10px;
+        border-radius: 9.338px;
+    }
+
+    .quantity_rooms span {
+        font-size: 7.468px;
+        line-height: normal;
+    }
+
+    .quantity_rooms_list div {
+        height: 16px;
+        font-size: 10.269px;
+        padding: 1px 4.5px;
+
+    }
+
+    .floors_plan_block_item.left {
+        padding-bottom: 17px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .btn {
+            display: flex;
+            font-size: 11px;
+            padding: 6px 19px;
+            text-transform: none;
+            order: 1;
+            margin-bottom: 0;
+        }
+
+        .compass {
+            display: flex;
+            order: -1;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    .floors_plan_img_block {
+        padding: 30px 20px;
+        min-height: 115px;
+    }
+
+    .compass {
+        margin-top: 16px;
     }
 }
 
@@ -11712,6 +12306,8 @@ span {
         position: relative;
 
         input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
             display: block;
             position: absolute;
             top: 0;
@@ -11720,9 +12316,11 @@ span {
             right: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
-            opacity: 0;
+            z-index: 5;
             cursor: pointer;
+            background: transparent;
+            pointer-events: auto;
+            border-radius: 0;
 
             &:checked {
                 &~.item {
@@ -11755,12 +12353,14 @@ span {
     }
 
     .item {
+        pointer-events: none;
         position: relative;
         border-radius: 24px;
         background: #FFF;
         padding: 18px 32px 36px;
         display: flex;
         height: 100%;
+        z-index: 1;
 
         .btn {
             width: 100%;
@@ -11770,9 +12370,9 @@ span {
         }
 
         .circle {
-            content: '';
             display: block;
             position: absolute;
+            z-index: -1;
             top: 22px;
             right: 28px;
             width: 33px;
