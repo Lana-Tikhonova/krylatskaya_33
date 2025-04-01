@@ -986,7 +986,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         function formatInputValue(input) {
-            let val = input.value.replace(/\D/g, '');
+            let val = input.value.replace(/[^-\d]/g, '');
             if (val) {
                 const formattedVal = priceFormat.to(Number(val));
                 input.value = formattedVal;
@@ -1032,8 +1032,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             element.noUiSlider.on('update', (values) => {
-                let valMin = parseInt(values[0].replace(/\D/g, ''), 10);
-                let valMax = parseInt(values[1].replace(/\D/g, ''), 10);
+                let valMin = parseInt(values[0].replace(/[^-\d]/g, ''), 10);
+                let valMax = parseInt(values[1].replace(/[^-\d]/g, ''), 10);
                 if (isFormatted) { // Только для блока с классом from_to_block_price
                     inputFrom.value = numberFormat(valMin);
                     inputTo.value = numberFormat(valMax);
@@ -1426,8 +1426,8 @@ document.addEventListener("DOMContentLoaded", function () {
             preloader.style.opacity = "1";
             preloader.style.display = "block"; // Показываем прелоадер
 
-            const response = await fetch(`http://127.0.0.1:5504/json/floor_${floorNumber}.json`);
-            // const response = await fetch(`https://крылатская33.рф/new.site/json/floor_${floorNumber}.json`);
+            // const response = await fetch(`http://127.0.0.1:5504/json/floor_${floorNumber}.json`);
+            const response = await fetch(`https://крылатская33.рф/new.site/json/floor_${floorNumber}.json`);
             if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
             const data = await response.json();

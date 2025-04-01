@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta name="description" content="Крылатская 33" />
     <meta name="keywords" content="" />
-    <title>План этажа</title>
+    <title>Коммерция (ничего не нашлось)</title>
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
@@ -25,10 +25,12 @@
     <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
+    <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css" />
     <link rel="stylesheet" href="css/bundle.min.css?42" />
 </head>
 
-<body class='small_header floors_plan_page'>
+<body class='small_header commerce_page'>
+    <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
     <header class="header header_dark">
         <div class="container">
             <div class="header_block header_block_fix">
@@ -186,126 +188,13 @@
     </div>
 
     <main>
-        <section class='floors_plan_section'>
+        <section class='one_section'>
             <div class="container">
-                <div class='floors_plan_block tabs_block'>
-                    <div class='floors_plan_block_item top'>
-                        <a href="#" class='back_btn'>
-                            <span class='back_btn_icon'>
-                                <img src="imgs/arrow_left.svg" alt="">
-                            </span>
-                            К выбору этажа
-                        </a>
-                        <a href="#" class='btn'>Подбор по параметрам</a>
-                        <div class="tabs_nav tags" data-aos="fade">
-                            <a class="tabs_nav_item tag active" href="#floors">План этажа</a>
-                            <a class="tabs_nav_item tag" href="#floors_plan">Генплан</a>
-                        </div>
-                    </div>
-                    <div class='floors_block_info floors_plan_block_item left'>
-                        <a href="#" class='back_btn'>
-                            <span class='back_btn_icon'>
-                                <img src="imgs/arrow_left.svg" alt="">
-                            </span>
-                            К выбору этажа
-                        </a>
-                        <h2 class='floors_plan_title'><span>30</span> этаж</h2>
-                        <a href="#" class='btn'>Подбор по параметрам</a>
-                        <div class='quantity_rooms'>
-                            <span>Количество комнат</span>
-                            <div class='quantity_rooms_list'>
-                                <div data-rooms-quantity="all" class='active'>Все</div>
-                                <div data-rooms-quantity="c">С</div>
-                                <div data-rooms-quantity="1">1</div>
-                                <div data-rooms-quantity="2">2</div>
-                                <div data-rooms-quantity="3">3</div>
-                                <div data-rooms-quantity="4">4</div>
-                            </div>
-                        </div>
-                        <div class='compass'><img src="imgs/compass.svg" alt=""></div>
-                    </div>
-                    <div class='floors_plan_wrapper'>
-                        <!-- коммент для внутренностей svg:
-                         1) если есть квартира то у polygon есть класс tippy_btn (он нужен для всплывашек)
-                         2) есть атрибут data-link - отсюда берется путь к странице, т.е. в data-link нужно просписать url странцы на которую мы должны попасть при клике на элемент  
-                         3) в атрибуте data-rooms-quantity нужно просписать кол-во комнат (для фильтра) и так же для стилей, они могут быть такими - https://skr.sh/sUrEBPNRZ1W
-                         4) если квартира в брони, у polygon есть атрибут data-booked. А в контенте tooltip_block появляется доп поле  <span class='subtext'>Забронировано</span>. Я не стала добавляется его везде, есть только в первом tooltip_block в файле floor_30.json
-                          -->
-                        <!-- img,svg, контент тултипов для svg загружается через json -->
-                        <div class='floors_plan_list tabs_content'>
-                            <div class='floors_plan_img_wrapper tabs_content_item' id="floors">
-                                <div class='floors_plan_img_block'>
-                                    <span class='floors_plan_img_view --courtyard'><img src="imgs/view_courtyard.svg"
-                                            alt=""></span>
-                                    <span class='floors_plan_img_view --street'><img src="imgs/view_street.svg"
-                                            alt=""></span>
-                                    <span class='floors_plan_img_view --church'><img src="imgs/view_church.svg"
-                                            alt=""></span>
-                                    <div class='floors_plan_img'></div>
-                                </div>
-                                <div class="preloader">
-                                    <span class="loader"></span>
-                                </div>
-                            </div>
-                            <div class='floors_plan_master_plan tabs_content_item' id="floors_plan">
-                                <img src="imgs/master_plan.png" alt="" class='floors_plan_master_plan_img'>
-                            </div>
-                        </div>
-                        <div class='compass'><img src="imgs/compass.svg" alt=""></div>
-                    </div>
-                    <div class='floors_block_info floors_plan_block_item right'>
-                        <!-- сюда floors_plan_flat_wrapper добавляются квартиры из jcon, на мобилке отображаются -->
-                        <div class='floors_plan_flat_wrapper'></div>
-
-                        <div class='floors_plan_slider_container'>
-                            <span class='name name_one'>Этажи</span>
-                            <span class='name name_two'>Этаж</span>
-                            <div class='floors_plan_slider_wrapper'>
-                                <div class="swiper-button-prev">
-                                    <svg width="30" height="17" viewBox="0 0 30 17" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M29.19 14.59L27.06 16.71L14.59 4.23996L2.12 16.71L2.52807e-08 14.59L14.59 -3.7973e-05L29.19 14.59Z" />
-                                    </svg>
-
-                                </div>
-                                <div class='swiper floors_plan_slider'>
-                                    <div class='swiper-wrapper'>
-                                        <div class="swiper-slide current-slide" data-floor="30">
-                                            <div class='item'>30</div>
-                                        </div>
-                                        <div class="swiper-slide" data-floor="31">
-                                            <div class='item'>31</div>
-                                        </div>
-                                        <div class="swiper-slide" data-floor="32">
-                                            <div class='item'>32</div>
-                                        </div>
-                                        <div class="swiper-slide" data-floor="33">
-                                            <div class='item'>33</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-button-next">
-                                    <svg width="30" height="17" viewBox="0 0 30 17" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_1696_4645)">
-                                            <path
-                                                d="M-0.000547384 2.12L2.12945 3.22687e-07L14.5995 12.47L27.0695 2.52807e-08L29.1895 2.12L14.5995 16.71L-0.000547384 2.12Z" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_1696_4645">
-                                                <rect width="16.71" height="29.19" fill="white"
-                                                    transform="translate(29.1895) rotate(90)" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='compass compass_desktop'><img src="imgs/compass.svg" alt=""></div>
+                <h2>Коммерция</h2>
+                <div class='text_big'>
+                    К сожалению, ничего не нашлось.<br> Запишитесь в лист ожидания.
                 </div>
+                <a href="#" class='btn btn_big'>Записаться</a>
             </div>
         </section>
     </main>
@@ -321,6 +210,8 @@
     <script src="vendors/tippy/popper.min.js"></script>
     <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
     <script src="vendors/imask/imask.js"></script>
+    <script src="vendors/nouislider/nouislider.min.js"></script>
+    <script src="vendors/nouislider/wNumb.min.js"></script>
     <script src="js/common.js?30"></script>
 </body>
 
