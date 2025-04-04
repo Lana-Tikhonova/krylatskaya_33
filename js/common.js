@@ -97,6 +97,15 @@ document.addEventListener("DOMContentLoaded", function () {
         $(this).prev().toggleClass('show')
     })
 
+    // $('.filter_btn_drop').on('click', function () {
+    //     const filterBlockWrapper = $(this).closest('.filter').find('.filter_block_wrapper');
+
+    //     $(this).toggleClass('active');
+    //     filterBlockWrapper.slideToggle();
+    //     filterBlockWrapper.toggleClass('show');
+    // });
+
+
     // 
     function toggleTableInfo(state) {
         $('.catalog_table_row').off('click'); // Убираем старые обработчики
@@ -393,6 +402,65 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
+    // высота svg равна ширине картинки под ней
+    let schemeImg = $('.parking_scheme img');
+    if (schemeImg.length) {
+        function setElementWidth(targetSelector) {
+            let schemeImg = document.querySelector('.parking_scheme img');
+            let targetElement = document.querySelector(targetSelector);
+
+            if (schemeImg && targetElement) {
+                let updateWidth = () => {
+                    targetElement.style.width = schemeImg.offsetWidth + 'px';
+                };
+
+                // Устанавливаем ширину при загрузке
+                schemeImg.addEventListener('load', updateWidth);
+
+                // Если изображение уже загружено
+                if (schemeImg.complete) {
+                    updateWidth();
+                }
+            }
+        }
+
+        setElementWidth('.parking_scheme svg');
+        setElementWidth('.parking_scheme .circle');
+
+        window.addEventListener('resize', () => {
+            setElementWidth('.parking_scheme svg');
+            setElementWidth('.parking_scheme .circle');
+
+
+        });
+
+    }
+
+    function updateLeftHeight() {
+        const sectionScheme = document.querySelector('.catalog_section_scheme');
+        if (sectionScheme) {
+            const top = sectionScheme.querySelector('.top');
+            const right = sectionScheme.querySelector('.right');
+            const left = sectionScheme.querySelector('.left');
+
+            // Получаем высоту .item и .top
+            const sectionSchemeHeight = sectionScheme.offsetHeight;
+            const topHeight = top.offsetHeight;
+
+            // Если ширина экрана больше 992px
+            if (window.innerWidth > 992) {
+                // Устанавливаем высоту .left как (высота .item - высота .top)
+                left.style.height = `${sectionSchemeHeight - topHeight}px`;
+            } else {
+                // Устанавливаем высоту .left как (высота .item - высота .top - высота .right)
+                const rightHeight = right.offsetHeight;
+                left.style.height = `${sectionSchemeHeight - topHeight - rightHeight}px`;
+            }
+        }
+    }
+    updateLeftHeight()
+    window.addEventListener('resize', updateLeftHeight);
 
     //галерея
     $('[data-fancybox]').fancybox({
@@ -826,6 +894,162 @@ document.addEventListener("DOMContentLoaded", function () {
         placement: 'bottom-start',
         maxWidth: '200px',
         duration: [400, 200]
+    });
+
+    const elem = document.querySelector('.parking_scheme .img');
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+    const panzoom = Panzoom(elem, {
+        minScale: 1,
+        maxScale: 5,
+        contain: 'outside'
+    })
+
+
+    zoomInBtn.addEventListener('click', panzoom.zoomIn)
+    zoomOutBtn.addEventListener('click', panzoom.zoomOut)
+
+
+    // let scale = 1;
+    // let translateX = 0;
+    // let translateY = 0;
+    // const minScale = 1;
+    // const maxScale = 3;
+    // const step = 0.5;
+
+    // const imgContainer = document.querySelector('.parking_scheme .img');
+    // const zoomInBtn = document.getElementById('zoom-in');
+    // const zoomOutBtn = document.getElementById('zoom-out');
+    // let isDragging = false;
+    // let startX, startY, prevTranslateX, prevTranslateY;
+
+    // function updateTransform() {
+    //     imgContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    // }
+
+
+    // // Функция для ограничения перемещения картинки
+    // function limitTranslation() {
+    //     const imgContainerRect = document.querySelector('.img-container').getBoundingClientRect();
+    //     const imgRect = imgContainer.getBoundingClientRect();
+
+    //     // Максимальные смещения по X и Y с учетом масштаба
+    //     const maxTranslateX = imgContainerRect.width - imgRect.width * scale;
+    //     const maxTranslateY = imgContainerRect.height - imgRect.height * scale;
+
+    //     // Ограничиваем translateX (по горизонтали)
+    //     if (translateX > 0) translateX = 0; // картинка не может выйти за левую сторону
+    //     if (translateX < maxTranslateX) translateX = maxTranslateX; // картинка не может выйти за правую сторону
+
+    //     // Ограничиваем translateY (по вертикали)
+    //     if (translateY > 0) translateY = 0; // картинка не может выйти за верхнюю сторону
+    //     if (translateY < maxTranslateY) translateY = maxTranslateY; // картинка не может выйти за нижнюю сторону
+    // }
+
+    // // Зум
+    // zoomInBtn.addEventListener('click', () => {
+    //     if (scale < maxScale) {
+    //         scale += step;
+    //         updateTransform();
+    //     }
+    // });
+
+    // zoomOutBtn.addEventListener('click', () => {
+    //     if (scale > minScale) {
+    //         scale -= step;
+    //         updateTransform();
+    //     }
+    // });
+
+
+
+    // // Перетаскивание
+    // imgContainer.addEventListener('mousedown', (e) => {
+    //     if (scale <= 1) return;
+    //     isDragging = true;
+    //     startX = e.clientX;
+    //     startY = e.clientY;
+    //     prevTranslateX = translateX;
+    //     prevTranslateY = translateY;
+    //     imgContainer.style.cursor = "grabbing";
+    // });
+
+    // document.addEventListener('mousemove', (e) => {
+    //     if (!isDragging) return;
+    //     let dx = e.clientX - startX;
+    //     let dy = e.clientY - startY;
+    //     translateX = prevTranslateX + dx;
+    //     translateY = prevTranslateY + dy;
+    //     limitTranslation();
+    //     updateTransform();
+    // });
+
+    // document.addEventListener('mouseup', () => {
+    //     isDragging = false;
+    //     imgContainer.style.cursor = "grab";
+    // });
+
+    // // Для мобильных устройств
+    // imgContainer.addEventListener('touchstart', (e) => {
+    //     if (scale <= 1) return;
+    //     isDragging = true;
+    //     const touch = e.touches[0];
+    //     startX = touch.clientX;
+    //     startY = touch.clientY;
+    //     prevTranslateX = translateX;
+    //     prevTranslateY = translateY;
+    // });
+
+    // document.addEventListener('touchmove', (e) => {
+    //     if (!isDragging) return;
+    //     const touch = e.touches[0];
+    //     let dx = touch.clientX - startX;
+    //     let dy = touch.clientY - startY;
+    //     translateX = prevTranslateX + dx;
+    //     translateY = prevTranslateY + dy;
+    //     limitTranslation();
+    //     updateTransform();
+    // });
+
+    // document.addEventListener('touchend', () => {
+    //     isDragging = false;
+    // });
+
+
+    let currentTippy = null;
+
+    tippy('.scheme_tippy_btn', {
+        // trigger: 'click',
+        content(reference) {
+            const id = reference.getAttribute('data-template');
+            const template = document.getElementById(id);
+            return template ? template.innerHTML : '';
+        },
+        allowHTML: true,
+        arrow: false,
+        theme: 'scheme_tooltip',
+        animation: 'scale',
+        placement: 'right',
+        maxWidth: '310px',
+        interactive: true,
+        duration: [400, 200],
+        appendTo: document.body,
+        distance: 0,
+        offset: [0, 0],
+        onShow(instance) {
+            // Закрываем текущий tooltip, если он открыт
+            if (currentTippy && currentTippy !== instance) {
+                currentTippy.hide();
+            }
+            // Устанавливаем новый текущий tooltip
+            currentTippy = instance;
+        },
+        onHide(instance) {
+            // Если закрывается tooltip, сбрасываем текущего
+            if (currentTippy === instance) {
+                currentTippy = null;
+            }
+        }
     });
 
     let tippyInstances = [];
