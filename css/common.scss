@@ -863,18 +863,12 @@ svg {
     min-height: 100%;
     height: auto;
     height: 100%;
-    padding: 30px 16px;
+    padding: 64px 80px;
     position: relative;
     z-index: 2;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-}
-
-@media screen and (min-width: 768px) {
-    .modal-dialog {
-        padding: 64px 80px;
-    }
 }
 
 .modal_bg {
@@ -997,6 +991,42 @@ svg {
         width: 100%;
         object-fit: contain;
     }
+}
+
+@media screen and (max-width:1600px) {
+    .modal-dialog {
+        padding: 40px 55px;
+    }
+
+    .modal-content {
+        padding: 50px 60px;
+    }
+
+    .modal .close {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .modal-dialog {
+        padding: 40px;
+    }
+
+    .modal-content {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .modal-dialog {
+        padding: 10px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
 }
 
 // header
@@ -3147,11 +3177,6 @@ svg {
         max-width: 1300px;
     }
 
-
-
-}
-
-@media screen and (max-width:1600px) {
     .swiper_arrows {
         gap: 8px;
     }
@@ -3164,6 +3189,16 @@ svg {
         svg {
             width: 11.14px;
             height: 19.46px;
+        }
+    }
+
+    .modal_tabs .modal_body {
+        .right {
+            width: 290px;
+        }
+
+        .left {
+            width: calc(100% - 320px);
         }
     }
 }
@@ -3328,14 +3363,6 @@ svg {
 
     .fancybox-infobar {
         bottom: 30px;
-    }
-
-    .modal-content {
-        padding: 40px;
-    }
-
-    .modal-dialog {
-        padding: 40px;
     }
 
     .modal_tabs .modal_body .tabs_content_item {
@@ -4594,14 +4621,6 @@ svg {
             width: 20px;
             height: 20px;
         }
-    }
-
-    .modal-dialog {
-        padding: 10px;
-    }
-
-    .modal-content {
-        padding: 20px;
     }
 
     .modal_tabs {
@@ -7128,10 +7147,6 @@ svg {
     .modal-content {
         padding: 0;
     }
-
-    .close svg {
-        fill: red;
-    }
 }
 
 .offer_modal_block {
@@ -7148,6 +7163,7 @@ svg {
         padding: 67px 92px;
         display: flex;
         flex-direction: column;
+        overflow: auto;
     }
 
     .right {
@@ -7165,8 +7181,10 @@ svg {
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+        form {
+            margin: auto;
+        }
     }
 }
 
@@ -7183,6 +7201,10 @@ svg {
 }
 
 @media screen and (max-width:1600px) {
+    .offer_modal_block .left {
+        padding: 50px 60px;
+    }
+
     .form_input {
         font-size: 19px;
     }
@@ -7262,6 +7284,31 @@ svg {
 }
 
 @media screen and (max-width:992px) {
+    .offer_modal_block {
+        .left {
+            width: 100%;
+            padding: 50px 65px 65px;
+        }
+
+        .right {
+            display: none;
+        }
+
+        .form_wrapper {
+            margin-top: 50px;
+        }
+    }
+
+    .offer_modal {
+        .close svg {
+            stroke: $color_brown;
+        }
+
+        .modal-content {
+            height: auto;
+        }
+    }
+
     .application_block {
         flex-direction: column;
         padding-top: 50px;
@@ -7273,6 +7320,24 @@ svg {
 }
 
 @media screen and (max-width:576px) {
+    .offer_modal_block {
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .left {
+            padding: 13px 24px 45px;
+
+            .text {
+                font-size: 11px;
+            }
+        }
+
+        .form_wrapper {
+            margin-top: 10px;
+        }
+    }
+
     .slider_small_card .item {
         border-radius: 12px;
     }
@@ -13830,6 +13895,7 @@ span {
         gap: 5px;
         padding: 5px;
         margin: -5px;
+        cursor: pointer;
 
         svg {
             width: 18px;
@@ -15468,7 +15534,7 @@ span {
 
 .parking_scheme {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 
     padding-bottom: 30px;
 
@@ -15502,6 +15568,7 @@ span {
         align-items: center;
         justify-content: center;
         position: relative;
+        overflow: hidden;
     }
 
     .img_block {
@@ -15574,7 +15641,7 @@ span {
     }
 
     .parking_scheme {
-        height: 100%;
+        height: calc(100% - 90px);
 
         .img {
             height: 100%;
@@ -15599,6 +15666,10 @@ span {
     background: #fff;
     width: 310px;
 
+    .close {
+        display: none;
+    }
+
     h3 {
         margin-bottom: 20px;
     }
@@ -15606,8 +15677,8 @@ span {
     ul {
         border-top: none;
         margin-bottom: 30px;
-        margin-top: 0;
-        padding-top: 0;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
 
         li {
             justify-content: initial;
@@ -15640,6 +15711,7 @@ span {
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        touch-action: manipulation;
 
         svg {
             max-width: 30px;
@@ -15663,9 +15735,19 @@ span {
         }
 
     }
+
+
+
+    .catalog_section_scheme .parking_scheme {
+        height: calc(100% - 52.5px);
+    }
 }
 
 @media screen and (max-width:1600px) {
+    .parking_scheme {
+        padding-bottom: 20px;
+    }
+
     .parking_scheme_zoom_btn button {
         width: 35px;
         height: 35px;
@@ -15698,19 +15780,96 @@ span {
         border-top: none;
     }
 
-    .catalog_section_scheme .left {
-        min-height: 300px;
+    .catalog_section_scheme .parking_scheme {
+        height: calc(100% - 54.7px);
+    }
 
+    .catalog_section_scheme {
+        .left {
+            min-height: 200px;
+
+        }
+
+        .filter_block_blocks {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
     }
 }
 
+.scheme_tippy_wrapper {
+    padding-left: 10px;
+}
+
 @media screen and (max-width:576px) {
-    .parking_scheme_zoom_btn button {}
 
     .catalog_section_scheme {
         .filter_block_blocks {
             display: none;
-            width: 100%;
+        }
+
+        .parking_scheme {
+            padding-bottom: 0;
+            margin-right: -12px;
+            margin-left: -12px;
         }
     }
+
+    .parking_scheme_zoom_btn {
+        left: 20px;
+        bottom: 25px;
+    }
+
+    .parking_scheme .img_wrapper {}
+
+    .scheme_tippy_wrapper {
+        padding-left: 0;
+        transform: none !important;
+        bottom: 0 !important;
+        position: fixed !important;
+        top: initial !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .tippy-box[data-theme~=scheme_tooltip] {
+        border-radius: 0;
+        transition: none;
+        max-width: 100% !important;
+    }
+
+    .tooltip_block_scheme {
+        width: 100%;
+
+        h3 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            text-transform: uppercase;
+        }
+
+        .close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+    }
+
+    .catalog_section_scheme .parking_scheme {
+        height: calc(100% - 48.2px);
+    }
+
 }

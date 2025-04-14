@@ -403,40 +403,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // высота svg равна ширине картинки под ней
-    let schemeImg = $('.parking_scheme img');
-    if (schemeImg.length) {
-        function setElementWidth(targetSelector) {
-            let schemeImg = document.querySelector('.parking_scheme img');
-            let targetElement = document.querySelector(targetSelector);
-
-            if (schemeImg && targetElement) {
-                let updateWidth = () => {
-                    targetElement.style.width = schemeImg.offsetWidth + 'px';
-                };
-
-                // Устанавливаем ширину при загрузке
-                schemeImg.addEventListener('load', updateWidth);
-
-                // Если изображение уже загружено
-                if (schemeImg.complete) {
-                    updateWidth();
-                }
-            }
-        }
-
-        setElementWidth('.parking_scheme svg');
-        setElementWidth('.parking_scheme .circle');
-
-        window.addEventListener('resize', () => {
-            setElementWidth('.parking_scheme svg');
-            setElementWidth('.parking_scheme .circle');
-
-
-        });
-
-    }
-
     function updateLeftHeight() {
         const sectionScheme = document.querySelector('.catalog_section_scheme');
         if (sectionScheme) {
@@ -444,16 +410,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const right = sectionScheme.querySelector('.right');
             const left = sectionScheme.querySelector('.left');
 
-            // Получаем высоту .item и .top
+
             const sectionSchemeHeight = sectionScheme.offsetHeight;
             const topHeight = top.offsetHeight;
 
-            // Если ширина экрана больше 992px
             if (window.innerWidth > 992) {
-                // Устанавливаем высоту .left как (высота .item - высота .top)
-                left.style.height = `${sectionSchemeHeight - topHeight}px`;
+                left.style.height = `${sectionSchemeHeight - topHeight}px - 10px`;
             } else {
-                // Устанавливаем высоту .left как (высота .item - высота .top - высота .right)
                 const rightHeight = right.offsetHeight;
                 left.style.height = `${sectionSchemeHeight - topHeight - rightHeight}px`;
             }
@@ -663,10 +626,10 @@ document.addEventListener("DOMContentLoaded", function () {
             watchSlidesVisibility: true,
             effect: "slide",
             speed: 1000,
-            // autoplay: {
-            //     delay: 3000,
-            //     disableOnInteraction: false,
-            // },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
             pagination: {
                 el: el.closest(".tabs_content_item").querySelector(".swiper-pagination"),
             },
@@ -864,28 +827,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // всплывающие подсказки
-    // let placement
-    // if ($(window).width() > 992) {
-    //     placement = 'right-start';
-    // } else {
-    //     placement = 'bottom';
-    // }
-    // tippy('.tippy_btn', {
-    //     trigger: 'click',
-    //     content(reference) {
-    //         const id = reference.getAttribute('data-template');
-    //         const template = document.getElementById(id);
-    //         return template.innerHTML;
-    //     },
-    //     allowHTML: true,
-    //     arrow: false,
-    //     theme: 'creame',
-    //     animation: 'scale',
-    //     placement: placement,
-    //     followCursor: true,
-    //     maxWidth: '462px',
-    //     duration: [400, 200]
-    // });
     tippy('[data-tippy-content]', {
         // trigger: 'click',
         arrow: false,
@@ -896,130 +837,12 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: [400, 200]
     });
 
-    const elem = document.querySelector('.parking_scheme .img');
-    const zoomInBtn = document.getElementById('zoom-in');
-    const zoomOutBtn = document.getElementById('zoom-out');
-    const panzoom = Panzoom(elem, {
-        minScale: 1,
-        maxScale: 5,
-        contain: 'outside'
-    })
-
-
-    zoomInBtn.addEventListener('click', panzoom.zoomIn)
-    zoomOutBtn.addEventListener('click', panzoom.zoomOut)
-
-
-    // let scale = 1;
-    // let translateX = 0;
-    // let translateY = 0;
-    // const minScale = 1;
-    // const maxScale = 3;
-    // const step = 0.5;
-
-    // const imgContainer = document.querySelector('.parking_scheme .img');
-    // const zoomInBtn = document.getElementById('zoom-in');
-    // const zoomOutBtn = document.getElementById('zoom-out');
-    // let isDragging = false;
-    // let startX, startY, prevTranslateX, prevTranslateY;
-
-    // function updateTransform() {
-    //     imgContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-    // }
-
-
-    // // Функция для ограничения перемещения картинки
-    // function limitTranslation() {
-    //     const imgContainerRect = document.querySelector('.img-container').getBoundingClientRect();
-    //     const imgRect = imgContainer.getBoundingClientRect();
-
-    //     // Максимальные смещения по X и Y с учетом масштаба
-    //     const maxTranslateX = imgContainerRect.width - imgRect.width * scale;
-    //     const maxTranslateY = imgContainerRect.height - imgRect.height * scale;
-
-    //     // Ограничиваем translateX (по горизонтали)
-    //     if (translateX > 0) translateX = 0; // картинка не может выйти за левую сторону
-    //     if (translateX < maxTranslateX) translateX = maxTranslateX; // картинка не может выйти за правую сторону
-
-    //     // Ограничиваем translateY (по вертикали)
-    //     if (translateY > 0) translateY = 0; // картинка не может выйти за верхнюю сторону
-    //     if (translateY < maxTranslateY) translateY = maxTranslateY; // картинка не может выйти за нижнюю сторону
-    // }
-
-    // // Зум
-    // zoomInBtn.addEventListener('click', () => {
-    //     if (scale < maxScale) {
-    //         scale += step;
-    //         updateTransform();
-    //     }
-    // });
-
-    // zoomOutBtn.addEventListener('click', () => {
-    //     if (scale > minScale) {
-    //         scale -= step;
-    //         updateTransform();
-    //     }
-    // });
-
-
-
-    // // Перетаскивание
-    // imgContainer.addEventListener('mousedown', (e) => {
-    //     if (scale <= 1) return;
-    //     isDragging = true;
-    //     startX = e.clientX;
-    //     startY = e.clientY;
-    //     prevTranslateX = translateX;
-    //     prevTranslateY = translateY;
-    //     imgContainer.style.cursor = "grabbing";
-    // });
-
-    // document.addEventListener('mousemove', (e) => {
-    //     if (!isDragging) return;
-    //     let dx = e.clientX - startX;
-    //     let dy = e.clientY - startY;
-    //     translateX = prevTranslateX + dx;
-    //     translateY = prevTranslateY + dy;
-    //     limitTranslation();
-    //     updateTransform();
-    // });
-
-    // document.addEventListener('mouseup', () => {
-    //     isDragging = false;
-    //     imgContainer.style.cursor = "grab";
-    // });
-
-    // // Для мобильных устройств
-    // imgContainer.addEventListener('touchstart', (e) => {
-    //     if (scale <= 1) return;
-    //     isDragging = true;
-    //     const touch = e.touches[0];
-    //     startX = touch.clientX;
-    //     startY = touch.clientY;
-    //     prevTranslateX = translateX;
-    //     prevTranslateY = translateY;
-    // });
-
-    // document.addEventListener('touchmove', (e) => {
-    //     if (!isDragging) return;
-    //     const touch = e.touches[0];
-    //     let dx = touch.clientX - startX;
-    //     let dy = touch.clientY - startY;
-    //     translateX = prevTranslateX + dx;
-    //     translateY = prevTranslateY + dy;
-    //     limitTranslation();
-    //     updateTransform();
-    // });
-
-    // document.addEventListener('touchend', () => {
-    //     isDragging = false;
-    // });
-
-
     let currentTippy = null;
 
+    const isMobile = window.innerWidth <= 768;
+
     tippy('.scheme_tippy_btn', {
-        // trigger: 'click',
+        trigger: isMobile ? 'click' : 'mouseenter focus',
         content(reference) {
             const id = reference.getAttribute('data-template');
             const template = document.getElementById(id);
@@ -1033,7 +856,7 @@ document.addEventListener("DOMContentLoaded", function () {
         maxWidth: '310px',
         interactive: true,
         duration: [400, 200],
-        appendTo: document.body,
+        appendTo: document.querySelector('.catalog_section'),
         distance: 0,
         offset: [0, 0],
         onShow(instance) {
@@ -1043,6 +866,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             // Устанавливаем новый текущий tooltip
             currentTippy = instance;
+
+            const tippyBox = instance.popper;
+            tippyBox.classList.add('scheme_tippy_wrapper');
+
+            // клик на элемент внутри тултипа, чтобы его закрыть
+            tippyBox.addEventListener('click', (e) => {
+                if (e.target && e.target.closest('.close')) {
+                    instance.hide();
+                }
+            });
         },
         onHide(instance) {
             // Если закрывается tooltip, сбрасываем текущего
@@ -1051,6 +884,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
 
     let tippyInstances = [];
     let isTouchDevice = detectTouchDevice();
@@ -1101,6 +935,33 @@ document.addEventListener("DOMContentLoaded", function () {
         isTouchDevice = detectTouchDevice();
         initTippy();
     });
+
+
+    // zoom
+    const parkingScheme = document.querySelector('.parking_scheme .img');
+    if (parkingScheme) {
+        const zoomInBtn = document.getElementById('zoom-in');
+        const zoomOutBtn = document.getElementById('zoom-out');
+
+        // Определяем, мобильное ли устройство
+        const isMobile = window.innerWidth <= 768;
+
+        // Устанавливаем начальный масштаб в зависимости от устройства
+        const initialScale = isMobile ? 2 : 1;
+
+        const panzoom = Panzoom(parkingScheme, {
+            minScale: 1,
+            maxScale: 10,
+            contain: 'outside',
+            startScale: initialScale,
+        })
+
+        parkingScheme.addEventListener('wheel', panzoom.zoomWithWheel);
+
+
+        zoomInBtn.addEventListener('click', panzoom.zoomIn)
+        zoomOutBtn.addEventListener('click', panzoom.zoomOut)
+    }
 
 
 
