@@ -852,8 +852,8 @@ svg {
         height: 30px;
 
         svg {
-            width: 20px;
-            height: 20px;
+            width: 14px;
+            height: 14px;
         }
     }
 }
@@ -9529,8 +9529,25 @@ span {
     background-size: cover;
     background-color: #fff;
 
-    .header {
-        z-index: 100;
+
+}
+
+@media screen and (min-width:993px) {
+    .floors_selection_page {
+        .header_block {
+            &>* {
+                z-index: 100;
+                position: relative;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    .floors_selection_page {
+        .header {
+            z-index: 100;
+        }
     }
 }
 
@@ -11801,12 +11818,6 @@ span {
         }
     }
 
-    .similar_apartment_list {
-        .catalog_col {
-            width: 50%;
-        }
-    }
-
     .catalog_block {
         .top {
             width: 100%;
@@ -11908,12 +11919,6 @@ span {
     .slider_text {
         .item {
             min-height: 230px;
-        }
-    }
-
-    .similar_apartment_list {
-        .catalog_col {
-            width: 100%;
         }
     }
 
@@ -12419,26 +12424,28 @@ span {
     }
 
     .item {
-        pointer-events: none;
+        // pointer-events: none;
         position: relative;
         border-radius: 24px;
         background: #FFF;
         padding: 18px 32px 36px;
         display: flex;
         height: 100%;
-        z-index: 1;
+        // z-index: 1;
 
         .btn {
             width: 100%;
             margin-top: auto;
             display: none;
-            z-index: 1;
+            z-index: 6;
+            position: relative;
         }
 
         .circle {
             display: block;
             position: absolute;
             z-index: -1;
+            z-index: 1;
             top: 22px;
             right: 28px;
             width: 33px;
@@ -14159,14 +14166,20 @@ span {
     }
 }
 
+.catalog_table_body_item {
+    transition: box-shadow 0.3s ease;
+    width: 100%;
+    display: block;
+
+    &:hover {
+        box-shadow: 0px 0px 19px -1px rgba(0, 0, 0, 0.21);
+    }
+}
+
 .catalog_parking {
 
     .catalog_table_body_item {
-        transition: box-shadow 0.3s ease;
-
         &:hover {
-            box-shadow: 0px 0px 19px -1px rgba(0, 0, 0, 0.21);
-
             .btn_table_catalog_wrapper {
                 visibility: visible;
                 opacity: 1;
@@ -15418,7 +15431,7 @@ span {
 
 
 @media screen and (max-width:1100px) {
-    .catalog_list.commerce_list {
+    .catalog_list {
         .catalog_col {
             width: 33.33%;
         }
@@ -15426,11 +15439,14 @@ span {
 }
 
 @media screen and (max-width:992px) {
-
-    .catalog_list.commerce_list {
+    .catalog_list {
         .catalog_col {
             width: 50%;
         }
+
+    }
+
+    .catalog_list.commerce_list {
 
         .catalog_item {
             .label {
@@ -15473,10 +15489,14 @@ span {
 }
 
 @media screen and (max-width:576px) {
-    .catalog_list.commerce_list {
+    .catalog_list {
         .catalog_col {
             width: 100%;
         }
+
+    }
+
+    .catalog_list.commerce_list {
 
         .catalog_item {
             .catalog_top {
@@ -15872,4 +15892,14 @@ span {
         height: calc(100% - 48.2px);
     }
 
+}
+
+.favorites_section {
+    padding-bottom: 32px;
+}
+
+@media screen and (max-width:576px) {
+    .favorites_section {
+        margin-bottom: 24px;
+    }
 }

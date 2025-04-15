@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="vendors/animate/aos.min.css" />
     <link rel="stylesheet" href="vendors/tippy/scale.css" />
     <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css" />
-    <link rel="stylesheet" href="css/bundle.min.css?45" />
+    <link rel="stylesheet" href="css/bundle.min.css?48" />
 </head>
 
 <body class='small_header extradition_page'>
@@ -207,7 +207,7 @@
                     <div class="left">
                         <div class='catalog_list'>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -223,7 +223,47 @@
                                                 <div class="price price_new">32 195 391 ₽</div>
                                                 <div class="price_old">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='catalog_btns'>
+                                            <div class='crayons_item --red' data-tippy-content="Aкция">
+                                                <img src="imgs/fire.svg" alt="">
+                                            </div>
+                                            <div class='favorites_btn_wrapper'>
+                                                <input type="checkbox" name="favorite">
+                                                <div class='favorites_btn --brown'>
+                                                    <svg class="fill_brown">
+                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="catalog_col">
+                                <a href="apartment_card.html" class="catalog_item">
+                                    <div class="catalog_top">
+                                        <div class='label'>БКТ6</div>
+                                        <div class='location'>1 секция, 51 этаж</div>
+                                    </div>
+                                    <div class="catalog_img">
+                                        <img src="imgs/plan_card.png" alt="">
+                                    </div>
+                                    <div class="catalog_bottom">
+                                        <div class='catalog_content'>
+                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
+                                            <div class='catalog_price'>
+                                                <!-- price_new класс чтобы цена стала светло-коричевой -->
+                                                <div class="price price_new">32 195 391 ₽</div>
+                                                <div class="price_old">32 195 391 ₽</div>
+                                            </div>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -241,10 +281,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -260,44 +300,9 @@
                                                 <div class="price price_new">32 195 391 ₽</div>
                                                 <div class="price_old">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
-                                            </div>
-                                        </div>
-                                        <div class='catalog_btns'>
-                                            <div class='crayons_item --red' data-tippy-content="Aкция">
-                                                <img src="imgs/fire.svg" alt="">
-                                            </div>
-                                            <div class='favorites_btn_wrapper'>
-                                                <input type="checkbox" name="favorite">
-                                                <div class='favorites_btn --brown'>
-                                                    <svg class="fill_brown">
-                                                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
-                                                    </svg>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="catalog_col">
-                                <div class="catalog_item">
-                                    <div class="catalog_top">
-                                        <div class='label'>БКТ6</div>
-                                        <div class='location'>1 секция, 51 этаж</div>
-                                    </div>
-                                    <div class="catalog_img">
-                                        <img src="imgs/plan_card.png" alt="">
-                                    </div>
-                                    <div class="catalog_bottom">
-                                        <div class='catalog_content'>
-                                            <div class="catalog_text">1-комнатная, 45,31 м² </div>
-                                            <div class='catalog_price'>
-                                                <!-- price_new класс чтобы цена стала светло-коричевой -->
-                                                <div class="price price_new">32 195 391 ₽</div>
-                                                <div class="price_old">32 195 391 ₽</div>
-                                            </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -315,10 +320,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -332,7 +337,9 @@
                                             <div class='catalog_price'>
                                                 <div class="price">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -347,10 +354,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -364,7 +371,9 @@
                                             <div class='catalog_price'>
                                                 <div class="price">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -379,10 +388,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -396,7 +405,9 @@
                                             <div class='catalog_price'>
                                                 <div class="price">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -411,10 +422,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -430,7 +441,9 @@
                                                 <div class="price price_new">32 195 391 ₽</div>
                                                 <div class="price_old">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -448,10 +461,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -467,7 +480,9 @@
                                                 <div class="price price_new">32 195 391 ₽</div>
                                                 <div class="price_old">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -485,10 +500,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -504,7 +519,9 @@
                                                 <div class="price price_new">32 195 391 ₽</div>
                                                 <div class="price_old">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -522,10 +539,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -539,7 +556,9 @@
                                             <div class='catalog_price'>
                                                 <div class="price">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -554,10 +573,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -571,7 +590,9 @@
                                             <div class='catalog_price'>
                                                 <div class="price">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -586,10 +607,10 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                             <div class="catalog_col">
-                                <div class="catalog_item">
+                                <a href="apartment_card.html" class="catalog_item">
                                     <div class="catalog_top">
                                         <div class='label'>БКТ6</div>
                                         <div class='location'>1 секция, 51 этаж</div>
@@ -603,7 +624,9 @@
                                             <div class='catalog_price'>
                                                 <div class="price">32 195 391 ₽</div>
                                             </div>
-                                            <div class='catalog_btn_wrapper'><a href="#" class='btn'>Забронировать</a>
+                                            <div class='catalog_btn_wrapper'>
+                                                <div class='btn' data-open-modal="booking_modal">Забронировать
+                                                </div>
                                             </div>
                                         </div>
                                         <div class='catalog_btns'>
@@ -618,7 +641,7 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -808,6 +831,55 @@
         </section>
     </main>
 
+    <div class="modal offer_modal" data-modal="booking_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-modal-close="">
+                    <svg class="w24 fill_none stroke_white">
+                        <use xlink:href="imgs/sprite.symbol.svg#close"></use>
+                    </svg>
+                </button>
+                <div class="modal_body">
+                    <div class='offer_modal_block'>
+                        <div class="left">
+                            <h2>Оформить бронь</h2>
+                            <div class='text'>Свяжемся в ближайшее время</div>
+                            <div class='form_wrapper'>
+                                <form action="" class='form' data-aos="fade">
+                                    <label class="form_input_group">
+                                        <input type="text" name="name" placeholder="Имя" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <label class="form_input_group">
+                                        <input type="tel" name="tel" placeholder="Телефон" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <label class="form_input_group">
+                                        <input type="text" name="message" placeholder="Сообщение" class="form_input">
+                                        <span class="text_error">Заполните поле</span>
+                                    </label>
+                                    <label class="checkbox_block">
+                                        <input type="checkbox" required="">
+                                        <span>Я согласен с <a href="#">политикой конфиденциальности</a></span>
+                                    </label>
+                                    <button class="btn" type="submit">
+                                        <span class='text_desktop'>Отправить сообщение</span>
+                                        <span class='text_mobile'>Отправить</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <img src="imgs/img_128.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal_bg"></div>
+    </div>
+
+
 
     <script src="vendors/gsap/gsap.min.js"></script>
     <script src="vendors/gsap/ScrollTrigger.min.js"></script>
@@ -821,7 +893,7 @@
     <script src="vendors/imask/imask.js"></script>
     <script src="vendors/nouislider/nouislider.min.js"></script>
     <script src="vendors/nouislider/wNumb.min.js"></script>
-    <script src="js/common.js?32"></script>
+    <script src="js/common.js?34"></script>
 </body>
 
 </html>

@@ -724,32 +724,46 @@ document.addEventListener("DOMContentLoaded", function () {
     const html = document.querySelector('html');
     let getScrollWidth = () => window.innerWidth - document.documentElement.offsetWidth;
     let browserScrollWidth = getScrollWidth();
-
     document.addEventListener('click', (e) => {
         const target = e.target;
+
+        // Открытие модалки
         if (target.closest('[data-open-modal]')) {
             e.preventDefault();
             const targetId = target.closest('[data-open-modal]').dataset.openModal;
             const selectedModal = document.querySelector(`[data-modal="${targetId}"]`);
             selectedModal.classList.add('show');
             html.classList.add('locked');
-            if (getScrollWidth() == 0) {
+            if (getScrollWidth() === 0) {
                 body.style.paddingRight = `${browserScrollWidth}px`;
             }
         }
+
+        // Закрытие по кнопке закрытия
         if (target.closest('[data-modal-close]')) {
             e.preventDefault();
-            let modalOpen = document.querySelector('.modal.show');
-            document.querySelector('.modal.show').classList.remove('show');
-            html.classList.remove('locked');
-            body.style.paddingRight = ``;
+            const currentModal = target.closest('.modal');
+            if (currentModal) {
+                currentModal.classList.remove('show');
+            }
+            // Проверим, осталась ли хоть одна открытая модалка
+            if (!document.querySelector('.modal.show')) {
+                html.classList.remove('locked');
+                body.style.paddingRight = ``;
+            }
         }
+
+        // Закрытие по клику вне .modal-content
         if (target.closest('.modal') && !target.closest('.modal-content')) {
             e.preventDefault();
-            let modalOpen = document.querySelector('.modal.show');
-            document.querySelector('.modal.show').classList.remove('show');
-            html.classList.remove('locked');
-            body.style.paddingRight = ``;
+            const currentModal = target.closest('.modal');
+            if (currentModal) {
+                currentModal.classList.remove('show');
+            }
+            if (!document.querySelector('.modal.show')) {
+                html.classList.remove('locked');
+                body.style.paddingRight = ``;
+            }
         }
     });
 
@@ -1189,12 +1203,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // при клике на активный этаж (path у которого есть data-link) делаем переход на сраницу
-    // floors.forEach((floor) => {
-    //     floor.addEventListener("click", (event) => {
-    //         const link = event.target.getAttribute("data-link");
-    //         if (link) window.open(link, "_blank");
-    //     });
-    // })
+    floors.forEach((floor) => {
+        floor.addEventListener("click", (event) => {
+            const link = event.target.getAttribute("data-link");
+            if (link) window.open(link, "_blank");
+        });
+    })
 
     const floorsSelectionSlider = new Swiper(".floors_selection_slider", {
         slidesPerView: 1,
