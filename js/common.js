@@ -1533,6 +1533,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = await response.json();
 
 
+            floorsPlanTitle.innerHTML = `${floorNumber}`;
             // floorsPlanImg.innerHTML = "";
 
             filterModule.removeEventListeners();
