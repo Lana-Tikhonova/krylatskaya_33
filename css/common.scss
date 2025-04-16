@@ -9579,6 +9579,16 @@ span {
             }
         }
     }
+
+    &_5 {
+        .building_img {
+
+            img,
+            svg {
+                max-height: 1152px;
+            }
+        }
+    }
 }
 
 .building_img {
@@ -14422,6 +14432,11 @@ span {
         justify-content: space-between;
         padding: 19px 25px 36px 17px;
 
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     }
 
     .filter_top {

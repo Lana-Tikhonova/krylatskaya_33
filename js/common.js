@@ -111,7 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $('.catalog_table_row').off('click'); // Убираем старые обработчики
 
         if (state) {
-            $('.catalog_table_row').on('click', function () {
+            $('.catalog_table_row').on('click', function (e) {
+                e.preventDefault();
                 $(this).next().slideToggle();
             });
         }
