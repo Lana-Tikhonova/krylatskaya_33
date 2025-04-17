@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="description" content="Крылатская 33" />
+    <meta name="keywords" content="" />
+    <title>Избранное (ничего не нашлось)</title>
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ЖК «Крылатская 33»" />
+    <link rel="manifest" href="favicons/site.webmanifest" />
+
+    <!-- шрифты -->
+    <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/TTFirsNeue-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/TTFirsNeue-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="vendors/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="vendors/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="vendors/animate/aos.min.css" />
+    <link rel="stylesheet" href="vendors/tippy/scale.css" />
+    <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="css/bundle.min.css?50" />
+</head>
+
+<body class='small_header favorites_page'>
+    <!-- в хедере два блока .header_block (один для фикс меню), отличаются классами -->
+    <header class="header header_dark">
+        <div class="container">
+            <div class="header_block header_block_fix">
+                <div class="menu_btn">
+                    <span></span>
+                </div>
+                <a href="/" class="logo"><img src="imgs/logo_brown.svg" alt="" /></a>
+                <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
+                <a href="#" class="favorites_btn">
+                    <svg class="fill_brown">
+                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                    </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="btn">Выбрать квартиру</a>
+            </div>
+            <div class="header_block header_block_not_fix" data-aos="fade">
+                <div class="menu_btn">
+                    <span></span>
+                </div>
+                <a href="/" class="logo"><img src="imgs/logo_brown.svg" alt="" /></a>
+                <a href="tel:+7 (495) 642 44 77" class="header_phone">+7 (495) 642 44 77</a>
+                <a href="#" class="favorites_btn">
+                    <svg class="fill_creamy">
+                        <use xlink:href="imgs/sprite.symbol.svg#favorites"></use>
+                    </svg>
+                    <div class='favorites_dropdown_wrapper'>
+                        <div class='favorites_dropdown'>
+                            В избранном
+                            <span>1 объект</span>
+                            <img src="imgs/favorite_img.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="btn -not_border">Выбрать квартиру</a>
+            </div>
+        </div>
+        <div class="big_menu">
+            <div class="menu_btn">
+                <span></span>
+            </div>
+            <div class='menu_wrapper'>
+                <ul class="menu">
+
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_1.jpg">Привелегии</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_2.jpg">Инфраструктура</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_3.jpg">Локация</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_4.jpg">Архитектура</a>
+                    </li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_5.jpg">Окружение</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_6.jpg">Благоустройство</a></li>
+                    <li>
+                        <a href="#" class="item btn" data-img="imgs/menu/menu_img_7.jpg">Выбрать квартиру</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_7.jpg">Квартиры</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_8.jpg">Машиноместа</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item" data-img="imgs/menu/menu_img_9.jpg">Кладовые</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_10.jpg">Коммерция</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_11.jpg">Ипотечные предложения</a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-img="imgs/menu/menu_img_12.jpg">Технологии комфорта</a>
+                    </li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_13.jpg">КОМАНДА</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_14.jpg">Медиа</a></li>
+                    <li><a href="#" class="item" data-img="imgs/menu/menu_img_15.jpg">Контакты</a></li>
+                </ul>
+                <a href="imgs/video/output_1.mp4" class='btn btn_border btn_play' data-video-fancybox="video_btn_1">
+                    <svg class="fill_creamy">
+                        <use xlink:href="imgs/sprite.symbol.svg#play"></use>
+                    </svg>
+                    Посмотреть ролик о проекте
+                </a>
+            </div>
+            <div class="big_menu_img">
+                <div class='swiper slider_menu'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_6.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_7.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_8.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_9.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_10.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_11.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_12.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_13.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_14.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="imgs/menu/menu_img_15.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class='mobile_btn_fix'>
+        <a href="#" class='btn btn_green'>Акция</a>
+        <a href="#" class='btn'>Выбрать квартиру</a>
+    </div>
+
+    <main>
+        <section class='one_section'>
+            <div class="container">
+                <h2>Избранное</h2>
+                <div class='text_big'>
+                    Здесь будут показаны добавленные в избранное квартиры.<br>
+                    Перейдите к выбору и отметьте понравившиеся варианты.
+                </div>
+                <a href="#" class='btn btn_big'>Выбрать квартиру</a>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="vendors/gsap/gsap.min.js"></script>
+    <script src="vendors/gsap/ScrollTrigger.min.js"></script>
+
+    <script src="vendors/jquery/jquery-3.5.1.min.js"></script>
+    <script src="vendors/fancybox/jquery.fancybox.min.js"></script>
+    <script src="vendors/animate/aos.min.js"></script>
+    <script src="vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="vendors/tippy/popper.min.js"></script>
+    <script src="vendors/tippy/tippy-bundle.umd.min.js"></script>
+    <script src="vendors/imask/imask.js"></script>
+    <script src="vendors/nouislider/nouislider.min.js"></script>
+    <script src="vendors/nouislider/wNumb.min.js"></script>
+    <script src="js/common.js?36"></script>
+</body>
+
+</html>
