@@ -15648,12 +15648,35 @@ span {
             }
         }
     }
+
+    .preloader {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #f8f0ec;
+        z-index: 1;
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+    }
 }
 
 .parking_scheme_top {
     padding-top: 29px;
     border-top: 1px solid #BAADA8;
     padding-bottom: 30px;
+}
+
+@media screen and (min-width:1601px) {
+    .catalog_section_scheme {
+        .left {
+            height: calc(100% - 100.5px) !important;
+        }
+    }
 }
 
 .catalog_section_scheme {
@@ -15663,7 +15686,6 @@ span {
     .left {
         padding-bottom: 0;
         min-height: 500px;
-        height: calc(100% - 100.5px);
     }
 
     .container {
@@ -15769,14 +15791,11 @@ span {
     }
 
     .catalog_section_scheme {
-
         .left {
-            height: calc(100% - 83.25px);
+            height: calc(100% - 83.25px) !important;
         }
 
     }
-
-
 
     .catalog_section_scheme .parking_scheme {
         height: calc(100% - 52.5px);
@@ -15842,7 +15861,18 @@ span {
     padding-left: 10px;
 }
 
+@media screen and (min-width:577px) and (max-width:992px) {
+    .catalog_section_scheme {
+        .filter_block_blocks {
+            display: flex !important;
+        }
+    }
+}
+
 @media screen and (max-width:576px) {
+    .scheme_btns_wrapper .name {
+        text-transform: none;
+    }
 
     .catalog_section_scheme {
         .filter_block_blocks {
@@ -15860,8 +15890,6 @@ span {
         left: 20px;
         bottom: 25px;
     }
-
-    .parking_scheme .img_wrapper {}
 
     .scheme_tippy_wrapper {
         padding-left: 0;
@@ -15959,4 +15987,159 @@ span {
     }
 
 
+}
+
+.scheme_btns_wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    margin-left: auto;
+
+    .name {
+        font-size: 16px;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+}
+
+.scheme_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .arrow {
+        cursor: pointer;
+        width: 57px;
+        height: 57px;
+        border-radius: 100%;
+        box-shadow: #634840 inset 0 0 0 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            box-shadow: none;
+            background: linear-gradient(90deg, #693528 0, #c37a59 70%, #c47f5a 100%);
+
+            svg {
+                fill: #f8f0ec;
+
+            }
+        }
+
+        svg {
+            width: 30px;
+            height: 17px;
+            margin: 0;
+            fill: $color_brown;
+        }
+
+    }
+}
+
+.scheme_level_btn {
+    cursor: pointer;
+    width: 57px;
+    height: 57px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    box-shadow: #634840 inset 0 0 0 1px;
+
+    &.active {
+        box-shadow: none;
+        background: linear-gradient(90deg, #693528 0, #c37a59 70%, #c47f5a 100%);
+        color: #f8f0ec;
+    }
+}
+
+.scheme_btns_wrapper_mobile {
+    display: none;
+}
+
+@media screen and (max-width:1600px) and (min-width:993px) {
+    .scheme_btns_wrapper {
+        margin-top: 17px;
+
+        .name {
+            font-size: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .scheme_level_btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .scheme_btns {
+        .arrow {
+            width: 38px;
+            height: 38px;
+
+            svg {
+                width: 20px;
+                height: 11px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    .scheme_btns_wrapper_mobile {
+        display: flex;
+    }
+
+    .scheme_btns_wrapper_desktop {
+        display: none;
+    }
+
+    .scheme_btns_wrapper {
+        width: auto;
+        align-items: flex-start;
+        margin-top: 0;
+        width: 160px;
+        margin-left: auto;
+
+        .name {
+            font-size: 11px;
+            margin-bottom: 6px;
+        }
+    }
+
+    .scheme_level_btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .scheme_btns {
+        flex-direction: row;
+        gap: 3px;
+
+        .arrow {
+            width: 28px;
+            height: 28px;
+
+            svg {
+
+                transform: rotate(-90deg);
+                width: 14px;
+                height: 8px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    .scheme_btns_wrapper {
+        width: 100%;
+        margin-left: 0;
+    }
 }

@@ -852,53 +852,6 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: [400, 200]
     });
 
-    let currentTippy = null;
-
-    const isMobile = window.innerWidth <= 768;
-
-    tippy('.scheme_tippy_btn', {
-        trigger: isMobile ? 'click' : 'mouseenter focus',
-        content(reference) {
-            const id = reference.getAttribute('data-template');
-            const template = document.getElementById(id);
-            return template ? template.innerHTML : '';
-        },
-        allowHTML: true,
-        arrow: false,
-        theme: 'scheme_tooltip',
-        animation: 'scale',
-        placement: 'right',
-        maxWidth: '310px',
-        interactive: true,
-        duration: [400, 200],
-        appendTo: document.querySelector('.catalog_section'),
-        distance: 0,
-        offset: [0, 0],
-        onShow(instance) {
-            // Закрываем текущий tooltip, если он открыт
-            if (currentTippy && currentTippy !== instance) {
-                currentTippy.hide();
-            }
-            // Устанавливаем новый текущий tooltip
-            currentTippy = instance;
-
-            const tippyBox = instance.popper;
-            tippyBox.classList.add('scheme_tippy_wrapper');
-
-            // клик на элемент внутри тултипа, чтобы его закрыть
-            tippyBox.addEventListener('click', (e) => {
-                if (e.target && e.target.closest('.close')) {
-                    instance.hide();
-                }
-            });
-        },
-        onHide(instance) {
-            // Если закрывается tooltip, сбрасываем текущего
-            if (currentTippy === instance) {
-                currentTippy = null;
-            }
-        }
-    });
 
 
     let tippyInstances = [];
@@ -950,34 +903,6 @@ document.addEventListener("DOMContentLoaded", function () {
         isTouchDevice = detectTouchDevice();
         initTippy();
     });
-
-
-    // zoom
-    const parkingScheme = document.querySelector('.parking_scheme .img');
-    if (parkingScheme) {
-        const zoomInBtn = document.getElementById('zoom-in');
-        const zoomOutBtn = document.getElementById('zoom-out');
-
-        // Определяем, мобильное ли устройство
-        const isMobile = window.innerWidth <= 768;
-
-        // Устанавливаем начальный масштаб в зависимости от устройства
-        const initialScale = isMobile ? 2 : 1;
-
-        const panzoom = Panzoom(parkingScheme, {
-            minScale: 1,
-            maxScale: 10,
-            contain: 'outside',
-            startScale: initialScale,
-        })
-
-        parkingScheme.addEventListener('wheel', panzoom.zoomWithWheel);
-
-
-        zoomInBtn.addEventListener('click', panzoom.zoomIn)
-        zoomOutBtn.addEventListener('click', panzoom.zoomOut)
-    }
-
 
 
     let mm = gsap.matchMedia();
@@ -1428,9 +1353,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // план этажа
-let flatsData = {}; // Должен загружаться динамически
-
 document.addEventListener("DOMContentLoaded", function () {
+    let flatsData = {};
     const floorsPlanSection = document.querySelector(".floors_plan_section");
     const floorsPlanImg = document.querySelector(".floors_plan_img");
     const floorsPlanTitle = document.querySelector(".floors_plan_title span");
@@ -1696,4 +1620,180 @@ document.addEventListener("DOMContentLoaded", function () {
         return { init, removeEventListeners };
     })();
 
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let loadedData = {};
+    const schemeWrapper = document.querySelector('.parking_scheme_wrapper');
+    const schemeContainer = schemeWrapper.querySelector('.parking_scheme .img');
+    const zoomInBtn = schemeWrapper.querySelector('#zoom-in');
+    const zoomOutBtn = schemeWrapper.querySelector('#zoom-out');
+    const preloader = schemeWrapper.querySelector('.preloader');
+
+    const isMobile = () => window.innerWidth <= 768;
+    let panzoomInstance = null;
+
+    const pageType = schemeWrapper.classList.contains('storage') ? 'storage' : 'parking';
+    // const SCHEME_PATH = 'http://127.0.0.1:5504/json';
+    const SCHEME_PATH = 'https://крылатская33.рф/new.site/json';
+
+
+    function loadScheme(level = '-1') {
+        // Если данные уже загружены для этого уровня
+        if (loadedData[level]) {
+            renderScheme(loadedData[level]);
+            initTippy();
+            initZoom();
+            preloader.classList.remove('active');
+            return;
+        }
+
+        fetch(`${SCHEME_PATH}/${pageType}_${level}.json`)
+            .then(res => res.json())
+            .then(data => {
+                loadedData[level] = data; // Сохраняем данные для текущего уровня
+                renderScheme(data);
+                initTippy();
+                initZoom();
+            })
+            .catch(err => console.error('Ошибка загрузки схемы:', err))
+            .finally(() => {
+                preloader.classList.remove('active');
+            });
+    }
+
+    function renderScheme({ image, svg, tooltips }) {
+        //  Обновляем image и svg
+        schemeContainer.innerHTML = `
+            <img src="${image}" alt="">
+            ${svg}
+        `;
+
+        //  Удаляем старые тултипы
+        document.querySelectorAll('[id^="scheme-content_"]').forEach(el => el.remove());
+
+        // Добавляем новые тултипы
+        const hiddenDiv = document.createElement('div');
+        hiddenDiv.style.display = 'none';
+        Object.entries(tooltips).forEach(([id, html]) => {
+            const wrapper = document.createElement('div');
+            wrapper.id = id;
+            wrapper.innerHTML = html;
+            hiddenDiv.appendChild(wrapper);
+        });
+        schemeWrapper.appendChild(hiddenDiv);
+    }
+
+    function initTippy() {
+        let currentTippy = null;
+
+        tippy('.scheme_tippy_btn', {
+            trigger: isMobile() ? 'click' : 'mouseenter focus',
+            content(reference) {
+                const id = reference.getAttribute('data-template');
+                const template = document.getElementById(id);
+                return template ? template.innerHTML : '';
+            },
+            allowHTML: true,
+            arrow: false,
+            theme: 'scheme_tooltip',
+            animation: 'scale',
+            placement: 'right',
+            maxWidth: '310px',
+            interactive: true,
+            duration: [400, 200],
+            appendTo: document.querySelector('.catalog_section'),
+            distance: 0,
+            offset: [0, 0],
+            onShow(instance) {
+                if (currentTippy && currentTippy !== instance) {
+                    currentTippy.hide();
+                }
+                currentTippy = instance;
+                const tippyBox = instance.popper;
+                tippyBox.classList.add('scheme_tippy_wrapper');
+                tippyBox.addEventListener('click', (e) => {
+                    if (e.target && e.target.closest('.close') || e.target.closest('.btn')) {
+                        instance.hide();
+                    }
+                });
+            },
+            onHide(instance) {
+                if (currentTippy === instance) {
+                    currentTippy = null;
+                }
+            }
+        });
+    }
+
+    function initZoom() {
+        if (panzoomInstance) {
+            panzoomInstance.destroy();
+            panzoomInstance = null;
+        }
+
+        const initialScale = isMobile() ? 2 : 1;
+
+        panzoomInstance = Panzoom(schemeContainer, {
+            minScale: 1,
+            maxScale: 10,
+            contain: 'outside',
+            startScale: initialScale,
+        });
+
+        schemeContainer.addEventListener('wheel', panzoomInstance.zoomWithWheel);
+        zoomInBtn.onclick = panzoomInstance.zoomIn;
+        zoomOutBtn.onclick = panzoomInstance.zoomOut;
+    }
+
+    // При клике на уровень
+    document.querySelectorAll('.scheme_btns_wrapper').forEach(wrapper => {
+        const buttons = wrapper.querySelectorAll('.scheme_level_btn');
+        const arrows = wrapper.querySelectorAll('.arrow');
+
+        [...buttons, ...arrows].forEach(btn => {
+            btn.addEventListener('click', () => {
+                const allWrappers = document.querySelectorAll('.scheme_btns_wrapper');
+
+                // Определим текущий активный уровень
+                let currentLevel = null;
+
+                const activeBtn = wrapper.querySelector('.scheme_level_btn.active');
+                if (activeBtn) currentLevel = activeBtn.textContent.trim();
+
+                // Обработка стрелок
+                if (btn.classList.contains('arrow_prev')) {
+                    const prev = activeBtn?.previousElementSibling;
+                    if (prev?.classList.contains('scheme_level_btn')) {
+                        currentLevel = prev.textContent.trim();
+                    }
+                } else if (btn.classList.contains('arrow_next')) {
+                    const next = activeBtn?.nextElementSibling;
+                    if (next?.classList.contains('scheme_level_btn')) {
+                        currentLevel = next.textContent.trim();
+                    }
+                } else if (btn.classList.contains('scheme_level_btn')) {
+                    currentLevel = btn.textContent.trim();
+                }
+
+                if (!currentLevel) return;
+
+                // Сбросить active со всех .scheme_level_btn на странице
+                allWrappers.forEach(w => {
+                    w.querySelectorAll('.scheme_level_btn').forEach(el => {
+                        el.classList.toggle('active', el.textContent.trim() === currentLevel);
+                    });
+                });
+
+                // Показываем прелоадер и загружаем схему
+                preloader.classList.add('active');
+                loadScheme(currentLevel);
+            });
+        });
+    });
+
+
+    // Загрузка при заходе на страницу
+    const defaultLevel = document.querySelector('.scheme_level_btn.active')?.textContent.trim() || '-1';
+    loadScheme(defaultLevel);
 });
