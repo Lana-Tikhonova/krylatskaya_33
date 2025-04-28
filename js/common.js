@@ -1625,6 +1625,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     let loadedData = {};
     const schemeWrapper = document.querySelector('.parking_scheme_wrapper');
+    if (!schemeWrapper) return;
     const schemeContainer = schemeWrapper.querySelector('.parking_scheme .img');
     const zoomInBtn = schemeWrapper.querySelector('#zoom-in');
     const zoomOutBtn = schemeWrapper.querySelector('#zoom-out');
