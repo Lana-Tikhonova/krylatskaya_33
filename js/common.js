@@ -853,56 +853,77 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
     let tippyInstances = [];
     let isTouchDevice = detectTouchDevice();
 
-    // Функция определения сенсорного устройства
+    // Определение сенсорного устройства
     function detectTouchDevice() {
-        return ('ontouchstart' in window) ||
-            (navigator.maxTouchPoints > 0) ||
+        return 'ontouchstart' in window ||
+            navigator.maxTouchPoints > 0 ||
             window.matchMedia('(pointer: coarse)').matches;
     }
 
-    // Функция инициализации Tippy
+    function getTippyContent(reference) {
+        const id = reference.getAttribute('data-template');
+        const template = document.getElementById(id);
+        return template ? template.innerHTML : '';
+    }
+
+    const tippyConfigs = [
+        {
+            selector: '.tippy_btn',
+            options: {
+                placement: 'right-start',
+                maxWidth: '462px',
+                theme: 'creame',
+            }
+        },
+        {
+            selector: '.extradition_tippy_btn',
+            options: {
+                placement: 'top-start',
+                maxWidth: '330px',
+                theme: 'transparent',
+            }
+        }
+    ];
+
     function initTippy() {
-        // Удаляем старые инстансы перед пересозданием
+        // Удаляем старые инстансы
         tippyInstances.forEach(instance => instance.destroy());
         tippyInstances = [];
 
         if (!isTouchDevice) {
-            tippyInstances = tippy('.tippy_btn', {
-                // trigger: 'click',
-                content(reference) {
-                    const id = reference.getAttribute('data-template');
-                    const template = document.getElementById(id);
-                    return template ? template.innerHTML : '';
-                },
-                allowHTML: true,
-                arrow: false,
-                theme: 'creame',
-                animation: 'scale',
-                placement: 'right-start',
-                followCursor: true,
-                maxWidth: '462px',
-                duration: [400, 200]
+            tippyConfigs.forEach(({ selector, options }) => {
+                const instances = tippy(selector, {
+                    // trigger: 'click',
+                    content: getTippyContent,
+                    allowHTML: true,
+                    arrow: false,
+                    animation: 'scale',
+                    followCursor: true,
+                    duration: [400, 200],
+                    ...options
+                });
+                tippyInstances.push(...instances);
             });
         }
     }
 
-    // Запускаем при загрузке
     initTippy();
 
-    // Отслеживаем изменения ввода (тач/мышь) и ресайз
-    window.matchMedia('(pointer: coarse)').addEventListener('change', (e) => {
-        isTouchDevice = detectTouchDevice();
-        initTippy();
-    });
+    // Обработчик изменения типа устройства
+    function handleDeviceChange() {
+        const newIsTouch = detectTouchDevice();
+        if (newIsTouch !== isTouchDevice) {
+            isTouchDevice = newIsTouch;
+            initTippy();
+        }
+    }
 
-    window.addEventListener('resize', () => {
-        isTouchDevice = detectTouchDevice();
-        initTippy();
-    });
+    // Отслеживаем изменения устройства и ресайз
+    window.matchMedia('(pointer: coarse)').addEventListener('change', handleDeviceChange);
+    window.addEventListener('resize', handleDeviceChange);
 
 
     let mm = gsap.matchMedia();
